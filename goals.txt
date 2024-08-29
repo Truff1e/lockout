@@ -1,4 +1,4 @@
-v1.3.0 - 228 goals
+v1.4.0 - 277 Goals
 K0001: Kill 100 Mobs
 K0002: Kill Bee
 K0003: Kill Blue Sheep
@@ -51,7 +51,6 @@ D0006: Die to Piglin Brute
 N0001: Opponent Dies
 N0002: Opponent Obtains Crafting Table
 N0004: Opponent Catches Fire
-N0005: Opponent Jumps
 N0006: Opponent Obtains Obsidian
 N0007: Opponent Obtains Seeds
 N0008: Opponent Touches Water
@@ -97,7 +96,7 @@ I0006: Obtain Cake
 I0007: Obtain Chainmail Armor
 I0008: Obtain Cobweb
 I0009: Obtain Comparator
-I0010: Craft a Decorated Pot
+I0010: Craft a Pot w/ 4 Sherds
 I0011: Obtain Diamond Tools
 I0012: Obtain Dragon Egg
 I0013: Obtain End Crystal
@@ -130,6 +129,8 @@ I0039: Obtain Brush
 I0040: Obtain Banner Pattern
 I0041: Obtain All Banner Patterns
 I0042: Obtain Trail Ruins Armor Trim
+I0043: Use 4 Unique Armor Trims
+I0044: Use 6 Unique Armor Trims
 I0045: Obtain Recovery Compass
 I0046: Obtain All Swords
 I0047: Obtain All Shovels
@@ -174,6 +175,42 @@ I0085: Obtain 64 Purple Concrete
 I0086: Obtain 64 Black Concrete
 I0087: Brew Invisibility Potion
 I0088: Brew Jump Boost Potion
+I0089: Obtain Tinted Glass
+I0090: Obtain All Furnace Variants
+I0091: Obtain Sniffer Egg
+I0092: Obtain Pink Glazed Terracotta
+I0093: Obtain Magenta Glazed Terracotta
+I0094: Obtain Red Glazed Terracotta
+I0095: Obtain Orange Glazed Terracotta
+I0096: Obtain Yellow Glazed Terracotta
+I0097: Obtain Lime Glazed Terracotta
+I0098: Obtain Green Glazed Terracotta
+I0099: Obtain Cyan Glazed Terracotta
+I0100: Obtain Light Blue Glazed Terracotta
+I0101: Obtain Blue Glazed Terracotta
+I0102: Obtain Purple Glazed Terracotta
+I0103: Obtain Black Glazed Terracotta
+I0104: Obtain Nether Star
+I0105: Obtain Netherite Ingot
+I0106: Obtain Glow Item Frame
+I0107: Obtain Mace
+I0108: Obtain Block of Dried Kelp
+I0109: Obtain Elytra
+I0110: Obtain Turtle Scute
+I0111: Obtain Pink Candle
+I0112: Obtain Magenta Candle
+I0113: Obtain Red Candle
+I0114: Obtain Orange Candle
+I0115: Obtain Yellow Candle
+I0116: Obtain Lime Candle
+I0117: Obtain Green Candle
+I0118: Obtain Cyan Candle
+I0119: Obtain Light Blue Candle
+I0120: Obtain Blue Candle
+I0121: Obtain Purple Candle
+I0122: Obtain Black Candle
+I0123: Obtain Honey Block
+I0125: Obtain Flower Pot
 E0001: Eat Chorus Fruit
 E0002: Eat Poisonous Potato
 E0003: Eat Pumpkin Pie
@@ -189,7 +226,7 @@ E0012: Eat a Cookie
 A0001: Get 25 Unique Advancements
 A0002: Get Bullseye Advancement
 A0003: Cure Zombie Villager
-A0004: Enchant Something
+A0004: Use Enchantment Table
 A0005: Get Oh Shiny Advancement
 A0006: Open Ominous Vault
 A0007: Get Sniper Duel Advancement
@@ -202,6 +239,12 @@ A0013: Apply Armor Trim
 A0014: Obtain all Froglights
 A0015: Get Subspace Bubble Advancement
 A0016: Tame Every Cat Variant
+A0017: Fully Charge Respawn Anchor
+A0018: Get "Power of Books" Advancement
+A0019: Get "Caves and Cliffs" Advancement
+A0020: Summon Iron Golem
+A0021: Get 15 Unique Advancements
+A0022: Get 35 Unique Advancements
 X0001: Get 30 Levels
 X0002: Get 64 of the Same Item
 X0003: Get Absorption
@@ -213,9 +256,15 @@ X0008: Mine Mob Spawner
 X0009: Sprint 1km
 X0010: Start a Raid
 X0012: Mine Emerald Ore
+X0015: Have 3 Status Effects at Once
+X0016: Have 6 Status Effects at Once
 X0017: Get Nausea
+X0018: Take 200 Damage
 X0019: Get Leaping
 X0020: Empty Hunger Bar
+X0021: Wash Leather Armor
+X0023: Have 9 Status Effects at Once
+X0024: Have 12 Status Effects at Once
 L0001: Find an Ancient City
 L0002: Reach Bedrock
 L0003: Reach Height Limit
