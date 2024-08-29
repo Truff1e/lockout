@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "hoglin": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:hoglin"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "hoglin"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0005"
+    }
+  }

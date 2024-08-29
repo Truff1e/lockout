@@ -1,0 +1,28 @@
+{
+    "criteria": {
+      "furnaces": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:furnace"
+            },
+            {
+              "items": "minecraft:smoker"
+            },
+            {
+              "items": "minecraft:blast_furnace"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "furnaces"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0090"
+    }
+  }

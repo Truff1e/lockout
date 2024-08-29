@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "poisonous_potato": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:poisonous_potato"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "poisonous_potato"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/e0002"
+    }
+  }
+  

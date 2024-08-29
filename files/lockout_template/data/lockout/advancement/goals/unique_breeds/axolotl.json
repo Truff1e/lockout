@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "chicken": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:axolotl"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "chicken"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/count_breeds"
+    }
+  }

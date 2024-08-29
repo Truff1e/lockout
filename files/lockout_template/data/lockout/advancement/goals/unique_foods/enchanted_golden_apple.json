@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "chorus_fruit": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:enchanted_golden_apple"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "chorus_fruit"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count_foods"
+    }
+  }
+  

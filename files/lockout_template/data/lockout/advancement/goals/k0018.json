@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "kill_player": {
+        "trigger": "minecraft:player_killed_entity",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:player"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "kill_player"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/k0018"
+    }
+  }

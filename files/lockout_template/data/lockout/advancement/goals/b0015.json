@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "horse": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:mooshroom"
+          },
+          "partner": {
+            "type": "minecraft:mooshroom"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "horse"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0015"
+    }
+  }

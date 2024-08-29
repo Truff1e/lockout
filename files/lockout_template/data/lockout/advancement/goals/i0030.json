@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "soul_lantern": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:soul_lantern"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "soul_lantern"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0030"
+    }
+  }

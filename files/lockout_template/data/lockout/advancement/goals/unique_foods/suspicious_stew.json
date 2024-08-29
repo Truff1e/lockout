@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "chorus_fruit": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:suspicious_stew"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "chorus_fruit"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count_foods"
+    }
+  }
+  

@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "zpig": {
+        "trigger": "minecraft:player_killed_entity",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:zombified_piglin"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "zpig"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/k0035"
+    }
+  }

@@ -1,0 +1,25 @@
+{
+    "criteria": {
+      "swift_potion": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:potion",
+              "predicates": {
+                "minecraft:potion_contents": "minecraft:leaping"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "requirements": [
+      [
+        "swift_potion"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0088"
+    }
+  }

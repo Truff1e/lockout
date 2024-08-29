@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:rail"
+            },
+            {
+              "items": "minecraft:activator_rail"
+            },
+            {
+              "items": "minecraft:powered_rail"
+            },
+            {
+              "items": "minecraft:detector_rail"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0004"
+    }
+  }

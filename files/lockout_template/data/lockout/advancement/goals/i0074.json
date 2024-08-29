@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:leather_horse_armor"
+            },
+            {
+              "items": "minecraft:iron_horse_armor"
+            },
+            {
+              "items": "minecraft:golden_horse_armor"
+            },
+            {
+              "items": "minecraft:diamond_horse_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0074"
+    }
+  }

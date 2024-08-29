@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "llama": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:llama"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "llama"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/d0003"
+    }
+  }
+  

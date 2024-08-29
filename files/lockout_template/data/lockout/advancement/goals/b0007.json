@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "horse": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:ocelot"
+          },
+          "partner": {
+            "type": "minecraft:ocelot"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "horse"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0007"
+    }
+  }

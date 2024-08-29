@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "wolf": {
+        "trigger": "minecraft:tame_animal",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:wolf"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "wolf"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/t0004"
+    }
+  }

@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "obsidian": {
+        "trigger": "minecraft:enter_block",
+        "conditions": {
+          "block": "minecraft:water"
+        }
+      }
+    },
+    "requirements": [
+      [
+        "obsidian"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/n0008"
+    }
+  }

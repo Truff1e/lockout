@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "end_rod": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:name_tag"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "end_rod"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0053"
+    }
+  }

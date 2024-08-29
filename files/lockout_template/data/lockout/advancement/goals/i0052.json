@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "end_rod": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:totem_of_undying"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "end_rod"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0052"
+    }
+  }

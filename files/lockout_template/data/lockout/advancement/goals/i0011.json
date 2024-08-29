@@ -1,0 +1,34 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:diamond_sword"
+            },
+            {
+              "items": "minecraft:diamond_axe"
+            },
+            {
+              "items": "minecraft:diamond_pickaxe"
+            },
+            {
+              "items": "minecraft:diamond_shovel"
+            },
+            {
+              "items": "minecraft:diamond_hoe"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0011"
+    }
+  }

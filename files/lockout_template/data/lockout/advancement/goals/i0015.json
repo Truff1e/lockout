@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "ender_chest": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:ender_chest"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "ender_chest"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0015"
+    }
+  }

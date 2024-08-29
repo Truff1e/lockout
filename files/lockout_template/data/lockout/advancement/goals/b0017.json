@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "horse": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:turtle"
+          },
+          "partner": {
+            "type": "minecraft:turtle"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "horse"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0017"
+    }
+  }

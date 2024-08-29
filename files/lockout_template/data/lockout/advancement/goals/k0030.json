@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "zoglin": {
+        "trigger": "minecraft:player_killed_entity",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:zoglin"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "zoglin"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/k0030"
+    }
+  }

@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "scaffolding": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:scaffolding"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "scaffolding"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0029"
+    }
+  }

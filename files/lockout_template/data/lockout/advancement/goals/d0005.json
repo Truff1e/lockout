@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "bee": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:witch"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "bee"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/d0005"
+    }
+  }
+  

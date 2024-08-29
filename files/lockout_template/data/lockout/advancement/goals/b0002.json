@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "chicken": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:cow"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "chicken"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0002"
+    }
+  }

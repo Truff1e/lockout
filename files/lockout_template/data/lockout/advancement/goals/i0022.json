@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "leather_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:leather_helmet"
+            },
+            {
+              "items": "minecraft:leather_chestplate"
+            },
+            {
+              "items": "minecraft:leather_leggings"
+            },
+            {
+              "items": "minecraft:leather_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "leather_armor"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0022"
+    }
+  }

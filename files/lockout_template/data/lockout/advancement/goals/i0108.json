@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "end_rod": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dried_kelp_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "end_rod"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0108"
+    }
+  }

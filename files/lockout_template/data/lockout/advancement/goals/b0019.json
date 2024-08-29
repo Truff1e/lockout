@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "horse": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:armadillo"
+          },
+          "partner": {
+            "type": "minecraft:armadillo"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "horse"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0019"
+    }
+  }

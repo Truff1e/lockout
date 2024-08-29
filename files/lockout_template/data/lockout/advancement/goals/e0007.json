@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "rabbit_stew": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:beetroot"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "rabbit_stew"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/e0007"
+    }
+  }
+  

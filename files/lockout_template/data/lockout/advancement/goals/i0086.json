@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "end_rod": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:black_concrete",
+              "count": 64
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "end_rod"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0086"
+    }
+  }

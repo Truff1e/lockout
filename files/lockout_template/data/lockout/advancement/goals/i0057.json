@@ -1,0 +1,43 @@
+{
+    "criteria": {
+      "ore_blocks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:coal_block"
+            },
+            {
+              "items": "minecraft:iron_block"
+            },
+            {
+              "items": "minecraft:copper_block"
+            },
+            {
+              "items": "minecraft:gold_block"
+            },
+            {
+              "items": "minecraft:diamond_block"
+            },
+            {
+              "items": "minecraft:redstone_block"
+            },
+            {
+              "items": "minecraft:emerald_block"
+            },
+            {
+              "items": "minecraft:lapis_block"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "ore_blocks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0057"
+    }
+  }

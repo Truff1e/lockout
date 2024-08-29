@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "horse": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:pig"
+          },
+          "partner": {
+            "type": "minecraft:pig"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "horse"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0008"
+    }
+  }

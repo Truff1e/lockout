@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "strider": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:strider"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "strider"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0011"
+    }
+  }

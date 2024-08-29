@@ -1,0 +1,34 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:golden_sword"
+            },
+            {
+              "items": "minecraft:golden_axe"
+            },
+            {
+              "items": "minecraft:golden_pickaxe"
+            },
+            {
+              "items": "minecraft:golden_shovel"
+            },
+            {
+              "items": "minecraft:golden_hoe"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0017"
+    }
+  }

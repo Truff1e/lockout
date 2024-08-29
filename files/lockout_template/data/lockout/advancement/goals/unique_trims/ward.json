@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "armor_trim": {
+        "conditions": {
+          "recipe_id": "minecraft:ward_armor_trim_smithing_template_smithing_trim"
+        },
+        "trigger": "minecraft:recipe_crafted"
+      }
+    },
+    "requirements": [
+      [
+        "armor_trim"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/count_trims"
+    }
+  }

@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "cat": {
+        "trigger": "minecraft:tame_animal",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:horse"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "cat"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/t0002"
+    }
+  }

@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "pumpkin_pie": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:pumpkin_pie"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "pumpkin_pie"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/e0003"
+    }
+  }
+  

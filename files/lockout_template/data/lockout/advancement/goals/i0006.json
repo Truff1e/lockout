@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "cake": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:cake"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "cake"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0006"
+    }
+  }

@@ -1,0 +1,37 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wooden_hoe"
+            },
+            {
+              "items": "minecraft:stone_hoe"
+            },
+            {
+              "items": "minecraft:iron_hoe"
+            },
+            {
+              "items": "minecraft:golden_hoe"
+            },
+            {
+              "items": "minecraft:diamond_hoe"
+            },
+            {
+              "items": "minecraft:netherite_hoe"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0002"
+    }
+  }

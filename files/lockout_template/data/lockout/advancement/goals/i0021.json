@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "iron_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:iron_helmet"
+            },
+            {
+              "items": "minecraft:iron_chestplate"
+            },
+            {
+              "items": "minecraft:iron_leggings"
+            },
+            {
+              "items": "minecraft:iron_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "iron_armor"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0021"
+    }
+  }

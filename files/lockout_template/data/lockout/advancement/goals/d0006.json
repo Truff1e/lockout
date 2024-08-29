@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "bee": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:piglin_brute"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "bee"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/d0006"
+    }
+  }
+  

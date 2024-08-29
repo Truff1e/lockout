@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "golden_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:golden_helmet"
+            },
+            {
+              "items": "minecraft:golden_chestplate"
+            },
+            {
+              "items": "minecraft:golden_leggings"
+            },
+            {
+              "items": "minecraft:golden_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "golden_armor"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0050"
+    }
+  }

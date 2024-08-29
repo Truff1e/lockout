@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "rabbit_stew": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:spider_eye"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "rabbit_stew"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/e0006"
+    }
+  }
+  

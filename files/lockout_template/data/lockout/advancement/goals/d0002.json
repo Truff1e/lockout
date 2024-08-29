@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "iron_golem": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:iron_golem"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "iron_golem"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/d0002"
+    }
+  }
+  

@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "scute": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:armadillo_scute"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "scute"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0005"
+    }
+  }

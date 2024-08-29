@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "comparator": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:dragon_egg"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "comparator"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/i0012"
+    }
+  }

@@ -1,0 +1,33 @@
+{
+    "criteria": {
+      "pot_crafted_using_only_sherds": {
+        "conditions": {
+          "ingredients": [
+            {
+              "items": "#minecraft:decorated_pot_sherds"
+            },
+            {
+              "items": "#minecraft:decorated_pot_sherds"
+            },
+            {
+              "items": "#minecraft:decorated_pot_sherds"
+            },
+            {
+              "items": "#minecraft:decorated_pot_sherds"
+            }
+          ],
+          "recipe_id": "minecraft:decorated_pot"
+        },
+        "trigger": "minecraft:recipe_crafted"
+      }
+    },
+    "requirements": [
+      [
+        "pot_crafted_using_only_sherds"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0010"
+    },
+    "sends_telemetry_event": true
+  }

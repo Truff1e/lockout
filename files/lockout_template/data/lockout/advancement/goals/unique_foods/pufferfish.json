@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "chorus_fruit": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": "minecraft:pufferfish"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "chorus_fruit"
+      ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count_foods"
+    }
+  }
+  
