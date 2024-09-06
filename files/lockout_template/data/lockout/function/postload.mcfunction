@@ -1,1 +1,5 @@
+team join 1 @e[tag=lk.team1pts]
+team join 2 @e[tag=lk.team2pts]
+scoreboard players display name @e[tag=lk.team1pts] lk.points {"text":"Team 1: ","bold":true}
+scoreboard players display name @e[tag=lk.team2pts] lk.points {"text":"Team 2: ","bold":true}
 tellraw @a ["",{"text":"---------------------------","color":"gray"},{"text":"\n"},{"text":"Lockout Loaded Successfully!","bold":true,"color":"light_purple"},{"text":"\n\n"},{"text":"Data Pack by Truff1e","color":"dark_purple"},{"text":"\n"},{"text":"Game Invented by SmallAnt","color":"dark_red"},{"text":"\n\n"},{"text":"DP Version - 1.4.0\nMC Version - 1.21/1.21.1","color":"gray"},{"text":"\n"},{"text":"---------------------------","color":"gray"},{"text":"\n\n "}]

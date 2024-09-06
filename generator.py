@@ -18,11 +18,14 @@ def generateBoard(goals: list, user: str):
     if not square.is_integer():
         return f"Board size must be a square number. {board_size} is not square!"
     else:
-        print(f"Creating a {int(square)}x{int(square)} board using: ", goals)
-
         file_path = f'./files/gen/lockout-{version}-{user}-{randint(10000, 99999)}'
         template_dir = './files/lockout_template'
         shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
+
+        goal_string = ''
+        for goal in goals:
+            goal_string += f'{str(goal)} '
+        print(f"Creating a {int(square)}x{int(square)} board using: ", goal_string)
 
         # create goal/coordinate map
         for goal in range(board_size):
