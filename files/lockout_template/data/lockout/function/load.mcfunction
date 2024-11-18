@@ -1,10 +1,8 @@
 team add 1
 team add 2
-team add 3
 team add spectator
-team modify 1 color red
+team modify 1 color dark_purple
 team modify 2 color dark_aqua
-team modify 3 color yellow
 team modify spectator color gray
 
 

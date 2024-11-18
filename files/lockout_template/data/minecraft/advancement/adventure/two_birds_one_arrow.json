@@ -24,7 +24,7 @@
           ]
         ]
       },
-      "trigger": "minecraft:killed_by_crossbow"
+      "trigger": "minecraft:killed_by_arrow"
     }
   },
   "display": {

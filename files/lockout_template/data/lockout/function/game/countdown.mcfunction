@@ -1,5 +1,5 @@
-attribute @s generic.jump_strength base set 0
-attribute @s generic.movement_speed base set 0
+attribute @s jump_strength base set 0
+attribute @s movement_speed base set 0
 
 scoreboard players set @a resign 0
 scoreboard players set @a draw 0

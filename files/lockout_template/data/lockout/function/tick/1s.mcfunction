@@ -14,6 +14,9 @@ execute as @a[scores={lk.death_count=3}] run function lockout:goals/n0011
 execute as @a[scores={lk.hunger_bar=0}] run function lockout:goals/x0020
 execute as @a[predicate=lockout:on_fire] run function lockout:goals/n0004
 execute as @a[scores={lk.armor_washed=1..4}] run function lockout:goals/x0021
+execute as @a[predicate=lockout:pumpkin_head] run scoreboard players add @s lk.pumpkin_head_timer 1
+execute as @a[predicate=!lockout:pumpkin_head] run scoreboard players set @s lk.pumpkin_head_timer 0
+execute as @a[scores={lk.pumpkin_head_timer=300..}] run function lockout:goals/x0014
 
 scoreboard players enable @a locate
 scoreboard players enable @a resign
