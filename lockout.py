@@ -1,7 +1,6 @@
 from generator import generateBoard
 from index import goalDictionary, exclusiveSets
 from random import choice, choices
-import math
 import shutil
 
 version = '1.5.0'
@@ -168,16 +167,6 @@ def boardcreator():
 
         elif inp == 'randomgoal':
             getrandomgoal(int(input("Amount: ")))
-
-        elif inp == 'randomboard':
-            randomboard()
-            print("Exiting...")
-            finished = True
-
-        elif inp == 'balancedboard':
-            balancedboard()
-            print("Exiting...")
-            finished = True
 
         elif 'translate' in inp:
             translate(input('Goal ID to translate: '))
