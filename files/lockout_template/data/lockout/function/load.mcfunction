@@ -61,6 +61,9 @@ scoreboard objectives add draw trigger
 #settings
 scoreboard players set #start_time lk.util 45
 scoreboard players set #max_time lk.util 120
+#constants
+scoreboard players set #const_1 lk.util 1
+scoreboard players set #const_2 lk.util 2
 
 forceload add 0 0
 execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}

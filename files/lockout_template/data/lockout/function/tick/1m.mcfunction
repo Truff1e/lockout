@@ -1,5 +1,4 @@
 
-
 scoreboard players add #game_time lk.util 1
 scoreboard players operation #temp_max_time lk.util = #max_time lk.util
 execute store result score #time_remaining lk.util run scoreboard players operation #temp_max_time lk.util -= #game_time lk.util
