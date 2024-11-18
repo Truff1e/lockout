@@ -5,7 +5,7 @@ from index import goalDictionary
 
 
 def generateBoard(goals: list, user: str):
-    version = '1.4.0-1.21'
+    version = '1.5.0-1.21.3'
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']
     board_size = len(goals)
     board_goals = []
@@ -13,10 +13,10 @@ def generateBoard(goals: list, user: str):
 
     for i in range(len(goals)):
         if goals[i] not in goalDictionary:
-            return f"Error: {goals[i]} is not a valid goal"
+            return f"Error: Goal Lookup Error ({goals[i]} is not a valid goal)"
 
     if not square.is_integer():
-        return f"Board size must be a square number. {board_size} is not square!"
+        return f"Error: Board Size Error ({board_size})"
     else:
         file_path = f'./files/gen/lockout-{version}-{user}-{randint(10000, 99999)}'
         template_dir = './files/lockout_template'
@@ -24,8 +24,8 @@ def generateBoard(goals: list, user: str):
 
         goal_string = ''
         for goal in goals:
-            goal_string += f'{str(goal)} '
-        print(f"Creating a {int(square)}x{int(square)} board using: ", goal_string)
+            goal_string += f'{str(goal)},'
+        print(f"Creating a {int(square)}x{int(square)} board using:", goal_string)
 
         # create goal/coordinate map
         for goal in range(board_size):

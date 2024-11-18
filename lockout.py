@@ -4,19 +4,32 @@ from random import choice, choices
 import math
 import shutil
 
-version = '1.4.0'
+version = '1.5.0'
 
-def randomboard():
+def customboard(size: int, goal_list: list):
+
+    print(f'Generating board with: {goal_list}')
+    filepath = generateBoard(goal_list, f'random-s{size}')
+    if filepath[0] == '.':
+        shutil.make_archive(filepath, 'zip', filepath)
+        print('Zip File Created!')
+        print('Check ./files/gen for your data pack')
+    else:
+        print(f"An error occurred: {filepath}")
+
+def randomboard(size: int, overrides: list):
     goal_list = []
-    size = int(input('Board Size: '))
-
-    while not (math.sqrt(size)).is_integer():
-        print('Error: Board not square')
-        size = int(input('Board Size: '))
 
     for i in range(size):
         newgoal = choice(list(goalDictionary))
         print(newgoal)
+        runs = 0
+        while newgoal in goal_list or check_exclusive_sets(newgoal, goal_list, overrides):
+            newgoal = choice(list(goalDictionary))
+            runs += 1
+            if runs > 300:
+                print("Failed to find compatible goal, defaulting to random non-duplicate.")
+                break
         while newgoal in goal_list:
             newgoal = choice(list(goalDictionary))
         goal_list.append(newgoal)
@@ -31,7 +44,7 @@ def randomboard():
         print(f"An error occurred: {filepath}")
 
 
-def check_exclusive_sets(goal, goal_list, overrides):
+def check_exclusive_sets(goal: str, goal_list: list, overrides: list):
     if 'all' in overrides:
         return False
     else:
@@ -45,13 +58,9 @@ def check_exclusive_sets(goal, goal_list, overrides):
         return False
 
 
-def balancedboard():
-    size = int(input('Board Size: '))
-    while not (math.sqrt(size)).is_integer() and size > 100:
-        print('Error: Size must be square and not exceed 100 goals.')
-        size = int(input('Board Size: '))
+def balancedboard(size: int, difficulty, overrides: list):
 
-    difficulty = input('Difficulty: ').split(',')
+    # difficulty = input('Difficulty: ').split(',')
     if len(difficulty) > 1:
         weights = []
         for i in range(len(difficulty)):
@@ -64,7 +73,7 @@ def balancedboard():
             difficulty = int(input('Difficulty: '))
         weights = [(8 * -2**((difficulty-2.5)/6)) + 15, (8 * -2**((difficulty-2.5)/14)) + 15, (8 * 2**((difficulty-2.5)/5)) - 7.5, (8 * 2**((difficulty-2.5)/6)) - 9]
 
-    overrides = input('Override Exclusive Sets: ').split(' ')
+    # overrides = input('Override Exclusive Sets: ').split(' ')
 
     goal_list = []
     for w in range(len(weights)):
@@ -118,7 +127,7 @@ def translate(goal_id):
         print("Goal not found.")
 
 
-def main():
+def boardcreator():
     finished = False
     goals_list = []
 
@@ -213,6 +222,104 @@ def main():
                 pass
             else:
                 print('Error: Invalid Goal')
+
+def main():
+    finished = False
+
+    print("====================================================================")
+    print(f"Lockout Generator v{version} is Ready")
+    print("Enter a command to generate a board or type 'help' for the help page")
+    print("====================================================================")
+
+    while not finished:
+
+        command = input(">> Lockout Generator: $")
+        args = command.split(' ')
+
+        if args[0] == 'help':
+            print(f'''
+============================================================================================
+Lockout Generator v{version} Command Manual
+$help - Shows this page
+$exit - Closes the generator
+============================================================================================
+BOARD GENERATOR COMMANDS
+$customboard <size> <goals> - Generates a board with a custom set of goals
+$boardcreator - Opens the board creator assistant
+$balancedboard <size> <difficulty> %<overrides> - Generates a balanced board with weighted difficulty
+$randomboard <size> %<overrides> - Generates a random board with optional exclusive set overrides
+============================================================================================
+GOAL LOOKUP COMMANDS
+$getrandomgoal <amount> - Generates a number of random goal IDs
+$getid <goal_name> - Gets the ID associated with a goal name
+$translate <goalID> - Translates a goal ID into its name
+============================================================================================
+            ''')
+
+        elif args[0] == 'exit':
+            print('Exiting...')
+            finished = True
+
+        elif args[0] == 'customboard':
+            if not len(args) > 1:
+                print("Error: Invalid Arguments")
+            elif int(args[1]) > 9:
+                print("Error: Invalid Board Size Argument")
+            else:
+                print('Generating Custom Board')
+                print('Size:', args[1])
+                print('Goals:', args[2].split(','))
+                customboard((int(args[1])**2), args[2].split(','))
+
+        elif args[0] == 'boardcreator':
+            print('Opening Board Creator...')
+            boardcreator()
+
+        elif args[0] == 'balancedboard':
+            if not len(args) > 2:
+                print("Error: Invalid Arguments")
+            elif int(args[1]) > 9:
+                print("Error: Invalid Board Size Argument")
+            elif '%' in command:
+                print('Generating Balanced Board')
+                print('Size:', args[1])
+                print('Difficulty:', list(args[2]))
+                print('Overrides:', args[3].strip('%').split(','))
+                balancedboard(int(args[1])**2, args[2].split(','), args[3].strip('%').split(','))
+            else:
+                print('Generating Balanced Board')
+                print('Size:', args[1])
+                print('Difficulty:', list(args[2]))
+                print('Overrides: None Detected')
+                balancedboard(int(args[1])**2, args[2].split(','), [])
+
+        elif args[0] == 'randomboard':
+            if not len(args) > 1:
+                print("Error: Invalid Arguments")
+            elif int(args[1]) > 9:
+                print("Error: Invalid Board Size Argument")
+            elif '%' in command:
+                print('Generating Random Board')
+                print('Size:', args[1])
+                print('Overrides:', args[2].strip('%').split(','))
+                randomboard((int(args[1])**2), args[2].strip('%').split(','))
+            else:
+                print('Generating Random Board')
+                print('Size:', args[1])
+                print('Overrides: None Detected')
+                randomboard(int(args[1])**2, [])
+
+        elif args[0] == 'getrandomgoal':
+            getrandomgoal(int(args[1]))
+
+        elif args[0] == 'getid':
+            getid(args[1])
+
+        elif args[0] == 'translate':
+            translate(args[1])
+
+        else:
+            print('Unknown Command')
 
 
 main()

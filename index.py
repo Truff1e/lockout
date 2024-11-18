@@ -1,5 +1,5 @@
 # Identifier [name, icon, difficulty, description]
-index_version = '1.4.0'
+index_version = '1.5.0'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": 1}', 1],
@@ -262,7 +262,7 @@ goalDictionary = {
     "A0015": ['Get Subspace Bubble Advancement', '"id": "minecraft:obsidian"', 2],
     "A0016": ['Tame Every Cat Variant', '"id": "minecraft:cod"', 3],
     "A0017": ['Fully Charge Respawn Anchor', '"id": "minecraft:respawn_anchor"', 2],
-    "A0018": ['Get Power of Books Advancement', '"id": "minecraft:chiseled_bookshelf"', 2],
+    "A0018": ['Do Power of Books Advancement', '"id": "minecraft:chiseled_bookshelf"', 2],
     "A0019": ['Get Caves and Cliffs Advancement', '"id": "minecraft:water_bucket"', 3],
     "A0020": ['Summon Iron Golem', '"id": "minecraft:carved_pumpkin"', 2],
     "A0021": ['Get 15 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 3}', 1],

@@ -1,7 +1,7 @@
 from index import goalDictionary, unique_advancements
 import os
 
-version = '1.4.0'
+version = '1.5.0'
 
 try:
     os.mkdir('./triggers')
