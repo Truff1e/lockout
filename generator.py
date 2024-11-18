@@ -13,10 +13,13 @@ def generateBoard(goals: list, user: str):
 
     for i in range(len(goals)):
         if goals[i] not in goalDictionary:
-            return f"Error: Goal Lookup Error ({goals[i]} is not a valid goal)"
+            print(f"Error: Goal Lookup Error ({goals[i]} is not a valid goal)")
+            return False
 
     if not square.is_integer():
-        return f"Error: Board Size Error ({board_size})"
+        print(f"Error: Board Size Error ({board_size})")
+        return False
+
     else:
         file_path = f'./files/gen/lockout-{version}-{user}-{randint(10000, 99999)}'
         template_dir = './files/lockout_template'
@@ -80,4 +83,9 @@ def generateBoard(goals: list, user: str):
             file = open(f'{file_path}/data/lockout/advancement/board/{letters[i]}{board_size+1}.json', 'w')
             file.write('{\n"display": {\n"icon": {\n "id": "minecraft:stone_button"\n},\n"title": "-",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
             file.write(f'"parent": "lockout:board/{letters[i]}{board_size}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
-        return file_path
+
+        shutil.make_archive(file_path, 'zip', file_path)
+        print('Data Pack Created!')
+        print('Check the gen folder for your zip file.')
+
+        return True
