@@ -1,44 +1,58 @@
 # Lockout Data Pack Generator
 
-CAUTION: DO NOT TAMPER WITH THE CONTENTS OF THE lockout_template FOLDER. YOUR DATA PACKS WILL NOT WORK IF THIS FOLDER IS MODIFIED OR MOVED!
+Warning: Do not tamper with the lockout_template folder unless you know what you are doing. It could cause your data packs to not work properly.
 
-### How to Generate a Board
-To begin, run lockout.py in your command line. You can either:
+## How to Generate a Board
+To begin, run lockout.py in your command line. You will be greeted with a welcome screen. To generate a board, you can use any of the three following commands:
 
- - Manually add goals to the board, then generate it
- - Generate a completely random board
- - Generate a balanced board with a specified difficulty.
+balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance
+randomboard - Generates a completely random board with wildly varying ranges of difficulty
+customboard - Generates a user-specified board using a provided list of goal ID numbers
 
-The instructions for these three options are below:
+More detailed instructions about these commands are as follows:
 
+#### MANUALLY CREATE A BOARD
+To manually create a board, look through index.py and find a bunch of goals you want to have on your board. Put these goals in a comma-separated list with no spaces.
+For example: A0001,A0002,A0003,etc. Do not put the same goal in the list twice, it will cause your data pack not to work properly. To generate the custom board, type: 
 
-**MANUALLY CREATE A BOARD**
-To manually create a board, simply run lockout.py and then type in either a goal ID (ex: A0001) or a goal name (ex: "Kill 100 Mobs").
-Repeat this until you have put in all the goals you want. Please note that you cannot generate a board that is not square.
-You must input 1, 4, 9, 25, 36, 49 or 64 goals. It is not recommended to make a board larger than 64 goals. Once you are ready to generate
-your board, type 'generate' and a zip file will be created inside the folder ./files/gen. Other useful commands for manually creating a board are:
+**customboard *board_size* *list_of_goals***
 
-'del' - This command will delete the last entry into your list. To delete a specific entry, type 'del0' to delete the first goal in the list, 'del1' to delete the second and so on.
-'print' - This command will print your list of goals so you can review them or save the list for later.
-'printnames' - This command prints your list of goals and their names so you can easily see what goals you have.
-'translate' - This command translates a Goal ID into that goal's name. For example, K0001 would translate to "Kill 100 Mobs".
-'getid' - This command does the opposite of the translate command. You input a goal name, and get that goal's ID.
-'dumpgoals' - Alternatively to the two previous commands, you can use this command to see every single goal ID paired with its name.
+*Board Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
+
+*List of Goals* is the list of goals you have chosen above.
 
 
-**GENERATE A RANDOM BOARD**
-To generate a completely random board, run the command 'randomboard', then follow the prompts to input a number of goals. Your data pack will
-generate in the folder "./files/gen".
+Some helpful commands for finding specific goals are:
+
+'translate _goalID_' - This command translates a Goal ID into that goal's name. For example, K0001 would translate to "Kill 100 Mobs".
+
+'getid _name_of_goal_' - This command does the opposite of the translate command. You input a goal name, and get that goal's ID.
+
+'getrandomgoals _amount_' - Alternatively to the two previous commands, you can use this command to see every single goal ID paired with its name.
 
 
-**GENERATE A BALANCED BOARD**
-To create a balanced board, first run the command 'balancedboard'. The generator will then ask you for a board size. You may put any square
-number (1, 4, 9, 16, 25...) below 100 for your board size. The length of your game heavily depends on this board size and the difficulty you choose.
-I recommend a 9 or 16 size board for short games (45m-1hr), and 25 for longer games (1.5-2hrs). The generator will now ask for a difficulty.
-You can choose to use the built-in difficulty calculator or put in a custom list of weights. The default difficulties range from 1 to 7 and can be
-any decimal number in between. 7 will be the hardest, while 1 will be the easiest. If you wish to set your own custom weights, you will need to
+#### GENERATE A RANDOM BOARD
+To generate a completely random board, run the command 'randomboard {board_size}'
+
+
+#### GENERATE A BALANCED BOARD
+The balancedboard command will create a fair and fun board weighed to the specified difficulty. This is the recommended option if you are just starting out or just want to start playing quickly.
+To create a balanced board, run the command 'balancedboard'. 
+
+**balancedboard *board_size* *difficulty***
+
+*Board Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
+
+*Difficulty* can be either a decimal number between 1 and 7 or a set of weighted values if you want extra customization. The easiest method is to just use the built-in difficulty calculator by inputting a number between 1 and 7, decimals included. 7 will be the hardest, while 1 will be the easiest. For more advanced options, see the section below.
+
+The length of your game heavily depends on this board size and the difficulty you choose.
+I recommend a 3 or 4 size board for short games (45m-1hr), and 5 for longer games (1.5-2hrs).  
+
+
+
+#### SET A CUSTOM DIFFICULTY
+If you wish to set your own custom weights, you will need to
 understand the goal difficulty ranking.
-
 Lvl 1 Goals - These goals are extremely easy and can be completed within the first 10-20 minutes of the game. For example, Obtain All Stone Tools.
 Lvl 2 Goals - These goals are a little harder and will require you to do a bit of prep beforehand. For example, Breed Strider is a lvl 2 goal.
 Lvl 3 Goals - These goals are very hard and will take a lot of time to complete. For example, Obtain Netherite Armor
@@ -56,17 +70,17 @@ the bottom of index.py
 Your data pack will generate in the folder "./files/gen" and you can see what goals were generated in the console.
 
 
-**INSTALLING THE DATA PACK AND PLAYING LOCKOUT**
+## INSTALLING THE DATA PACK AND PLAYING LOCKOUT
 To install a data pack, open your Minecraft world folder and find the folder labeled 'datapacks'. Drag the zip file into this folder, then run /reload in your world.
 
 To play lockout, first install the data pack on your world or on a server. Add players to teams using "/team join 1 <player>" and "/team join 2 <player>".
 You can change the colors of the teams by typing "/team modify 1 color <color>".
 To start the game, run "/function lockout:game/start". If a player joins late, and they can't see the lockout board, type "/function lockout:game/resume" (this should happen automatically as of v1.3.0)
-Since a compass tracker is hard to implement in a data pack, instead you can use "/trigger locate" to see player's coordinates in the world.
+Since a compass tracker is hard to implement in a data pack, instead you can use "/trigger locate" to see any player's coordinates in the world.
 Press your advancements keybind (defaults to L) to see the lockout board.
 
 
-Do not install this data pack on a pre-existing world. This data pack is intended to be played on a new world.
+Do not install this data pack on a pre-existing world. Lockout is intended to be played on a new world with a random seed.
 
 
 I hope you enjoy!
