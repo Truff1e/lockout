@@ -5,7 +5,7 @@ from random import choice, choices
 version = '1.5.0'
 
 def customboard(size: int, goal_list: list):
-    generateBoard(goal_list, f'random-s{size}')
+    generateBoard(goal_list, f'random-s{size}', version)
 
 
 def randomboard(size: int, overrides: list):
@@ -25,7 +25,7 @@ def randomboard(size: int, overrides: list):
             newgoal = choice(list(goalDictionary))
         goal_list.append(newgoal)
 
-    generateBoard(goal_list, f'random-s{size}')
+    generateBoard(goal_list, f'random-s{size}', version)
 
 
 def balancedboard(size: int, difficulty, overrides: list):
@@ -62,7 +62,7 @@ def balancedboard(size: int, difficulty, overrides: list):
         goal_list.append(newgoal)
         print(f'Added {newgoal} ({goalDictionary[newgoal][0]}) of difficulty {goalDictionary[newgoal][2]}')
 
-    generateBoard(goal_list, f's{size}-d{difficulty}')
+    generateBoard(goal_list, f's{size}-d{difficulty}', version)
 
 
 def getid(goal):

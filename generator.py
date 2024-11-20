@@ -3,7 +3,6 @@ import shutil
 from random import randint
 from index import goalDictionary
 
-
 def write_start_function(path, goals, letters):
     file = open(f'{path}/data/lockout/function/game/start.mcfunction', 'w')
     for col in range(int(math.sqrt(len(goals)))):
@@ -55,8 +54,8 @@ def write_advancement_tree(path, goals, letters):
         file.write(f'"parent": "lockout:board/{letters[i]}{board_size}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
 
 
-def generateBoard(goals: list, user: str):
-    version = '1.5.0-1.21.3'
+def generateBoard(goals: list, user: str, version):
+    datapack_version = f'{version}-1.21.3'
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']
     board_size = len(goals)
     goal_list = []
@@ -73,8 +72,8 @@ def generateBoard(goals: list, user: str):
 
     else:
         # prepare template and file path
-        file_path = f'./files/gen/lockout-{version}-{user}-{randint(10000, 99999)}'
-        template_dir = './files/lockout_template'
+        file_path = f'datapacks/lockout-{datapack_version}-{user}-{randint(10000, 99999)}'
+        template_dir = 'template'
         shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
 
         goal_string = ''
@@ -99,7 +98,8 @@ def generateBoard(goals: list, user: str):
 
         # make archive
         shutil.make_archive(file_path, 'zip', file_path)
+        shutil.rmtree(file_path)
         print('Data Pack Created!')
-        print('Check the gen folder for your zip file.')
+        print('Check the datapacks folder for your zip file.')
 
         return True

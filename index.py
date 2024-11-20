@@ -53,6 +53,7 @@ goalDictionary = {
     "D0004": ['Die to Warden', '"id": "minecraft:sculk_shrieker"', 2],
     "D0005": ['Die to Witch', '"id": "minecraft:stick"', 2],
     "D0006": ['Die to Piglin Brute', '"id": "minecraft:golden_axe"', 2],
+    # "D0007": ['Die on Pointed Dripstone', '"id": "minecraft:pointed_dripstone"', 1],
 
     # OPPONENT GOALS
     "N0001": ['Opponent Dies', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 2}', 1],
@@ -68,6 +69,7 @@ goalDictionary = {
     "N0011": ['Opponent Dies 3 Times', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 2}', 1],
     # "N0012": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
     # "N0013": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
+    # "N0014": ['Opponent Obtains a Pickaxe', '"id": "minecraft:barrier"', 1],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": 1}', 1],
@@ -305,7 +307,8 @@ goalDictionary = {
     "L0008": ['Locate all Nether Biomes', '"id": "minecraft:netherite_boots"', 3],
     "L0009": ['Enter Nether', '"id": "minecraft:netherrack"', 1],
     "L0010": ['Locate Stronghold', '"id": "minecraft:ender_eye"', 3],
-    "L0011": ['Locate Trail Ruins', '"id": "minecraft:brush"', 3]
+    "L0011": ['Locate Trail Ruins', '"id": "minecraft:brush"', 3],
+    # "L0012": ['Travel to Nether Roof', '"id": "minecraft:bedrock"', 2]
 
 }
 
@@ -329,4 +332,4 @@ unique_advancements = ['A0001', 'A0021', 'A0022']
 index_length = len(goalDictionary)
 # for i in goalDictionary:
 #   print(f'{i}: {goalDictionary[i][0]}')
-print(index_version, index_length)
+print("Index Version:", index_version, "Goals:", index_length)

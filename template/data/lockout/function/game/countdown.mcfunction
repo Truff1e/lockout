@@ -22,6 +22,9 @@ function lockout:game/reset_scoreboards
 scoreboard players set #game_begun lk.util 1
 scoreboard players set #test_effects lk.util 0
 
+scoreboard players display name @e[type=armor_stand,tag=lk.team1pts] lk.points {"text":"Team 1","bold":true}
+scoreboard players display name @e[type=armor_stand,tag=lk.team2pts] lk.points {"text":"Team 2","bold":true}
+
 time set day
 
 execute if score #start_time lk.util matches 30 run function lockout:game/countdowns/30s

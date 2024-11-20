@@ -67,7 +67,7 @@ goals from showing up twice in the same board - for example, one set makes sure 
 sets, type 'all'. If you want to override specific sets, type the name(s) of the set(s) separated by spaces. You can find all the exclusive sets at 
 the bottom of index.py
 
-Your data pack will generate in the folder "./files/gen" and you can see what goals were generated in the console.
+Your data pack will generate in the folder "datapacks" and you can see what goals were generated in the console.
 
 
 ## INSTALLING THE DATA PACK AND PLAYING LOCKOUT
