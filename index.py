@@ -1,5 +1,5 @@
 # Identifier [name, icon, difficulty, description]
-index_version = '1.5.0'
+index_version = '1.5.1'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": 1}', 1],
@@ -53,7 +53,8 @@ goalDictionary = {
     "D0004": ['Die to Warden', '"id": "minecraft:sculk_shrieker"', 2],
     "D0005": ['Die to Witch', '"id": "minecraft:stick"', 2],
     "D0006": ['Die to Piglin Brute', '"id": "minecraft:golden_axe"', 2],
-    # "D0007": ['Die on Pointed Dripstone', '"id": "minecraft:pointed_dripstone"', 1],
+    "D0007": ['Die on Pointed Dripstone', '"id": "minecraft:pointed_dripstone"', 1],
+    "D0008": ['Die to TNT Minecart', '"id": "minecraft:tnt_minecart"', 1],
 
     # OPPONENT GOALS
     "N0001": ['Opponent Dies', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 2}', 1],
@@ -295,6 +296,7 @@ goalDictionary = {
     # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
     "X0023": ['Have 9 Status Effects at Once', '"id": "minecraft:milk_bucket"', 3],
     "X0024": ['Have 12 Status Effects at Once', '"id": "minecraft:milk_bucket"', 3],
+    # "X0025": ['Get 15 Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 2}', 2],
 
     # LOCATION GOALS
     "L0001": ['Find an Ancient City', '"id": "minecraft:sculk_shrieker"', 2],
@@ -308,7 +310,7 @@ goalDictionary = {
     "L0009": ['Enter Nether', '"id": "minecraft:netherrack"', 1],
     "L0010": ['Locate Stronghold', '"id": "minecraft:ender_eye"', 3],
     "L0011": ['Locate Trail Ruins', '"id": "minecraft:brush"', 3],
-    # "L0012": ['Travel to Nether Roof', '"id": "minecraft:bedrock"', 2]
+    "L0012": ['Travel to Nether Roof', '"id": "minecraft:bedrock"', 2]
 
 }
 
