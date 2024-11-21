@@ -45,8 +45,11 @@ scoreboard objectives add lk.mine_spawner minecraft.mined:spawner
 scoreboard objectives add lk.mine_emerald minecraft.mined:emerald_ore
 scoreboard objectives add lk.damage_taken minecraft.custom:damage_taken
 scoreboard objectives add lk.death_count deathCount
+scoreboard objectives add lk.death_trigger deathCount
 scoreboard objectives add lk.hunger_bar food
 scoreboard objectives add lk.armor_washed minecraft.custom:clean_armor
+scoreboard objectives add lk.fall minecraft.custom:fall_one_cm
+scoreboard objectives add lk.fall_dmg minecraft.custom:damage_taken
 
 
 scoreboard objectives add lk.posX dummy
