@@ -1,9 +1,9 @@
 # Lockout Data Pack Generator
 
-Warning: Do not tamper with the lockout_template folder unless you know what you are doing. It could cause your data packs to not work properly.
+Warning: Do not tamper with the 'template' folder unless you know what you are doing. It could cause your data packs to break.
 
 ## How to Generate a Board
-To begin, run lockout.py in your command line. You will be greeted with a welcome screen. To generate a board, you can use any of the three following commands:
+To begin, run lockout.py. You will be greeted with a welcome screen. To generate a board, you can use any of the three following commands:
 
 balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance
 randomboard - Generates a completely random board with wildly varying ranges of difficulty
@@ -35,7 +35,7 @@ Some helpful commands for finding specific goals are:
 To generate a completely random board, run the command 'randomboard {board_size}'
 
 
-#### GENERATE A BALANCED BOARD
+#### GENERATE A BALANCED BOARD (RECOMMENDED)
 The balancedboard command will create a fair and fun board weighed to the specified difficulty. This is the recommended option if you are just starting out or just want to start playing quickly.
 To create a balanced board, run the command 'balancedboard'. 
 
@@ -58,16 +58,16 @@ Lvl 2 Goals - These goals are a little harder and will require you to do a bit o
 Lvl 3 Goals - These goals are very hard and will take a lot of time to complete. For example, Obtain Netherite Armor
 Lvl 4 Goals - These goals are extremely hard and most of the time require you to go to the end. These probably aren't suited for a 1.5-2hr game.
 
-To input a custom difficulty, just type a list of weights like this: [8, 5, 5, 2] Each number corresponds to the frequency that difficulty of goal 
-will show up. Approximately 8/20 goals will be level 1, 5/20 will be level 2, 5/20 will be level 3 and 2/20 will be level 4.
+To input a custom difficulty, just type a list of weights like this: 8,5,5,2 Each number corresponds to the frequency that difficulty of goal 
+will show up. Approximately 8/20 goals will be level 1 difficulty, 5/20 will be level 2, 5/20 will be level 3 and 2/20 will be level 4.
 
 Finally, the data pack will ask if you would like to override any of the exclusive sets for the goal index. These exclusive sets prevent similar 
 goals from showing up twice in the same board - for example, one set makes sure you don't have "Kill Red Sheep", "Kill Cyan Sheep" and 
-"Kill Yellow Sheep" all on the same board. Pressing enter without typing anything will activate all the exclusive sets. If you want to override all 
-sets, type 'all'. If you want to override specific sets, type the name(s) of the set(s) separated by spaces. You can find all the exclusive sets at 
+"Kill Yellow Sheep" all on the same board. Doing nothing will activate all the exclusive sets. If you want to override all 
+sets, type '%all' after either the balancedboard or randomboard command. If you want to override specific sets, type the name(s) of the set(s) separated by commas. You can find all the exclusive sets at 
 the bottom of index.py
 
-Your data pack will generate in the folder "datapacks" and you can see what goals were generated in the console.
+Your data pack will generate in the folder "datapacks" and you can see what goals were added in the console.
 
 
 ## INSTALLING THE DATA PACK AND PLAYING LOCKOUT

@@ -1,6 +1,8 @@
 from index import goalDictionary, unique_advancements
 import os
 
+# This is used to automatically generate all the functions that are called when a goal is achieved. This will not be needed in everyday use unless you want to tinker with the data pack.
+
 try:
     os.mkdir('./triggers')
 except FileExistsError:
