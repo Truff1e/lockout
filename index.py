@@ -1,4 +1,5 @@
 # Identifier [name, icon, difficulty, description]
+# Commented out goals are not yet implemented or are broken
 index_version = '1.5.1'
 goalDictionary = {
     # KILL GOALS
@@ -71,6 +72,7 @@ goalDictionary = {
     # "N0012": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
     # "N0013": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
     # "N0014": ['Opponent Obtains a Pickaxe', '"id": "minecraft:barrier"', 1],
+    # ?"N0015": ['Use Spyglass on Opponent', '"id": "minecraft:spyglass"', 1],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": 1}', 1],
@@ -231,6 +233,7 @@ goalDictionary = {
     "I0121": ['Obtain Purple Candle', '"id": "minecraft:purple_candle"', 1],
     "I0122": ['Obtain Black Candle', '"id": "minecraft:black_candle"', 1],
     "I0123": ['Obtain Honey Block', '"id": "minecraft:honey_block"', 2],
+    # "I0124": ['Obtain Glow Lichen', '"id": "minecraft:glow_lichen"', 2], (CHECK ITEM ID)
     "I0125": ['Obtain Flower Pot', '"id": "minecraft:flower_pot"', 1],
 
     # EAT GOALS
@@ -334,4 +337,4 @@ unique_advancements = ['A0001', 'A0021', 'A0022']
 index_length = len(goalDictionary)
 # for i in goalDictionary:
 #   print(f'{i}: {goalDictionary[i][0]}')
-print("Index Version:", index_version, "Goals:", index_length)
+print("Index Version:", index_version, " Goals:", index_length)
