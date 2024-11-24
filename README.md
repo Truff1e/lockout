@@ -8,6 +8,7 @@ You can find the original mod here: https://www.curseforge.com/minecraft/mc-mods
 All credit for the game concept goes to SmallAnt.
 
 
+
 Warning: Do not tamper with the 'template' folder unless you know what you are doing. It could cause your data packs to break.
 
 ## How to Generate a Board
