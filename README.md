@@ -79,7 +79,7 @@ the bottom of index.py
 Your data pack will generate in the folder "datapacks" and you can see what goals were added in the console.
 
 
-## INSTALLING THE DATA PACK AND PLAYING LOCKOUT
+## Installing the Data Pack and Playing Lockout
 To install a data pack, open your Minecraft world folder and find the folder labeled 'datapacks'. Drag the zip file into this folder, then run /reload in your world.
 
 To play lockout, first install the data pack on your world or on a server. Add players to teams using "/team join 1 <player>" and "/team join 2 <player>".
@@ -96,4 +96,9 @@ I hope you enjoy!
 ~Truffle
 
 
+## Known Issues
+'Whatever Floats your Goat' advancement does not work and is not counted for unique advancements goal.
+
+
+## License
 This code is licensed under terms of the GNU GPLv3 license.
