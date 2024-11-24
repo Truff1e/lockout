@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:entity_killed_player",
+        "conditions": {
+          "entity": {
+            "type": "minecraft:tnt_minecart"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "requirement"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/d0008"
+    }
+  }
+  

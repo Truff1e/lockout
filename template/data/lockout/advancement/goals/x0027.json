@@ -1,0 +1,21 @@
+{
+    "criteria": {
+      "glow": {
+        "trigger": "minecraft:effects_changed",
+        "conditions": {
+          "effects": {
+            "minecraft:wither": {}
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "glow"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/x0027"
+    }
+  }
+  
