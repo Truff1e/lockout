@@ -7,12 +7,13 @@ This game was originally invented by SmallAnt and created by AtSign as a Forge m
 You can find the original mod here: https://www.curseforge.com/minecraft/mc-mods/lockout
 All credit for the game concept goes to SmallAnt.
 
-
+I hope you enjoy!
+~Truffle
 
 Warning: Do not tamper with the 'template' folder unless you know what you are doing. It could cause your data packs to break.
 
 ## How to Generate a Board
-To begin, run lockout.py. You will be greeted with a welcome screen. To generate a board, you can use any of the three following commands:
+To begin, make sure you have python installed and then run lockout.py. To generate a board, you can use any of the three following commands:
 
 balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance. This is the recommended option for starting out. 
 
@@ -37,7 +38,7 @@ Some helpful commands for finding specific goals are:
 
 'getid _name_of_goal_' - This command does the opposite of the 'translate' command. You input a goal name, and get that goal's ID.
 
-'getrandomgoals _amount_' - Alternatively to the two previous commands, you can use this command to see every single goal ID paired with its name.
+'getrandomgoals _amount_' - Alternatively to the two previous commands, you can use this command to retrieve an amount of randomly selected goals.
 
 
 #### GENERATE A RANDOM BOARD
@@ -93,16 +94,20 @@ To install a data pack, open your Minecraft world folder and find the folder lab
 
 To play lockout, first install the data pack on your world or on a server. Add players to teams using "/team join 1 <player>" and "/team join 2 <player>".
 You can change the colors of the teams by typing "/team modify 1 color <color>".
-To start the game, run "/function lockout:game/start". If a player joins late, and they can't see the lockout board, type "/function lockout:game/resume" (this should happen automatically as of v1.3.0)
+To start the game, run "/function lockout:game/start". If a player joins late, and they can't see the lockout board, type "/function lockout:game/resume" (this should happen automatically as of v1.3.0 if the player relogs)
+
+## Limitations
+
 Since a compass tracker is hard to implement in a data pack, instead you can use "/trigger locate" to see any player's coordinates in the world.
-Press your advancements keybind (defaults to L) to see the lockout board.
+
+There is no lockout board overlay like in the original mod. Press your advancements keybind (defaults to L) to see the lockout board. 
+
+There is also no way for the data pack to detect what the seed will be like, so there is no gaurentee that every goal is completable within 2000 blocks. A common choke point is finding a desert for green dyes.
 
 
 Do not install this data pack on a pre-existing world. Lockout is intended to be played on a new world with a random seed.
 
-
-I hope you enjoy!
-~Truffle
+With that being said, there are plenty of benefits to playing in vanilla. You can install any mods you want and your friends can join and play instantly without any annoying client-side setup. If you have any questions, stay tuned for my video covering how to use the generator and play the game. 
 
 ## Playing Blackout
 
