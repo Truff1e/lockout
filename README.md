@@ -93,3 +93,6 @@ Do not install this data pack on a pre-existing world. Lockout is intended to be
 
 I hope you enjoy!
 ~Truffle
+
+
+This code is licensed under terms of the GNU GPLv3 license.
