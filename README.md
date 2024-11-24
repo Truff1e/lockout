@@ -1,4 +1,4 @@
-# Lockout Data Pack Generator
+# Lockout Generator v1.6.0
 
 Minecraft Lockout is a game in which two teams compete to complete as many goals as they can on a 5 by 5 board. The goals could be as simple as 'Ride a Horse' or as challenging as 'Kill the Ender Dragon'. If one team completes a goal, the other team can no longer get points for that goal. First team to complete the majority of the board wins.
 
