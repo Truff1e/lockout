@@ -9,8 +9,10 @@ def write_start_function(path, goals, letters):
         file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(goals)))+1}\n')
     for goal in range(len(goals)):
         file.write(f'scoreboard players set #{goals[goal][0]} lk.enabled_goals 1\n')
-    file.write('execute as @a run function lockout:game/countdown\n')
-    file.write(f'scoreboard players set #boardSize lk.util {(len(goals)+1)//2}')
+    file.write('execute unless score #blackout lk.util matches 1 as @a run function lockout:game/countdown\n')
+    file.write(f'execute unless score #blackout lk.util matches 1 scoreboard players set #boardSize lk.util {(len(goals)+1)//2}')
+    file.write('execute if score #blackout lk.util matches 1 as @a run function lockout:game/blackout_countdown\n')
+    file.write(f'execute if score #blackout lk.util matches 1 scoreboard players set #boardSize lk.util {(len(goals))}')
     file.close()
 
 
