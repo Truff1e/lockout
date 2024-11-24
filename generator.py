@@ -1,5 +1,6 @@
 import math
 import shutil
+import os
 from random import randint
 from index import goalDictionary
 

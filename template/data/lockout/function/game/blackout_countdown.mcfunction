@@ -23,6 +23,7 @@ scoreboard players set #game_begun lk.util 1
 scoreboard players set #test_effects lk.util 0
 
 scoreboard players display name @e[type=armor_stand,tag=lk.team1pts] lk.points {"text":"Team 1","bold":true}
+scoreboard players reset @e[type=armor_stand,tag=lk.team2pts] lk.points
 
 time set day
 
