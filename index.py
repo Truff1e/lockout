@@ -1,6 +1,6 @@
 # Identifier [name, icon, difficulty, description]
 # Commented out goals are not yet implemented or are broken
-index_version = '1.5.1'
+index_version = '1.5.2'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": 1}', 1],
@@ -46,6 +46,8 @@ goalDictionary = {
     "K0041": ['Kill Piglin Brute', '"id": "minecraft:golden_axe"', 2],
     "K0042": ['Kill Ravager', '"id": "minecraft:iron_sword"', 3],
     "K0043": ['Kill Slime', '"id": "minecraft:slime_block"', 2],
+    "K0044": ['Kill Pillager', '"id": "minecraft:crossbow"', 2],
+    "K0045": ['Kill Shulker', '"id": "minecraft:shulker_shell"', 4],
 
     # DIE GOALS
     "D0001": ['Die to Bee', '"id": "minecraft:beehive","components": {"minecraft:custom_model_data": 1}', 1],
@@ -55,12 +57,14 @@ goalDictionary = {
     "D0005": ['Die to Witch', '"id": "minecraft:stick"', 2],
     "D0006": ['Die to Piglin Brute', '"id": "minecraft:golden_axe"', 2],
     "D0007": ['Die on Pointed Dripstone', '"id": "minecraft:pointed_dripstone"', 1],
-    "D0008": ['Die to TNT Minecart', '"id": "minecraft:tnt_minecart"', 1],
+    # "D0008": ['Die to TNT Minecart', '"id": "minecraft:tnt_minecart"', 1],
+    "D0009": ['Die to Goat', '"id": "minecraft:goat_horn"', 3],
+    "D0010": ['Die to Polar Bear', '"id": "minecraft:cod"', 2],
 
     # OPPONENT GOALS
     "N0001": ['Opponent Dies', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 2}', 1],
     "N0002": ['Opponent Obtains Crafting Table', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 1}', 1],
-    # "N0003": ['Opponent Takes Fall Damage', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 3}', 1],
+    "N0003": ['Opponent Takes Fall Damage', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 3}', 1],
     "N0004": ['Opponent Catches Fire', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 4}', 1],
     # "N0005": ['Opponent Jumps', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 5}', 1],
     "N0006": ['Opponent Obtains Obsidian', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": 6}', 1],
@@ -119,7 +123,7 @@ goalDictionary = {
     "I0007": ['Obtain Chainmail Armor', '"id": "minecraft:chainmail_helmet"', 2],
     "I0008": ['Obtain Cobweb', '"id": "minecraft:cobweb"', 1],
     "I0009": ['Obtain Comparator', '"id": "minecraft:comparator"', 1],
-    "I0010": ['Craft a Pot w/ 4 Sherds', '"id": "minecraft:decorated_pot"', 2],
+    "I0010": ['Craft a Pot with 4 Sherds', '"id": "minecraft:decorated_pot"', 2],
     "I0011": ['Obtain Diamond Tools', '"id": "minecraft:diamond_pickaxe"', 1],
     "I0012": ['Obtain Dragon Egg', '"id": "minecraft:dragon_egg"', 4],
     "I0013": ['Obtain End Crystal', '"id": "minecraft:end_crystal"', 3],
@@ -189,10 +193,10 @@ goalDictionary = {
     "I0077": ['Obtain 64 Red Concrete', '"id": "minecraft:red_concrete"', 1],
     "I0078": ['Obtain 64 Orange Concrete', '"id": "minecraft:orange_concrete"', 1],
     "I0079": ['Obtain 64 Yellow Concrete', '"id": "minecraft:yellow_concrete"', 1],
-    "I0080": ['Obtain 64 Lime Concrete', '"id": "minecraft:lime_concrete"', 1],
-    "I0081": ['Obtain 64 Green Concrete', '"id": "minecraft:green_concrete"', 1],
+    "I0080": ['Obtain 64 Lime Concrete', '"id": "minecraft:lime_concrete"', 2],
+    "I0081": ['Obtain 64 Green Concrete', '"id": "minecraft:green_concrete"', 2],
     "I0082": ['Obtain 64 Light Blue Concrete', '"id": "minecraft:light_blue_concrete"', 1],
-    "I0083": ['Obtain 64 Cyan Concrete', '"id": "minecraft:cyan_concrete"', 1],
+    "I0083": ['Obtain 64 Cyan Concrete', '"id": "minecraft:cyan_concrete"', 2],
     "I0084": ['Obtain 64 Blue Concrete', '"id": "minecraft:blue_concrete"', 1],
     "I0085": ['Obtain 64 Purple Concrete', '"id": "minecraft:purple_concrete"', 1],
     "I0086": ['Obtain 64 Black Concrete', '"id": "minecraft:black_concrete"', 1],
@@ -206,9 +210,9 @@ goalDictionary = {
     "I0094": ['Obtain Red Glazed Terracotta', '"id": "minecraft:red_glazed_terracotta"', 1],
     "I0095": ['Obtain Orange Glazed Terracotta', '"id": "minecraft:orange_glazed_terracotta"', 1],
     "I0096": ['Obtain Yellow Glazed Terracotta', '"id": "minecraft:yellow_glazed_terracotta"', 1],
-    "I0097": ['Obtain Lime Glazed Terracotta', '"id": "minecraft:lime_glazed_terracotta"', 1],
-    "I0098": ['Obtain Green Glazed Terracotta', '"id": "minecraft:green_glazed_terracotta"', 1],
-    "I0099": ['Obtain Cyan Glazed Terracotta', '"id": "minecraft:cyan_glazed_terracotta"', 1],
+    "I0097": ['Obtain Lime Glazed Terracotta', '"id": "minecraft:lime_glazed_terracotta"', 2],
+    "I0098": ['Obtain Green Glazed Terracotta', '"id": "minecraft:green_glazed_terracotta"', 2],
+    "I0099": ['Obtain Cyan Glazed Terracotta', '"id": "minecraft:cyan_glazed_terracotta"', 2],
     "I0100": ['Obtain Light Blue Glazed Terracotta', '"id": "minecraft:light_blue_glazed_terracotta"', 1],
     "I0101": ['Obtain Blue Glazed Terracotta', '"id": "minecraft:blue_glazed_terracotta"', 1],
     "I0102": ['Obtain Purple Glazed Terracotta', '"id": "minecraft:purple_glazed_terracotta"', 1],
@@ -225,16 +229,37 @@ goalDictionary = {
     "I0113": ['Obtain Red Candle', '"id": "minecraft:red_candle"', 1],
     "I0114": ['Obtain Orange Candle', '"id": "minecraft:orange_candle"', 1],
     "I0115": ['Obtain Yellow Candle', '"id": "minecraft:yellow_candle"', 1],
-    "I0116": ['Obtain Lime Candle', '"id": "minecraft:lime_candle"', 1],
-    "I0117": ['Obtain Green Candle', '"id": "minecraft:green_candle"', 1],
-    "I0118": ['Obtain Cyan Candle', '"id": "minecraft:cyan_candle"', 1],
+    "I0116": ['Obtain Lime Candle', '"id": "minecraft:lime_candle"', 2],
+    "I0117": ['Obtain Green Candle', '"id": "minecraft:green_candle"', 2],
+    "I0118": ['Obtain Cyan Candle', '"id": "minecraft:cyan_candle"', 2],
     "I0119": ['Obtain Light Blue Candle', '"id": "minecraft:light_blue_candle"', 1],
     "I0120": ['Obtain Blue Candle', '"id": "minecraft:blue_candle"', 1],
     "I0121": ['Obtain Purple Candle', '"id": "minecraft:purple_candle"', 1],
     "I0122": ['Obtain Black Candle', '"id": "minecraft:black_candle"', 1],
     "I0123": ['Obtain Honey Block', '"id": "minecraft:honey_block"', 2],
-    # "I0124": ['Obtain Glow Lichen', '"id": "minecraft:glow_lichen"', 2], (CHECK ITEM ID)
+    "I0124": ['Obtain Glow Lichen', '"id": "minecraft:glow_lichen"', 2],
     "I0125": ['Obtain Flower Pot', '"id": "minecraft:flower_pot"', 1],
+    "I0126": ['Obtain All Minecart Types', '"id": "minecraft:minecart"', 2],
+    "I0127": ['Obtain Iron Bars', '"id": "minecraft:iron_bars"', 1],
+    "I0128": ['Obtain Music Disc 5', '"id": "minecraft:music_disc_5"', 3],
+    "I0129": ['Obtain Music Disc 11', '"id": "minecraft:music_disc_11"', 3],
+    "I0130": ['Obtain Music Disc 13', '"id": "minecraft:music_disc_13"', 2],
+    "I0131": ['Obtain Music Disc Blocks', '"id": "minecraft:music_disc_blocks"', 3],
+    "I0132": ['Obtain Music Disc Cat', '"id": "minecraft:music_disc_cat"', 2],
+    "I0133": ['Obtain Music Disc Chirp', '"id": "minecraft:music_disc_chirp"', 3],
+    "I0134": ['Obtain Music Disc Creator', '"id": "minecraft:music_disc_creator"', 4],
+    "I0135": ['Obtain Creator Music Box', '"id": "minecraft:music_disc_creator_music_box"', 3],
+    "I0136": ['Obtain Music Disc Far', '"id": "minecraft:music_disc_far"', 3],
+    "I0137": ['Obtain Music Disc Mall', '"id": "minecraft:music_disc_mall"', 3],
+    "I0138": ['Obtain Music Disc Mellohi', '"id": "minecraft:music_disc_mellohi"', 3],
+    "I0139": ['Obtain Music Disc Otherside', '"id": "minecraft:music_disc_otherside"', 3],
+    "I0140": ['Obtain Music Disc Pigstep', '"id": "minecraft:music_disc_pigstep"', 4],
+    "I0141": ['Obtain Music Disc Precipice', '"id": "minecraft:music_disc_precipice"', 3],
+    "I0142": ['Obtain Music Disc Relic', '"id": "minecraft:music_disc_relic"', 4],
+    "I0143": ['Obtain Music Disc Stal', '"id": "minecraft:music_disc_stal"', 3],
+    "I0144": ['Obtain Music Disc Strad', '"id": "minecraft:music_disc_strad"', 3],
+    "I0145": ['Obtain Music Disc Wait', '"id": "minecraft:music_disc_wait"', 3],
+    "I0146": ['Obtain Music Disc Ward', '"id": "minecraft:music_disc_ward"', 3],
 
     # EAT GOALS
     "E0001": ['Eat Chorus Fruit', '"id": "minecraft:chorus_fruit"', 4],
@@ -249,6 +274,11 @@ goalDictionary = {
     "E0010": ['Eat Suspicious Stew', '"id": "minecraft:suspicious_stew"', 1],
     "E0011": ['Eat a Glow Berry', '"id": "minecraft:glow_berries"', 1],
     "E0012": ['Eat a Cookie', '"id": "minecraft:cookie"', 1],
+    "E0013": ['Eat an Apple', '"id": "minecraft:apple"', 1],
+    "E0014": ['Eat a Carrot', '"id": "minecraft:carrot"', 1],
+    "E0015": ['Eat Dried Kelp', '"id": "minecraft:dried_kelp"', 1],
+    # "E0016": ['Eat All Harmful Foods', '"id": "minecraft:rotten_flesh"', 2], #rotten flesh, spider eye, poisonous potato, raw chicken, pufferfish
+    # "E0017": ['Eat All Raw Seafood', '"id": "minecraft:salmon"', 2], #cod, salmon, pufferfish, tropical fish
 
     # ADVANCEMENT GOALS
     "A0001": ['Get 25 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 2}', 2],
@@ -269,7 +299,7 @@ goalDictionary = {
     "A0016": ['Tame Every Cat Variant', '"id": "minecraft:cod"', 3],
     "A0017": ['Fully Charge Respawn Anchor', '"id": "minecraft:respawn_anchor"', 2],
     "A0018": ['Do Power of Books Advancement', '"id": "minecraft:chiseled_bookshelf"', 2],
-    "A0019": ['Get Caves and Cliffs Advancement', '"id": "minecraft:water_bucket"', 3],
+    "A0019": ['Do Caves and Cliffs Advancement', '"id": "minecraft:water_bucket"', 3],
     "A0020": ['Summon Iron Golem', '"id": "minecraft:carved_pumpkin"', 2],
     "A0021": ['Get 15 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 3}', 1],
     "A0022": ['Get 35 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 4}', 3],
@@ -299,7 +329,14 @@ goalDictionary = {
     # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
     "X0023": ['Have 9 Status Effects at Once', '"id": "minecraft:milk_bucket"', 3],
     "X0024": ['Have 12 Status Effects at Once', '"id": "minecraft:milk_bucket"', 3],
-    # "X0025": ['Get 15 Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 2}', 2],
+    "X0025": ['Get 15 Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": 2}', 2],
+    "X0026": ['Get Withered', '"id": "minecraft:wither_rose"', 2],
+    "X0027": ['Get Mining Fatigue', '"id": "minecraft:wooden_pickaxe"', 2],
+    "X0028": ['Get Blindness', '"id": "minecraft:suspicious_stew"', 2],
+    "X0029": ['Get Strength', '"id": "minecraft:blaze_powder"', 2],
+    "X0030": ['Get Fire Resistance', '"id": "minecraft:potion","components": {"minecraft:potion_contents": {"potion": "minecraft:fire_resistance"}}', 2],
+    "X0031": ['Get Water Breathing', '"id": "minecraft:potion","components": {"minecraft:potion_contents": {"potion": "minecraft:water_breathing"}}', 2],
+    "X0032": ['Get Night Vision', '"id": "minecraft:potion","components": {"minecraft:potion_contents": {"potion": "minecraft:night_vision"}}', 2],
 
     # LOCATION GOALS
     "L0001": ['Find an Ancient City', '"id": "minecraft:sculk_shrieker"', 2],
@@ -313,11 +350,13 @@ goalDictionary = {
     "L0009": ['Enter Nether', '"id": "minecraft:netherrack"', 1],
     "L0010": ['Locate Stronghold', '"id": "minecraft:ender_eye"', 3],
     "L0011": ['Locate Trail Ruins', '"id": "minecraft:brush"', 3],
-    "L0012": ['Travel to Nether Roof', '"id": "minecraft:bedrock"', 2]
+    "L0012": ['Travel to Nether Roof', '"id": "minecraft:bedrock"', 2],
+    "L0013": ['Locate Woodland Mansion', '"id": "minecraft:red_carpet"', 4],
 
 }
 
 exclusiveSets = {
+    # When exclusive sets are enabled (default), two goals in the same set will *almost* never show up on the same board.
     'sheep': ['K0003', 'K0005', 'K0010', 'K0013', 'K0014', 'K0015', 'K0016', 'K0017', 'K0019', 'K0020', 'K0029'],
     'poison': ['X0005', 'E0006'],
     'netherite': ['I0002', 'I0003', 'I0025', 'I0046', 'I0047', 'I0048', 'I0105'],
@@ -329,7 +368,9 @@ exclusiveSets = {
     'seeds': ['N0007', 'B0001', 'I0075'],
     'obsidian': ['N0006', 'A0004'],
     'terracotta': ['I0092', 'I0093', 'I0094', 'I0095', 'I0096', 'I0097', 'I0098', 'I0099', 'I0100', 'I0101', 'I0102', 'I0103'],
-    'candle': ['I0111', 'I0112', 'I0113', 'I0114', 'I0115', 'I0116', 'I0117', 'I0118', 'I0119', 'I0120', 'I0121', 'I0122']
+    'candle': ['I0111', 'I0112', 'I0113', 'I0114', 'I0115', 'I0116', 'I0117', 'I0118', 'I0119', 'I0120', 'I0121', 'I0122'],
+    'effects': ['X0003', 'X0004', 'X0005', 'X0017', 'X0019', 'X0026', 'X0027', 'X0028', 'X0029', 'X0030', 'X0031', 'X0032'],
+    'musicdisc': ['I0128', 'I0129', 'I0130', 'I0131', 'I0132', 'I0133', 'I0134', 'I0135', 'I0136', 'I0137', 'I0138', 'I0139', 'I0140', 'I0141', 'I0142', 'I0143', 'I0144', 'I0145', 'I0146']
 }
 
 unique_advancements = ['A0001', 'A0021', 'A0022']

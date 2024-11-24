@@ -1,5 +1,6 @@
 execute as @a[scores={locate=1..}] run function lockout:locate
 execute as @a[scores={lk.levels=30}] run function lockout:goals/x0001
+execute as @a[scores={lk.levels=15}] run function lockout:goals/x0025
 #execute as @a[scores={lk.jump=1..3}] run function lockout:goals/n0005
 execute as @a[scores={lk.mob_kills=100..110}] run function lockout:goals/k0001
 execute as @a[scores={lk.mine_deepslate_diamond=1..3}] run function lockout:goals/x0007
@@ -18,7 +19,6 @@ execute as @a[scores={lk.armor_washed=1..4}] run function lockout:goals/x0021
 execute as @a[predicate=lockout:pumpkin_head] run scoreboard players add @s lk.pumpkin_head_timer 1
 execute as @a[predicate=!lockout:pumpkin_head] run scoreboard players set @s lk.pumpkin_head_timer 0
 execute as @a[scores={lk.pumpkin_head_timer=300..}] run function lockout:goals/x0014
-#execute as @a[scores={lk.fall=400..,lk.fall_dmg=2..}] run function lockout:goals/n0003
 
 scoreboard players enable @a locate
 scoreboard players enable @a resign

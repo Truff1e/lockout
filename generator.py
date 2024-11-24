@@ -50,7 +50,7 @@ def write_advancement_tree(path, goals, letters):
     board_size = int(math.sqrt(len(goals)))
     for i in range(board_size):
         file = open(f'{path}/data/lockout/advancement/board/{letters[i]}{board_size+1}.json', 'w')
-        file.write('{\n"display": {\n"icon": {\n "id": "minecraft:stone_button"\n},\n"title": "-",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
+        file.write('{\n"display": {\n"icon": {\n "id": "minecraft:stone_button"\n},\n"title": "-",\n"description": "",\n"show_toast": false\n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
         file.write(f'"parent": "lockout:board/{letters[i]}{board_size}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
 
 

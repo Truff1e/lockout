@@ -1,15 +1,23 @@
 # Lockout Data Pack Generator
 
+Minecraft Lockout is a game in which two teams compete to complete as many goals as they can on a 5 by 5 board. The goals could be as simple as 'Ride a Horse' or as challenging as 'Kill the Ender Dragon'. If one team completes a goal, the other team can no longer get points for that goal. First team to complete the majority of the board wins.
+
+This game was originally invented by SmallAnt and created by AtSign as a Forge mod. This version is a data pack which means it can be played in 100% vanilla Minecraft and no client-side installations are necessary. 
+
+You can find the original mod here: https://www.curseforge.com/minecraft/mc-mods/lockout
+All credit for the game concept goes to SmallAnt.
+
+
 Warning: Do not tamper with the 'template' folder unless you know what you are doing. It could cause your data packs to break.
 
 ## How to Generate a Board
 To begin, run lockout.py. You will be greeted with a welcome screen. To generate a board, you can use any of the three following commands:
 
 balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance
-randomboard - Generates a completely random board with wildly varying ranges of difficulty
-customboard - Generates a user-specified board using a provided list of goal ID numbers
 
-More detailed instructions about these commands are as follows:
+randomboard - Generates a completely random board with wildly varying ranges of difficulty
+
+customboard - Generates a user-specified board using a provided list of goal ID numbers
 
 #### MANUALLY CREATE A BOARD
 To manually create a board, look through index.py and find a bunch of goals you want to have on your board. Put these goals in a comma-separated list with no spaces.
@@ -26,7 +34,7 @@ Some helpful commands for finding specific goals are:
 
 'translate _goalID_' - This command translates a Goal ID into that goal's name. For example, K0001 would translate to "Kill 100 Mobs".
 
-'getid _name_of_goal_' - This command does the opposite of the translate command. You input a goal name, and get that goal's ID.
+'getid _name_of_goal_' - This command does the opposite of the 'translate' command. You input a goal name, and get that goal's ID.
 
 'getrandomgoals _amount_' - Alternatively to the two previous commands, you can use this command to see every single goal ID paired with its name.
 

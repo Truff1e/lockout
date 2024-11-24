@@ -17,6 +17,7 @@ for goal in goalDictionary:
 
     if 'N' in goal:
         file.write(f'''execute unless score #{goal} lk.enabled_goals matches 1 run return fail
+execute if score #end_seen lk.util matches 1 run return fail
 execute if entity @e[tag=lk.{goal}] run return fail
 execute if entity @s[team=spectator] run return fail
 tag @s add lk.{goal}
@@ -33,6 +34,7 @@ execute as @s[team=1] at @a[team=1] run playsound block.beacon.deactivate master
 scoreboard players add @s lk.stat.failed_goals 1''')
     else:
         file.write(f'''execute unless score #{goal} lk.enabled_goals matches 1 run return fail
+execute if score #end_seen lk.util matches 1 run return fail
 execute if entity @e[tag=lk.{goal}] run return fail
 execute if entity @s[team=spectator] run return fail
 tag @s add lk.{goal}
