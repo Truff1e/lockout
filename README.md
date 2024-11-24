@@ -14,7 +14,7 @@ Warning: Do not tamper with the 'template' folder unless you know what you are d
 ## How to Generate a Board
 To begin, run lockout.py. You will be greeted with a welcome screen. To generate a board, you can use any of the three following commands:
 
-balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance
+balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance. This is the recommended option for starting out. 
 
 randomboard - Generates a completely random board with wildly varying ranges of difficulty
 
@@ -24,11 +24,11 @@ customboard - Generates a user-specified board using a provided list of goal ID 
 To manually create a board, look through index.py and find a bunch of goals you want to have on your board. Put these goals in a comma-separated list with no spaces.
 For example: A0001,A0002,A0003,etc. Do not put the same goal in the list twice, it will cause your data pack not to work properly. To generate the custom board, type: 
 
-**customboard *board_size* *list_of_goals***
+**customboard *size* *goals***
 
-*Board Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
+*Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
 
-*List of Goals* is the list of goals you have chosen above.
+*Goals* is the list of goals you have chosen above.
 
 
 Some helpful commands for finding specific goals are:
@@ -48,15 +48,21 @@ To generate a completely random board, run the command 'randomboard {board_size}
 The balancedboard command will create a fair and fun board weighed to the specified difficulty. This is the recommended option if you are just starting out or just want to start playing quickly.
 To create a balanced board, run the command 'balancedboard'. 
 
-**balancedboard *board_size* *difficulty***
+**balancedboard *size* *difficulty***
 
-*Board Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
+*Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
 
 *Difficulty* can be either a decimal number between 1 and 7 or a set of weighted values if you want extra customization. The easiest method is to just use the built-in difficulty calculator by inputting a number between 1 and 7, decimals included. 7 will be the hardest, while 1 will be the easiest. For more advanced options, see the section below.
 
 The length of your game heavily depends on this board size and the difficulty you choose.
 I recommend a 3 or 4 size board for short games (45m-1hr), and 5 for longer games (1.5-2hrs).  
 
+
+Example Command (good for beginners):
+*$balancedboard 5 2.2*
+
+Example Command with Overrides:
+*$balancedboard 4 3.5 %sheep,netherite
 
 
 #### SET A CUSTOM DIFFICULTY
@@ -70,11 +76,14 @@ Lvl 4 Goals - These goals are extremely hard and most of the time require you to
 To input a custom difficulty, just type a list of weights like this: 8,5,5,2 Each number corresponds to the frequency that difficulty of goal 
 will show up. Approximately 8/20 goals will be level 1 difficulty, 5/20 will be level 2, 5/20 will be level 3 and 2/20 will be level 4.
 
-Finally, the data pack will ask if you would like to override any of the exclusive sets for the goal index. These exclusive sets prevent similar 
+Finally, you can specify if you would like to override any of the exclusive sets for the goal index. These exclusive sets prevent similar 
 goals from showing up twice in the same board - for example, one set makes sure you don't have "Kill Red Sheep", "Kill Cyan Sheep" and 
 "Kill Yellow Sheep" all on the same board. Doing nothing will activate all the exclusive sets. If you want to override all 
-sets, type '%all' after either the balancedboard or randomboard command. If you want to override specific sets, type the name(s) of the set(s) separated by commas. You can find all the exclusive sets at 
+sets, type '%all' after either the balancedboard or randomboard command. If you want to override specific sets, first type "%", then type the name(s) of the set(s) separated by commas. You can find all the exclusive sets at 
 the bottom of index.py
+
+Example command:
+*$balancedboard 5 4,4,3,2 %concrete,effects*
 
 Your data pack will generate in the folder "datapacks" and you can see what goals were added in the console.
 
@@ -94,6 +103,12 @@ Do not install this data pack on a pre-existing world. Lockout is intended to be
 
 I hope you enjoy!
 ~Truffle
+
+## Playing Blackout
+
+The data pack also allows you to start a Blackout game (same as a lockout except everyone is on the same team and you try to complete the entire board)
+
+To play, follow the same steps as above to generate the data pack and load it into your world. Then run /reload and either click the button in chat that says START BLACKOUT or type /function lockout:game/start_blackout
 
 
 ## Known Issues
