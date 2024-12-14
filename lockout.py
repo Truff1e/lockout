@@ -2,7 +2,7 @@ from generator import generateBoard
 from index import goalDictionary, exclusiveSets
 from random import choice, choices
 
-version = '1.6.0'
+version = '1.7.0'
 
 def customboard(size: int, goal_list: list):
     generateBoard(goal_list, f'random-s{size}', version)

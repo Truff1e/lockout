@@ -4,7 +4,7 @@
         "trigger": "minecraft:effects_changed",
         "conditions": {
           "effects": {
-            "minecraft:wither": {}
+            "minecraft:mining_fatigue": {}
           }
         }
       }

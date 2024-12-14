@@ -32,6 +32,9 @@
           },
           {
             "items": "minecraft:mangrove_log"
+          },
+          {
+            "items": "minecraft:pale_oak_log"
           }
         ]
       },

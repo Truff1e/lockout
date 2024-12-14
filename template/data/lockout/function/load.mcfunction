@@ -29,6 +29,7 @@ scoreboard objectives add lk.unique_flowers dummy
 scoreboard objectives add lk.unique_saplings dummy
 scoreboard objectives add lk.unique_trims dummy
 scoreboard objectives add lk.unique_effects dummy
+scoreboard objectives add lk.unique_logs dummy
 
 scoreboard objectives add lk.levels level
 scoreboard objectives add lk.hoppers dummy
