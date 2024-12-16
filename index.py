@@ -78,6 +78,7 @@ goalDictionary = {
     # "N0013": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
     # "N0014": ['Opponent Obtains a Pickaxe', '"id": "minecraft:barrier"', 1],
     # ?"N0015": ['Use Spyglass on Opponent', '"id": "minecraft:spyglass"', 1],
+    # ?"N0016": ['Have the Most Levels', '"id": "minecraft:experience_bottle"', 1],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": {"strings": ["T0001"]}}', 1],
