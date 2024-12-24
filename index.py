@@ -1,6 +1,7 @@
+from random import choice, choices
 # Identifier [name, icon, difficulty, description]
 # Commented out goals are not yet implemented or are broken
-index_version = '1.7.0'
+index_version = '1.7.1'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": {"strings": ["K0001"]}}', 1],
@@ -60,7 +61,7 @@ goalDictionary = {
     # "D0008": ['Die to TNT Minecart', '"id": "minecraft:tnt_minecart"', 1],
     "D0009": ['Die to Goat', '"id": "minecraft:goat_horn"', 3],
     "D0010": ['Die to Polar Bear', '"id": "minecraft:cod"', 2],
-    "D0011": ['Die to Creaking', '"id": "minecraft:cod"', 3],
+    "D0011": ['Die to Creaking', '"id": "minecraft:creaking_heart"', 3],
 
     # OPPONENT GOALS
     "N0001": ['Opponent Dies', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0001"]}}', 1],
@@ -362,6 +363,7 @@ goalDictionary = {
 
 }
 
+
 exclusiveSets = {
     # When exclusive sets are enabled (default), two goals in the same set will *almost* never show up on the same board.
     'sheep': ['K0003', 'K0005', 'K0010', 'K0013', 'K0014', 'K0015', 'K0016', 'K0017', 'K0019', 'K0020', 'K0029'],
@@ -374,9 +376,10 @@ exclusiveSets = {
     'brewing': ['I0088', 'I0087', 'I0032', 'I0019'],
     'seeds': ['N0007', 'B0001', 'I0075'],
     'obsidian': ['N0006', 'A0004'],
+    'advancements': ['A0001', 'A00021', 'A00022'],
     'terracotta': ['I0092', 'I0093', 'I0094', 'I0095', 'I0096', 'I0097', 'I0098', 'I0099', 'I0100', 'I0101', 'I0102', 'I0103'],
     'candle': ['I0111', 'I0112', 'I0113', 'I0114', 'I0115', 'I0116', 'I0117', 'I0118', 'I0119', 'I0120', 'I0121', 'I0122'],
-    'effects': ['X0003', 'X0004', 'X0005', 'X0017', 'X0019', 'X0026', 'X0027', 'X0028', 'X0029', 'X0030', 'X0031', 'X0032'],
+    'effects': ['X0003', 'X0004', 'X0005', 'X0017', 'X0019', 'X0026', 'X0027', 'X0028', 'X0029', 'X0030', 'X0031', 'X0032', 'X0033'],
     'disc': ['I0128', 'I0129', 'I0130', 'I0131', 'I0132', 'I0133', 'I0134', 'I0135', 'I0136', 'I0137', 'I0138', 'I0139', 'I0140', 'I0141', 'I0142', 'I0143', 'I0144', 'I0145', 'I0146']
 }
 
@@ -386,9 +389,43 @@ exclusionSets = {
     'opponent': ['N0001', 'N0002', 'N0003', 'N0004', 'N0005', 'N0006', 'N0007', 'N0008', 'N0009', 'N0010', 'N0011'],
 }
 
+
+balancedIndex = [
+
+    choice(exclusiveSets['sheep']),
+    choice(exclusiveSets['netherite']),
+    choice(exclusiveSets['opponent']),
+    choice(exclusiveSets['concrete']),
+    choice(exclusiveSets['brewing']),
+    choice(exclusiveSets['terracotta']),
+    choice(exclusiveSets['candle']),
+    choice(exclusiveSets['effects']),
+    choice(exclusiveSets['disc']),
+
+    "K0001", "K0002", "K0004", "K0006", "K0007", "K0008", "K0009", "K0011", "K0012", "K0018", "K0021", "K0022", "K0023", "K0024", "K0025",
+    "K0026", "K0027", "K0028", "K0030", "K0031", "K0032", "K0033", "K0034", "K0035", "K0036", "K0037", "K0038", "K0039", "K0040", "K0041",
+    "K0042", "K0043", "K0044", "K0045", "D0001", "D0002", "D0003", "D0004", "D0005", "D0006", "D0007", "D0009", "D0010", "D0011", "T0001",
+    "T0002", "T0003", "T0004", "T0005", "T0006", "T0007", "B0001", "B0002", "B0003", "B0004", "B0005", "B0006", "B0007", "B0008", "B0009",
+    "B0010", "B0011", "B0012", "B0013", "B0014", "B0015", "B0016", "B0017", "B0018", "B0019", "B0020", "B0021", "B0022", "B0023", "I0001",
+    "I0004", "I0005", "I0006", "I0007", "I0008", "I0009", "I0010", "I0011", "I0012", "I0013", "I0014", "I0015", "I0016", "I0017", "I0018",
+    "I0020", "I0021", "I0022", "I0023", "I0024", "I0026", "I0027", "I0028", "I0029", "I0030", "I0031", "I0033", "I0034", "I0035", "I0036",
+    "I0037", "I0038", "I0039", "I0040", "I0041", "I0042", "I0043", "I0044", "I0045", "I0049", "I0050", "I0051", "I0052", "I0053", "I0054",
+    "I0055", "I0056", "I0057", "I0058", "I0059", "I0060", "I0061", "I0062", "I0063", "I0064", "I0065", "I0066", "I0067", "I0068", "I0069",
+    "I0070", "I0071", "I0072", "I0073", "I0074", "I0075", "I0089", "I0090", "I0091", "I0104", "I0106", "I0107", "I0108", "I0109", "I0110", "I0123",
+    "I0124", "I0125", "I0126", "I0127", "I0147", "I0148", "I0149", "I0150", "E0001", "E0002", "E0003", "E0004", "E0005", "E0006", "E0007",
+    "E0008", "E0009", "E0010", "E0011", "E0012", "E0013", "E0014", "E0015", "A0001", "A0002", "A0003", "A0004", "A0005", "A0006", "A0007",
+    "A0008", "A0009", "A0010", "A0011", "A0012", "A0013", "A0014", "A0015", "A0016", "A0018", "A0020", "A0021", "A0022", "X0001", "X0002",
+    "X0006", "X0007", "X0008", "X0009", "X0010", "X0012", "X0014", "X0015", "X0016", "X0017", "X0018", "X0019", "X0020", "X0021", "X0023",
+    "X0024", "X0025", "L0001", "L0002", "L0003", "L0004", "L0005", "L0006", "L0007", "L0008", "L0009", "L0010", "L0011", "L0012", "L0013",
+
+]
+
+
 unique_advancements = ['A0001', 'A0021', 'A0022']
 
 index_length = len(goalDictionary)
-# for i in goalDictionary:
-#   print(f'{i}: {goalDictionary[i][0]}')
+#for i in goalDictionary:
+    #print(f'"{i}", ')
+    #texture = goalDictionary[i][1].replace(r'"', r'\"')
+    #print(f'goalindex.add(new LockoutGoal("{i}", "{goalDictionary[i][0]}", "{texture}", {goalDictionary[i][2]}));')
 print("Index Version:", index_version, " Goals:", index_length)

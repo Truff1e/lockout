@@ -57,7 +57,7 @@ def write_advancement_tree(path, goals, letters):
 
 
 def generateBoard(goals: list, user: str, version):
-    datapack_version = f'{version}-1.21.3'
+    datapack_version = f'{version}-1.21.4'
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']
     board_size = len(goals)
     goal_list = []
