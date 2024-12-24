@@ -1,4 +1,5 @@
 say wins!
+execute at @a run playsound entity.ender_dragon.death master @a ~ ~ ~
 gamemode spectator @a
 tellraw @a [{"text": "Team 1 Score: "},{"score": {"name": "@r[team=1]", "objective": "lk.points"}}]
 tellraw @a [{"text": "Team 2 Score: "},{"score": {"name": "@r[team=2]", "objective": "lk.points"}}]
