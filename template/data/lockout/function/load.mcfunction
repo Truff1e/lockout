@@ -14,7 +14,6 @@ scoreboard objectives add lk.goal dummy
 
 scoreboard objectives add lk.logoff minecraft.custom:minecraft.leave_game
 
-scoreboard objectives add lk.stat.points dummy
 scoreboard objectives add lk.stat.failed_goals dummy
 scoreboard objectives add lk.stat.deaths deathCount
 scoreboard objectives add lk.stat.kills playerKillCount
@@ -69,10 +68,11 @@ scoreboard players set #const_2 lk.util 2
 
 forceload add 0 0
 execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}
-execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"]}
-execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team2pts"]}
+execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"],CustomName:'"Team 1"'}
+execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team2pts"],CustomName:'"Team 2"'}
 
 
 schedule function lockout:postload 1s
 schedule function lockout:tick/1s 1s replace
+schedule function lockout:tick/5s 1s replace
 schedule function lockout:tick/1m 1s replace

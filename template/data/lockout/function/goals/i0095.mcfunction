@@ -14,4 +14,3 @@ execute as @s[team=1] at @a[team=1] run playsound entity.player.levelup master @
 execute as @s[team=2] at @a[team=2] run playsound entity.player.levelup master @a[team=2] ~ ~ ~
 execute as @s[team=1] at @a[team=2] run playsound block.beacon.deactivate master @a[team=2] ~ ~ ~
 execute as @s[team=2] at @a[team=1] run playsound block.beacon.deactivate master @a[team=1] ~ ~ ~
-scoreboard players add @s lk.stat.points 1
