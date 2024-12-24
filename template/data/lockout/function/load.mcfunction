@@ -74,5 +74,4 @@ execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:
 
 schedule function lockout:postload 1s
 schedule function lockout:tick/1s 1s replace
-schedule function lockout:tick/5s 1s replace
 schedule function lockout:tick/1m 1s replace

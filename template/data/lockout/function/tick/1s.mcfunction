@@ -4,6 +4,11 @@ execute if score #game_begun lk.util matches 1 if score #time_remaining lk.util 
 
 execute if score #game_begun lk.util matches 1 if score #time_remaining lk.util matches ..0 run title @a actionbar [{"text": "Game Ended", "color": "red"}]
 
+execute as @a store result score @s lk.dried_kelp run clear @s dried_kelp_block 0
+execute as @a store result score @s lk.hoppers run clear @s hopper 0
+
+function lockout:goals/most_goals
+
 scoreboard players set @a lk.logoff 0
 
 function lockout:game/detect_win

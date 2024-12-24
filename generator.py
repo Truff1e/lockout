@@ -23,6 +23,7 @@ def write_resume_function(path, goals, letters):
     for i in range(len(goals)):
         command = 'execute as @a[advancements={lockout:board/' + goals[i][1] + '=true}] run advancement grant @a only lockout:board/' + goals[i][1] + '\n'
         file.write(command)
+    file.write('execute as @s run function lockout:game/resume_moregoals')
     file.close()
 
 
@@ -35,9 +36,6 @@ def write_getgoals_function(path, goals):
 
 
 def write_advancement_tree(path, goals, letters):
-    file = open(f'{path}/data/lockout/advancement/board/root.json', 'w')
-    file.write('{\n"display": {\n"icon": {\n"id":"minecraft:ominous_trial_key","components": {"minecraft:custom_model_data": {"strings": ["25adv"]}}\n},\n"title": "Lockout Board",\n"description": "Generated with the Truff1e Lockout Board Generator", \n"background": "minecraft:textures/block/stone.png",\n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
-    file.close()
     for i in range(len(goals)):
         letter, num = goals[i][1].strip('123456789'), int(goals[i][1].strip('abcdefghij'))
         if num == 1:

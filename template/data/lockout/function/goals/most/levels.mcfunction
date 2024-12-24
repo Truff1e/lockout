@@ -1,0 +1,2 @@
+execute as @s[tag=!lk.N0014] unless entity @a[tag=lk.N0014] if score @s lk.levels matches 1.. run function lockout:goals/n0014
+execute as @s[tag=!lk.N0014] if score @s lk.levels > @p[tag=lk.N0014] lk.levels run function lockout:goals/n0014

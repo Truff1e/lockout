@@ -1,22 +1,28 @@
 {
-    "criteria": {
-      "end_rod": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:wolf_armor"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "end_rod"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/i0056"
+  "criteria": {
+    "nether_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:nether_gold_ore"
+          },
+          {
+            "items": "minecraft:nether_quartz_ore"
+          },
+          {
+            "items": "minecraft:ancient_debris"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
+  },
+  "requirements": [
+    [
+      "nether_ores"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/i0056"
   }
+}

@@ -1,7 +1,7 @@
-from random import choice, choices
+from random import choice
 # Identifier [name, icon, difficulty, description]
 # Commented out goals are not yet implemented or are broken
-index_version = '1.7.1'
+index_version = '1.7.2'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": {"strings": ["K0001"]}}', 1],
@@ -75,11 +75,9 @@ goalDictionary = {
     "N0009": ['Opponent Wears Armor', '"id": "minecraft:barrier"', 1],
     "N0010": ['Opponent Takes 100 Damage', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0010"]}}', 1],
     "N0011": ['Opponent Dies 3 Times', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0011"]}}', 1],
-    # "N0012": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
-    # "N0013": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": 1}', 2],
-    # "N0014": ['Opponent Obtains a Pickaxe', '"id": "minecraft:barrier"', 1],
-    # ?"N0015": ['Use Spyglass on Opponent', '"id": "minecraft:spyglass"', 1],
-    # ?"N0016": ['Have the Most Levels', '"id": "minecraft:experience_bottle"', 1],
+    "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
+    "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
+    "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle"', 2],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": {"strings": ["T0001"]}}', 1],
@@ -172,7 +170,7 @@ goalDictionary = {
     "I0053": ['Obtain Name Tag', '"id": "minecraft:name_tag"', 2],
     "I0054": ['Obtain Written Book', '"id": "minecraft:written_book"', 1],
     "I0055": ['Obtain Bookshelf', '"id": "minecraft:bookshelf"', 1],
-    "I0056": ['Obtain Wolf Armor', '"id": "minecraft:wolf_armor"', 2],
+    "I0056": ['Get All Nether Ores', '"id": "minecraft:nether_gold_ore"', 2],
     "I0057": ['Get All Overworld Ore Blocks', '"id": "minecraft:diamond_block"', 3, 'Requirements: Coal, Iron, Copper, Gold, Lapis, Redstone, Emerald and Diamond blocks'],
     "I0058": ['Obtain Full Iron Tools', '"id": "minecraft:iron_pickaxe"', 1],
     "I0059": ['Obtain Sea Lantern', '"id": "minecraft:sea_lantern"', 1],
@@ -310,6 +308,7 @@ goalDictionary = {
     "A0020": ['Summon Iron Golem', '"id": "minecraft:carved_pumpkin"', 2],
     "A0021": ['Get 15 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["A0021"]}}', 1],
     "A0022": ['Get 35 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["A0022"]}}', 3],
+    "A0023": ['Repair Wolf Armor', '"id": "minecraft:wolf_armor"', 2],
 
     # MISC GOALS
     "X0001": ['Get 30 Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["X0001"]}}', 2],
@@ -369,7 +368,7 @@ exclusiveSets = {
     'sheep': ['K0003', 'K0005', 'K0010', 'K0013', 'K0014', 'K0015', 'K0016', 'K0017', 'K0019', 'K0020', 'K0029'],
     'poison': ['X0005', 'E0006'],
     'netherite': ['I0002', 'I0003', 'I0025', 'I0046', 'I0047', 'I0048', 'I0105'],
-    'opponent': ['N0001', 'N0002', 'N0003', 'N0004', 'N0005', 'N0006', 'N0007', 'N0008', 'N0009', 'N0010', 'N0011'],
+    'opponent': ['N0001', 'N0002', 'N0003', 'N0004', 'N0006', 'N0007', 'N0008', 'N0009', 'N0010', 'N0011', 'N0012', 'N0013', 'N0014'],
     'redstone': ['I0009', 'I0069', 'I0070', 'I0071'],
     'piston': ['I0072', 'I0073'],
     'concrete': ['I0076', 'I0077', 'I0078', 'I0079', 'I0080', 'I0081', 'I0082', 'I0083', 'I0084', 'I0085', 'I0086'],
@@ -410,11 +409,11 @@ balancedIndex = [
     "I0004", "I0005", "I0006", "I0007", "I0008", "I0009", "I0010", "I0011", "I0012", "I0013", "I0014", "I0015", "I0016", "I0017", "I0018",
     "I0020", "I0021", "I0022", "I0023", "I0024", "I0026", "I0027", "I0028", "I0029", "I0030", "I0031", "I0033", "I0034", "I0035", "I0036",
     "I0037", "I0038", "I0039", "I0040", "I0041", "I0042", "I0043", "I0044", "I0045", "I0049", "I0050", "I0051", "I0052", "I0053", "I0054",
-    "I0055", "I0056", "I0057", "I0058", "I0059", "I0060", "I0061", "I0062", "I0063", "I0064", "I0065", "I0066", "I0067", "I0068", "I0069",
-    "I0070", "I0071", "I0072", "I0073", "I0074", "I0075", "I0089", "I0090", "I0091", "I0104", "I0106", "I0107", "I0108", "I0109", "I0110", "I0123",
+    "I0055", "I0057", "I0058", "I0059", "I0060", "I0061", "I0062", "I0063", "I0064", "I0065", "I0066", "I0067", "I0068", "I0069", "I0070",
+    "I0071", "I0072", "I0073", "I0074", "I0075", "I0089", "I0090", "I0091", "I0104", "I0106", "I0107", "I0108", "I0109", "I0110", "I0123",
     "I0124", "I0125", "I0126", "I0127", "I0147", "I0148", "I0149", "I0150", "E0001", "E0002", "E0003", "E0004", "E0005", "E0006", "E0007",
     "E0008", "E0009", "E0010", "E0011", "E0012", "E0013", "E0014", "E0015", "A0001", "A0002", "A0003", "A0004", "A0005", "A0006", "A0007",
-    "A0008", "A0009", "A0010", "A0011", "A0012", "A0013", "A0014", "A0015", "A0016", "A0018", "A0020", "A0021", "A0022", "X0001", "X0002",
+    "A0008", "A0009", "A0010", "A0011", "A0012", "A0013", "A0014", "A0015", "A0016", "A0018", "A0020", "A0021", "A0022", "A0023", "X0001", "X0002",
     "X0006", "X0007", "X0008", "X0009", "X0010", "X0012", "X0014", "X0015", "X0016", "X0017", "X0018", "X0019", "X0020", "X0021", "X0023",
     "X0024", "X0025", "L0001", "L0002", "L0003", "L0004", "L0005", "L0006", "L0007", "L0008", "L0009", "L0010", "L0011", "L0012", "L0013",
 
@@ -422,6 +421,7 @@ balancedIndex = [
 
 
 unique_advancements = ['A0001', 'A0021', 'A0022']
+have_more_goals = ['N0012', 'N0013', 'N0016']
 
 index_length = len(goalDictionary)
 #for i in goalDictionary:

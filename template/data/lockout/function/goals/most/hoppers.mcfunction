@@ -1,0 +1,2 @@
+execute as @s[tag=!lk.N0013] unless entity @a[tag=lk.N0013] if score @s lk.hoppers matches 1.. run function lockout:goals/n0013
+execute as @s[tag=!lk.N0013] if score @s lk.hoppers > @p[tag=lk.N0013] lk.hoppers run function lockout:goals/n0013

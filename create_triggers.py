@@ -1,4 +1,4 @@
-from index import goalDictionary, unique_advancements
+from index import goalDictionary, unique_advancements, have_more_goals
 import os
 
 # This is used to automatically generate all the functions that are called when a goal is achieved. This will not be needed in everyday use unless you want to tinker with the data pack.
@@ -16,7 +16,10 @@ for goal in goalDictionary:
         file.write('execute as @s run function lockout:goals/count_advancements\n')
 
     if 'N' in goal:
-        file.write(f'''execute unless score #{goal} lk.enabled_goals matches 1 run return fail
+        if goal in have_more_goals:
+            continue
+        else:
+            file.write(f'''execute unless score #{goal} lk.enabled_goals matches 1 run return fail
 execute if score #end_seen lk.util matches 1 run return fail
 execute if entity @e[tag=lk.{goal}] run return fail
 execute if entity @s[team=spectator] run return fail
@@ -49,6 +52,6 @@ execute as @s[team=1] at @a[team=1] run playsound entity.player.levelup master @
 execute as @s[team=2] at @a[team=2] run playsound entity.player.levelup master @a[team=2] ~ ~ ~
 execute as @s[team=1] at @a[team=2] run playsound block.beacon.deactivate master @a[team=2] ~ ~ ~
 execute as @s[team=2] at @a[team=1] run playsound block.beacon.deactivate master @a[team=1] ~ ~ ~
-scoreboard players add @s lk.stat.points 1''')
+''')
 
     file.close()
