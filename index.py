@@ -296,7 +296,7 @@ goalDictionary = {
     "A0006": ['Open Ominous Vault', '"id": "minecraft:ominous_trial_key"', 2],
     "A0007": ['Get Sniper Duel Advancement', '"id": "minecraft:bow"', 1],
     "A0008": ['Do any Spyglass Advancement', '"id": "minecraft:spyglass"', 1],
-    "A0009": ['Do Star Trader Advancement', '"id": "minecraft:emerald_block"', 2],
+    "A0009": ['Do Star Trader Advancement', '"id": "minecraft:emerald_block"', 3],
     "A0010": ['Ride Strider', '"id": "minecraft:warped_fungus_on_a_stick"', 2],
     "A0011": ['Trade with a Villager', '"id": "minecraft:emerald"', 1],
     "A0012": ['Open Trial Vault', '"id": "minecraft:trial_key"', 1],
