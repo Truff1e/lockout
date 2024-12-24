@@ -8,7 +8,16 @@ scoreboard players set @a lk.mine_spawner 0
 scoreboard players set @a lk.mob_kills 0
 scoreboard players set @a lk.points 0
 scoreboard players set @a lk.sprint_1km 0
-scoreboard players set @a lk.stat.points 0
+scoreboard players set @a lk.use_anvil 0
+scoreboard players set @a lk.armor_washed 0
+
+scoreboard players set @a lk.dried_kelp 0
+scoreboard players set @a lk.hoppers 0
+
+scoreboard players set #dried_kelp lk.util 0
+scoreboard players set #hoppers lk.util 0
+scoreboard players set #levels lk.util 0
+
 scoreboard players set @a lk.stat.kills 0
 scoreboard players set @a lk.stat.deaths 0
 scoreboard players set @a resign 0
