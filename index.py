@@ -77,7 +77,7 @@ goalDictionary = {
     "N0011": ['Opponent Dies 3 Times', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0011"]}}', 1],
     "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
     "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
-    "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle"', 2],
+    "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["N0014"]}}', 2],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": {"strings": ["T0001"]}}', 1],
@@ -331,7 +331,7 @@ goalDictionary = {
     "X0018": ['Take 200 Damage', '"id": "minecraft:wooden_sword","components": {"minecraft:custom_model_data": {"strings": ["X0018"]}}', 1],
     "X0019": ['Get Leaping', '"id": "minecraft:rabbit_foot"', 1],
     "X0020": ['Empty Hunger Bar', '"id": "minecraft:rotten_flesh","components": {"minecraft:custom_model_data": {"strings": ["X0020"]}}', 1],
-    "X0021": ['Wash Leather Armor', '"id": "minecraft:cauldron"', 1],
+    "X0021": ['Wash Leather Armor', '"id": "minecraft:cauldron","components": {"minecraft:custom_model_data": {"strings": ["X0021"]}}', 1],
     # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
     "X0023": ['Have 9 Status Effects at Once', '"id": "minecraft:milk_bucket"', 3],
     "X0024": ['Have 12 Status Effects at Once', '"id": "minecraft:milk_bucket"', 3],
@@ -348,13 +348,13 @@ goalDictionary = {
     # LOCATION GOALS
     "L0001": ['Find an Ancient City', '"id": "minecraft:sculk_shrieker"', 2],
     "L0002": ['Reach Bedrock', '"id": "minecraft:bedrock"', 1],
-    "L0003": ['Reach Height Limit', '"id": "minecraft:glass"', 1],
+    "L0003": ['Reach Height Limit', '"id": "minecraft:glass","components": {"minecraft:custom_model_data": {"strings": ["L0003"]}}', 1],
     "L0004": ['Enter Nether Fortress', '"id": "minecraft:nether_bricks"', 1],
     "L0005": ['Enter Bastion', '"id": "minecraft:gilded_blackstone"', 1],
     "L0006": ['Enter End City', '"id": "minecraft:purpur_pillar"', 4],
     "L0007": ['Enter End', '"id": "minecraft:end_portal_frame"', 3],
     "L0008": ['Locate all Nether Biomes', '"id": "minecraft:netherite_boots"', 3],
-    "L0009": ['Enter Nether', '"id": "minecraft:netherrack"', 1],
+    "L0009": ['Enter Nether', '"id": "minecraft:netherrack","components": {"minecraft:custom_model_data": {"strings": ["L0009"]}}', 1],
     "L0010": ['Locate Stronghold', '"id": "minecraft:ender_eye"', 3],
     "L0011": ['Locate Trail Ruins', '"id": "minecraft:brush"', 3],
     "L0012": ['Travel to Nether Roof', '"id": "minecraft:bedrock"', 2],
@@ -385,7 +385,7 @@ exclusiveSets = {
 exclusionSets = {
     'desert': ['K0005', 'K0010', 'K0012', 'K0014', 'K0037', 'I0080', 'I0081', 'I0097', 'I0098', 'I0099', 'I0116', 'I0117', 'I0118'],
     'disc': ['I0128', 'I0129', 'I0130', 'I0131', 'I0132', 'I0133', 'I0134', 'I0135', 'I0136', 'I0137', 'I0138', 'I0139', 'I0140', 'I0141', 'I0142', 'I0143', 'I0144', 'I0145', 'I0146'],
-    'opponent': ['N0001', 'N0002', 'N0003', 'N0004', 'N0005', 'N0006', 'N0007', 'N0008', 'N0009', 'N0010', 'N0011'],
+    'opponent': ['N0001', 'N0002', 'N0003', 'N0004', 'N0006', 'N0007', 'N0008', 'N0009', 'N0010', 'N0011', 'N0012', 'N0013', 'N0014'],
 }
 
 
