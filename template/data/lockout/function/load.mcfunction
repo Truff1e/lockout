@@ -8,7 +8,7 @@ team modify spectator color gray
 
 scoreboard objectives add lk.util dummy
 scoreboard objectives add lk.enabled_goals dummy
-scoreboard objectives add lk.points dummy {"text": "Score", "color": "yellow", "bold": true}
+scoreboard objectives add lk.points dummy {"text": "Lockout", "color": "yellow", "bold": true}
 scoreboard objectives setdisplay sidebar lk.points
 scoreboard objectives add lk.goal dummy
 

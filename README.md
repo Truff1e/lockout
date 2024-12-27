@@ -42,15 +42,7 @@ The "goals" tab has some helpful commands for finding specific goals.
 To generate a completely random board, specify a size and then click generate. I highly reccommend using balanced board instead of this option.
 
 
-
-#### SET OVERRIDES
-
-Finally, you can specify if you would like to override any of the exclusive sets for the goal index. These exclusive sets prevent similar 
-goals from showing up twice in the same board - for example, they make sure you don't have "Kill Red Sheep", "Kill Cyan Sheep" and 
-"Kill Yellow Sheep" all on the same board. Leaving the overrides field blank will keep all the exclusive sets active. If you want to override all 
-sets, type '%all'. If you want to override specific sets, first type "%", then type the name(s) of the set(s) separated by commas. You can find all the exclusive sets at 
-the bottom of index.py
-
+### OUTPUT
 Your data pack will generate in the folder "datapacks" and you can see what goals were added in the console.
 
 

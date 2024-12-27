@@ -12,6 +12,8 @@ execute if score #start_time lk.util matches 120 run title @s title {"text": "Bl
 
 title @s subtitle [{"text": "Press ", "color": "aqua"}, {"keybind": "key.advancements", "color": "aqua"}, {"text":" for Blackout Board", "color": "aqua"}]
 
+scoreboard objectives modify lk.points displayname {"text": "Blackout", "color": "yellow", "bold": true}
+
 tellraw @s ["",{"text":"======================================","color":"dark_gray"},{"text":"\n"},{"text":"Minecraft Blackout - by Truff1e","bold":true,"color":"yellow"},{"text":"\n\n"},{"text":"Objective: Complete all of the goals on the\nboard before the time runs out.","color":"yellow"},{"text":"\n\n"},{"text":">> Press [","color":"green"},{"keybind":"key.advancements","color":"green"},{"text":"] to see the Blackout Board","color":"green"},{"text":"\n\n"},{"text":"©2024 - MCfunction Development","italic":true,"color":"gray"},{"text":"\n"},{"text":"======================================","color":"dark_gray"}]
 
 effect give @s regeneration 3 10 true
