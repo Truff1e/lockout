@@ -58,24 +58,24 @@ customgoallistvar = StringVar()
 
 
 # Balanced Board
-boardsize = Frame(balanced_generator, padx=10, pady=5)
-difficulty = Frame(balanced_generator, padx=10, pady=5)
-overrides = Frame(balanced_generator, padx=10, pady=5)
+boardsize = ttk.Frame(balanced_generator, padding=5)
+difficulty = ttk.Frame(balanced_generator, padding=5)
+overrides = ttk.Frame(balanced_generator, padding=5)
 
-Label(boardsize, text="Board Size: ").pack(side=LEFT)
+ttk.Label(boardsize, text="Board Size: ").pack(side=LEFT)
 boardsizeslider = ttk.Scale(boardsize, from_=1, to=9, orient='horizontal', variable=sizevar, command=(lambda event: boardsizelabel.configure(text=f"{getsizesildervalue()} x {getsizesildervalue()}")))
-boardsizelabel = Label(boardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
+boardsizelabel = ttk.Label(boardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
 boardsizeslider.pack(side=LEFT, padx=10, pady=3)
 boardsizelabel.pack(side=LEFT)
-Label(difficulty, text="Difficulty: ").pack(side=LEFT)
+ttk.Label(difficulty, text="Difficulty: ").pack(side=LEFT)
 difficultyslider = ttk.Scale(difficulty, from_=1, to=8, orient='horizontal', variable=difficultyvar, command=(lambda event: difficultylabel.configure(text=f"{getdifficultysildervalue()}")))
-difficultylabel = Label(difficulty, text=getdifficultysildervalue())
+difficultylabel = ttk.Label(difficulty, text=getdifficultysildervalue())
 difficultyslider.pack(side=LEFT, padx=10, pady=3)
 difficultylabel.pack(side=LEFT)
 # Label(overrides, text="Overrides: ").pack(side=LEFT)
 # Entry(overrides, textvariable=overridesvar).pack(side=LEFT)
-blackouttoggle = ttk.Checkbutton(balanced_generator, text="Blackout Mode", variable=blackoutvar, padding=5)
-generatebutton = Button(balanced_generator, text="Generate Balanced Board", command=generatebalanced)
+blackouttoggle = ttk.Checkbutton(balanced_generator, text="Blackout Mode", variable=blackoutvar, padding=10)
+generatebutton = ttk.Button(balanced_generator, text="Generate Balanced Board", command=generatebalanced)
 
 boardsize.pack()
 difficulty.pack()
@@ -85,17 +85,17 @@ generatebutton.pack()
 
 
 # Random Board
-randomboardsize = Frame(random_generator, padx=10, pady=5)
-randomoverrides = Frame(random_generator, padx=10, pady=5)
+randomboardsize = ttk.Frame(random_generator, padding=5)
+randomoverrides = ttk.Frame(random_generator, padding=5)
 
-Label(randomboardsize, text="Board Size: ").pack(side=LEFT)
+ttk.Label(randomboardsize, text="Board Size: ").pack(side=LEFT)
 randomboardsizeslider = ttk.Scale(randomboardsize, from_=1, to=9, orient='horizontal', variable=randomsizevar, command=(lambda event: randomboardsizelabel.configure(text=f"{getrandomsizesildervalue()} x {getrandomsizesildervalue()}")))
-randomboardsizelabel = Label(randomboardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
+randomboardsizelabel = ttk.Label(randomboardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
 randomboardsizeslider.pack(side=LEFT, padx=10, pady=3)
 randomboardsizelabel.pack(side=LEFT)
 # Label(randomoverrides, text="Overrides: ").pack(side=LEFT)
 # Entry(randomoverrides, textvariable=overridesvar).pack(side=LEFT)
-randomgeneratebutton = Button(random_generator, text="Generate Random Board", command=generaterandom)
+randomgeneratebutton = ttk.Button(random_generator, text="Generate Random Board", command=generaterandom)
 
 randomboardsize.pack()
 # randomoverrides.pack()
@@ -103,18 +103,18 @@ randomgeneratebutton.pack()
 
 
 # Custom Board
-customboardinput = Frame(custom_generator, padx=10, pady=5)
-Label(customboardinput, text="Custom Board: ").pack(side=LEFT)
+customboardinput = ttk.Frame(custom_generator, padding=5)
+ttk.Label(customboardinput, text="Custom Board: ").pack(side=LEFT)
 customboardtext = Text(customboardinput, height=8, width=25)
 customboardtext.pack(side=LEFT)
-customgeneratebutton = Button(custom_generator, text="Generate Custom Board", command=generatecustom)
+customgeneratebutton = ttk.Button(custom_generator, text="Generate Custom Board", command=generatecustom)
 
 customboardinput.pack()
 customgeneratebutton.pack()
 
 
 # Goal Translator
-Label(goaltranslator, text="Coming Soon", pady=20).pack()
+ttk.Label(goaltranslator, text="Coming Soon", padding=20).pack()
 
 
 # Notebook Packing
