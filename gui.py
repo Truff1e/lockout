@@ -30,9 +30,6 @@ window.title("Lockout Generator")
 window.geometry("350x280")
 window.resizable(0,0)
 
-style = ttk.Style(window)
-style.theme_use('aqua')
-
 window.iconphoto(True, PhotoImage(file='assets/logo1024.png'))
 
 notebook = ttk.Notebook(window)
