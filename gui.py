@@ -1,4 +1,3 @@
-import time
 from tkinter import *
 from lockout import balancedboard, randomboard, customboard
 from tkinter import ttk
@@ -33,6 +32,8 @@ window.resizable(0,0)
 
 style = ttk.Style(window)
 style.theme_use('aqua')
+
+window.iconphoto(True, PhotoImage(file='assets/logo1024.png'))
 
 notebook = ttk.Notebook(window)
 
