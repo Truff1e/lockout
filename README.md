@@ -1,4 +1,4 @@
-# Lockout Generator v1.7.2
+# Lockout Generator v1.7.3
 
 ## What is Lockout?
 Minecraft Lockout is a game in which two teams compete to complete as many goals as they can on a 5x5 board. The goals could be as simple as 'Ride a Horse' or as challenging as 'Kill the Ender Dragon'. Each goal is worth one point, and if one team completes a goal, the other team can no longer get a point for that goal. First team to complete the majority of the board wins.
@@ -12,7 +12,7 @@ I hope you enjoy!
 ~Truffle
 
 ## How to Generate a Board
-To begin, make sure you have python installed and then run lockout.py. To generate a board, you can use any of the three following commands:
+To begin, make sure you have python installed and then run gui.py. To generate a board, you can use any of the three presets:
 
 balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance. This is the recommended option for starting out. 
 
@@ -24,70 +24,32 @@ customboard - Generates a user-specified board using a provided list of goal ID 
 
 ### GENERATE A BALANCED BOARD (RECOMMENDED - START HERE)
 The balancedboard command will create a fair and fun board weighed to the specified difficulty. This is the recommended option if you are just starting out or just want to start playing quickly.
-To create a balanced board, run the command: 
-
-**balancedboard *size* *difficulty***
-
-*Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. Maximum size is 9x9.
-
-*Difficulty* can be either a decimal number between 1 and 8, or a set of weighted values if you want extra customization. The easiest method is to just use the built-in difficulty calculator by inputting a number between 1 and 8. 8 will be the hardest, while 1 will be the easiest. For more advanced options, see the section below about custom difficulty.
+To create a balanced board, set the board size and difficulty using the sliders, and click "generate board". Leave the overrides field blank - more about that below.
 
 The length of your game heavily depends on this board size and the difficulty you choose.
 I recommend a 3 or 4 size board for short games (45m-1hr), and 5 for longer games (1.5-2hrs).  
 
 
-Example Command (good for beginners):
-*$balancedboard 5 2.2*
-
-Example Command with Overrides:
-*$balancedboard 4 3.5 %sheep,netherite
+### CREATE A CUSTOM BOARD
+To manually create a board, look through index.py and find a bunch of goals you want to have on your board. Put the ID number of these goals in a comma-separated list with no spaces.
+For example: A0001,A0002,A0003,etc. Do not put the same goal in the list twice, it will cause your data pack not to work properly.
 
 
-
-### MANUALLY CREATE A BOARD
-To manually create a board, look through index.py and find a bunch of goals you want to have on your board. Put these goals in a comma-separated list with no spaces.
-For example: A0001,A0002,A0003,etc. Do not put the same goal in the list twice, it will cause your data pack not to work properly. To generate the custom board, type:
-
-**customboard *size* *goals***
-
-*Size* is how big you want your board to be. Put 5 for a 5x5 board, 6 for a 6x6 board, etc. You can make up to a 9x9 board.
-
-*Goals* is the list of goals you have chosen above.
-
-
-Some helpful commands for finding specific goals are:
-
-'translate _goalID_' - This command translates a Goal ID into that goal's name. For example, K0001 would translate to "Kill 100 Mobs".
-
-'getid _name_of_goal_' - This command does the opposite of the 'translate' command. You input a goal name, and get that goal's ID.
-
-'getrandomgoals _amount_' - Alternatively to the two previous commands, you can use this command to retrieve an amount of randomly selected goals.
+The "goals" tab has some helpful commands for finding specific goals.
 
 
 ### GENERATE A RANDOM BOARD
-To generate a completely random board, run the command 'randomboard {board_size}'
+To generate a completely random board, specify a size and then click generate. I highly reccommend using balanced board instead of this option.
 
 
 
-#### SET A CUSTOM DIFFICULTY
-If you wish to set your own custom weights, you will need to
-understand the goal difficulty ranking.
-Lvl 1 Goals - These goals are extremely easy and can be completed within the first 10-20 minutes of the game. For example, Obtain All Stone Tools.
-Lvl 2 Goals - These goals are a little harder and will require you to do a bit of prep beforehand. For example, Breed Strider is a lvl 2 goal.
-Lvl 3 Goals - These goals are very hard and will take a lot of time to complete. For example, Obtain Netherite Armor
-Lvl 4 Goals - These goals are extremely hard and most of the time require you to go to the end. These probably aren't suited for a 1.5-2hr game.
-
-To input a custom difficulty, just type a list of weights like this: 8,5,5,2 Each number corresponds to the frequency that difficulty of goal 
-will show up. Approximately 8/20 goals will be level 1 difficulty, 5/20 will be level 2, 5/20 will be level 3 and 2/20 will be level 4.
+#### SET OVERRIDES
 
 Finally, you can specify if you would like to override any of the exclusive sets for the goal index. These exclusive sets prevent similar 
-goals from showing up twice in the same board - for example, one set makes sure you don't have "Kill Red Sheep", "Kill Cyan Sheep" and 
-"Kill Yellow Sheep" all on the same board. Doing nothing will activate all the exclusive sets. If you want to override all 
-sets, type '%all' after either the balancedboard or randomboard command. If you want to override specific sets, first type "%", then type the name(s) of the set(s) separated by commas. You can find all the exclusive sets at 
+goals from showing up twice in the same board - for example, they make sure you don't have "Kill Red Sheep", "Kill Cyan Sheep" and 
+"Kill Yellow Sheep" all on the same board. Leaving the overrides field blank will keep all the exclusive sets active. If you want to override all 
+sets, type '%all'. If you want to override specific sets, first type "%", then type the name(s) of the set(s) separated by commas. You can find all the exclusive sets at 
 the bottom of index.py
-
-Example command:
-*$balancedboard 5 4,4,3,2 %concrete,effects*
 
 Your data pack will generate in the folder "datapacks" and you can see what goals were added in the console.
 
