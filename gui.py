@@ -1,5 +1,5 @@
 from tkinter import *
-from lockout import balancedboard, randomboard, customboard
+from lockout import *
 from tkinter import ttk
 
 def generatebalanced():
@@ -25,6 +25,10 @@ def getrandomsizesildervalue():
 
 def getdifficultysildervalue():
     return '{: .1f}'.format(difficultyvar.get())
+
+def randomgoal():
+    goal = getrandomgoal()
+    return f"{goal} - {goalDictionary[goal][0]}"
 
 
 # Window
@@ -55,6 +59,8 @@ difficultyvar = DoubleVar()
 difficultyvar.set(4)
 overridesvar = StringVar()
 customgoallistvar = StringVar()
+translatevar = StringVar()
+goalidvar = StringVar()
 
 
 # Balanced Board
@@ -103,9 +109,9 @@ randomgeneratebutton.pack()
 
 
 # Custom Board
-customboardinput = ttk.Frame(custom_generator, padding=5)
+customboardinput = ttk.Frame(custom_generator, padding=10)
 ttk.Label(customboardinput, text="Custom Board: ").pack(side=LEFT)
-customboardtext = Text(customboardinput, height=8, width=25)
+customboardtext = Text(customboardinput, height=7, width=25)
 customboardtext.pack(side=LEFT)
 customgeneratebutton = ttk.Button(custom_generator, text="Generate Custom Board", command=generatecustom)
 
@@ -114,8 +120,18 @@ customgeneratebutton.pack()
 
 
 # Goal Translator
-ttk.Label(goaltranslator, text="Coming Soon", padding=20).pack()
+translate_goal = ttk.Frame(goaltranslator, padding=5)
+ttk.Button(translate_goal, text="Translate", command=(lambda: outputlabel.config(text=f"Goal Name is: {translate(translatevar.get())}"))).pack(side=LEFT)
+Entry(translate_goal, textvariable=translatevar).pack(side=LEFT)
+getgoalID = ttk.Frame(goaltranslator, padding=5)
+ttk.Button(getgoalID, text="Get Goal ID", command=(lambda: outputlabel.config(text=f"Goal ID is: {getid(goalidvar.get())}"))).pack(side=LEFT)
+Entry(getgoalID, textvariable=goalidvar).pack(side=LEFT)
 
+translate_goal.pack()
+getgoalID.pack()
+ttk.Button(goaltranslator, text="Get Random Goal", command=(lambda: outputlabel.config(text=randomgoal())), padding=5).pack()
+outputlabel = ttk.Label(goaltranslator, padding=8, font=("Arial", 14), text="No input")
+outputlabel.pack()
 
 # Notebook Packing
 notebook.add(balanced_generator, text="Balanced")

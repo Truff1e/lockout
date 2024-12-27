@@ -73,21 +73,22 @@ def getid(goal):
     for i in goalDictionary:
         if goalDictionary[i][0].lower() == goal.lower():
             print(f'>> {goal} has a goal ID of: {i}')
-            return
+            return i
     print(">> Goal not found.")
+    return "Goal not found."
 
 
-def getrandomgoal(amount):
-    for i in range(amount):
-        print(choice(list(goalDictionary)))
+def getrandomgoal():
+    return choice(list(goalDictionary))
 
 
 def translate(goal_id):
     if str(goal_id).upper() in goalDictionary:
         print(f'>> {goal_id} has a goal name of: {goalDictionary[str(goal_id)][0]}')
-        return
+        return goalDictionary[str(goal_id)][0]
     else:
         print(">> Goal not found.")
+        return "Goal not found."
 
 
 def check_exclusive_sets(goal: str, goal_list: list, overrides: list):
@@ -123,89 +124,3 @@ def check_cmd_args(args, min_args: int, board_size_check: bool):
             print(">> ERROR: Invalid Board Size - Must be less than 10")
             return False
     return True
-
-
-def main():
-    finished = False
-
-    print(f'''
-====================================================================
-           >>> Lockout Generator v{version} is Ready <<<
-         Enter a command to generate a board or type help
-====================================================================  
-    ''')
-
-    while not finished:
-
-        command = input(">> Lockout Generator: $")
-        args = command.split(' ')
-
-        if args[0] == 'help':
-            print(f'''
->> LOCKOUT GENERATOR COMMAND MANUAL ===========================================================
-   $help - Shows this page
-   $exit - Closes the generator
-
->> BOARD GENERATOR COMMANDS ===================================================================
-   $customboard <size> <goals> - Generates a board with a custom set of goals
-   $balancedboard <size> <difficulty> %<overrides> - Generates a board with weighted difficulty
-   $randomboard <size> %<overrides> - Generates a random board
-
->> GOAL LOOKUP COMMANDS =======================================================================
-   $getrandomgoal <amount> - Generates a number of random goal IDs
-   $getid <goal_name> - Gets the ID associated with a goal name
-   $translate <goalID> - Translates a goal ID into its name
-            ''')
-
-        elif args[0] == 'exit':
-            print('>> Exiting...')
-            finished = True
-
-        elif args[0] == 'customboard':
-            print('>> Generating Custom Board')
-            print('   Goals:', args[1].split(','))
-            customboard(args[1].split(','))
-            finished = True
-
-        elif args[0] == 'balancedboard':
-            if check_cmd_args(args, 4, True):
-                print('>> Generating Balanced Board')
-                print('   Size:', args[1])
-                print('   Difficulty:', args[2].split(','))
-                if '%' in command:
-                    print('   Overrides:', args[3].strip('%').split(','))
-                    balancedboard(int(args[1])**2, args[2].split(','), args[3].strip('%').split(','))
-                else:
-                    print('   Overrides: None Detected')
-                    balancedboard(int(args[1])**2, args[2].split(','), [])
-                finished = True
-
-        elif args[0] == 'randomboard':
-            if check_cmd_args(args, 2, True):
-                print('>> Generating Random Board')
-                print('   Size:', args[1])
-                if '%' in command:
-                    print('   Overrides:', args[2].strip('%').split(','))
-                    randomboard((int(args[1])**2), args[2].strip('%').split(','))
-                else:
-                    print('   Overrides: None Detected')
-                    randomboard(int(args[1])**2, [])
-                finished = True
-
-        elif args[0] == 'getrandomgoal':
-            if len(args) < 2:
-                print(getrandomgoal(1))
-            else:
-                getrandomgoal(int(args[1]))
-
-        elif args[0] == 'getid':
-            getid(args[1])
-
-        elif args[0] == 'translate':
-            translate(args[1])
-
-        else:
-            print('Unknown Command')
-
-
-# main()
