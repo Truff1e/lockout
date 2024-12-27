@@ -1,7 +1,7 @@
 from random import choice
 # Identifier [name, icon, difficulty, description]
 # Commented out goals are not yet implemented or are broken
-index_version = '1.7.2'
+index_version = '1.7.3'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": {"strings": ["K0001"]}}', 1],

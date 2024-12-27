@@ -2,7 +2,7 @@ from generator import generateBoard
 from index import goalDictionary, exclusiveSets, balancedIndex
 from random import choice, choices
 
-version = '1.7.2'
+version = '1.7.3'
 
 def customboard(goal_list: list):
     generateBoard(goal_list, f'random-s{len(goal_list)+1}', version)
@@ -15,7 +15,6 @@ def randomboard(size: int, overrides: list, excluded=None):
 
     for i in range(size):
         newgoal = choice(balancedIndex)
-        print(newgoal)
         runs = 0
         while newgoal in goal_list or check_exclusive_sets(newgoal, goal_list, overrides) or check_excluded_goals(newgoal, excluded):
             newgoal = choice(balancedIndex)
@@ -25,6 +24,7 @@ def randomboard(size: int, overrides: list, excluded=None):
                 break
         while newgoal in goal_list:
             newgoal = choice(balancedIndex)
+        print(f'Added {newgoal} ({goalDictionary[newgoal][0]}) of difficulty {goalDictionary[newgoal][2]}')
         goal_list.append(newgoal)
 
     generateBoard(goal_list, f'random-s{size}', version)
@@ -208,4 +208,4 @@ def main():
             print('Unknown Command')
 
 
-main()
+# main()
