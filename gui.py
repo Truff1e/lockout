@@ -14,7 +14,7 @@ def generaterandom():
     exit()
 
 def generatecustom():
-    customboard(customboardtext.get("1.0", "end").lower().strip(" ").split(','))
+    customboard(customboardtext.get("1.0", "end-1c").strip(" ").split(','))
     exit()
 
 def getsizesildervalue():
