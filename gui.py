@@ -4,8 +4,10 @@ from tkinter import ttk
 
 def generatebalanced():
     if not blackoutvar.get():
+        print("Generating Lockout Board")
         balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), overridesvar.get().lower().strip('% ').split(','))
     else:
+        print("Generating Blackout Board")
         balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), overridesvar.get().lower().strip('% ').split(','), excluded=['opponent'])
     exit()
 

@@ -342,6 +342,8 @@ goalDictionary = {
     "X0031": ['Get Water Breathing', '"id": "minecraft:potion","components": {"minecraft:potion_contents": {"potion": "minecraft:water_breathing"}}', 2],
     "X0032": ['Get Night Vision', '"id": "minecraft:potion","components": {"minecraft:potion_contents": {"potion": "minecraft:night_vision"}}', 2],
     "X0033": ['Get Weakness', '"id": "minecraft:wooden_sword","components": {"minecraft:custom_model_data": {"strings": ["X0033"]}}', 2],
+    # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
+    # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
 
     # LOCATION GOALS
     "L0001": ['Find an Ancient City', '"id": "minecraft:sculk_shrieker"', 2],
