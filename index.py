@@ -75,9 +75,9 @@ goalDictionary = {
     "N0009": ['Opponent Wears Armor', '"id": "minecraft:barrier"', 1],
     "N0010": ['Opponent Takes 100 Damage', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0010"]}}', 1],
     "N0011": ['Opponent Dies 3 Times', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0011"]}}', 1],
-    "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
-    "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
-    "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["N0014"]}}', 2],
+    # "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
+    # "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
+    # "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["N0014"]}}', 2],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": {"strings": ["T0001"]}}', 1],
@@ -282,8 +282,6 @@ goalDictionary = {
     "E0013": ['Eat an Apple', '"id": "minecraft:apple"', 1],
     "E0014": ['Eat a Carrot', '"id": "minecraft:carrot"', 1],
     "E0015": ['Eat Dried Kelp', '"id": "minecraft:dried_kelp"', 1],
-    # "E0016": ['Eat All Harmful Foods', '"id": "minecraft:rotten_flesh"', 2], #rotten flesh, spider eye, poisonous potato, raw chicken, pufferfish
-    # "E0017": ['Eat All Raw Seafood', '"id": "minecraft:salmon"', 2], #cod, salmon, pufferfish, tropical fish
 
     # ADVANCEMENT GOALS
     "A0001": ['Get 25 Unique Advancements', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["A0001"]}}', 2],
@@ -382,12 +380,6 @@ exclusiveSets = {
     'disc': ['I0128', 'I0129', 'I0130', 'I0131', 'I0132', 'I0133', 'I0134', 'I0135', 'I0136', 'I0137', 'I0138', 'I0139', 'I0140', 'I0141', 'I0142', 'I0143', 'I0144', 'I0145', 'I0146']
 }
 
-exclusionSets = {
-    'desert': ['K0005', 'K0010', 'K0012', 'K0014', 'K0037', 'I0080', 'I0081', 'I0097', 'I0098', 'I0099', 'I0116', 'I0117', 'I0118'],
-    'disc': ['I0128', 'I0129', 'I0130', 'I0131', 'I0132', 'I0133', 'I0134', 'I0135', 'I0136', 'I0137', 'I0138', 'I0139', 'I0140', 'I0141', 'I0142', 'I0143', 'I0144', 'I0145', 'I0146'],
-    'opponent': ['N0001', 'N0002', 'N0003', 'N0004', 'N0006', 'N0007', 'N0008', 'N0009', 'N0010', 'N0011', 'N0012', 'N0013', 'N0014'],
-}
-
 
 balancedIndex = [
 
@@ -424,8 +416,4 @@ unique_advancements = ['A0001', 'A0021', 'A0022']
 have_more_goals = ['N0012', 'N0013', 'N0016']
 
 index_length = len(goalDictionary)
-#for i in goalDictionary:
-    #print(f'"{i}", ')
-    #texture = goalDictionary[i][1].replace(r'"', r'\"')
-    #print(f'goalindex.add(new LockoutGoal("{i}", "{goalDictionary[i][0]}", "{texture}", {goalDictionary[i][2]}));')
 print("Index Version:", index_version, " Goals:", index_length)
