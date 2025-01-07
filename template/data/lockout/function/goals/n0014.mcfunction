@@ -4,7 +4,7 @@ execute if entity @s[team=spectator] run return fail
 scoreboard players set @s lk.goal 780014
 execute as @s run function lockout:game/getgoal
 
-say completed "Have the Most Hoppers"
+say completed "Have the Most Levels"
 execute as @s[team=1] at @a[team=1] run playsound entity.player.levelup master @a[team=1] ~ ~ ~
 execute as @s[team=2] at @a[team=2] run playsound entity.player.levelup master @a[team=2] ~ ~ ~
 execute as @s[team=1] at @a[team=2] run playsound block.beacon.deactivate master @a[team=2] ~ ~ ~
