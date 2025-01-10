@@ -1,6 +1,7 @@
 from tkinter import *
 from lockout import *
 from tkinter import ttk
+import os
 
 def generatebalanced():
     if not blackoutvar.get():
@@ -9,15 +10,12 @@ def generatebalanced():
     else:
         print("Generating Blackout Board")
         balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), overridesvar.get().lower().strip('% ').split(','), excluded=['opponent'])
-    exit()
 
 def generaterandom():
     randomboard(int(sizevar.get()//1)**2, overridesvar.get().lower().strip('% ').split(','))
-    exit()
 
 def generatecustom():
     customboard(customboardtext.get("1.0", "end-1c").strip(" ").split(','))
-    exit()
 
 def getsizesildervalue():
     return int(sizevar.get()//1)
@@ -39,7 +37,7 @@ window.title("Lockout Generator")
 window.geometry("350x300")
 window.resizable(0,0)
 
-window.iconphoto(True, PhotoImage(file='assets/logo1024.png'))
+# window.iconphoto(True, PhotoImage(file='./assets/logo1024.png'))
 
 # Notebook Windows
 notebook = ttk.Notebook(window)
@@ -141,7 +139,9 @@ notebook.add(random_generator, text="Random")
 notebook.add(custom_generator, text="Custom")
 notebook.add(goaltranslator, text="Goals")
 
-appicon = PhotoImage(file="assets/app_splash.png")
+app_splash_ref = os.path.join(os.path.dirname(__file__), './assets/app_splash.png')
+
+appicon = PhotoImage(file=app_splash_ref)
 Label(window, image=appicon, pady=15).pack()
 Label(window, text="v1.7.3 - Created by Truff1e", pady=3).pack()
 notebook.pack()

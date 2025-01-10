@@ -1,7 +1,25 @@
 import math
 import shutil
+import os
 from random import randint
 from index import goalDictionary
+import platform
+import subprocess
+
+def open_directory(path):
+    if platform.system() == 'Windows':
+        os.startfile(path)
+    elif platform.system() == 'Darwin':
+        subprocess.Popen(['open', path])
+    else:
+        return False
+
+def parse_options():
+    optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
+    optionslist = {}
+    for line in optionsfile:
+        optionslist[line[:line.find('=')]] = line[line.find('=')+1:]
+    return optionslist
 
 def write_start_function(path, goals, letters):
     file = open(f'{path}/data/lockout/function/game/start.mcfunction', 'w')
@@ -72,8 +90,12 @@ def generateBoard(goals: list, user: str, version):
 
     else:
         # prepare template and file path
-        file_path = f'datapacks/lockout-{datapack_version}-{user}-{randint(10000, 99999)}'
-        template_dir = 'template'
+        app_path = os.path.dirname(__file__)
+        print(parse_options()['output_path'])
+        downloads_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
+        datapack_path = f'lockout-{datapack_version}-{user}-{randint(10000, 99999)}'
+        file_path = os.path.join(downloads_path, datapack_path)
+        template_dir = os.path.join(app_path, 'template')
         shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
 
         goal_string = ''
@@ -99,6 +121,7 @@ def generateBoard(goals: list, user: str, version):
         # make archive
         shutil.make_archive(file_path, 'zip', file_path)
         shutil.rmtree(file_path)
+        open_directory(downloads_path)
         print('Data Pack Created!')
         print('Check the datapacks folder for your zip file.')
 
