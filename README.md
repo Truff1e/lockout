@@ -12,7 +12,14 @@ I hope you enjoy!
 ~Truffle
 
 ## How to Generate a Board
-To begin, make sure you have python installed and then run gui.py. To generate a board, you can use any of the three presets:
+You can interact with the generator in two ways:
+
+You can download the source code, install python and run applet.py.
+
+You can download and install the application for either macOS or Windows (does not require installing python)
+
+
+With the app open, you can generate a board with any of the three presets:
 
 balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance. This is the recommended option for starting out. 
 
@@ -22,36 +29,38 @@ customboard - Generates a user-specified board using a provided list of goal ID 
 
 
 
-### GENERATE A BALANCED BOARD (RECOMMENDED - START HERE)
-The balancedboard command will create a fair and fun board weighed to the specified difficulty. This is the recommended option if you are just starting out or just want to start playing quickly.
-To create a balanced board, set the board size and difficulty using the sliders, and click "generate board". Leave the overrides field blank - more about that below.
+### Generate a Balanced Board (Start Here)
+The balancedboard command will create a fair and fun board weighed to the specified difficulty. This is the recommended option if you are just starting out or want to start playing quickly.
+To create a balanced board, set the board size and difficulty using the sliders, and click "generate board". The app should reveal the data pack in your Downloads folder.
 
 The length of your game heavily depends on this board size and the difficulty you choose.
-I recommend a 3 or 4 size board for short games (45m-1hr), and 5 for longer games (1.5-2hrs).  
+I recommend a 3 or 4 size board for short games (45m-1hr), and 5 or 6 for longer games (1.5-2hrs).
 
 
-### CREATE A CUSTOM BOARD
-To manually create a board, look through index.py and find a bunch of goals you want to have on your board. Put the ID number of these goals in a comma-separated list with no spaces.
+### Generate a Custom Board
+To manually create a board, you need to make a list of goal ID numbers. Some tools to find goal IDs are found in the "Goals" tab. Alternatively, you can look through index.py in the source code to see a list of all available goals.
+
+When you have slected your goals, put the ID numbers in a comma-separated list with no spaces.
 For example: A0001,A0002,A0003,etc. Do not put the same goal in the list twice, it will cause your data pack not to work properly.
+You must have a square number of goals (4, 9, 16, 25, 36, etc.)
+Do not put a comma at the end.
 
 
-The "goals" tab has some helpful commands for finding specific goals.
-
-
-### GENERATE A RANDOM BOARD
+### Generate a Random Board
 To generate a completely random board, specify a size and then click generate. I highly reccommend using balanced board instead of this option.
 
 
-### OUTPUT
-Your data pack will generate in the folder "datapacks" and you can see what goals were added in the console.
+### Output
+Your data pack will generate by default in your Downloads folder.
+If you used the python code, you can see what goals were added in the console. The app does not currently have this feature.
 
 
 ## Installing the Data Pack and Playing Lockout
-To install a data pack, open your Minecraft world folder and find the folder labeled 'datapacks'. Drag the zip file into this folder (no need to unzip it), then run /reload in your world.
+To install a data pack, open your Minecraft world folder and find the folder labeled 'datapacks'. Drag the zip file into this folder (no need to extract it), then run /reload in your world.
 
 To play lockout, first install the data pack on your world or on a server. Add players to teams using "/team join 1 <player>" and "/team join 2 <player>".
 You can change the colors of the teams by typing "/team modify 1 color <color>".
-To start the game, run "/function lockout:game/start". If a player joins late, and they can't see the lockout board, type "/function lockout:game/resume" (this should happen automatically as of v1.3.0, however if this is the first time the player is joining, they will have to relog again to reset)
+To start the game, run "/function lockout:game/start". If a player joins late, and they can't see the lockout board, add them to a team and have them relog. That should fix the problem.
 
 ## Limitations
 

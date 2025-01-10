@@ -143,7 +143,7 @@ app_splash_ref = os.path.join(os.path.dirname(__file__), './assets/app_splash.pn
 
 appicon = PhotoImage(file=app_splash_ref)
 Label(window, image=appicon, pady=15).pack()
-Label(window, text="v1.7.3 - Created by Truff1e", pady=3).pack()
+Label(window, text="v1.7.4 - Created by Truff1e", pady=3).pack()
 notebook.pack()
 
 window.mainloop()
