@@ -1,33 +1,20 @@
 from generator import generateBoard
 from index import goalDictionary, exclusiveSets, balancedIndex
 from random import choice, choices
+import os
 
-version = '1.7.4'
+def parse_options():
+    optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
+    optionslist = {}
+    for line in optionsfile:
+        optionslist[line[:line.find('=')]] = line[line.find('=')+1:]
+    return optionslist
+
+
+version = parse_options()['version'][:-1]
 
 def customboard(goal_list: list):
     generateBoard(goal_list, f'random-s{len(goal_list)+1}', version)
-
-
-def randomboard(size: int, overrides: list, excluded=None):
-    if excluded is None:
-        excluded = []
-    goal_list = []
-
-    for i in range(size):
-        newgoal = choice(balancedIndex)
-        runs = 0
-        while newgoal in goal_list or check_exclusive_sets(newgoal, goal_list, overrides) or check_excluded_goals(newgoal, excluded):
-            newgoal = choice(balancedIndex)
-            runs += 1
-            if runs > 300:
-                print("Failed to find compatible goal, defaulting to random non-duplicate.")
-                break
-        while newgoal in goal_list:
-            newgoal = choice(balancedIndex)
-        print(f'Added {newgoal} ({goalDictionary[newgoal][0]}) of difficulty {goalDictionary[newgoal][2]}')
-        goal_list.append(newgoal)
-
-    generateBoard(goal_list, f'random-s{size}', version)
 
 
 def balancedboard(size: int, difficulty, overrides: list, excluded=None):
@@ -54,7 +41,9 @@ def balancedboard(size: int, difficulty, overrides: list, excluded=None):
         goal_difficulty = choices([1, 2, 3, 4], weights=weights, k=1)[0]
         newgoal = choice(balancedIndex)
         runs = 0
-        while (newgoal in goal_list) or (goalDictionary[newgoal][2] != goal_difficulty) or check_exclusive_sets(newgoal, goal_list, overrides) or check_excluded_goals(newgoal, excluded):
+        while ((newgoal in goal_list)
+               or (goalDictionary[newgoal][2] != goal_difficulty)
+               or check_excluded_goals(newgoal, excluded)):
             newgoal = choice(balancedIndex)
             runs += 1
             if runs > 300:

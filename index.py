@@ -1,7 +1,6 @@
 from random import choice
-# Identifier [name, icon, difficulty, description]
+# id: [name, icon, difficulty, description]
 # Commented out goals are not yet implemented or are broken
-index_version = '1.7.4'
 goalDictionary = {
     # KILL GOALS
     "K0001": ['Kill 100 Mobs', '"id": "minecraft:iron_sword","components": {"minecraft:custom_model_data": {"strings": ["K0001"]}}', 1],
@@ -418,4 +417,4 @@ unique_advancements = ['A0001', 'A0021', 'A0022']
 have_more_goals = ['N0012', 'N0013', 'N0016']
 
 index_length = len(goalDictionary)
-print("Index Version:", index_version, " Goals:", index_length)
+print("Goals:", index_length)

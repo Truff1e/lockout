@@ -1,5 +1,6 @@
 from tkinter import *
 from lockout import *
+from generator import parse_options
 from tkinter import ttk
 import os
 
@@ -34,7 +35,7 @@ def randomgoal():
 # Window
 window = Tk()
 window.title("Lockout Generator")
-window.geometry("350x300")
+window.geometry("420x350")
 window.resizable(0,0)
 
 # window.iconphoto(True, PhotoImage(file='./assets/logo1024.png'))
@@ -44,8 +45,8 @@ notebook = ttk.Notebook(window)
 
 custom_generator = ttk.Frame(window)
 balanced_generator = ttk.Frame(window)
-random_generator = ttk.Frame(window)
 goaltranslator = ttk.Frame(window)
+settings = ttk.Frame(window)
 
 
 # Variables
@@ -53,14 +54,13 @@ sizevar = DoubleVar()
 sizevar.set(5)
 blackoutvar = BooleanVar()
 blackoutvar.set(False)
-randomsizevar = DoubleVar()
-randomsizevar.set(5)
 difficultyvar = DoubleVar()
 difficultyvar.set(4)
 overridesvar = StringVar()
 customgoallistvar = StringVar()
 translatevar = StringVar()
 goalidvar = StringVar()
+output_path_var = StringVar()
 
 
 # Balanced Board
@@ -90,24 +90,6 @@ blackouttoggle.pack()
 generatebutton.pack()
 
 
-# Random Board
-randomboardsize = ttk.Frame(random_generator, padding=5)
-randomoverrides = ttk.Frame(random_generator, padding=5)
-
-ttk.Label(randomboardsize, text="Board Size: ").pack(side=LEFT)
-randomboardsizeslider = ttk.Scale(randomboardsize, from_=1, to=9, orient='horizontal', variable=randomsizevar, command=(lambda event: randomboardsizelabel.configure(text=f"{getrandomsizesildervalue()} x {getrandomsizesildervalue()}")))
-randomboardsizelabel = ttk.Label(randomboardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
-randomboardsizeslider.pack(side=LEFT, padx=10, pady=3)
-randomboardsizelabel.pack(side=LEFT)
-# Label(randomoverrides, text="Overrides: ").pack(side=LEFT)
-# Entry(randomoverrides, textvariable=overridesvar).pack(side=LEFT)
-randomgeneratebutton = ttk.Button(random_generator, text="Generate Random Board", command=generaterandom)
-
-randomboardsize.pack()
-# randomoverrides.pack()
-randomgeneratebutton.pack()
-
-
 # Custom Board
 customboardinput = ttk.Frame(custom_generator, padding=10)
 ttk.Label(customboardinput, text="Custom Board: ").pack(side=LEFT)
@@ -120,30 +102,46 @@ customgeneratebutton.pack()
 
 
 # Goal Translator
-translate_goal = ttk.Frame(goaltranslator, padding=5)
-ttk.Button(translate_goal, text="Translate", command=(lambda: outputlabel.config(text=f"Goal Name is: {translate(translatevar.get())}"))).pack(side=LEFT)
-Entry(translate_goal, textvariable=translatevar).pack(side=LEFT)
-getgoalID = ttk.Frame(goaltranslator, padding=5)
-ttk.Button(getgoalID, text="Get Goal ID", command=(lambda: outputlabel.config(text=f"Goal ID is: {getid(goalidvar.get())}"))).pack(side=LEFT)
-Entry(getgoalID, textvariable=goalidvar).pack(side=LEFT)
+# translate_goal = ttk.Frame(goaltranslator, padding=5)
+# ttk.Button(translate_goal, text="Translate", command=(lambda: outputlabel.config(text=f"Goal Name is: {translate(translatevar.get())}"))).pack(side=LEFT)
+# Entry(translate_goal, textvariable=translatevar).pack(side=LEFT)
+# getgoalID = ttk.Frame(goaltranslator, padding=5)
+# ttk.Button(getgoalID, text="Get Goal ID", command=(lambda: outputlabel.config(text=f"Goal ID is: {getid(goalidvar.get())}"))).pack(side=LEFT)
+# Entry(getgoalID, textvariable=goalidvar).pack(side=LEFT)
 
-translate_goal.pack()
-getgoalID.pack()
-ttk.Button(goaltranslator, text="Get Random Goal", command=(lambda: outputlabel.config(text=randomgoal())), padding=5).pack()
-outputlabel = ttk.Label(goaltranslator, padding=8, font=("Arial", 14), text="No input")
-outputlabel.pack()
+# translate_goal.pack()
+# getgoalID.pack()
+# ttk.Button(goaltranslator, text="Get Random Goal", command=(lambda: outputlabel.config(text=randomgoal())), padding=5).pack()
+# outputlabel = ttk.Label(goaltranslator, padding=8, font=("Arial", 14), text="No input")
+# outputlabel.pack()
+
+goal_list = Text(goaltranslator, height=10)
+for i in goalDictionary:
+    goal_list.insert('end', f"{i} - {goalDictionary[i][0]}\n")
+goal_list.config(state=DISABLED)
+goal_list.pack()
+
+
+# Options
+output_path_var = parse_options()['output_path']
+output_path = ttk.Entry(settings, textvariable=output_path_var)
+output_path.pack()
 
 # Notebook Packing
 notebook.add(balanced_generator, text="Balanced")
-notebook.add(random_generator, text="Random")
 notebook.add(custom_generator, text="Custom")
 notebook.add(goaltranslator, text="Goals")
+notebook.add(settings, text="Options")
 
 app_splash_ref = os.path.join(os.path.dirname(__file__), './assets/app_splash.png')
 
 appicon = PhotoImage(file=app_splash_ref)
 Label(window, image=appicon, pady=15).pack()
-Label(window, text="v1.7.4 - Created by Truff1e", pady=3).pack()
+Label(window, text=f"v{parse_options()['version'][:-1]} - Created by Truff1e", pady=3).pack()
 notebook.pack()
+
+console = ttk.Frame(window, padding=5)
+ttk.Label(console, text="This is a test").pack()
+console.pack()
 
 window.mainloop()
