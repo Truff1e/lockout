@@ -80,20 +80,6 @@ def translate(goal_id):
         return "Goal not found."
 
 
-def check_exclusive_sets(goal: str, goal_list: list, overrides: list):
-    if 'all' in overrides:
-        return False
-    else:
-        for ex_set in exclusiveSets:
-            if ex_set in overrides:
-                continue
-            if goal in exclusiveSets[ex_set]:
-                for i in goal_list:
-                    if i in exclusiveSets[ex_set]:
-                        return True
-        return False
-
-
 def check_excluded_goals(goal, exclusion_sets):
     for exclusion_set in exclusion_sets:
         if goal in exclusion_set:
