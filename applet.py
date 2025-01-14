@@ -9,7 +9,7 @@ import os
 def boardoutputwindow(board, gentype: str):
     outputwindow = Tk()
     outputwindow.title("Generated Board")
-    outputwindow.geometry("300x250")
+    outputwindow.geometry("300x250+300+300")
     outputwindow.resizable(False, True)
 
     goal_list = Text(outputwindow)
@@ -72,7 +72,7 @@ def randomgoal():
 # Window
 window = Tk()
 window.title("Lockout Generator")
-window.geometry("350x300")
+window.geometry("350x300+150+150")
 window.resizable(False, False)
 
 # window.iconphoto(True, PhotoImage(file='./assets/logo1024.png'))
