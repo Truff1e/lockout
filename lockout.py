@@ -84,18 +84,6 @@ def check_excluded_goals(goal, exclusion_sets):
     for exclusion_set in exclusion_sets:
         if goal in exclusion_set:
             return True
+            # Goal is excluded
     return False
-
-
-def check_cmd_args(args, min_args: int, board_size_check: bool):
-    if len(args) == 1:
-        print(">> ERROR: Invalid Arguments - See help page for more")
-        return False
-    elif not len(args) <= min_args:
-        print(">> ERROR: Invalid Arguments - See help page for more")
-        return False
-    if board_size_check:
-        if int(args[1]) > 9:
-            print(">> ERROR: Invalid Board Size - Must be less than 10")
-            return False
-    return True
+    # Goal is not excluded
