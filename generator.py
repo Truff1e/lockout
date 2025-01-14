@@ -91,7 +91,6 @@ def generateBoard(goals: list, user: str, version):
     else:
         # prepare template and file path
         app_path = os.path.dirname(__file__)
-        print(parse_options()['output_path'])
         downloads_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
         datapack_path = f'lockout-{datapack_version}-{user}-{randint(10000, 99999)}'
         file_path = os.path.join(downloads_path, datapack_path)
@@ -123,6 +122,6 @@ def generateBoard(goals: list, user: str, version):
         shutil.rmtree(file_path)
         open_directory(downloads_path)
         print('Data Pack Created!')
-        print('Check the datapacks folder for your zip file.')
+        print('Check', parse_options()['output_path'], 'for your zip file.')
 
         return True

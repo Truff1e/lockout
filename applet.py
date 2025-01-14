@@ -1,28 +1,65 @@
 from tkinter import *
 from lockout import *
+from index import exclusiveSets
 from generator import parse_options
 from tkinter import ttk
 import os
 
-def generatebalanced():
-    if not blackoutvar.get():
-        print("Generating Lockout Board")
-        balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), overridesvar.get().lower().strip('% ').split(','))
-    else:
-        print("Generating Blackout Board")
-        balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), overridesvar.get().lower().strip('% ').split(','), excluded=['opponent'])
 
-def generaterandom():
-    randomboard(int(sizevar.get()//1)**2, overridesvar.get().lower().strip('% ').split(','))
+def boardoutputwindow(board, gentype: str):
+    outputwindow = Tk()
+    outputwindow.title("Generated Board")
+    outputwindow.geometry("300x250")
+    outputwindow.resizable(False, True)
+
+    goal_list = Text(outputwindow)
+
+    if gentype == 'balanced':
+        goal_list.insert('end', "BALANCED BOARD\n\n")
+        goal_list.insert('end', f"Board Size: {int(sizevar.get()//1)**2} \n")
+        goal_list.insert('end', f"Difficulty: {difficultyvar.get().__round__(1)} \n")
+        goal_list.insert('end', f"Blackout Mode: {blackoutvar.get()} \n")
+        goal_list.insert('end', "Excluded Goals: \n")
+        for goal in goal_checkboxes_list:
+            if not goal_checkboxes_list[goal].get():
+                goal_list.insert('end', f"{goal}, ")
+    elif gentype == 'custom':
+        goal_list.insert('end', "CUSTOM BOARD\n")
+    goal_list.insert('end', "\n\nBoard Goals: ")
+    for goal in board:
+        goal_list.insert('end', f"\n{goal} - {goalDictionary[goal][0]}")
+    goal_list.insert('end', "\n\nGoal List: ")
+    for goal in board:
+        goal_list.insert('end', f"{goal},")
+    goal_list.config(state=DISABLED)
+    goal_list.pack()
+    outputwindow.mainloop()
+
+def generatebalanced():
+    if blackoutvar.get():
+        excluded = []
+        for goal in goal_checkboxes_list:
+            if not goal_checkboxes_list[goal].get():
+                excluded.append(goal)
+        for goal in exclusiveSets['opponent']:
+            excluded.append(goal)
+        print("Generating Blackout Board")
+    else:
+        excluded = []
+        for goal in goal_checkboxes_list:
+            if not goal_checkboxes_list[goal].get():
+                excluded.append(goal)
+        print("Generating Lockout Board")
+    print(excluded)
+    board = balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), excluded=excluded)
+    boardoutputwindow(board, 'balanced')
 
 def generatecustom():
     customboard(customboardtext.get("1.0", "end-1c").strip(" ").split(','))
+    boardoutputwindow(customboardtext.get("1.0", "end-1c").strip(" ").split(','), 'custom')
 
 def getsizesildervalue():
     return int(sizevar.get()//1)
-
-def getrandomsizesildervalue():
-    return int(randomsizevar.get()//1)
 
 def getdifficultysildervalue():
     return '{: .1f}'.format(difficultyvar.get())
@@ -35,18 +72,18 @@ def randomgoal():
 # Window
 window = Tk()
 window.title("Lockout Generator")
-window.geometry("420x350")
-window.resizable(0,0)
+window.geometry("350x300")
+window.resizable(False, False)
 
 # window.iconphoto(True, PhotoImage(file='./assets/logo1024.png'))
 
 # Notebook Windows
 notebook = ttk.Notebook(window)
 
-custom_generator = ttk.Frame(window)
-balanced_generator = ttk.Frame(window)
-goaltranslator = ttk.Frame(window)
-settings = ttk.Frame(window)
+balanced_window = ttk.Frame(window)
+custom_window = ttk.Frame(window)
+goal_window = ttk.Frame(window)
+settings_window = ttk.Frame(window)
 
 
 # Variables
@@ -64,9 +101,9 @@ output_path_var = StringVar()
 
 
 # Balanced Board
-boardsize = ttk.Frame(balanced_generator, padding=5)
-difficulty = ttk.Frame(balanced_generator, padding=5)
-overrides = ttk.Frame(balanced_generator, padding=5)
+boardsize = ttk.Frame(balanced_window, padding=5)
+difficulty = ttk.Frame(balanced_window, padding=5)
+overrides = ttk.Frame(balanced_window, padding=5)
 
 ttk.Label(boardsize, text="Board Size: ").pack(side=LEFT)
 boardsizeslider = ttk.Scale(boardsize, from_=1, to=9, orient='horizontal', variable=sizevar, command=(lambda event: boardsizelabel.configure(text=f"{getsizesildervalue()} x {getsizesildervalue()}")))
@@ -78,60 +115,57 @@ difficultyslider = ttk.Scale(difficulty, from_=1, to=8, orient='horizontal', var
 difficultylabel = ttk.Label(difficulty, text=getdifficultysildervalue())
 difficultyslider.pack(side=LEFT, padx=10, pady=3)
 difficultylabel.pack(side=LEFT)
-# Label(overrides, text="Overrides: ").pack(side=LEFT)
-# Entry(overrides, textvariable=overridesvar).pack(side=LEFT)
-blackouttoggle = ttk.Checkbutton(balanced_generator, text="Blackout Mode", variable=blackoutvar, padding=10)
-generatebutton = ttk.Button(balanced_generator, text="Generate Balanced Board", command=generatebalanced)
+blackouttoggle = ttk.Checkbutton(balanced_window, text="Blackout Mode", variable=blackoutvar, padding=10)
+generatebutton = ttk.Button(balanced_window, text="Generate Balanced Board", command=generatebalanced)
 
 boardsize.pack()
 difficulty.pack()
-# overrides.pack()
 blackouttoggle.pack()
 generatebutton.pack()
 
 
 # Custom Board
-customboardinput = ttk.Frame(custom_generator, padding=10)
+customboardinput = ttk.Frame(custom_window, padding=10)
 ttk.Label(customboardinput, text="Custom Board: ").pack(side=LEFT)
 customboardtext = Text(customboardinput, height=7, width=25)
 customboardtext.pack(side=LEFT)
-customgeneratebutton = ttk.Button(custom_generator, text="Generate Custom Board", command=generatecustom)
+customgeneratebutton = ttk.Button(custom_window, text="Generate Custom Board", command=generatecustom)
 
 customboardinput.pack()
 customgeneratebutton.pack()
 
 
-# Goal Translator
-# translate_goal = ttk.Frame(goaltranslator, padding=5)
-# ttk.Button(translate_goal, text="Translate", command=(lambda: outputlabel.config(text=f"Goal Name is: {translate(translatevar.get())}"))).pack(side=LEFT)
-# Entry(translate_goal, textvariable=translatevar).pack(side=LEFT)
-# getgoalID = ttk.Frame(goaltranslator, padding=5)
-# ttk.Button(getgoalID, text="Get Goal ID", command=(lambda: outputlabel.config(text=f"Goal ID is: {getid(goalidvar.get())}"))).pack(side=LEFT)
-# Entry(getgoalID, textvariable=goalidvar).pack(side=LEFT)
+goal_checkboxes_canvas = Canvas(goal_window)
+goal_checkboxes_scroll = ttk.Scrollbar(goal_window, orient="vertical", command=goal_checkboxes_canvas.yview)
+goal_checkboxes_canvas.config(yscrollcommand=goal_checkboxes_scroll.set)
+goal_checkboxes = ttk.Frame(goal_checkboxes_canvas)
 
-# translate_goal.pack()
-# getgoalID.pack()
-# ttk.Button(goaltranslator, text="Get Random Goal", command=(lambda: outputlabel.config(text=randomgoal())), padding=5).pack()
-# outputlabel = ttk.Label(goaltranslator, padding=8, font=("Arial", 14), text="No input")
-# outputlabel.pack()
+goal_checkboxes_scroll.pack(side="right", fill="y")
+goal_checkboxes_canvas.pack(side="left", fill="both", expand=True)
+goal_checkboxes_canvas.create_window((0, 0), window=goal_checkboxes, anchor='nw')
 
-goal_list = Text(goaltranslator, height=10)
+
+goal_checkboxes.bind("<Configure>", lambda e: goal_checkboxes_canvas.configure(scrollregion=goal_checkboxes_canvas.bbox("all")))
+
+goal_checkboxes_list = {}
 for i in goalDictionary:
-    goal_list.insert('end', f"{i} - {goalDictionary[i][0]}\n")
-goal_list.config(state=DISABLED)
-goal_list.pack()
+    goal_enabled = BooleanVar()
+    goal_checkboxes_list[i] = BooleanVar()
+    goal_checkboxes_list[i].set(True)
+    checkbutton = ttk.Checkbutton(goal_checkboxes, text=f'{i} - {goalDictionary[i][0]}', variable=goal_checkboxes_list[i])
+    checkbutton.pack(anchor='w')
 
 
 # Options
 output_path_var = parse_options()['output_path']
-output_path = ttk.Entry(settings, textvariable=output_path_var)
+output_path = ttk.Entry(settings_window, textvariable=output_path_var)
 output_path.pack()
 
 # Notebook Packing
-notebook.add(balanced_generator, text="Balanced")
-notebook.add(custom_generator, text="Custom")
-notebook.add(goaltranslator, text="Goals")
-notebook.add(settings, text="Options")
+notebook.add(balanced_window, text="Balanced")
+notebook.add(custom_window, text="Custom")
+notebook.add(goal_window, text="Goals")
+notebook.add(settings_window, text="Options")
 
 app_splash_ref = os.path.join(os.path.dirname(__file__), './assets/app_splash.png')
 
@@ -140,8 +174,5 @@ Label(window, image=appicon, pady=15).pack()
 Label(window, text=f"v{parse_options()['version'][:-1]} - Created by Truff1e", pady=3).pack()
 notebook.pack()
 
-console = ttk.Frame(window, padding=5)
-ttk.Label(console, text="This is a test").pack()
-console.pack()
 
 window.mainloop()

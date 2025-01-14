@@ -1,5 +1,5 @@
 from generator import generateBoard
-from index import goalDictionary, exclusiveSets, balancedIndex
+from index import goalDictionary, balancedIndex
 from random import choice, choices
 import os
 
@@ -15,9 +15,10 @@ version = parse_options()['version'][:-1]
 
 def customboard(goal_list: list):
     generateBoard(goal_list, f'random-s{len(goal_list)+1}', version)
+    return goal_list
 
 
-def balancedboard(size: int, difficulty, overrides: list, excluded=None):
+def balancedboard(size: int, difficulty, excluded=None):
     if excluded is None:
         excluded = []
 
@@ -56,6 +57,7 @@ def balancedboard(size: int, difficulty, overrides: list, excluded=None):
         print(f'Added {newgoal} ({goalDictionary[newgoal][0]}) of difficulty {goalDictionary[newgoal][2]}')
 
     generateBoard(goal_list, f's{size}-d{difficulty}', version)
+    return goal_list
 
 
 def getid(goal):
@@ -80,9 +82,9 @@ def translate(goal_id):
         return "Goal not found."
 
 
-def check_excluded_goals(goal, exclusion_sets):
-    for exclusion_set in exclusion_sets:
-        if goal in exclusion_set:
+def check_excluded_goals(newgoal, excluded):
+    for goal in excluded:
+        if newgoal == goal:
             return True
             # Goal is excluded
     return False
