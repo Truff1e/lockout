@@ -5,7 +5,6 @@ from generator import parse_options
 from tkinter import ttk
 import os
 
-
 def boardoutputwindow(board, gentype: str):
     outputwindow = Tk()
     outputwindow.title("Generated Board")
@@ -64,10 +63,6 @@ def getsizesildervalue():
 def getdifficultysildervalue():
     return '{: .1f}'.format(difficultyvar.get())
 
-def randomgoal():
-    goal = getrandomgoal()
-    return f"{goal} - {goalDictionary[goal][0]}"
-
 
 # Window
 window = Tk()
@@ -83,7 +78,7 @@ notebook = ttk.Notebook(window)
 balanced_window = ttk.Frame(window)
 custom_window = ttk.Frame(window)
 goal_window = ttk.Frame(window)
-settings_window = ttk.Frame(window)
+options_window = ttk.Frame(window)
 
 
 # Variables
@@ -93,10 +88,6 @@ blackoutvar = BooleanVar()
 blackoutvar.set(False)
 difficultyvar = DoubleVar()
 difficultyvar.set(4)
-overridesvar = StringVar()
-customgoallistvar = StringVar()
-translatevar = StringVar()
-goalidvar = StringVar()
 output_path_var = StringVar()
 
 
@@ -135,6 +126,7 @@ customboardinput.pack()
 customgeneratebutton.pack()
 
 
+# Goal Window
 goal_checkboxes_canvas = Canvas(goal_window)
 goal_checkboxes_scroll = ttk.Scrollbar(goal_window, orient="vertical", command=goal_checkboxes_canvas.yview)
 goal_checkboxes_canvas.config(yscrollcommand=goal_checkboxes_scroll.set)
@@ -143,8 +135,6 @@ goal_checkboxes = ttk.Frame(goal_checkboxes_canvas)
 goal_checkboxes_scroll.pack(side="right", fill="y")
 goal_checkboxes_canvas.pack(side="left", fill="both", expand=True)
 goal_checkboxes_canvas.create_window((0, 0), window=goal_checkboxes, anchor='nw')
-
-
 goal_checkboxes.bind("<Configure>", lambda e: goal_checkboxes_canvas.configure(scrollregion=goal_checkboxes_canvas.bbox("all")))
 
 goal_checkboxes_list = {}
@@ -156,23 +146,23 @@ for i in goalDictionary:
     checkbutton.pack(anchor='w')
 
 
-# Options
+# Options Window
 output_path_var = parse_options()['output_path']
-output_path = ttk.Entry(settings_window, textvariable=output_path_var)
+output_path = ttk.Entry(options_window, textvariable=output_path_var)
 output_path.pack()
+
 
 # Notebook Packing
 notebook.add(balanced_window, text="Balanced")
 notebook.add(custom_window, text="Custom")
 notebook.add(goal_window, text="Goals")
-notebook.add(settings_window, text="Options")
+notebook.add(options_window, text="Options")
 
-app_splash_ref = os.path.join(os.path.dirname(__file__), './assets/app_splash.png')
 
-appicon = PhotoImage(file=app_splash_ref)
+# App Construction
+appicon = PhotoImage(file=os.path.join(os.path.dirname(__file__), './assets/app_splash.png'))
 Label(window, image=appicon, pady=15).pack()
 Label(window, text=f"v{parse_options()['version'][:-1]} - Created by Truff1e", pady=3).pack()
 notebook.pack()
-
 
 window.mainloop()
