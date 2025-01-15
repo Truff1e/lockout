@@ -6,7 +6,10 @@ from index import goalDictionary
 import platform
 import subprocess
 
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']
+
 def open_directory(path):
+    # Opens either Finder or File Explorer with the specified path
     if platform.system() == 'Windows':
         os.startfile(path)
     elif platform.system() == 'Darwin':
@@ -15,18 +18,23 @@ def open_directory(path):
         return False
 
 def parse_options():
+    # Reads data stored in options.txt and translates it to a settings list
     optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
     optionslist = {}
     for line in optionsfile:
         optionslist[line[:line.find('=')]] = line[line.find('=')+1:]
     return optionslist
 
-def write_start_function(path, goals, letters):
+def write_start_function(path, goals):
+    # Writes the mcfunction responsible for starting the game
     file = open(f'{path}/data/lockout/function/game/start.mcfunction', 'w')
     for col in range(int(math.sqrt(len(goals)))):
+        # Grants players the cap advancements so that all parent advancements can be seen
         file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(goals)))+1}\n')
     for goal in range(len(goals)):
+        # Enables the listeners for every goal on the board
         file.write(f'scoreboard players set #{goals[goal][0]} lk.enabled_goals 1\n')
+    # Starts the countdown and sets the board size
     file.write('execute unless score #blackout lk.util matches 1 as @a run function lockout:game/countdown\n')
     file.write(f'execute unless score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(goals)+1)//2}\n')
     file.write('execute if score #blackout lk.util matches 1 as @a run function lockout:game/blackout_countdown\n')
@@ -34,7 +42,8 @@ def write_start_function(path, goals, letters):
     file.close()
 
 
-def write_resume_function(path, goals, letters):
+def write_resume_function(path, goals):
+    # Writes the mcfunction responsible for "resuming" the game when a player leaves and rejoins
     file = open(f'{path}/data/lockout/function/game/resume.mcfunction', 'w')
     for col in range(int(math.sqrt(len(goals)))):
         file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(goals)))+1}\n')
@@ -46,6 +55,7 @@ def write_resume_function(path, goals, letters):
 
 
 def write_getgoals_function(path, goals):
+    # Writes the function to translate a scoreboard value into the correct advancement on the lockout board
     file = open(f'{path}/data/lockout/function/game/getgoal.mcfunction', 'w')
     for i in range(len(goals)):
         number = goals[i][0].strip('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
@@ -53,7 +63,8 @@ def write_getgoals_function(path, goals):
     file.close()
 
 
-def write_advancement_tree(path, goals, letters):
+def write_advancement_tree(path, goals):
+    # Writes the advancement files to display goals on the board
     for i in range(len(goals)):
         letter, num = goals[i][1].strip('123456789'), int(goals[i][1].strip('abcdefghij'))
         if num == 1:
@@ -73,15 +84,15 @@ def write_advancement_tree(path, goals, letters):
 
 
 def generateBoard(goals: list, user: str, version):
+    # Generates the lockout data pack based on a list of goal IDs
     datapack_version = f'{version}-1.21.4'
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']
     board_size = len(goals)
     goal_list = []
     square = math.sqrt(board_size)
 
-    for i in range(len(goals)):
-        if goals[i] not in goalDictionary:
-            print(f"Error: Goal Lookup Error ({goals[i]} is not a valid goal)")
+    for g in goals:
+        if g not in goalDictionary:
+            print(f"Error: Goal Lookup Error ({g} is not a valid goal)")
             return False
 
     if not square.is_integer():
@@ -91,9 +102,9 @@ def generateBoard(goals: list, user: str, version):
     else:
         # prepare template and file path
         app_path = os.path.dirname(__file__)
-        downloads_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
+        output_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
         datapack_path = f'lockout-{datapack_version}-{user}-{randint(10000, 99999)}'
-        file_path = os.path.join(downloads_path, datapack_path)
+        file_path = os.path.join(output_path, datapack_path)
         template_dir = os.path.join(app_path, 'template')
         shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
 
@@ -102,26 +113,26 @@ def generateBoard(goals: list, user: str, version):
             goal_string += f'{str(goal)},'
         print(f"Creating a {int(square)}x{int(square)} board using:", goal_string)
 
-        # create goal/coordinate map
+        # create goal/coordinate map (eg. [K0023, b2])
         for goal in range(board_size):
             letter = letters[goal // int(square)]
             number = (goal % int(square)) + 1
             coordinate = f'{letter}{number}'
             goal_list.append([goals[goal], coordinate])
 
-        write_start_function(file_path, goal_list, letters)
+        write_start_function(file_path, goal_list)
 
-        write_resume_function(file_path, goal_list, letters)
+        write_resume_function(file_path, goal_list)
 
         write_getgoals_function(file_path, goal_list)
 
-        write_advancement_tree(file_path, goal_list, letters)
+        write_advancement_tree(file_path, goal_list)
 
-        # make archive
+        # make zip archive
         shutil.make_archive(file_path, 'zip', file_path)
+        # delete folder
         shutil.rmtree(file_path)
-        open_directory(downloads_path)
-        print('Data Pack Created!')
-        print('Check', parse_options()['output_path'], 'for your zip file.')
+        open_directory(output_path)
+        print('Data Pack Created! Check', parse_options()['output_path'], 'for your zip file.')
 
         return True
