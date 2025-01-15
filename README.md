@@ -21,12 +21,9 @@ You can download and install the application for either macOS or Windows (does n
 
 With the app open, you can generate a board with any of the three presets:
 
-balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance. This is the recommended option for starting out. 
-
-randomboard - Generates a completely random board with wildly varying ranges of difficulty
+balancedboard - Generates a board with weighted difficulty distribution for optimal gameplay balance. This is the recommended option for starting out.
 
 customboard - Generates a user-specified board using a provided list of goal ID numbers
-
 
 
 ### Generate a Balanced Board (Start Here)
@@ -46,13 +43,9 @@ You must have a square number of goals (4, 9, 16, 25, 36, etc.)
 Do not put a comma at the end.
 
 
-### Generate a Random Board
-To generate a completely random board, specify a size and then click generate. I highly reccommend using balanced board instead of this option.
-
-
 ### Output
 Your data pack will generate by default in your Downloads folder.
-If you used the python code, you can see what goals were added in the console. The app does not currently have this feature.
+If you used the python code, you can see what goals were added in the console. In the app, a window will appear with a summary of the board you generated.
 
 
 ## Installing the Data Pack and Playing Lockout
