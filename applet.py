@@ -11,27 +11,27 @@ def boardoutputwindow(board, gentype: str):
     outputwindow.geometry("300x250+300+300")
     outputwindow.resizable(False, True)
 
-    goal_list = Text(outputwindow)
+    boardinfo = Text(outputwindow)
 
     if gentype == 'balanced':
-        goal_list.insert('end', "BALANCED BOARD\n\n")
-        goal_list.insert('end', f"Board Size: {int(sizevar.get()//1)**2} \n")
-        goal_list.insert('end', f"Difficulty: {difficultyvar.get().__round__(1)} \n")
-        goal_list.insert('end', f"Blackout Mode: {blackoutvar.get()} \n")
-        goal_list.insert('end', "Excluded Goals: \n")
+        boardinfo.insert('end', "BALANCED BOARD\n\n")
+        boardinfo.insert('end', f"Board Size: {int(sizevar.get()//1)**2} \n")
+        boardinfo.insert('end', f"Difficulty: {difficultyvar.get().__round__(1)} \n")
+        boardinfo.insert('end', f"Blackout Mode: {blackoutvar.get()} \n")
+        boardinfo.insert('end', "Excluded Goals: \n")
         for goal in goal_checkboxes_list:
             if not goal_checkboxes_list[goal].get():
-                goal_list.insert('end', f"{goal}, ")
+                boardinfo.insert('end', f"{goal}, ")
     elif gentype == 'custom':
-        goal_list.insert('end', "CUSTOM BOARD\n")
-    goal_list.insert('end', "\n\nBoard Goals: ")
+        boardinfo.insert('end', "CUSTOM BOARD\n")
+    boardinfo.insert('end', "\n\nBoard Goals: ")
     for goal in board:
-        goal_list.insert('end', f"\n{goal} - {goalDictionary[goal][0]}")
-    goal_list.insert('end', "\n\nGoal List: ")
+        boardinfo.insert('end', f"\n{goal} - {goalDictionary[goal][0]}")
+    boardinfo.insert('end', "\n\nGoal List: ")
     for goal in board:
-        goal_list.insert('end', f"{goal},")
-    goal_list.config(state=DISABLED)
-    goal_list.pack()
+        boardinfo.insert('end', f"{goal},")
+    boardinfo.config(state=DISABLED)
+    boardinfo.pack()
     outputwindow.mainloop()
 
 def generatebalanced():
