@@ -14,9 +14,9 @@ scoreboard players set @a lk.armor_washed 0
 scoreboard players set @a lk.dried_kelp 0
 scoreboard players set @a lk.hoppers 0
 
-scoreboard players set #dried_kelp lk.util 0
-scoreboard players set #hoppers lk.util 0
-scoreboard players set #levels lk.util 0
+scoreboard players set #dried_kelp lk.dried_kelp 0
+scoreboard players set #hoppers lk.hoppers 0
+scoreboard players set #levels lk.levels 0
 
 scoreboard players set @a lk.stat.kills 0
 scoreboard players set @a lk.stat.deaths 0

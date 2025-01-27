@@ -15,8 +15,9 @@ execute as @s[team=1] run scoreboard players add @e[tag=lk.team1pts] lk.points 1
 execute as @s[team=2] run scoreboard players add @e[tag=lk.team2pts] lk.points 1
 execute if entity @s[team=1] as @a[tag=lk.N0012,team=2] run scoreboard players remove @e[tag=lk.team2pts] lk.points 1
 execute if entity @s[team=2] as @a[tag=lk.N0012,team=1] run scoreboard players remove @e[tag=lk.team1pts] lk.points 1
-execute if entity @s[team=1] as @a[tag=lk.N0012,team=2] run scoreboard players remove @s lk.points 1
-execute if entity @s[team=2] as @a[tag=lk.N0012,team=1] run scoreboard players remove @s lk.points 1
+execute if entity @s[team=1] as @a[tag=lk.N0012,team=1] run scoreboard players remove @e[tag=lk.team1pts] lk.points 1
+execute if entity @s[team=2] as @a[tag=lk.N0012,team=2] run scoreboard players remove @e[tag=lk.team2pts] lk.points 1
+execute as @a[tag=lk.N0012] run scoreboard players remove @s lk.points 1
 
 tag @e remove lk.N0012
 tag @e[tag=lk.goaltracker] add lk.N0012

@@ -1,0 +1,21 @@
+{
+    "condition": "minecraft:value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:context",
+        "target": "this"
+      },
+      "score": "lk.dried_kelp"
+    },
+    "range": {
+      "min": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "#dried_kelp"
+        },
+        "score": "lk.dried_kelp"
+      }
+    }
+  }

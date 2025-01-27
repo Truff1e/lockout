@@ -74,9 +74,9 @@ goalDictionary = {
     "N0009": ['Opponent Wears Armor', '"id": "minecraft:barrier"', 1],
     "N0010": ['Opponent Takes 100 Damage', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0010"]}}', 1],
     "N0011": ['Opponent Dies 3 Times', '"id": "minecraft:barrier","components": {"minecraft:custom_model_data": {"strings": ["N0011"]}}', 1],
-    # "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
-    # "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
-    # "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["N0014"]}}', 2],
+    "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
+    "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
+    "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["N0014"]}}', 2],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": {"strings": ["T0001"]}}', 1],

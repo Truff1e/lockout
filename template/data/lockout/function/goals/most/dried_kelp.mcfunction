@@ -1,2 +1,2 @@
-execute as @s[tag=!lk.N0012] unless entity @a[tag=lk.N0012] if score @s lk.dried_kelp matches 1.. run function lockout:goals/n0012
-execute as @s[tag=!lk.N0012] if score @s lk.dried_kelp > @p[tag=lk.N0012] lk.dried_kelp run function lockout:goals/n0012
+#execute as @s[tag=!lk.N0012] unless entity @a[tag=lk.N0012] if score @s lk.dried_kelp >= @e[type=armor_stand,tag=lk.N0012,tag=!lk.goaltracker,limit=1] lk.dried_kelp run function lockout:goals/n0012
+#execute as @s[tag=!lk.N0012] if score @s lk.dried_kelp > @p[tag=lk.N0012] lk.dried_kelp run function lockout:goals/n0012
