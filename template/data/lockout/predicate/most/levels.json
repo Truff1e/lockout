@@ -15,7 +15,7 @@
           "type": "minecraft:fixed",
           "name": "#levels"
         },
-        "score": "lk.levels"
+        "score": "lk.util"
       }
     }
   }
