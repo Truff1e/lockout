@@ -1,4 +1,4 @@
-# Lockout Generator v1.8
+# Lockout Generator v1.8.2
 
 ## What is Lockout?
 Minecraft Lockout is a game in which two teams compete to complete as many goals as they can on a 5x5 board. The goals could be as simple as 'Ride a Horse' or as challenging as 'Kill the Ender Dragon'. Each goal is worth one point, and if one team completes a goal, the other team can no longer get a point for that goal. First team to complete the majority of the board wins.
@@ -79,8 +79,6 @@ In order to make some of the goal icons more descriptive, this generator comes w
 
 
 ## Known Issues
-'Whatever Floats your Goat' advancement does not work and is not counted for unique advancements goal.
-
 Due to data pack limitations, there may be some issues with players logging off during the game, though I've done as much as I can to limit any problems from this. One such issue that may arise is if a player logs out during the game start sequence. If this happens and the player cannot move/jump after the game has started, try running "/execute as <affected_player> run function lockout:game/reset_attributes"
 
 
