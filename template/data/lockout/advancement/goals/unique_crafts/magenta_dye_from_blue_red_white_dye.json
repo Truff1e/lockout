@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:magenta_dye_from_blue_red_white_dye"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}

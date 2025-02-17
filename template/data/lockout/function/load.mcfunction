@@ -29,6 +29,7 @@ scoreboard objectives add lk.unique_saplings dummy
 scoreboard objectives add lk.unique_trims dummy
 scoreboard objectives add lk.unique_effects dummy
 scoreboard objectives add lk.unique_logs dummy
+scoreboard objectives add lk.unique_crafts dummy
 
 scoreboard objectives add lk.levels level
 scoreboard objectives add lk.hoppers dummy
@@ -58,13 +59,13 @@ scoreboard objectives add lk.posZ dummy
 scoreboard objectives add locate trigger
 scoreboard objectives add resign trigger
 scoreboard objectives add draw trigger
+scoreboard objectives add progress trigger
 
 #settings
 scoreboard players set #start_time lk.util 45
 scoreboard players set #max_time lk.util 120
-#constants
-scoreboard players set #const_1 lk.util 1
-scoreboard players set #const_2 lk.util 2
+scoreboard players set #show_progress lk.util 1
+#boardSize lk.util
 
 forceload add 0 0
 execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}

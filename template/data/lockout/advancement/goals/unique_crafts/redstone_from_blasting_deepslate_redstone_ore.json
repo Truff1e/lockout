@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:redstone_from_blasting_deepslate_redstone_ore"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}

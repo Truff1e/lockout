@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:blast_furnace"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}

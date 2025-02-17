@@ -48,6 +48,7 @@ goalDictionary = {
     "K0043": ['Kill Slime', '"id": "minecraft:slime_block"', 3],
     "K0044": ['Kill Pillager', '"id": "minecraft:crossbow"', 2],
     "K0045": ['Kill Shulker', '"id": "minecraft:shulker_shell"', 4],
+    "K0046": ['Kill Bat', '"id": "minecraft:iron_sword"', 2],
 
     # DIE GOALS
     "D0001": ['Die to Bee', '"id": "minecraft:beehive","components": {"minecraft:custom_model_data": {"strings": ["D0001"]}}', 1],
@@ -77,6 +78,7 @@ goalDictionary = {
     "N0012": ['Have the Most Dried Kelp Blocks', '"id": "minecraft:dried_kelp_block","components": {"minecraft:custom_model_data": {"strings": ["N0012"]}}', 2],
     "N0013": ['Have the Most Hoppers', '"id": "minecraft:hopper","components": {"minecraft:custom_model_data": {"strings": ["N0013"]}}', 2],
     "N0014": ['Have the Most Levels', '"id": "minecraft:experience_bottle","components": {"minecraft:custom_model_data": {"strings": ["N0014"]}}', 2],
+    "N0015": ['Have the Most Unique Crafts', '"id": "minecraft:crafting_table"', 2],
 
     # TAME GOALS
     "T0001": ['Tame Cat', '"id": "minecraft:cod","components": {"minecraft:custom_model_data": {"strings": ["T0001"]}}', 1],
@@ -264,6 +266,10 @@ goalDictionary = {
     "I0148": ['Obtain Creaking Heart', '"id": "minecraft:creaking_heart"', 3],
     "I0149": ['Obtain 6 Log Variants', '"id": "minecraft:acacia_log"', 2],
     "I0150": ['Obtain 8 Log Variants', '"id": "minecraft:jungle_log"', 3],
+    "I0151": ['Obtain All Mushrooms', '"id": "minecraft:red_mushroom"', 2],
+    "I0152": ['Obtain Redstone Lamp', '"id": "minecraft:redstone_lamp"', 2],
+    "I0153": ['Obtain All Pumpkin Types', '"id": "minecraft:pumpkin"', 2],
+    "I0154": ['Obtain Clock', '"id": "minecraft:clock"', 1],
 
     # EAT GOALS
     "E0001": ['Eat Chorus Fruit', '"id": "minecraft:chorus_fruit"', 4],
@@ -343,6 +349,9 @@ goalDictionary = {
     "X0033": ['Get Weakness', '"id": "minecraft:wooden_sword","components": {"minecraft:custom_model_data": {"strings": ["X0033"]}}', 2],
     # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
     # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
+    "X0036": ['Craft 25 Unique Items', '"id": "minecraft:crafting_table"', 1],
+    "X0037": ['Craft 50 Unique Items', '"id": "minecraft:crafting_table"', 2],
+    "X0038": ['Craft 75 Unique Items', '"id": "minecraft:crafting_table"', 2],
 
     # LOCATION GOALS
     "L0001": ['Find an Ancient City', '"id": "minecraft:sculk_shrieker"', 2],
@@ -363,7 +372,7 @@ goalDictionary = {
 
 
 exclusiveSets = {
-    # When exclusive sets are enabled (default), two goals in the same set will *almost* never show up on the same board.
+    # Two goals in the same set will almost never show up on the same balanced board
     'sheep': ['K0003', 'K0005', 'K0010', 'K0013', 'K0014', 'K0015', 'K0016', 'K0017', 'K0019', 'K0020', 'K0029'],
     'poison': ['X0005', 'E0006'],
     'netherite': ['I0002', 'I0003', 'I0025', 'I0046', 'I0047', 'I0048', 'I0105'],
@@ -409,12 +418,13 @@ balancedIndex = [
     "A0008", "A0009", "A0010", "A0011", "A0012", "A0013", "A0014", "A0015", "A0016", "A0018", "A0020", "A0021", "A0022", "A0023", "X0001", "X0002",
     "X0006", "X0007", "X0008", "X0009", "X0010", "X0012", "X0014", "X0015", "X0016", "X0017", "X0018", "X0019", "X0020", "X0021", "X0023",
     "X0024", "X0025", "L0001", "L0002", "L0003", "L0004", "L0005", "L0006", "L0007", "L0008", "L0009", "L0010", "L0011", "L0012", "L0013",
+    "N0012", "N0013", "N0014", "N0015", "I0151", "X0036", "X0037", "X0038", "I0152", "I0153", "I0154", "K0046",
 
 ]
 
 
 unique_advancements = ['A0001', 'A0021', 'A0022']
-have_more_goals = ['N0012', 'N0013', 'N0016']
+have_more_goals = ['N0012', 'N0013', 'N0014', 'N0015']
 
 index_length = len(goalDictionary)
 print("Goals:", index_length)

@@ -14,7 +14,7 @@ def parse_options():
 version = parse_options()['version'][:-1]
 
 def customboard(goal_list: list):
-    generateBoard(goal_list, f'random-s{len(goal_list)+1}', version)
+    generateBoard(goal_list, f'custom-s{len(goal_list)}', version)
     return goal_list
 
 

@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:emerald_from_smelting_deepslate_emerald_ore"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}

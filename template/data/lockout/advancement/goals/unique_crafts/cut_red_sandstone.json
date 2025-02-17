@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:cut_red_sandstone"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}

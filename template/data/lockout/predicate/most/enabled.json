@@ -36,6 +36,18 @@
           "score": "lk.enabled_goals"
         },
         "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#N0015"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
       }
     ]
   }
