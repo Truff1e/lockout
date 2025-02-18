@@ -1,5 +1,5 @@
 scoreboard players add @s lk.unique_crafts 1
-execute as @s run function lockout:goals/most/unique_crafts
+execute if score #N0015 lk.enabled_goals matches 1 as @s run function lockout:goals/most/unique_crafts
 execute as @s[scores={lk.unique_crafts=25}] run function lockout:goals/x0036
 execute as @s[scores={lk.unique_crafts=50}] run function lockout:goals/x0037
 execute as @s[scores={lk.unique_crafts=75}] run function lockout:goals/x0038
