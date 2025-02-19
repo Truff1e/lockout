@@ -1,0 +1,53 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#X0036"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#X0037"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#X0038"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#N0015"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      }
+    ]
+  }

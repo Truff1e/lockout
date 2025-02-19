@@ -40,7 +40,7 @@ execute if score #test_effects lk.util matches 1 as @s[scores={lk.unique_effects
 execute as @s[scores={lk.unique_effects=9..}] run function lockout:goals/x0023
 execute as @s[scores={lk.unique_effects=12..}] run function lockout:goals/x0024
 
-execute if score #show_progress lk.util matches 1 run title @s actionbar [{"text": "You have ", "italic": true, "color": "gray"},{"score":{"name": "@s", "objective": "lk.unique_effects"}, "italic": true, "color": "gray"},{"text": " unique effects", "italic": true, "color": "gray"}]
+execute if score #show_progress lk.util matches 1 if predicate lockout:unique/effects run title @s actionbar [{"text": "You have ", "italic": true, "color": "gray"},{"score":{"name": "@s", "objective": "lk.unique_effects"}, "italic": true, "color": "gray"},{"text": " unique effects", "italic": true, "color": "gray"}]
 
 scoreboard players set @s lk.unique_effects 0
 advancement revoke @s only lockout:goals/unique_effects
