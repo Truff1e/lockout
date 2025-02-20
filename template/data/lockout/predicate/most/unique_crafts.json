@@ -15,7 +15,7 @@
           "type": "minecraft:fixed",
           "name": "#unique_crafts"
         },
-        "score": "lk.unique_crafts"
+        "score": "lk.util"
       }
     }
   }
