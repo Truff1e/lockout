@@ -29,6 +29,7 @@ scoreboard players reset @e[type=armor_stand,tag=lk.team2pts] lk.points
 
 time set day
 
+execute if score #start_time lk.util matches 15 run function lockout:game/countdowns/15s
 execute if score #start_time lk.util matches 30 run function lockout:game/countdowns/30s
 execute if score #start_time lk.util matches 45 run function lockout:game/countdowns/45s
 execute if score #start_time lk.util matches 60 run function lockout:game/countdowns/60s
