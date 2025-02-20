@@ -1,10 +1,10 @@
 execute as @a store result score @s lk.dried_kelp run clear @s dried_kelp_block 0
 execute as @a store result score @s lk.hoppers run clear @s hopper 0
 
-execute unless entity @a[tag=lk.N0012] as @e[type=armor_stand,tag=lk.N0012,tag=!lk.goaltracker] run function lockout:goals/most/dried_kelp_logoff
-execute unless entity @a[tag=lk.N0013] as @e[type=armor_stand,tag=lk.N0013,tag=!lk.goaltracker] run function lockout:goals/most/hoppers_logoff
-execute unless entity @a[tag=lk.N0014] as @e[type=armor_stand,tag=lk.N0014,tag=!lk.goaltracker] run function lockout:goals/most/levels_logoff
-execute unless entity @a[tag=lk.N0015] as @e[type=armor_stand,tag=lk.N0015,tag=!lk.goaltracker] run function lockout:goals/most/unique_crafts_logoff
+execute unless entity @a[tag=lk.N0012] as @e[type=armor_stand,tag=lk.N0012,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "N0012", "type": "dried kelp"}
+execute unless entity @a[tag=lk.N0013] as @e[type=armor_stand,tag=lk.N0013,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "N0013", "type": "hoppers"}
+execute unless entity @a[tag=lk.N0014] as @e[type=armor_stand,tag=lk.N0014,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "N0014", "type": "levels"}
+execute unless entity @a[tag=lk.N0015] as @e[type=armor_stand,tag=lk.N0015,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "N0015", "type": "unique crafts"}
 
 execute if score #N0012 lk.enabled_goals matches 1 as @a[predicate=lockout:most/dried_kelp,limit=1,sort=random,tag=!lk.N0012] if score @s lk.dried_kelp > #dried_kelp lk.dried_kelp run function lockout:goals/n0012
 execute if score #N0013 lk.enabled_goals matches 1 as @a[predicate=lockout:most/hoppers,limit=1,sort=random,tag=!lk.N0013] if score @s lk.hoppers > #hoppers lk.hoppers run function lockout:goals/n0013

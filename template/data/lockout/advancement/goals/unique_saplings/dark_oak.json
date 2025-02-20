@@ -17,6 +17,6 @@
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/count_saplings"
+        "function": "lockout:goals/count/saplings"
     }
   }

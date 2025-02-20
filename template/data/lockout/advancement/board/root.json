@@ -6,10 +6,10 @@
                 "minecraft:custom_model_data": {"strings": ["25adv"]}
                     }
         },
-        "title": "Lockout Board",
-        "description": "Generated with the Truff1e Lockout Board Generator",
+        "title": "Truff1e Lockout",
+        "description": "Download at github.com/Truff1e/lockout",
         "background": "minecraft:textures/block/stone.png",
-        "frame": "task",
+        "frame": "challenge",
         "announce_to_chat": false,
         "hidden": false},
         "criteria": {

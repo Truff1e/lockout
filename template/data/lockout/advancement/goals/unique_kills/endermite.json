@@ -21,6 +21,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/count_kills"
+      "function": "lockout:goals/count/kills"
     }
   }

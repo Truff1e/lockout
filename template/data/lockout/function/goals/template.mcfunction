@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/master {"goalid": "", "goalnum": "", "goalname": ""}

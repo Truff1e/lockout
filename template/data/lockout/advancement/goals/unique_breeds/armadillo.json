@@ -15,6 +15,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/count_breeds"
+      "function": "lockout:goals/count/breeds"
     }
   }

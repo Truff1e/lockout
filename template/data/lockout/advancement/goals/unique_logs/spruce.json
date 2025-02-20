@@ -17,6 +17,6 @@
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/count_logs"
+        "function": "lockout:goals/count/logs"
     }
   }

@@ -15,7 +15,7 @@
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/count_foods"
+        "function": "lockout:goals/count/foods"
     }
   }
   

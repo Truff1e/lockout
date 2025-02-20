@@ -13,6 +13,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/count_trims"
+      "function": "lockout:goals/count/trims"
     }
   }

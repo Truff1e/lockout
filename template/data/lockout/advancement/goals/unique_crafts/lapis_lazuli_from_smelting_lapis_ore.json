@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:lapis_lazuli_from_smelting_lapis_ore"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:lapis_lazuli_from_smelting_lapis_ore"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

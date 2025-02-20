@@ -5,6 +5,6 @@
       }
     },
     "rewards": {
-      "function": "lockout:goals/count_effects"
+      "function": "lockout:goals/count/effects"
     }
   }

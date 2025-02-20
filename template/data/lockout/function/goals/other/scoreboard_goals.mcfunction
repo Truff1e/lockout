@@ -1,5 +1,8 @@
-execute as @a[scores={locate=1..}] run function lockout:locate
-execute as @a[scores={progress=1..}] run function lockout:progress
+#trigger functions
+execute as @a[scores={locate=1..}] run function lockout:trigger/locate
+execute as @a[scores={progress=1..}] run function lockout:trigger/progress
+
+#goals
 execute as @a[scores={lk.levels=30}] run function lockout:goals/x0001
 execute as @a[scores={lk.levels=15}] run function lockout:goals/x0025
 execute as @a[scores={lk.mob_kills=100..110}] run function lockout:goals/k0001
