@@ -26,7 +26,7 @@ def parse_options():
     return optionslist
 
 def write_start_function(path, goals):
-    # Writes the mcfunction responsible for starting the game
+    # Writes the function responsible for starting the game
     file = open(f'{path}/data/lockout/function/game/start.mcfunction', 'w')
     for col in range(int(math.sqrt(len(goals)))):
         # Grants players the cap advancements so that all parent advancements can be seen
@@ -43,7 +43,7 @@ def write_start_function(path, goals):
 
 
 def write_resume_function(path, goals):
-    # Writes the mcfunction responsible for "resuming" the game when a player leaves and rejoins
+    # Writes the function responsible for "resuming" the game when a player leaves and rejoins
     file = open(f'{path}/data/lockout/function/game/resume.mcfunction', 'w')
     for col in range(int(math.sqrt(len(goals)))):
         file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(goals)))+1}\n')
