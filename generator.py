@@ -17,6 +17,7 @@ def open_directory(path):
     else:
         return False
 
+
 def parse_options():
     # Reads data stored in options.txt and translates it to a settings list
     optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
@@ -24,6 +25,7 @@ def parse_options():
     for line in optionsfile:
         optionslist[line[:line.find('=')]] = line[line.find('=')+1:]
     return optionslist
+
 
 def write_start_function(path, goals):
     # Writes the function responsible for starting the game
@@ -83,35 +85,46 @@ def write_advancement_tree(path, goals):
         file.write(f'"parent": "lockout:board/{letters[i]}{board_size}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
 
 
-def generateBoard(goals: list, user: str, version):
-    # Generates the lockout data pack based on a list of goal IDs
+def prepare_files(output_path, version, boardtype: str):
     datapack_version = f'{version}-1.21.4'
+
+    app_path = os.path.dirname(__file__)
+    datapack_path = f'lockout-{datapack_version}-{boardtype}-{randint(10000, 99999)}'
+    file_path = os.path.join(output_path, datapack_path)
+
+    template_dir = os.path.join(app_path, 'template')
+    shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
+    return file_path
+
+
+def clean_up(file_path):
+    # make zip archive
+    shutil.make_archive(file_path, 'zip', file_path)
+    # delete folder
+    shutil.rmtree(file_path)
+
+
+def generateBoard(goals: list, boardtype: str, version):
+    # Generates the lockout data pack based on a list of goal IDs
     board_size = len(goals)
-    goal_list = []
     square = math.sqrt(board_size)
 
     for g in goals:
         if g not in goalDictionary:
-            print(f"Error: Goal Lookup Error ({g} is not a valid goal)")
+            print(f"Goal Lookup Error: {g} is not a valid goal id")
             return False
 
     if not square.is_integer():
-        print(f"Error: Board Size Error ({board_size})")
+        print(f"Board Size Error: The amount of goals must be a square number (you had {board_size} goals)")
         return False
 
     else:
-        # prepare template and file path
-        app_path = os.path.dirname(__file__)
-        output_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
-        datapack_path = f'lockout-{datapack_version}-{user}-{randint(10000, 99999)}'
-        file_path = os.path.join(output_path, datapack_path)
-        template_dir = os.path.join(app_path, 'template')
-        shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
 
-        goal_string = ''
-        for goal in goals:
-            goal_string += f'{str(goal)},'
-        print(f"Creating a {int(square)}x{int(square)} board using:", goal_string)
+        goal_list = []
+        output_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
+        file_path = prepare_files(output_path, version, boardtype)
+
+        print(f"Creating a {int(square)}x{int(square)} board using:", ''.join(f'{str(goal)},' for goal in goals))  # logs a list of board goals
 
         # create goal/coordinate map (eg. [K0023, b2])
         for goal in range(board_size):
@@ -120,19 +133,13 @@ def generateBoard(goals: list, user: str, version):
             coordinate = f'{letter}{number}'
             goal_list.append([goals[goal], coordinate])
 
+        # generate the necessary data pack files
         write_start_function(file_path, goal_list)
-
         write_resume_function(file_path, goal_list)
-
         write_getgoals_function(file_path, goal_list)
-
         write_advancement_tree(file_path, goal_list)
 
-        # make zip archive
-        shutil.make_archive(file_path, 'zip', file_path)
-        # delete folder
-        shutil.rmtree(file_path)
+        clean_up(file_path)
         open_directory(output_path)
         print('Data Pack Created! Check', parse_options()['output_path'], 'for your zip file.')
-
         return True

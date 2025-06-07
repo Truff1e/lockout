@@ -3,6 +3,37 @@ from index import goalDictionary, balancedIndex
 from random import choice, choices
 import os
 
+def getid(goal):
+    for i in goalDictionary:
+        if goalDictionary[i][0].lower() == goal.lower():
+            print(f'>> {goal} has a goal ID of: {i}')
+            return i
+    print(f"Goal Lookup Error: {goal} is not a valid goal id")
+    return "Goal not found."
+
+
+def getrandomgoal():
+    return choice(list(goalDictionary))
+
+
+def translate(goal_id):
+    if str(goal_id).upper() in goalDictionary:
+        print(f'>> {goal_id} has a goal name of: {goalDictionary[str(goal_id)][0]}')
+        return goalDictionary[str(goal_id)][0]
+    else:
+        print(">> Goal not found.")
+        return "Goal not found."
+
+
+def check_excluded_goals(newgoal, excluded):
+    for goal in excluded:
+        if newgoal == goal:
+            return True
+            # Goal is excluded
+    return False
+    # Goal is not excluded
+
+
 def parse_options():
     optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
     optionslist = {}
@@ -58,34 +89,3 @@ def balancedboard(size: int, difficulty, excluded=None):
 
     generateBoard(goal_list, f's{size}-d{difficulty}', version)
     return goal_list
-
-
-def getid(goal):
-    for i in goalDictionary:
-        if goalDictionary[i][0].lower() == goal.lower():
-            print(f'>> {goal} has a goal ID of: {i}')
-            return i
-    print(">> Goal not found.")
-    return "Goal not found."
-
-
-def getrandomgoal():
-    return choice(list(goalDictionary))
-
-
-def translate(goal_id):
-    if str(goal_id).upper() in goalDictionary:
-        print(f'>> {goal_id} has a goal name of: {goalDictionary[str(goal_id)][0]}')
-        return goalDictionary[str(goal_id)][0]
-    else:
-        print(">> Goal not found.")
-        return "Goal not found."
-
-
-def check_excluded_goals(newgoal, excluded):
-    for goal in excluded:
-        if newgoal == goal:
-            return True
-            # Goal is excluded
-    return False
-    # Goal is not excluded
