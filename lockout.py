@@ -60,9 +60,6 @@ def balancedboard(size: int, difficulty, excluded=None):
         difficulty = 'custom'
     else:
         difficulty = float(difficulty[0])
-        while not 1 <= difficulty <= 8:
-            print('Error: Difficulty out of range. (Must be between 1 and 8)')
-            difficulty = int(input('Difficulty: '))
         weights = [(-0.5*difficulty) + 10, (-0.25*difficulty) + 8, (8 * 2**((difficulty-2.5)/8)) - 7.5, (8 * 2**((difficulty-2.5)/6)) - 9]
 
     goal_list = []

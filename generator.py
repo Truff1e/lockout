@@ -15,7 +15,7 @@ def open_directory(path):
     elif platform.system() == 'Darwin':
         subprocess.Popen(['open', path])
     else:
-        return False
+        print("Open Directory Failed - Unsupported platform")
 
 
 def parse_options():
@@ -86,7 +86,7 @@ def write_advancement_tree(path, goals):
 
 
 def prepare_files(output_path, version, boardtype: str):
-    datapack_version = f'{version}-1.21.4'
+    datapack_version = f'{version}-1.21.6'
 
     app_path = os.path.dirname(__file__)
     datapack_path = f'lockout-{datapack_version}-{boardtype}-{randint(10000, 99999)}'
