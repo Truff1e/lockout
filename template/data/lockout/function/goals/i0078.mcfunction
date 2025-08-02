@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0078", "goalnum": "730078", "goalname": "Obtain 64 Orange Concrete"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0078", "goalnum": "730078", "goalname": "Obtain Sticky Piston"}

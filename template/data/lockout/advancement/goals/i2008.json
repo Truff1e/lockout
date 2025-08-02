@@ -1,0 +1,20 @@
+{
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:green_concrete"
+              }
+            }
+          }
+        },
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i2008"
+        }
+    }

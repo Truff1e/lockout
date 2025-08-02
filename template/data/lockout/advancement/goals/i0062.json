@@ -1,22 +1,20 @@
 {
-    "criteria": {
-      "end_rod": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:ancient_debris"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:rabbit_foot"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "end_rod"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/i0062"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0062"
+        }
     }
-  }

@@ -2,9 +2,11 @@ import math
 import shutil
 import os
 from random import randint
-from index import goalDictionary
+from index import getFullGoalIndex
 import platform
 import subprocess
+
+goalDictionary = getFullGoalIndex()
 
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p']
 
@@ -23,85 +25,93 @@ def parse_options():
     optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
     optionslist = {}
     for line in optionsfile:
-        optionslist[line[:line.find('=')]] = line[line.find('=')+1:]
+        optionslist[line[:line.find('=')]] = line[line.find('=')+1:-1]
     return optionslist
 
 
-def write_start_function(path, goals):
+def write_start_function(path, boardBlueprint):
     # Writes the function responsible for starting the game
     file = open(f'{path}/data/lockout/function/game/start.mcfunction', 'w')
-    for col in range(int(math.sqrt(len(goals)))):
+
+    for col in range(int(math.sqrt(len(boardBlueprint)))):
         # Grants players the cap advancements so that all parent advancements can be seen
-        file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(goals)))+1}\n')
-    for goal in range(len(goals)):
+        file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(boardBlueprint)))+1}\n')
+
+    for goalId, coordinate, goalInfo in boardBlueprint:
         # Enables the listeners for every goal on the board
-        file.write(f'scoreboard players set #{goals[goal][0]} lk.enabled_goals 1\n')
+        file.write(f'scoreboard players set #{goalId} lk.enabled_goals 1\n')
+
     # Starts the countdown and sets the board size
     file.write('execute unless score #blackout lk.util matches 1 as @a run function lockout:game/init/lockout\n')
-    file.write(f'execute unless score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(goals)+1)//2}\n')
+    file.write(f'execute unless score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint)+1)//2}\n')
     file.write('execute if score #blackout lk.util matches 1 as @a run function lockout:game/init/blackout\n')
-    file.write(f'execute if score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(goals))}')
+    file.write(f'execute if score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint))}')
     file.close()
 
 
-def write_resume_function(path, goals):
+def write_resume_function(path, boardBlueprint):
     # Writes the function responsible for "resuming" the game when a player leaves and rejoins
     file = open(f'{path}/data/lockout/function/game/resume.mcfunction', 'w')
-    for col in range(int(math.sqrt(len(goals)))):
-        file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(goals)))+1}\n')
-    for i in range(len(goals)):
-        command = 'execute as @a[advancements={lockout:board/' + goals[i][1] + '=true}] run advancement grant @a only lockout:board/' + goals[i][1] + '\n'
-        file.write(command)
+
+    for col in range(int(math.sqrt(len(boardBlueprint)))): 
+        # Grants players the cap advancements so that all parent advancements can be seen
+        file.write(f'advancement grant @a only lockout:board/{letters[col]}{int(math.sqrt(len(boardBlueprint)))+1}\n')
+
+    for goalId, coordinate, goalInfo in boardBlueprint: # if goal is completed, give it to everyone
+        file.write('execute as @a[advancements={lockout:board/' + coordinate + '=true}] run advancement grant @a only lockout:board/' + coordinate + '\n')
+
     file.write('execute as @s run function lockout:game/resume_moregoals')
     file.close()
 
 
-def write_getgoals_function(path, goals):
+def write_getgoals_function(path, boardBlueprint):
     # Writes the function to translate a scoreboard value into the correct advancement on the lockout board
     file = open(f'{path}/data/lockout/function/game/getgoal.mcfunction', 'w')
-    for i in range(len(goals)):
-        number = goals[i][0].strip('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-        file.write(f'execute if score @s lk.goal matches {ord((goals[i][0])[0])}{number} run advancement grant @a only lockout:board/{goals[i][1]}\n')
+    for goalId, coordinate, goalInfo in boardBlueprint:
+        number = goalId[1:]
+        file.write(f'execute if score @s lk.goal matches {ord(goalId[0])}{number} run advancement grant @a only lockout:board/{coordinate}\n')
     file.close()
 
 
-def write_advancement_tree(path, goals):
+def write_advancement_tree(path, boardBlueprint):
     # Writes the advancement files to display goals on the board
-    for i in range(len(goals)):
-        letter, num = goals[i][1].strip('123456789'), int(goals[i][1].strip('abcdefghij'))
-        if num == 1:
+    for goalId, coordinate, goalInfo in boardBlueprint:
+        if int(coordinate[1:]) == 1:
             parent = 'root'
         else:
-            parent = f'{letter}{num-1}'
-        goal = goalDictionary[goals[i][0]]
+            parent = coordinate[0] + str(int(coordinate[1:]) - 1)
 
-        file = open(f'{path}/data/lockout/advancement/board/{goals[i][1]}.json', 'w')
-        file.write('{\n"display": {\n"icon": {\n' + goal[1] + '\n},\n"title": "' + goal[0] + '",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
+        file = open(f'{path}/data/lockout/advancement/board/{coordinate}.json', 'w')
+        if goalInfo[2]:
+            file.write('{\n"display": {\n"icon": {\n"id": "minecraft:' + goalInfo[1] + '","components": {"minecraft:custom_model_data": {"strings": ["' + goalId + '"]}}\n},\n"title": "' + goalInfo[0] + '",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
+        else:
+            file.write('{\n"display": {\n"icon": {\n"id": "minecraft:' + goalInfo[1] + '"\n},\n"title": "' + goalInfo[0] + '",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
         file.write(f'"parent": "lockout:board/{parent}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
-    board_size = int(math.sqrt(len(goals)))
-    for i in range(board_size):
-        file = open(f'{path}/data/lockout/advancement/board/{letters[i]}{board_size+1}.json', 'w')
+    boardSideLength = int(math.sqrt(len(boardBlueprint)))
+
+    for i in range(boardSideLength):
+        file = open(f'{path}/data/lockout/advancement/board/{letters[i]}{boardSideLength+1}.json', 'w')
         file.write('{\n"display": {\n"icon": {\n "id": "minecraft:stone_button"\n},\n"title": "-",\n"description": "",\n"show_toast": false,\n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
-        file.write(f'"parent": "lockout:board/{letters[i]}{board_size}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
+        file.write(f'"parent": "lockout:board/{letters[i]}{boardSideLength}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
 
 
 def prepare_files(output_path, version, boardtype: str):
-    datapack_version = f'{version}-1.21.6'
+    datapack_version = f'{version}-1.21.8'
 
     app_path = os.path.dirname(__file__)
     datapack_path = f'lockout-{datapack_version}-{boardtype}-{randint(10000, 99999)}'
-    file_path = os.path.join(output_path, datapack_path)
+    filePath = os.path.join(output_path, datapack_path)
 
     template_dir = os.path.join(app_path, 'template')
-    shutil.copytree(template_dir, file_path, dirs_exist_ok=True)
-    return file_path
+    shutil.copytree(template_dir, filePath, dirs_exist_ok=True)
+    return filePath
 
 
-def clean_up(file_path):
+def clean_up(filePath):
     # make zip archive
-    shutil.make_archive(file_path, 'zip', file_path)
+    shutil.make_archive(filePath, 'zip', filePath)
     # delete folder
-    shutil.rmtree(file_path)
+    shutil.rmtree(filePath)
 
 
 def generateBoard(goals: list, boardtype: str, version):
@@ -120,26 +130,28 @@ def generateBoard(goals: list, boardtype: str, version):
 
     else:
 
-        goal_list = []
-        output_path = os.path.join(os.path.expanduser('~'), parse_options()['output_path'])
-        file_path = prepare_files(output_path, version, boardtype)
+        boardBlueprint = []
+        outputPath = os.path.join(os.path.expanduser('~'), parse_options()['outputPath'])
+        filePath = prepare_files(outputPath, version, boardtype)
 
         print(f"Creating a {int(square)}x{int(square)} board using:", ''.join(f'{str(goal)},' for goal in goals))  # logs a list of board goals
 
-        # create goal/coordinate map (eg. [K0023, b2])
-        for goal in range(board_size):
-            letter = letters[goal // int(square)]
-            number = (goal % int(square)) + 1
+        # create goal/coordinate/info map (eg. ["K0023", "b2", ['Kill Zombie', 'iron_sword', True, 1]])
+        for i in range(board_size):
+            goalId = goals[i]
+            letter = letters[i // int(square)]
+            number = (i % int(square)) + 1
             coordinate = f'{letter}{number}'
-            goal_list.append([goals[goal], coordinate])
+            goalInfo = goalDictionary[goalId]
+            boardBlueprint.append((goalId, coordinate, goalInfo))
 
         # generate the necessary data pack files
-        write_start_function(file_path, goal_list)
-        write_resume_function(file_path, goal_list)
-        write_getgoals_function(file_path, goal_list)
-        write_advancement_tree(file_path, goal_list)
+        write_start_function(filePath, boardBlueprint)
+        write_resume_function(filePath, boardBlueprint)
+        write_getgoals_function(filePath, boardBlueprint)
+        write_advancement_tree(filePath, boardBlueprint)
 
-        clean_up(file_path)
-        open_directory(output_path)
-        print('Data Pack Created! Check', parse_options()['output_path'], 'for your zip file.')
+        clean_up(filePath)
+        open_directory(outputPath)
+        print('Data Pack Created! Check', outputPath, 'for your zip file.')
         return True

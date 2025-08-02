@@ -1,0 +1,2 @@
+execute as @s run function lockout:goals/count/advancements
+execute as @s run function lockout:goals/skeleton/master {"goalid": "A0029", "goalnum": "650029", "goalname": "Open Ominous Vault"}

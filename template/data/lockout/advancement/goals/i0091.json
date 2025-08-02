@@ -1,22 +1,25 @@
 {
     "criteria": {
-      "end_rod": {
+      "swift_potion": {
+        "trigger": "minecraft:inventory_changed",
         "conditions": {
           "items": [
             {
-              "items": "minecraft:sniffer_egg"
+              "items": "minecraft:potion",
+              "predicates": {
+                "minecraft:potion_contents": "minecraft:swiftness"
+              }
             }
           ]
-        },
-        "trigger": "minecraft:inventory_changed"
+        }
       }
     },
     "requirements": [
       [
-        "end_rod"
+        "swift_potion"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0091"
+      "function": "lockout:goals/i0032"
     }
   }

@@ -1,37 +1,20 @@
 {
-    "criteria": {
-      "picks": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:wooden_shovel"
-            },
-            {
-              "items": "minecraft:stone_shovel"
-            },
-            {
-              "items": "minecraft:iron_shovel"
-            },
-            {
-              "items": "minecraft:golden_shovel"
-            },
-            {
-              "items": "minecraft:diamond_shovel"
-            },
-            {
-              "items": "minecraft:netherite_shovel"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:grass_block"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "picks"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0047"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0047"
+        }
     }
-  }

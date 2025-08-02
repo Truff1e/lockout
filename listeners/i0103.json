@@ -1,0 +1,20 @@
+{
+            "criteria": {
+              "getitem": {
+                "trigger": "minecraft:inventory_changed",
+                "conditions": {
+                  "items": {
+                    "items": "minecraft:rib_armor_trim_smithing_template"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "getitem"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/i0103"
+            }
+        }

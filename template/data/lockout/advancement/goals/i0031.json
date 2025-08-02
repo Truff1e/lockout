@@ -1,22 +1,19 @@
 {
     "criteria": {
-      "stone_tools": {
+      "picks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:stone_sword"
+              "items": "minecraft:wheat_seeds"
             },
             {
-              "items": "minecraft:stone_axe"
+              "items": "minecraft:beetroot_seeds"
             },
             {
-              "items": "minecraft:stone_pickaxe"
+              "items": "minecraft:melon_seeds"
             },
             {
-              "items": "minecraft:stone_shovel"
-            },
-            {
-              "items": "minecraft:stone_hoe"
+              "items": "minecraft:pumpkin_seeds"
             }
           ]
         },
@@ -25,10 +22,10 @@
     },
     "requirements": [
       [
-        "stone_tools"
+        "picks"
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/i0031"
+      "function": "lockout:goals/i0075"
     }
   }

@@ -1,25 +1,34 @@
 {
     "criteria": {
-      "healing_potion": {
-        "trigger": "minecraft:inventory_changed",
+      "picks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:potion",
-              "predicates": {
-                "minecraft:potion_contents": "minecraft:healing"
-              }
+              "items": "minecraft:diamond_sword"
+            },
+            {
+              "items": "minecraft:diamond_axe"
+            },
+            {
+              "items": "minecraft:diamond_pickaxe"
+            },
+            {
+              "items": "minecraft:diamond_shovel"
+            },
+            {
+              "items": "minecraft:diamond_hoe"
             }
           ]
-        }
+        },
+        "trigger": "minecraft:inventory_changed"
       }
     },
     "requirements": [
       [
-        "healing_potion"
+        "picks"
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/i0019"
+      "function": "lockout:goals/i0011"
     }
   }

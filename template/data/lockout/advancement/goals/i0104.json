@@ -1,22 +1,20 @@
 {
-    "criteria": {
-      "end_rod": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:nether_star"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:silence_armor_trim_smithing_template"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "end_rod"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/i0104"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0104"
+        }
     }
-  }

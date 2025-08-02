@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X1031", "goalnum": "881031", "goalname": "Get Mining Fatigue"}

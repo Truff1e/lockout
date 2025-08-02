@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0063", "goalnum": "730063", "goalname": "Obtain Heart of the Sea"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0063", "goalnum": "730063", "goalname": "Obtain Totem of Undying"}

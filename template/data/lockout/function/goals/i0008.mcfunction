@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0008", "goalnum": "730008", "goalname": "Obtain Cobweb"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0008", "goalnum": "730008", "goalname": "Obtain Full Chainmail Armor"}

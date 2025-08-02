@@ -1,22 +1,20 @@
 {
-    "criteria": {
-      "end_rod": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:written_book"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:scaffolding"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "end_rod"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/i0054"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0054"
+        }
     }
-  }

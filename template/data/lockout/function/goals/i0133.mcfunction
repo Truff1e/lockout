@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0133", "goalnum": "730133", "goalname": "Obtain Music Disc Chirp"}

@@ -1,23 +1,20 @@
 {
-    "criteria": {
-      "end_rod": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:magenta_concrete",
-              "count": 64
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:observer"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "end_rod"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/i0076"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0076"
+        }
     }
-  }

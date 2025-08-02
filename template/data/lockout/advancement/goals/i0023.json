@@ -1,10 +1,19 @@
 {
     "criteria": {
-      "mossy_stone_brick_wall": {
+      "picks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:mossy_stone_brick_wall"
+              "items": "minecraft:rail"
+            },
+            {
+              "items": "minecraft:activator_rail"
+            },
+            {
+              "items": "minecraft:powered_rail"
+            },
+            {
+              "items": "minecraft:detector_rail"
             }
           ]
         },
@@ -13,10 +22,10 @@
     },
     "requirements": [
       [
-        "mossy_stone_brick_wall"
+        "picks"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0023"
+      "function": "lockout:goals/i0004"
     }
   }

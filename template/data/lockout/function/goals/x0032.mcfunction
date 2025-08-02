@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0032", "goalnum": "880032", "goalname": "Get Night Vision"}

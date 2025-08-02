@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/most {"goalid": "N0014", "goalnum": "780014", "goalname": "Have the Most Levels"}
+execute as @s run function lockout:goals/skeleton/opponent {"goalid": "N0014", "goalnum": "780014", "goalname": "Opponent Takes Fall Damage"}

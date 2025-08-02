@@ -4,16 +4,22 @@
         "conditions": {
           "items": [
             {
-              "items": "minecraft:rail"
+              "items": "minecraft:wooden_shovel"
             },
             {
-              "items": "minecraft:activator_rail"
+              "items": "minecraft:stone_shovel"
             },
             {
-              "items": "minecraft:powered_rail"
+              "items": "minecraft:iron_shovel"
             },
             {
-              "items": "minecraft:detector_rail"
+              "items": "minecraft:golden_shovel"
+            },
+            {
+              "items": "minecraft:diamond_shovel"
+            },
+            {
+              "items": "minecraft:netherite_shovel"
             }
           ]
         },
@@ -26,6 +32,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/i0004"
+      "function": "lockout:goals/i0047"
     }
   }

@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0153", "goalnum": "730153", "goalname": "Obtain All Pumpkin Types"}

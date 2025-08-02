@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0059", "goalnum": "730059", "goalname": "Obtain Sea Lantern"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0059", "goalnum": "730059", "goalname": "Obtain Nautilus Shell"}

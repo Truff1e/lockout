@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0010", "goalnum": "730010", "goalname": "Craft a Pot with 4 Sherds"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0010", "goalnum": "730010", "goalname": "Obtain Full Gold Armor"}

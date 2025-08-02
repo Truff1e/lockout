@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "rabbit_stew": {
-        "trigger": "minecraft:consume_item",
-        "conditions": {
-          "item": {
-            "items": "minecraft:enchanted_golden_apple"
-          }
+            "criteria": {
+              "eat": {
+                "trigger": "minecraft:consume_item",
+                "conditions": {
+                  "item": {
+                    "items": "minecraft:dried_kelp"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "eat"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/e0005"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "rabbit_stew"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/e0005"
-    }
-  }
-  

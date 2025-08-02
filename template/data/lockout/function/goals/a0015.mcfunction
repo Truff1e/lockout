@@ -1,2 +1,2 @@
 execute as @s run function lockout:goals/count/advancements
-execute as @s run function lockout:goals/skeleton/master {"goalid": "A0015", "goalnum": "650015", "goalname": "Get Subspace Bubble Advancement"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "A0015", "goalnum": "650015", "goalname": "Do Power of Books Advancement"}

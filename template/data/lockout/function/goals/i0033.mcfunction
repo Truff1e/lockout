@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0033", "goalnum": "730033", "goalname": "Obtain Bucket of Tropical Fish"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0033", "goalnum": "730033", "goalname": "Obtain All Furnace Variants"}

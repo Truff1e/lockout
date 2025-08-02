@@ -1,43 +1,20 @@
 {
-  "criteria": {
-    "patterns": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:flow_banner_pattern"
-          },
-          {
-            "items": "minecraft:globe_banner_pattern"
-          },
-          {
-            "items": "minecraft:skull_banner_pattern"
-          },
-          {
-            "items": "minecraft:flower_banner_pattern"
-          },
-          {
-            "items": "minecraft:guster_banner_pattern"
-          },
-          {
-            "items": "minecraft:mojang_banner_pattern"
-          },
-          {
-            "items": "minecraft:piglin_banner_pattern"
-          },
-          {
-            "items": "minecraft:creeper_banner_pattern"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:comparator"
+              }
+            }
           }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+        },
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0041"
+        }
     }
-  },
-  "requirements": [
-    [
-      "patterns"
-    ]
-  ],
-  "rewards": {
-    "function": "lockout:goals/i0041"
-  }
-}

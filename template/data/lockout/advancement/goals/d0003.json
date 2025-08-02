@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "llama": {
-        "trigger": "minecraft:entity_killed_player",
-        "conditions": {
-          "entity": {
-            "type": "minecraft:llama"
-          }
+            "criteria": {
+              "dieto": {
+                "trigger": "minecraft:entity_killed_player",
+                "conditions": {
+                  "entity": {
+                    "type": "minecraft:iron_golem"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "dieto"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/d0003"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "llama"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/d0003"
-    }
-  }
-  

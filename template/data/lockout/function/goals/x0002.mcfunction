@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0002", "goalnum": "880002", "goalname": "Get 64 of the Same Item"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0002", "goalnum": "880002", "goalname": "Get 15 Levels"}

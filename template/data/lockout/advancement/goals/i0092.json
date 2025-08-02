@@ -1,22 +1,25 @@
 {
     "criteria": {
-      "end_rod": {
+      "healing_potion": {
+        "trigger": "minecraft:inventory_changed",
         "conditions": {
           "items": [
             {
-              "items": "minecraft:pink_glazed_terracotta"
+              "items": "minecraft:potion",
+              "predicates": {
+                "minecraft:potion_contents": "minecraft:healing"
+              }
             }
           ]
-        },
-        "trigger": "minecraft:inventory_changed"
+        }
       }
     },
     "requirements": [
       [
-        "end_rod"
+        "healing_potion"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0092"
+      "function": "lockout:goals/i0019"
     }
   }

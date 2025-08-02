@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0057", "goalnum": "730057", "goalname": "Get All Overworld Ore Blocks"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0057", "goalnum": "730057", "goalname": "Obtain Wither Skeleton Skull"}

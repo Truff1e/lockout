@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0029", "goalnum": "730029", "goalname": "Obtain Scaffolding"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0029", "goalnum": "730029", "goalname": "Obtain All Nether Ore Blocks"}

@@ -4,19 +4,19 @@
         "conditions": {
           "items": [
             {
-              "items": "minecraft:golden_sword"
+              "items": "minecraft:iron_sword"
             },
             {
-              "items": "minecraft:golden_axe"
+              "items": "minecraft:iron_axe"
             },
             {
-              "items": "minecraft:golden_pickaxe"
+              "items": "minecraft:iron_pickaxe"
             },
             {
-              "items": "minecraft:golden_shovel"
+              "items": "minecraft:iron_shovel"
             },
             {
-              "items": "minecraft:golden_hoe"
+              "items": "minecraft:iron_hoe"
             }
           ]
         },
@@ -29,6 +29,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/i0017"
+      "function": "lockout:goals/i0058"
     }
   }

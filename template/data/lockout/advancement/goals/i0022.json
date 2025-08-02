@@ -1,31 +1,67 @@
 {
-    "criteria": {
-      "leather_armor": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:leather_helmet"
-            },
-            {
-              "items": "minecraft:leather_chestplate"
-            },
-            {
-              "items": "minecraft:leather_leggings"
-            },
-            {
-              "items": "minecraft:leather_boots"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "leather_armor"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0022"
+  "criteria": {
+    "stone_tools": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:red_wool"
+          },
+          {
+            "items": "minecraft:orange_wool"
+          },
+          {
+            "items": "minecraft:yellow_wool"
+          },
+          {
+            "items": "minecraft:lime_wool"
+          },
+          {
+            "items": "minecraft:green_wool"
+          },
+          {
+            "items": "minecraft:cyan_wool"
+          },
+          {
+            "items": "minecraft:light_blue_wool"
+          },
+          {
+            "items": "minecraft:blue_wool"
+          },
+          {
+            "items": "minecraft:purple_wool"
+          },
+          {
+            "items": "minecraft:magenta_wool"
+          },
+          {
+            "items": "minecraft:pink_wool"
+          },
+          {
+            "items": "minecraft:white_wool"
+          },
+          {
+            "items": "minecraft:black_wool"
+          },
+          {
+            "items": "minecraft:brown_wool"
+          },
+          {
+            "items": "minecraft:gray_wool"
+          },
+          {
+            "items": "minecraft:light_gray_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
+  },
+  "requirements": [
+    [
+      "stone_tools"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/i0035"
   }
+}

@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I2012", "goalnum": "732012", "goalname": "Obtain 64 Purple Concrete"}

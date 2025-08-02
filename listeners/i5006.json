@@ -1,0 +1,20 @@
+{
+            "criteria": {
+              "getitem": {
+                "trigger": "minecraft:inventory_changed",
+                "conditions": {
+                  "items": {
+                    "items": "minecraft:yellow_stained_glass"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "getitem"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/i5006"
+            }
+        }

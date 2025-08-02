@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0092", "goalnum": "730092", "goalname": "Obtain Pink Glazed Terracotta"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0092", "goalnum": "730092", "goalname": "Brew Healing Potion"}

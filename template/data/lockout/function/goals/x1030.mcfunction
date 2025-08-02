@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X1030", "goalnum": "881030", "goalname": "Get Withered"}

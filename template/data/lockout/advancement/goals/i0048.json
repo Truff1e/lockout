@@ -1,37 +1,20 @@
 {
-    "criteria": {
-      "picks": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:wooden_axe"
-            },
-            {
-              "items": "minecraft:stone_axe"
-            },
-            {
-              "items": "minecraft:iron_axe"
-            },
-            {
-              "items": "minecraft:golden_axe"
-            },
-            {
-              "items": "minecraft:diamond_axe"
-            },
-            {
-              "items": "minecraft:netherite_axe"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:honey_bottle"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "picks"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0048"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0048"
+        }
     }
-  }

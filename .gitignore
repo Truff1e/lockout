@@ -3,4 +3,5 @@
 /workspace.xml
 /lockout-generator.iml
 /triggers/
-/create_triggers.py/
+**/.DS_Store
+**/__pycache__/

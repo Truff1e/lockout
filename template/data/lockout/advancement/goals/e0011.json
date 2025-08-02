@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "chorus_fruit": {
-        "trigger": "minecraft:consume_item",
-        "conditions": {
-          "item": {
-            "items": "minecraft:glow_berries"
-          }
+            "criteria": {
+              "eat": {
+                "trigger": "minecraft:consume_item",
+                "conditions": {
+                  "item": {
+                    "items": "minecraft:beetroot_stew"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "eat"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/e0011"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "chorus_fruit"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/e0011"
-    }
-  }
-  

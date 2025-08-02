@@ -1,28 +1,20 @@
 {
-    "criteria": {
-      "furnaces": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:furnace"
-            },
-            {
-              "items": "minecraft:smoker"
-            },
-            {
-              "items": "minecraft:blast_furnace"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:clock"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "furnaces"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0090"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0090"
+        }
     }
-  }

@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "K0027", "goalnum": "750027", "goalname": "Kill 7 Unique Hostile Mobs"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "K0027", "goalnum": "750027", "goalname": "Kill Zoglin"}

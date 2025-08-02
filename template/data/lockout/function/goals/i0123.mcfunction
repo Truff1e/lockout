@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0123", "goalnum": "730123", "goalname": "Obtain Honey Block"}

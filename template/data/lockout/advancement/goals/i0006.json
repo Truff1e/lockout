@@ -1,10 +1,19 @@
 {
     "criteria": {
-      "cake": {
+      "leather_armor": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:cake"
+              "items": "minecraft:leather_helmet"
+            },
+            {
+              "items": "minecraft:leather_chestplate"
+            },
+            {
+              "items": "minecraft:leather_leggings"
+            },
+            {
+              "items": "minecraft:leather_boots"
             }
           ]
         },
@@ -13,10 +22,10 @@
     },
     "requirements": [
       [
-        "cake"
+        "leather_armor"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0006"
+      "function": "lockout:goals/i0022"
     }
   }

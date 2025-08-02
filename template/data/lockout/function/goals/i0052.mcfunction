@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0052", "goalnum": "730052", "goalname": "Obtain Totem of Undying"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0052", "goalnum": "730052", "goalname": "Obtain Mushroom Stem"}

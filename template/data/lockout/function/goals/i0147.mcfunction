@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0147", "goalnum": "730147", "goalname": "Obtain Resin Brick Stairs"}

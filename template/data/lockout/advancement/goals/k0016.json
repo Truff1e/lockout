@@ -1,18 +1,44 @@
 {
     "criteria": {
-      "endermite": {
+      "kill_player": {
         "trigger": "minecraft:player_killed_entity",
         "conditions": {
+          "player": {
+            "type_specific": {
+              "type": "minecraft:player"
+            },
+            "team": "1"
+          },
           "entity": {
-            "type": "minecraft:sheep",
-            "nbt": "{Color:1b}"
+            "type_specific": {
+              "type": "minecraft:player"
+            },
+            "team": "2"
+          }
+        }
+      },
+      "kill_player2": {
+        "trigger": "minecraft:player_killed_entity",
+        "conditions": {
+          "player": {
+            "type_specific": {
+              "type": "minecraft:player"
+            },
+            "team": "2"
+          },
+          "entity": {
+            "type_specific": {
+              "type": "minecraft:player"
+            },
+            "team": "1"
           }
         }
       }
     },
     "requirements": [
       [
-        "endermite"
+        "kill_player",
+        "kill_player2"
       ]
     ],
     "rewards": {

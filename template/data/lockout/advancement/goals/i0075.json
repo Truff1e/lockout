@@ -1,31 +1,20 @@
 {
-    "criteria": {
-      "picks": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:wheat_seeds"
-            },
-            {
-              "items": "minecraft:beetroot_seeds"
-            },
-            {
-              "items": "minecraft:melon_seeds"
-            },
-            {
-              "items": "minecraft:pumpkin_seeds"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:daylight_detector"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "picks"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0075"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0075"
+        }
     }
-  }

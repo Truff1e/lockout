@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "T0008", "goalnum": "840008", "goalname": "Tame 5 Cat Variants"}

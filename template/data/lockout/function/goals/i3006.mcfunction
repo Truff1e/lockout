@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I3006", "goalnum": "733006", "goalname": "Obtain Yellow Glazed Terracotta"}

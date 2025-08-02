@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "B0008", "goalnum": "660008", "goalname": "Breed Pig"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "B0008", "goalnum": "660008", "goalname": "Breed Horse"}

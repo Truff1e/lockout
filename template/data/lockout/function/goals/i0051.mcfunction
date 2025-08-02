@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0051", "goalnum": "730051", "goalname": "Obtain Rabbit Foot"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0051", "goalnum": "730051", "goalname": "Obtain Red Nether Brick Stairs"}

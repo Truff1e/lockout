@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "requirement": {
-        "trigger": "minecraft:entity_killed_player",
-        "conditions": {
-          "entity": {
-            "type": "minecraft:goat"
-          }
+            "criteria": {
+              "dieto": {
+                "trigger": "minecraft:entity_killed_player",
+                "conditions": {
+                  "entity": {
+                    "type": "minecraft:creaking"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "dieto"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/d0009"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "requirement"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/d0009"
-    }
-  }
-  

@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0042", "goalnum": "730042", "goalname": "Obtain Trail Ruins Armor Trim"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0042", "goalnum": "730042", "goalname": "Obtain Repeater"}

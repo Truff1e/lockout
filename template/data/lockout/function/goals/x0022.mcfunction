@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0022", "goalnum": "880022", "goalname": "Craft 25 Unique Items"}

@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "L0008", "goalnum": "760008", "goalname": "Locate all Nether Biomes"}

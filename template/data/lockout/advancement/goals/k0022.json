@@ -1,20 +1,20 @@
 {
-    "criteria": {
-      "silverfish": {
-        "trigger": "minecraft:player_killed_entity",
-        "conditions": {
-          "entity": {
-            "type": "minecraft:snow_golem"
-          }
+            "criteria": {
+              "killentity": {
+                "trigger": "minecraft:player_killed_entity",
+                "conditions": {
+                  "entity": {
+                    "type": "minecraft:spider"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "killentity"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/k0022"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "silverfish"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/k0022"
-    }
-  }

@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0008", "goalnum": "880008", "goalname": "Mine Mob Spawner"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0008", "goalnum": "880008", "goalname": "Sprint 1km"}

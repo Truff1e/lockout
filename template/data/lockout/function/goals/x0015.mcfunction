@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0015", "goalnum": "880015", "goalname": "Have 3 Status Effects at Once"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0015", "goalnum": "880015", "goalname": "Reach Height Limit"}

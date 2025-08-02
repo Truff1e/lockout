@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "chorus_fruit": {
-        "trigger": "minecraft:consume_item",
-        "conditions": {
-          "item": {
-            "items": "minecraft:chorus_fruit"
-          }
+            "criteria": {
+              "eat": {
+                "trigger": "minecraft:consume_item",
+                "conditions": {
+                  "item": {
+                    "items": "minecraft:apple"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "eat"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/e0001"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "chorus_fruit"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/e0001"
-    }
-  }
-  

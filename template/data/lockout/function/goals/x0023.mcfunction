@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0023", "goalnum": "880023", "goalname": "Have 9 Status Effects at Once"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0023", "goalnum": "880023", "goalname": "Craft 50 Unique Items"}

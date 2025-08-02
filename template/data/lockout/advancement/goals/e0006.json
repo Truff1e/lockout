@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "rabbit_stew": {
-        "trigger": "minecraft:consume_item",
-        "conditions": {
-          "item": {
-            "items": "minecraft:spider_eye"
-          }
+            "criteria": {
+              "eat": {
+                "trigger": "minecraft:consume_item",
+                "conditions": {
+                  "item": {
+                    "items": "minecraft:glow_berry"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "eat"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/e0006"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "rabbit_stew"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/e0006"
-    }
-  }
-  

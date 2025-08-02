@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0106", "goalnum": "730106", "goalname": "Obtain Glow Item Frame"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0106", "goalnum": "730106", "goalname": "Obtain Creaking Heart"}

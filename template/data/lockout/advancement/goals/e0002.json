@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "poisonous_potato": {
-        "trigger": "minecraft:consume_item",
-        "conditions": {
-          "item": {
-            "items": "minecraft:poisonous_potato"
-          }
+            "criteria": {
+              "eat": {
+                "trigger": "minecraft:consume_item",
+                "conditions": {
+                  "item": {
+                    "items": "minecraft:beetroot"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "eat"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/e0002"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "poisonous_potato"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/e0002"
-    }
-  }
-  

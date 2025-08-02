@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0019", "goalnum": "880019", "goalname": "Get Leaping"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0019", "goalnum": "880019", "goalname": "Have 6 Status Effects at Once"}

@@ -50,7 +50,7 @@ def generatebalanced():
                 excluded.append(goal)
         print("Generating Lockout Board")
     print(excluded)
-    board = balancedboard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), excluded=excluded)
+    board = generateBalancedBoard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), ['all'], excluded=excluded)
     boardoutputwindow(board, 'balanced')
 
 def generatecustom():
@@ -97,12 +97,14 @@ difficulty = ttk.Frame(balanced_window, padding=5)
 overrides = ttk.Frame(balanced_window, padding=5)
 
 ttk.Label(boardsize, text="Board Size: ").pack(side="left")
-boardsizeslider = ttk.Scale(boardsize, from_=1, to=9, orient='horizontal', variable=sizevar, command=(lambda event: boardsizelabel.configure(text=f"{getsizesildervalue()} x {getsizesildervalue()}")))
+boardsizeslider = ttk.Scale(boardsize, from_=1, to=9, orient='horizontal', variable=sizevar,
+                            command=(lambda event: boardsizelabel.configure(text=f"{getsizesildervalue()} x {getsizesildervalue()}")))
 boardsizelabel = ttk.Label(boardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
 boardsizeslider.pack(side="left", padx=10, pady=3)
 boardsizelabel.pack(side="left")
 ttk.Label(difficulty, text="Difficulty: ").pack(side="left")
-difficultyslider = ttk.Scale(difficulty, from_=1, to=8, orient='horizontal', variable=difficultyvar, command=(lambda event: difficultylabel.configure(text=f"{getdifficultysildervalue()}")))
+difficultyslider = ttk.Scale(difficulty, from_=1, to=8, orient='horizontal', variable=difficultyvar,
+                             command=(lambda event: difficultylabel.configure(text=f"{getdifficultysildervalue()}")))
 difficultylabel = ttk.Label(difficulty, text=getdifficultysildervalue())
 difficultyslider.pack(side="left", padx=10, pady=3)
 difficultylabel.pack(side="left")
@@ -117,7 +119,7 @@ generatebutton.pack()
 
 # Custom Board
 customboardinput = ttk.Frame(custom_window, padding=10)
-ttk.Label(customboardinput, text="Custom Board: ").pack(side=LEFT)
+ttk.Label(customboardinput, text="Custom Board: ").pack(side="left")
 customboardtext = Text(customboardinput, height=7, width=25)
 customboardtext.pack(side="left")
 customgeneratebutton = ttk.Button(custom_window, text="Generate Custom Board", command=generatecustom)

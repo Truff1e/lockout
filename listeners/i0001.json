@@ -1,0 +1,20 @@
+{
+            "criteria": {
+              "getitem": {
+                "trigger": "minecraft:inventory_changed",
+                "conditions": {
+                  "items": {
+                    "items": "minecraft:netherite_sword"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "getitem"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/i0001"
+            }
+        }

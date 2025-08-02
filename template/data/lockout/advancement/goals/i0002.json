@@ -4,22 +4,22 @@
         "conditions": {
           "items": [
             {
-              "items": "minecraft:wooden_hoe"
+              "items": "minecraft:wooden_axe"
             },
             {
-              "items": "minecraft:stone_hoe"
+              "items": "minecraft:stone_axe"
             },
             {
-              "items": "minecraft:iron_hoe"
+              "items": "minecraft:iron_axe"
             },
             {
-              "items": "minecraft:golden_hoe"
+              "items": "minecraft:golden_axe"
             },
             {
-              "items": "minecraft:diamond_hoe"
+              "items": "minecraft:diamond_axe"
             },
             {
-              "items": "minecraft:netherite_hoe"
+              "items": "minecraft:netherite_axe"
             }
           ]
         },
@@ -32,6 +32,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/i0002"
+      "function": "lockout:goals/i0048"
     }
   }

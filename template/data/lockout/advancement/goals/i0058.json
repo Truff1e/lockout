@@ -1,34 +1,20 @@
 {
-    "criteria": {
-      "picks": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:iron_sword"
-            },
-            {
-              "items": "minecraft:iron_axe"
-            },
-            {
-              "items": "minecraft:iron_pickaxe"
-            },
-            {
-              "items": "minecraft:iron_shovel"
-            },
-            {
-              "items": "minecraft:iron_hoe"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:trident"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "picks"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0058"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0058"
+        }
     }
-  }

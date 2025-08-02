@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "T0011", "goalnum": "840011", "goalname": "Tame Every Wolf Variant"}

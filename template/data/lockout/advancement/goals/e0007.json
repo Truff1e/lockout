@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "rabbit_stew": {
-        "trigger": "minecraft:consume_item",
-        "conditions": {
-          "item": {
-            "items": "minecraft:beetroot"
-          }
+            "criteria": {
+              "eat": {
+                "trigger": "minecraft:consume_item",
+                "conditions": {
+                  "item": {
+                    "items": "minecraft:poisonous_potato"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "eat"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/e0007"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "rabbit_stew"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/e0007"
-    }
-  }
-  

@@ -1,31 +1,20 @@
 {
-    "criteria": {
-      "diamond_armor": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:diamond_helmet"
-            },
-            {
-              "items": "minecraft:diamond_chestplate"
-            },
-            {
-              "items": "minecraft:diamond_leggings"
-            },
-            {
-              "items": "minecraft:diamond_boots"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:honey_block"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "diamond_armor"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0049"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0049"
+        }
     }
-  }

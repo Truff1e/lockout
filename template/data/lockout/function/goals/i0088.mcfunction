@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0088", "goalnum": "730088", "goalname": "Brew Jump Boost Potion"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0088", "goalnum": "730088", "goalname": "Obtain Flower Pot"}

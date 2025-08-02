@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0028", "goalnum": "730028", "goalname": "Obtain Red Nether Brick Stairs"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0028", "goalnum": "730028", "goalname": "Obtain All Banner Patterns"}

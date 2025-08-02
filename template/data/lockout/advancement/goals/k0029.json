@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "endermite": {
-        "trigger": "minecraft:player_killed_entity",
-        "conditions": {
-          "entity": {
-            "type": "minecraft:sheep",
-            "nbt": "{Color:4b}"
-          }
+            "criteria": {
+              "killentity": {
+                "trigger": "minecraft:player_killed_entity",
+                "conditions": {
+                  "entity": {
+                    "type": "minecraft:zombie"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "killentity"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/k0029"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "endermite"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/k0029"
-    }
-  }

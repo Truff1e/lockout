@@ -1,10 +1,19 @@
 {
     "criteria": {
-      "comparator": {
+      "diamond_armor": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:dragon_egg"
+              "items": "minecraft:diamond_helmet"
+            },
+            {
+              "items": "minecraft:diamond_chestplate"
+            },
+            {
+              "items": "minecraft:diamond_leggings"
+            },
+            {
+              "items": "minecraft:diamond_boots"
             }
           ]
         },
@@ -13,10 +22,10 @@
     },
     "requirements": [
       [
-        "comparator"
+        "diamond_armor"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0012"
+      "function": "lockout:goals/i0049"
     }
   }

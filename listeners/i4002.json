@@ -1,0 +1,20 @@
+{
+            "criteria": {
+              "getitem": {
+                "trigger": "minecraft:inventory_changed",
+                "conditions": {
+                  "items": {
+                    "items": "minecraft:pink_candle"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "getitem"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/i4002"
+            }
+        }

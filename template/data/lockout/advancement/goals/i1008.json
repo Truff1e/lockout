@@ -1,0 +1,20 @@
+{
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:music_disc_creator_music_box"
+              }
+            }
+          }
+        },
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i1008"
+        }
+    }

@@ -1,2 +1,2 @@
 execute as @s run function lockout:goals/count/advancements
-execute as @s run function lockout:goals/skeleton/master {"goalid": "A0020", "goalnum": "650020", "goalname": "Summon Iron Golem"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "A0020", "goalnum": "650020", "goalname": "Enter Nether Fortress"}

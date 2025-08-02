@@ -1,22 +1,43 @@
 {
-    "criteria": {
-      "end_crystal": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:red_nether_brick_stairs"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "end_crystal"
-      ]
-    ],
-    "rewards": {
-        "function": "lockout:goals/i0028"
+  "criteria": {
+    "patterns": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:flow_banner_pattern"
+          },
+          {
+            "items": "minecraft:globe_banner_pattern"
+          },
+          {
+            "items": "minecraft:skull_banner_pattern"
+          },
+          {
+            "items": "minecraft:flower_banner_pattern"
+          },
+          {
+            "items": "minecraft:guster_banner_pattern"
+          },
+          {
+            "items": "minecraft:mojang_banner_pattern"
+          },
+          {
+            "items": "minecraft:piglin_banner_pattern"
+          },
+          {
+            "items": "minecraft:creeper_banner_pattern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
+  },
+  "requirements": [
+    [
+      "patterns"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/i0041"
   }
+}

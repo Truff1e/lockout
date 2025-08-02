@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0024", "goalnum": "730024", "goalname": "Obtain Mushroom Stem"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0024", "goalnum": "730024", "goalname": "Obtain All Raw Ore Blocks"}

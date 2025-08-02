@@ -1,10 +1,31 @@
 {
     "criteria": {
-      "end_rod": {
+      "ore_blocks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:powder_snow_bucket"
+              "items": "minecraft:coal_block"
+            },
+            {
+              "items": "minecraft:iron_block"
+            },
+            {
+              "items": "minecraft:copper_block"
+            },
+            {
+              "items": "minecraft:gold_block"
+            },
+            {
+              "items": "minecraft:diamond_block"
+            },
+            {
+              "items": "minecraft:redstone_block"
+            },
+            {
+              "items": "minecraft:emerald_block"
+            },
+            {
+              "items": "minecraft:lapis_block"
             }
           ]
         },
@@ -13,10 +34,10 @@
     },
     "requirements": [
       [
-        "end_rod"
+        "ore_blocks"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0026"
+      "function": "lockout:goals/i0057"
     }
   }

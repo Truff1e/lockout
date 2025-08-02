@@ -1,1 +1,0 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0124", "goalnum": "730124", "goalname": "Obtain Glow Lichen"}

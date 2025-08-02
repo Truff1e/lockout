@@ -1,37 +1,20 @@
 {
-    "criteria": {
-      "picks": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:wooden_sword"
-            },
-            {
-              "items": "minecraft:stone_sword"
-            },
-            {
-              "items": "minecraft:iron_sword"
-            },
-            {
-              "items": "minecraft:golden_sword"
-            },
-            {
-              "items": "minecraft:diamond_sword"
-            },
-            {
-              "items": "minecraft:netherite_sword"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:ender_chest"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "picks"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0046"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0046"
+        }
     }
-  }

@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "D0007", "goalnum": "680007", "goalname": "Die on Pointed Dripstone"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "D0007", "goalnum": "680007", "goalname": "Die to Polar Bear"}

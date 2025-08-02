@@ -1,10 +1,25 @@
 {
     "criteria": {
-      "scute": {
+      "picks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:armadillo_scute"
+              "items": "minecraft:wooden_hoe"
+            },
+            {
+              "items": "minecraft:stone_hoe"
+            },
+            {
+              "items": "minecraft:iron_hoe"
+            },
+            {
+              "items": "minecraft:golden_hoe"
+            },
+            {
+              "items": "minecraft:diamond_hoe"
+            },
+            {
+              "items": "minecraft:netherite_hoe"
             }
           ]
         },
@@ -13,10 +28,10 @@
     },
     "requirements": [
       [
-        "scute"
+        "picks"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0005"
+      "function": "lockout:goals/i0002"
     }
   }

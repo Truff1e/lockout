@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/most {"goalid": "M0016", "goalnum": "770016", "goalname": "Have the Most Dried Kelp Blocks"}

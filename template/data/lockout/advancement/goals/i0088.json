@@ -1,25 +1,20 @@
 {
-    "criteria": {
-      "swift_potion": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:potion",
-              "predicates": {
-                "minecraft:potion_contents": "minecraft:leaping"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:flower_pot"
               }
             }
+          }
+        },
+        "requirements": [
+          [
+            "getitem"
           ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0088"
         }
-      }
-    },
-    "requirements": [
-      [
-        "swift_potion"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0088"
     }
-  }

@@ -1,31 +1,20 @@
 {
-    "criteria": {
-      "golden_armor": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:golden_helmet"
-            },
-            {
-              "items": "minecraft:golden_chestplate"
-            },
-            {
-              "items": "minecraft:golden_leggings"
-            },
-            {
-              "items": "minecraft:golden_boots"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:mossy_stone_brick_wall"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "golden_armor"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0050"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0050"
+        }
     }
-  }

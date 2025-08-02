@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0104", "goalnum": "730104", "goalname": "Obtain Nether Star"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0104", "goalnum": "730104", "goalname": "Apply 7 Unique Armor Trims"}

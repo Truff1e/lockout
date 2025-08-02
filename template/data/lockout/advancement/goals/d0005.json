@@ -1,21 +1,20 @@
 {
-    "criteria": {
-      "bee": {
-        "trigger": "minecraft:entity_killed_player",
-        "conditions": {
-          "entity": {
-            "type": "minecraft:witch"
-          }
+            "criteria": {
+              "dieto": {
+                "trigger": "minecraft:entity_killed_player",
+                "conditions": {
+                  "entity": {
+                    "type": "minecraft:piglin_brute"
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "dieto"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/d0005"
+            }
         }
-      }
-    },
-    "requirements": [
-      [
-        "bee"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/d0005"
-    }
-  }
-  

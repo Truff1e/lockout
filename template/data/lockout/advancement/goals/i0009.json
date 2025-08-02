@@ -1,10 +1,19 @@
 {
     "criteria": {
-      "comparator": {
+      "iron_armor": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:comparator"
+              "items": "minecraft:iron_helmet"
+            },
+            {
+              "items": "minecraft:iron_chestplate"
+            },
+            {
+              "items": "minecraft:iron_leggings"
+            },
+            {
+              "items": "minecraft:iron_boots"
             }
           ]
         },
@@ -13,10 +22,10 @@
     },
     "requirements": [
       [
-        "comparator"
+        "iron_armor"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0009"
+      "function": "lockout:goals/i0021"
     }
   }

@@ -1,10 +1,19 @@
 {
     "criteria": {
-      "soul_lantern": {
+      "picks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:soul_lantern"
+              "items": "minecraft:leather_horse_armor"
+            },
+            {
+              "items": "minecraft:iron_horse_armor"
+            },
+            {
+              "items": "minecraft:golden_horse_armor"
+            },
+            {
+              "items": "minecraft:diamond_horse_armor"
             }
           ]
         },
@@ -13,10 +22,10 @@
     },
     "requirements": [
       [
-        "soul_lantern"
+        "picks"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0030"
+      "function": "lockout:goals/i0074"
     }
   }

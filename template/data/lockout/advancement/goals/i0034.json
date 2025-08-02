@@ -1,10 +1,19 @@
 {
     "criteria": {
-      "end_rod": {
+      "picks": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:wither_skeleton_skull"
+              "items": "minecraft:red_mushroom"
+            },
+            {
+              "items": "minecraft:brown_mushroom"
+            },
+            {
+              "items": "minecraft:crimson_fungus"
+            },
+            {
+              "items": "minecraft:warped_fungus"
             }
           ]
         },
@@ -13,10 +22,10 @@
     },
     "requirements": [
       [
-        "end_rod"
+        "picks"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0034"
+      "function": "lockout:goals/i0151"
     }
   }

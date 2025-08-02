@@ -1,10 +1,40 @@
 {
     "criteria": {
-      "end_crystal": {
+      "netherite_boots": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:end_crystal"
+              "items": "minecraft:netherite_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "netherite_chestplate": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_chestplate"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "netherite_helmet": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_helmet"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "netherite_leggings": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_leggings"
             }
           ]
         },
@@ -13,10 +43,13 @@
     },
     "requirements": [
       [
-        "end_crystal"
+        "netherite_helmet",
+        "netherite_chestplate",
+        "netherite_leggings",
+        "netherite_boots"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/i0013"
+      "function": "lockout:goals/i0025"
     }
   }

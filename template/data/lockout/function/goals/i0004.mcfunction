@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0004", "goalnum": "730004", "goalname": "Obtain All Rail Types"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0004", "goalnum": "730004", "goalname": "Obtain All Shovels"}

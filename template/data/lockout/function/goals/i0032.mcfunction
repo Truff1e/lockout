@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0032", "goalnum": "730032", "goalname": "Brew Swiftness Potion"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0032", "goalnum": "730032", "goalname": "Obtain All Minecart Types"}

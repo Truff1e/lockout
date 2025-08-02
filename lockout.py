@@ -1,7 +1,9 @@
 from generator import generateBoard
-from index import goalDictionary, balancedIndex
+from index import createNewBalancedGoalIndex, getFullGoalIndex
 from random import choice, choices
 import os
+
+goalDictionary = getFullGoalIndex()
 
 def getid(goal):
     for i in goalDictionary:
@@ -25,7 +27,7 @@ def translate(goal_id):
         return "Goal not found."
 
 
-def check_excluded_goals(newgoal, excluded):
+def checkExcludedGoals(newgoal, excluded):
     for goal in excluded:
         if newgoal == goal:
             return True
@@ -44,45 +46,43 @@ def parse_options():
 
 version = parse_options()['version'][:-1]
 
-def customboard(goal_list: list):
-    generateBoard(goal_list, f'custom-s{len(goal_list)}', version)
-    return goal_list
+def generateCustomboard(boardBlueprint: list):
+    print(f'Generating Custom Board')
+    generateBoard(boardBlueprint, f'custom-s{len(boardBlueprint)}', version)
+    return boardBlueprint
 
 
-def balancedboard(size: int, difficulty, excluded=None):
+def generateBalancedBoard(size: int, difficultySet: tuple, expansions, excluded=None):
     if excluded is None:
         excluded = []
 
-    if len(difficulty) > 1:
-        for w in range(len(difficulty)):
-            difficulty[w] = float(difficulty[w])
-        weights = difficulty
-        difficulty = 'custom'
-    else:
-        difficulty = float(difficulty[0])
-        weights = [(-0.5*difficulty) + 10, (-0.25*difficulty) + 8, (8 * 2**((difficulty-2.5)/8)) - 7.5, (8 * 2**((difficulty-2.5)/6)) - 9]
+    minDifficulty, difficultyWeights, maxDifficulty = difficultySet
+    goalIndex = createNewBalancedGoalIndex(expansions, True)
 
-    goal_list = []
-    for w in range(len(weights)):
-        if weights[w] < 0:
-            weights[w] = 0
+    print(f'Generating Balanced Board of size {size}')
+
+    boardBlueprint = [] 
     for i in range(size):
-        goal_difficulty = choices([1, 2, 3, 4], weights=weights, k=1)[0]
-        newgoal = choice(balancedIndex)
+        if difficultyWeights != None:
+            preferredDifficulty = choices(range(minDifficulty, maxDifficulty+1), weights=difficultyWeights, k=1)[0]
+        else:
+            preferredDifficulty = None
+
+        newgoal = choice(list(goalIndex))
         runs = 0
-        while ((newgoal in goal_list)
-               or (goalDictionary[newgoal][2] != goal_difficulty)
-               or check_excluded_goals(newgoal, excluded)):
-            newgoal = choice(balancedIndex)
+        while ((newgoal in boardBlueprint) or (goalDictionary[newgoal][3] not in range(int(minDifficulty), int(maxDifficulty)+1)) 
+                or (goalDictionary[newgoal][3] != preferredDifficulty if preferredDifficulty != None else False)
+                or checkExcludedGoals(newgoal, excluded)) or newgoal in boardBlueprint:
+            newgoal = choice(list(goalIndex))
             runs += 1
             if runs > 300:
                 print("Failed to find compatible goal, defaulting to random non-duplicate.")
                 break
-        while newgoal in goal_list:
-            newgoal = choice(balancedIndex)
+        while newgoal in boardBlueprint:
+            newgoal = choice(list(goalIndex))
 
-        goal_list.append(newgoal)
-        print(f'Added {newgoal} ({goalDictionary[newgoal][0]}) of difficulty {goalDictionary[newgoal][2]}')
+        boardBlueprint.append(newgoal)
+        print(f'Added {newgoal} ({goalDictionary[newgoal][0]}) of difficulty {goalDictionary[newgoal][3]}')
 
-    generateBoard(goal_list, f's{size}-d{difficulty}', version)
-    return goal_list
+    generateBoard(boardBlueprint, f's{size}-d{minDifficulty}-{maxDifficulty}', version)
+    return boardBlueprint

@@ -1,43 +1,20 @@
 {
-    "criteria": {
-      "ore_blocks": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:coal_block"
-            },
-            {
-              "items": "minecraft:iron_block"
-            },
-            {
-              "items": "minecraft:copper_block"
-            },
-            {
-              "items": "minecraft:gold_block"
-            },
-            {
-              "items": "minecraft:diamond_block"
-            },
-            {
-              "items": "minecraft:redstone_block"
-            },
-            {
-              "items": "minecraft:emerald_block"
-            },
-            {
-              "items": "minecraft:lapis_block"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": {
+                "items": "minecraft:wither_skeleton_skull"
+              }
             }
-          ]
+          }
         },
-        "trigger": "minecraft:inventory_changed"
-      }
-    },
-    "requirements": [
-      [
-        "ore_blocks"
-      ]
-    ],
-    "rewards": {
-      "function": "lockout:goals/i0057"
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0057"
+        }
     }
-  }

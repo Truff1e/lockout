@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0023", "goalnum": "730023", "goalname": "Obtain Mossy Stone Brick Wall"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0023", "goalnum": "730023", "goalname": "Obtain All Rail Types"}

@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "I0044", "goalnum": "730044", "goalname": "Use 5 Unique Armor Trims"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0044", "goalnum": "730044", "goalname": "Obtain End Crystal"}

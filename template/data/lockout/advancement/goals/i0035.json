@@ -1,67 +1,28 @@
 {
-  "criteria": {
-    "stone_tools": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:red_wool"
-          },
-          {
-            "items": "minecraft:orange_wool"
-          },
-          {
-            "items": "minecraft:yellow_wool"
-          },
-          {
-            "items": "minecraft:lime_wool"
-          },
-          {
-            "items": "minecraft:green_wool"
-          },
-          {
-            "items": "minecraft:cyan_wool"
-          },
-          {
-            "items": "minecraft:light_blue_wool"
-          },
-          {
-            "items": "minecraft:blue_wool"
-          },
-          {
-            "items": "minecraft:purple_wool"
-          },
-          {
-            "items": "minecraft:magenta_wool"
-          },
-          {
-            "items": "minecraft:pink_wool"
-          },
-          {
-            "items": "minecraft:white_wool"
-          },
-          {
-            "items": "minecraft:black_wool"
-          },
-          {
-            "items": "minecraft:brown_wool"
-          },
-          {
-            "items": "minecraft:gray_wool"
-          },
-          {
-            "items": "minecraft:light_gray_wool"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:pumpkin"
+            },
+            {
+              "items": "minecraft:jack_o_lantern"
+            },
+            {
+              "items": "minecraft:carved_pumpkin"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0153"
     }
-  },
-  "requirements": [
-    [
-      "stone_tools"
-    ]
-  ],
-  "rewards": {
-    "function": "lockout:goals/i0035"
   }
-}
