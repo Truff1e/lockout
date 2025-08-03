@@ -1,20 +1,22 @@
 {
-        "criteria": {
-          "getitem": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-              "items": {
-                "items": "minecraft:end_rod"
-              }
-            }
-          }
-        },
-        "requirements": [
-          [
-            "getitem"
-          ]
-        ],
-        "rewards": {
-          "function": "lockout:goals/i0045"
+    "criteria": {
+      "getitem": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+            "items": [
+                {
+                    "items": "minecraft:end_rod"
+                }
+            ]
         }
+      }
+    },
+    "requirements": [
+      [
+        "getitem"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0045"
     }
+}

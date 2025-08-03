@@ -1,20 +1,22 @@
 {
-        "criteria": {
-          "getitem": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-              "items": {
-                "items": "minecraft:elytra"
-              }
-            }
-          }
-        },
-        "requirements": [
-          [
-            "getitem"
-          ]
-        ],
-        "rewards": {
-          "function": "lockout:goals/i0085"
+    "criteria": {
+      "getitem": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+            "items": [
+                {
+                    "items": "minecraft:elytra"
+                }
+            ]
         }
+      }
+    },
+    "requirements": [
+      [
+        "getitem"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0085"
     }
+}

@@ -1,20 +1,22 @@
 {
-        "criteria": {
-          "getitem": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-              "items": {
-                "items": "minecraft:flower_pot"
-              }
-            }
-          }
-        },
-        "requirements": [
-          [
-            "getitem"
-          ]
-        ],
-        "rewards": {
-          "function": "lockout:goals/i0088"
+    "criteria": {
+      "getitem": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+            "items": [
+                {
+                    "items": "minecraft:flower_pot"
+                }
+            ]
         }
+      }
+    },
+    "requirements": [
+      [
+        "getitem"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0088"
     }
+}

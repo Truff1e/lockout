@@ -4,7 +4,7 @@
                 "trigger": "minecraft:consume_item",
                 "conditions": {
                   "item": {
-                    "items": "minecraft:beetroot_stew"
+                    "items": "minecraft:beetroot_soup"
                   }
                 }
               }

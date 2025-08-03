@@ -1,20 +1,22 @@
 {
-        "criteria": {
-          "getitem": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-              "items": {
-                "items": "minecraft:totem_of_undying"
-              }
-            }
-          }
-        },
-        "requirements": [
-          [
-            "getitem"
-          ]
-        ],
-        "rewards": {
-          "function": "lockout:goals/i0063"
+    "criteria": {
+      "getitem": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+            "items": [
+                {
+                    "items": "minecraft:totem_of_undying"
+                }
+            ]
         }
+      }
+    },
+    "requirements": [
+      [
+        "getitem"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0063"
     }
+}

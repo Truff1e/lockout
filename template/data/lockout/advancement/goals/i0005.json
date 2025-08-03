@@ -32,6 +32,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/i0002"
+      "function": "lockout:goals/i0005"
     }
   }

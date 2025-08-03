@@ -1,44 +1,28 @@
 {
-  "criteria": {
-    "chainmail_boots": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:verdant_froglight"
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                  {
+                    "items": "minecraft:pearlescent_froglight"
+                  },
+                  {
+                    "items": "minecraft:verdant_froglight"
+                  },
+                  {
+                    "items": "minecraft:ochre_froglight"
+                  }
+              ]
+            }
           }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chainmail_chestplate": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:pearlescent_froglight"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "chainmail_helmet": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:ochre_froglight"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
+        },
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0098"
+        }
     }
-  },
-  "requirements": [
-    [
-      "chainmail_helmet",
-      "chainmail_chestplate",
-      "chainmail_boots"
-    ]
-  ],
-  "rewards": {
-    "function": "lockout:goals/i0016"
-  }
-}

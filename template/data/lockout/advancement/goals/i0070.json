@@ -1,20 +1,22 @@
 {
-        "criteria": {
-          "getitem": {
-            "trigger": "minecraft:inventory_changed",
-            "conditions": {
-              "items": {
-                "items": "minecraft:ancient_debris"
-              }
-            }
-          }
-        },
-        "requirements": [
-          [
-            "getitem"
-          ]
-        ],
-        "rewards": {
-          "function": "lockout:goals/i0070"
+    "criteria": {
+      "getitem": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+            "items": [
+                {
+                    "items": "minecraft:ancient_debris"
+                }
+            ]
         }
+      }
+    },
+    "requirements": [
+      [
+        "getitem"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0070"
     }
+}

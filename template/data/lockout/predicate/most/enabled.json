@@ -7,7 +7,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "#N0012"
+            "name": "#M0012"
           },
           "score": "lk.enabled_goals"
         },
@@ -19,7 +19,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "#N0013"
+            "name": "#M0013"
           },
           "score": "lk.enabled_goals"
         },
@@ -31,7 +31,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "#N0014"
+            "name": "#M0014"
           },
           "score": "lk.enabled_goals"
         },
@@ -43,7 +43,7 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
-            "name": "#N0015"
+            "name": "#M0015"
           },
           "score": "lk.enabled_goals"
         },

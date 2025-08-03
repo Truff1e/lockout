@@ -1,18 +1,30 @@
 {
     "criteria": {
-      "obsidian": {
-        "trigger": "minecraft:enter_block",
+      "bedrock": {
+        "trigger": "minecraft:location",
         "conditions": {
-          "block": "minecraft:water"
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "stepping_on": {
+                  "block": {
+                    "blocks": "minecraft:netherrack"
+                  }
+                }
+              }
+            }
+          ]
         }
       }
     },
     "requirements": [
       [
-        "obsidian"
+        "bedrock"
       ]
     ],
     "rewards": {
-        "function": "lockout:goals/n0008"
+      "function": "lockout:goals/n0008"
     }
   }

@@ -1,64 +1,30 @@
 {
     "criteria": {
-      "chest": {
-        "trigger": "minecraft:inventory_changed",
+      "bedrock": {
+        "trigger": "minecraft:location",
         "conditions": {
-          "player": {
-            "equipment": {
-              "chest": {
-                "items": "#minecraft:chest_armor"
+          "player": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "stepping_on": {
+                  "block": {
+                    "blocks": "minecraft:stone"
+                  }
+                }
               }
             }
-          }
-        }
-      },
-      "head": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "player": {
-            "equipment": {
-              "head": {
-                "items": "#minecraft:head_armor"
-              }
-            }
-          }
-        }
-      },
-      "legs": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "player": {
-            "equipment": {
-              "legs": {
-                "items": "#minecraft:leg_armor"
-              }
-            }
-          }
-        }
-      },
-      "feet": {
-        "trigger": "minecraft:inventory_changed",
-        "conditions": {
-          "player": {
-            "equipment": {
-              "feet": {
-                "items": "#minecraft:foot_armor"
-              }
-            }
-          }
+          ]
         }
       }
     },
     "requirements": [
       [
-        "feet",
-        "legs",
-        "head",
-        "chest"
+        "bedrock"
       ]
     ],
     "rewards": {
       "function": "lockout:goals/n0009"
     }
   }
-  

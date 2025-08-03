@@ -1,10 +1,10 @@
 {
     "criteria": {
-      "crafting_table": {
+      "obsidian": {
         "conditions": {
           "items": [
             {
-              "items": "minecraft:crafting_table"
+              "items": "minecraft:obsidian"
             }
           ]
         },
@@ -13,7 +13,7 @@
     },
     "requirements": [
       [
-        "crafting_table"
+        "obsidian"
       ]
     ],
     "rewards": {

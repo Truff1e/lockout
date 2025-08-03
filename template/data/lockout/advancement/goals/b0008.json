@@ -1,20 +1,20 @@
 {
     "criteria": {
-      "horse": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:pig"
+            "type": "minecraft:horse"
           },
           "partner": {
-            "type": "minecraft:pig"
+            "type": "minecraft:horse"
           }
         }
       }
     },
     "requirements": [
       [
-        "horse"
+        "breed"
       ]
     ],
     "rewards": {

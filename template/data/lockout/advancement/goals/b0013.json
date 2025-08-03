@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "breed": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:rabbit"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "breed"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0013"
+    }
+  }

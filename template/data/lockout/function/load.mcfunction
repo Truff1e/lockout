@@ -65,14 +65,14 @@ scoreboard objectives add progress trigger
 scoreboard players set #start_time lk.util 45
 scoreboard players set #max_time lk.util 120
 scoreboard players set #show_progress lk.util 1
-#boardSize lk.util
 
+#team scorebaord entities
 forceload add 0 0
 execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}
 execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"],CustomName:'"Team 1"'}
 execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team2pts"],CustomName:'"Team 2"'}
 
-
-schedule function lockout:postload 1s
+#start loops and run postload
+schedule function lockout:postload 3s
 schedule function lockout:tick/1s 1s replace
 schedule function lockout:tick/1m 1s replace

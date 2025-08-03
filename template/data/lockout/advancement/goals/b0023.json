@@ -1,0 +1,23 @@
+{
+    "criteria": {
+      "breed": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "parent": {
+            "type": "minecraft:sniffer"
+          },
+          "partner": {
+            "type": "minecraft:cat"
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "breed"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/b0023"
+    }
+  }

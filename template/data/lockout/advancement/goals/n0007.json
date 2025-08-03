@@ -1,52 +1,15 @@
 {
     "criteria": {
-      "seeds": {
+      "obsidian": {
+        "trigger": "minecraft:enter_block",
         "conditions": {
-          "items": [
-            {
-              "items": "minecraft:wheat_seeds"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "pumpkin_seeds": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:pumpkin_seeds"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "melon_seeds": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:melon_seeds"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
-      },
-      "beetroot_seeds": {
-        "conditions": {
-          "items": [
-            {
-              "items": "minecraft:beetroot_seeds"
-            }
-          ]
-        },
-        "trigger": "minecraft:inventory_changed"
+          "block": "minecraft:water"
+        }
       }
     },
     "requirements": [
       [
-        "seeds",
-        "melon_seeds",
-        "pumpkin_seeds",
-        "beetroot_seeds"
+        "obsidian"
       ]
     ],
     "rewards": {

@@ -1,20 +1,17 @@
 {
     "criteria": {
-      "horse": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:wolf"
-          },
-          "partner": {
-            "type": "minecraft:wolf"
+            "type": "minecraft:turtle"
           }
         }
       }
     },
     "requirements": [
       [
-        "horse"
+        "breed"
       ]
     ],
     "rewards": {

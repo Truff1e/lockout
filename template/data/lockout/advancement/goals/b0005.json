@@ -1,17 +1,17 @@
 {
     "criteria": {
-      "hoglin": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:hoglin"
+            "type": "minecraft:fox"
           }
         }
       }
     },
     "requirements": [
       [
-        "hoglin"
+        "breed"
       ]
     ],
     "rewards": {

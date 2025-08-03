@@ -1,17 +1,17 @@
 {
     "criteria": {
-      "strider": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:strider"
+            "type": "minecraft:panda"
           }
         }
       }
     },
     "requirements": [
       [
-        "strider"
+        "breed"
       ]
     ],
     "rewards": {

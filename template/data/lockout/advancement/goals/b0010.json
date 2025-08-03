@@ -1,20 +1,17 @@
 {
     "criteria": {
-      "horse": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:sheep"
-          },
-          "partner": {
-            "type": "minecraft:sheep"
+            "type": "minecraft:ocelot"
           }
         }
       }
     },
     "requirements": [
       [
-        "horse"
+        "breed"
       ]
     ],
     "rewards": {

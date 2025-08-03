@@ -47,6 +47,6 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/i0036"
+    "function": "lockout:goals/i0021"
   }
 }

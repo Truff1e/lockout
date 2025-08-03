@@ -1,17 +1,17 @@
 {
     "criteria": {
-      "chicken": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:cow"
+            "type": "minecraft:cat"
           }
         }
       }
     },
     "requirements": [
       [
-        "chicken"
+        "breed"
       ]
     ],
     "rewards": {

@@ -1,20 +1,17 @@
 {
     "criteria": {
-      "horse": {
+      "breed": {
         "trigger": "minecraft:bred_animals",
         "conditions": {
           "parent": {
-            "type": "minecraft:mooshroom"
-          },
-          "partner": {
-            "type": "minecraft:mooshroom"
+            "type": "minecraft:strider"
           }
         }
       }
     },
     "requirements": [
       [
-        "horse"
+        "breed"
       ]
     ],
     "rewards": {

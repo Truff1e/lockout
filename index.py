@@ -1,4 +1,5 @@
 import random
+import copy
 
 defaultGoalDictionary = {
         # id: [name, icon, customModelDataBool, difficulty, description]
@@ -37,13 +38,13 @@ defaultGoalDictionary = {
         'K0030': ['Kill Zombified Piglin', 'iron_sword', True, 2],
         'K0031': ['Kill 30 Mobs', 'iron_sword', True, 1],
         'K0032': ['Kill 100 Mobs', 'iron_sword', True, 2],
-        'K0033': ['Kill 30 Undead Mobs', 'iron_sword', True, 2],
-        'K0034': ['Kill 30 Arthropods', 'iron_sword', True, 2],
-        'K0035': ['Kill 10 Ghasts', 'iron_sword', True, 3],
-        'K0036': ['Kill 10 Endermen', 'iron_sword', True, 3],
+        # 'K0033': ['Kill 30 Undead Mobs', 'iron_sword', True, 2],
+        # 'K0034': ['Kill 30 Arthropods', 'iron_sword', True, 2],
+        # 'K0035': ['Kill 10 Ghasts', 'iron_sword', True, 3],
+        # 'K0036': ['Kill 10 Endermen', 'iron_sword', True, 3],
         'K0037': ['Kill 7 Unique Hostile Mobs', 'iron_sword', True, 3],
         'K0038': ['Kill 15 Unique Hostile Mobs', 'iron_sword', True, 5],
-        'K0039': ['Kill Every Undead Mob', 'iron_sword', True, 5],
+        # 'K0039': ['Kill Every Undead Mob', 'iron_sword', True, 5],
 
         # DEATH GOALS
         'D0001': ['Die to Bee', 'beehive', True, 1],
@@ -53,23 +54,6 @@ defaultGoalDictionary = {
         'D0005': ['Die to Piglin Brute', 'golden_axe', True, 3],
         'D0006': ['Die on Pointed Dripstone', 'pointed_dripstone', True, 2],
         'D0007': ['Die to Polar Bear', 'cod', True, 3],
-
-        # OPPONENT GOALS
-        'N0001': ['Opponent Obtains Crafting Table', 'barrier', True, 2],
-        'N0002': ['Opponent Obtains Obsidian', 'barrier', True, 2],
-        'N0003': ['Opponent Obtains Seeds', 'barrier', True, 2],
-        'N0004': ['Opponent Eats', 'barrier', True, 2],
-        'N0005': ['Opponent Obtains Advancement', 'barrier', True, 4],
-        'N0006': ['Opponent Gets 5 Levels', 'barrier', True, 4],
-        'N0007': ['Opponent Touches Water', 'barrier', True, 3],
-        'N0008': ['Opponent Stands on Netherrack', 'barrier', True, 4],
-        'N0009': ['Opponent Stands on Stone', 'barrier', True, 4],
-        'N0010': ['Opponent Wears Armor', 'barrier', True, 4],
-        'N0011': ['Opponent Dies', 'barrier', True, 2],
-        'N0012': ['Opponent Dies 3 Times', 'barrier', True, 2],
-        'N0013': ['Opponent Takes 100 Damage', 'barrier', True, 2],
-        'N0014': ['Opponent Takes Fall Damage', 'barrier', True, 2],
-        'N0015': ['Opponent Catches Fire', 'barrier', True, 2],
 
         # HAVE MORE GOALS
         'M0013': ['Have the Most Dried Kelp Blocks', 'dried_kelp_block', True, 3],
@@ -85,7 +69,7 @@ defaultGoalDictionary = {
         'T0005': ['Tame Mule', 'golden_carrot', True, 5],
         'T0006': ['Tame Parrot', 'melon_seeds', True, 4],
         'T0007': ['Tame Llama', 'hay_block', True, 4],
-        'T0008': ['Tame 5 Cat Variants', 'cod', True, 5],
+        # 'T0008': ['Tame 5 Cat Variants', 'cod', True, 5],
         'T0009': ['Tame Every Cat Variant', 'cod', True, 9],
 
         # BREEDING GOALS
@@ -179,7 +163,7 @@ defaultGoalDictionary = {
         'I0065': ['Obtain Written Book', 'written_book', False, 3],
         'I0066': ['Obtain Bookshelf', 'bookshelf', False, 2],
         'I0067': ['Obtain Sea Lantern', 'sea_lantern', False, 4],
-        'I0068': ['Obtain Flowering Azalea', 'flowing_azalea', False, 2],
+        'I0068': ['Obtain Flowering Azalea', 'flowering_azalea', False, 2],
         'I0069': ['Obtain Bell', 'bell', False, 2],
         'I0070': ['Obtain Ancient Debris', 'ancient_debris', False, 4],
         'I0071': ['Obtain Lodestone', 'lodestone', False, 3],
@@ -218,7 +202,7 @@ defaultGoalDictionary = {
         'E0008': ['Eat Pumpkin Pie', 'pumpkin_pie', False, 2],
         'E0009': ['Eat Rabbit Stew', 'rabbit_stew', False, 2],
         'E0010': ['Eat Suspicious Stew', 'suspicious_stew', False, 2],
-        'E0011': ['Eat Beetroot Stew', 'beetroot_stew', False, 3],
+        'E0011': ['Eat Beetroot Stew', 'beetroot_soup', False, 3],
         'E0012': ['Eat Chorus Fruit', 'chorus_fruit', False, 8],
         'E0013': ['Eat Enchanted Golden Apple', 'enchanted_golden_apple', False, 6],
         'E0014': ['Eat Spider Eye', 'spider_eye', False, 1],
@@ -283,6 +267,24 @@ defaultGoalDictionary = {
 
 
 exclusiveSets = {
+
+        'opponent': {
+                'N0001': ['Opponent Obtains Crafting Table', 'barrier', True, 2],
+                'N0002': ['Opponent Obtains Obsidian', 'barrier', True, 2],
+                'N0003': ['Opponent Obtains Seeds', 'barrier', True, 2],
+                'N0004': ['Opponent Eats', 'barrier', True, 2],
+                'N0005': ['Opponent Obtains Advancement', 'barrier', True, 4],
+                'N0006': ['Opponent Gets 5 Levels', 'barrier', True, 4],
+                'N0007': ['Opponent Touches Water', 'barrier', True, 3],
+                'N0008': ['Opponent Stands on Netherrack', 'barrier', True, 4],
+                'N0009': ['Opponent Stands on Stone', 'barrier', True, 4],
+                'N0010': ['Opponent Wears Armor', 'barrier', True, 4],
+                'N0011': ['Opponent Dies', 'barrier', True, 2],
+                'N0012': ['Opponent Dies 3 Times', 'barrier', True, 2],
+                'N0013': ['Opponent Takes 100 Damage', 'barrier', True, 2],
+                'N0014': ['Opponent Takes Fall Damage', 'barrier', True, 2],
+                'N0015': ['Opponent Catches Fire', 'barrier', True, 2],
+        },
 
         'musicDiscs' : {
                 'I1001': ['Obtain Music Disc 5', 'music_disc_5', False, 6],
@@ -422,8 +424,7 @@ exclusiveSets = {
 
 
 expansionPack19 = {
-        'X0001': ['Find an Ancient City', 'sculk_shrieker', False, 2],
-
+        'X0025': ['Find an Ancient City', 'sculk_shrieker', False, 2],
         'D0008': ['Die to Warden', 'sculk_shrieker', True, 3],
         'K0041': ['Kill Warden', 'iron_sword', True, 8],
         'I0095': ['Obtain Recovery Compass', 'recovery_compass', False, 5],
@@ -431,7 +432,7 @@ expansionPack19 = {
         'I0097': ['Obtain Froglight', 'pearlescent_froglight', False, 4],
         'I0098': ['Obtain All Froglights', 'pearlescent_froglight', True, 8],
         'I0099': ['Obtain Fermented Spider Eye', 'fermented_spider_eye', False, 3],
-        'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
+        # 'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
         'B0022': ['Breed Frog', 'slime_ball', True, 4],
 }
 
@@ -445,7 +446,7 @@ expansionPack20 = {
         'A0026': ['Apply Armor Trim', 'coast_armor_trim_smithing_template', True, 2],
         'B0023': ['Breed Sniffer', 'sniffer_egg', True, 9],
         'B0024': ['Breed Armadillo', 'spider_eye', True, 4],
-        'L0011': ['Locate Trail Ruins', 'brush', False, 3],
+        'X0026': ['Locate Trail Ruins', 'brush', False, 3],
 }
 
 
@@ -486,7 +487,7 @@ goalDictionaryLegacy = {
 
 
 def createNewBalancedGoalIndex(expansions: list, respectExclusiveSets: bool) -> dict:
-    baseIndex = defaultGoalDictionary
+    baseIndex = copy.deepcopy(defaultGoalDictionary)
 
     if 'all' in expansions or 19 in expansions:
         baseIndex |= expansionPack19
@@ -497,21 +498,31 @@ def createNewBalancedGoalIndex(expansions: list, respectExclusiveSets: bool) -> 
     if 'all' in expansions or 22 in expansions:
         baseIndex |= expansionPack22
 
-    if respectExclusiveSets:
-        for exSet in exclusiveSets:
+    for exSet in exclusiveSets:
+        if exSet == 'opponent': # adds extra two opponent goals
             randomChoice = random.choice(list(exclusiveSets[exSet]))
             baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
-    else:
-        for exSet in exclusiveSets:
-            for goal in exclusiveSets[exSet]:
-                baseIndex[goal] = exclusiveSets[exSet][goal]
-
+            randomChoice = random.choice(list(exclusiveSets[exSet]))
+            baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
+        randomChoice = random.choice(list(exclusiveSets[exSet]))
+        baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
     return baseIndex
 
 
-def getFullGoalIndex():
-    return createNewBalancedGoalIndex(['all'], False)
 
+def getFullGoalIndex():
+    baseIndex = copy.deepcopy(defaultGoalDictionary)
+
+    baseIndex |= expansionPack19
+    baseIndex |= expansionPack20
+    baseIndex |= expansionPack21
+    baseIndex |= expansionPack22
+
+    for exSet in exclusiveSets:
+        for goal in exclusiveSets[exSet]:
+            baseIndex[goal] = exclusiveSets[exSet][goal]
+
+    return baseIndex
 
 
 if __name__ == '__main__':
@@ -531,3 +542,4 @@ def createGoalIdStrings(letter, length):
     for i in range(length):
         zeros = 4 - len(str(i+1)) 
         print(letter + ("0" * zeros) + str(i+1))
+
