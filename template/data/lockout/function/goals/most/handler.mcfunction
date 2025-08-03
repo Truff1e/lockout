@@ -11,10 +11,10 @@ execute unless entity @a[tag=lk.M0015] as @e[type=armor_stand,tag=lk.M0015,tag=!
 #check for new highest player
 #execute as @a[predicate=lockout:most/unique_crafts] run say Predicate most unique crafts passed
 #execute as @a[predicate=lockout:most/unique_crafts] if score @s lk.unique_crafts > #unique_crafts lk.util run say Second check passed
-execute if score #M0012 lk.enabled_goals matches 1 as @a[predicate=lockout:most/dried_kelp,limit=1,sort=random,tag=!lk.M0012] if score @s lk.dried_kelp > #dried_kelp lk.dried_kelp run function lockout:goals/n0012
-execute if score #M0013 lk.enabled_goals matches 1 as @a[predicate=lockout:most/hoppers,limit=1,sort=random,tag=!lk.M0013] if score @s lk.hoppers > #hoppers lk.hoppers run function lockout:goals/n0013
-execute if score #M0014 lk.enabled_goals matches 1 as @a[predicate=lockout:most/levels,limit=1,sort=random,tag=!lk.M0014] if score @s lk.levels > #levels lk.util run function lockout:goals/n0014
-execute if score #M0015 lk.enabled_goals matches 1 as @a[predicate=lockout:most/unique_crafts,limit=1,sort=random,tag=!lk.M0015] if score @s lk.unique_crafts > #unique_crafts lk.util run function lockout:goals/n0015
+execute if score #M0012 lk.enabled_goals matches 1 as @a[predicate=lockout:most/dried_kelp,limit=1,sort=random,tag=!lk.M0012] if score @s lk.dried_kelp > #dried_kelp lk.dried_kelp run function lockout:goals/m0012
+execute if score #M0013 lk.enabled_goals matches 1 as @a[predicate=lockout:most/hoppers,limit=1,sort=random,tag=!lk.M0013] if score @s lk.hoppers > #hoppers lk.hoppers run function lockout:goals/m0013
+execute if score #M0014 lk.enabled_goals matches 1 as @a[predicate=lockout:most/levels,limit=1,sort=random,tag=!lk.M0014] if score @s lk.levels > #levels lk.util run function lockout:goals/m0014
+execute if score #M0015 lk.enabled_goals matches 1 as @a[predicate=lockout:most/unique_crafts,limit=1,sort=random,tag=!lk.M0015] if score @s lk.unique_crafts > #unique_crafts lk.util run function lockout:goals/m0015
 
 #decrement placeholder until next highest player found
 #store current highest value in placeholder

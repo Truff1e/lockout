@@ -1,0 +1,64 @@
+{
+    "criteria": {
+      "ores": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:coal_ore"
+            },
+            {
+              "items": "minecraft:iron_ore"
+            },
+            {
+              "items": "minecraft:copper_ore"
+            },
+            {
+              "items": "minecraft:gold_ore"
+            },
+            {
+              "items": "minecraft:diamond_ore"
+            },
+            {
+              "items": "minecraft:redstone_ore"
+            },
+            {
+              "items": "minecraft:emerald_ore"
+            },
+            {
+              "items": "minecraft:lapis_ore"
+            },
+            {
+              "items": "minecraft:deepslate_coal_ore"
+            },
+            {
+              "items": "minecraft:deepslate_iron_ore"
+            },
+            {
+              "items": "minecraft:deepslate_copper_ore"
+            },
+            {
+              "items": "minecraft:deepslate_gold_ore"
+            },
+            {
+              "items": "minecraft:deepslate_diamond_ore"
+            },
+            {
+              "items": "minecraft:deepslate_redstone_ore"
+            },
+            {
+              "items": "minecraft:deepslate_lapis_ore"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "ores"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0025"
+    }
+  }

@@ -1,4 +1,4 @@
-{1
+{
     "criteria": {
       "endermite": {
         "trigger": "minecraft:player_killed_entity",

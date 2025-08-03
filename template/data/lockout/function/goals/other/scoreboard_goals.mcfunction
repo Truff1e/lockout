@@ -8,8 +8,8 @@ execute as @a[scores={lk.levels=5}] run function lockout:goals/x0001
 execute as @a[scores={lk.levels=15}] run function lockout:goals/x0002
 execute as @a[scores={lk.levels=30}] run function lockout:goals/x0003
 
-execute as @a[scores={lk.mob_kills=30..32}] run function lockout:goals/k0031
-execute as @a[scores={lk.mob_kills=100..102}] run function lockout:goals/k0032
+execute as @a[scores={lk.mob_kills=30..50}] run function lockout:goals/k0031
+execute as @a[scores={lk.mob_kills=100..120}] run function lockout:goals/k0032
 # undead mobs
 
 execute as @a[scores={lk.mine_deepslate_diamond=1..2}] run function lockout:goals/x0004

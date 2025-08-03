@@ -33,6 +33,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/x0015"
+      "function": "lockout:goals/x0016"
     }
   }

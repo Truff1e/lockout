@@ -56,10 +56,10 @@ defaultGoalDictionary = {
         'D0007': ['Die to Polar Bear', 'cod', True, 3],
 
         # HAVE MORE GOALS
-        'M0013': ['Have the Most Dried Kelp Blocks', 'dried_kelp_block', True, 3],
-        'M0014': ['Have the Most Hoppers', 'hopper', True, 3],
-        'M0015': ['Have the Most Levels', 'experience_bottle', True, 3],
-        'M0016': ['Have the Most Unique Crafts', 'crafting_table', True, 3],
+        'M0012': ['Have the Most Dried Kelp Blocks', 'dried_kelp_block', True, 3],
+        'M0013': ['Have the Most Hoppers', 'hopper', True, 3],
+        'M0014': ['Have the Most Levels', 'experience_bottle', True, 3],
+        'M0015': ['Have the Most Unique Crafts', 'crafting_table', True, 3],
 
         # HUSBANDRY GOALS
         'T0001': ['Tame Cat', 'cod', True, 2],

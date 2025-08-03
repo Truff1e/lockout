@@ -9,7 +9,7 @@ title @s subtitle [{"text": "Press ", "color": "aqua"}, {"keybind": "key.advance
 
 scoreboard objectives modify lk.points displayname {"text": "Blackout", "color": "yellow", "bold": true}
 
-tellraw @s ["",{"text":"========================================","color":"dark_gray"},{"text":"\n"},{"text":"Minecraft Blackout","bold":true,"color":"yellow"},{"text":"\n"},{"text":"Objective: Complete all of the goals on the\nboard before the time runs out.","color":"yellow"},{"text":"\n\n"},{"text":">> Press [","color":"green"},{"keybind":"key.advancements","color":"green"},{"text":"] to see the Blackout Board","color":"green"},{"text":"\n"},{"text":"©2025 - Truff1e","italic":true,"color":"gray"},{"text":"========================================","color":"dark_gray"}]
+tellraw @s ["",{"text":"========================================","color":"dark_gray"},{"text":"\n"},{"text":"Minecraft Blackout","bold":true,"color":"yellow"},{"text":"\n\n"},{"text":"Objective: Complete all of the goals on the\nboard before the time runs out.","color":"yellow"},{"text":"\n\n"},{"text":">> Press [","color":"green"},{"keybind":"key.advancements","color":"green"},{"text":"] to see the Blackout Board","color":"green"},{"text":"\n"},{"text":"\n©2025 - Truff1e","italic":true,"color":"gray"},{"text":"\n========================================","color":"dark_gray"}]
 
 effect give @s regeneration 3 10 true
 effect give @s saturation 3 10 true
