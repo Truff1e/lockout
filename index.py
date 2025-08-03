@@ -266,6 +266,57 @@ defaultGoalDictionary = {
 }
 
 
+
+expansionPack19 = {
+        'X0025': ['Find an Ancient City', 'sculk_shrieker', False, 2],
+        'D0008': ['Die to Warden', 'sculk_shrieker', True, 3],
+        'K0041': ['Kill Warden', 'iron_sword', True, 8],
+        'I0095': ['Obtain Recovery Compass', 'recovery_compass', False, 5],
+        'I0096': ['Obtain Mud Brick Wall', 'mud_brick_wall', False, 2],
+        'I0097': ['Obtain Froglight', 'pearlescent_froglight', False, 4],
+        'I0098': ['Obtain All Froglights', 'pearlescent_froglight', True, 8],
+        'I0099': ['Obtain Fermented Spider Eye', 'fermented_spider_eye', False, 3],
+        # 'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
+        'B0022': ['Breed Frog', 'slime_ball', True, 4],
+}
+
+
+expansionPack20 = {
+        'I0100': ['Obtain Brush', 'brush', False, 1],
+        'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', True, 2],
+        'I0102': ['Apply 3 Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 4],
+        'I0103': ['Apply 5 Unique Armor Trims', 'rib_armor_trim_smithing_template', True, 6],
+        'I0104': ['Apply 7 Unique Armor Trims', 'silence_armor_trim_smithing_template', True, 8],
+        'A0026': ['Apply Armor Trim', 'coast_armor_trim_smithing_template', True, 2],
+        'B0023': ['Breed Sniffer', 'sniffer_egg', True, 9],
+        'B0024': ['Breed Armadillo', 'spider_eye', True, 4],
+        'X0026': ['Locate Trail Ruins', 'brush', False, 3],
+}
+
+
+expansionPack21 = {
+        'I0105': ['Obtain Mace', 'mace', False, 10],
+        'I0106': ['Obtain Creaking Heart', 'creaking_heart', False, 6],
+        'I0107': ['Obtain Resin Brick Stairs', 'resin_brick_stairs', False, 3],
+        'A0027': ['Open Trial Vault', 'trial_key', False, 1],
+        'A0028': ['Repair Wolf Armor', 'wolf_armor', False, 2],
+        'A0029': ['Open Ominous Vault', 'ominous_trial_key', False, 2],
+        'A0030': ['Ride Horse', 'saddle', False, 3],
+        'K0042': ['Kill Bogged', 'iron_sword', True, 4],
+        'K0043': ['Kill Breeze', 'iron_sword', True, 4],
+        'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
+        'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
+        'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
+}
+
+
+expansionPack22 = {
+        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1],
+        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2],
+        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3],
+}
+
+
 exclusiveSets = {
 
         'opponent': {
@@ -423,56 +474,8 @@ exclusiveSets = {
 }
 
 
-expansionPack19 = {
-        'X0025': ['Find an Ancient City', 'sculk_shrieker', False, 2],
-        'D0008': ['Die to Warden', 'sculk_shrieker', True, 3],
-        'K0041': ['Kill Warden', 'iron_sword', True, 8],
-        'I0095': ['Obtain Recovery Compass', 'recovery_compass', False, 5],
-        'I0096': ['Obtain Mud Brick Wall', 'mud_brick_wall', False, 2],
-        'I0097': ['Obtain Froglight', 'pearlescent_froglight', False, 4],
-        'I0098': ['Obtain All Froglights', 'pearlescent_froglight', True, 8],
-        'I0099': ['Obtain Fermented Spider Eye', 'fermented_spider_eye', False, 3],
-        # 'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
-        'B0022': ['Breed Frog', 'slime_ball', True, 4],
-}
 
-
-expansionPack20 = {
-        'I0100': ['Obtain Brush', 'brush', False, 1],
-        'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', True, 2],
-        'I0102': ['Apply 3 Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 4],
-        'I0103': ['Apply 5 Unique Armor Trims', 'rib_armor_trim_smithing_template', True, 6],
-        'I0104': ['Apply 7 Unique Armor Trims', 'silence_armor_trim_smithing_template', True, 8],
-        'A0026': ['Apply Armor Trim', 'coast_armor_trim_smithing_template', True, 2],
-        'B0023': ['Breed Sniffer', 'sniffer_egg', True, 9],
-        'B0024': ['Breed Armadillo', 'spider_eye', True, 4],
-        'X0026': ['Locate Trail Ruins', 'brush', False, 3],
-}
-
-
-expansionPack21 = {
-        'I0105': ['Obtain Mace', 'mace', False, 10],
-        'I0106': ['Obtain Creaking Heart', 'creaking_heart', False, 6],
-        'I0107': ['Obtain Resin Brick Stairs', 'resin_brick_stairs', False, 3],
-        'A0027': ['Open Trial Vault', 'trial_key', False, 1],
-        'A0028': ['Repair Wolf Armor', 'wolf_armor', False, 2],
-        'A0029': ['Open Ominous Vault', 'ominous_trial_key', False, 2],
-        'A0030': ['Ride Horse', 'saddle', False, 3],
-        'K0042': ['Kill Bogged', 'iron_sword', True, 4],
-        'K0043': ['Kill Breeze', 'iron_sword', True, 4],
-        'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
-        'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
-        'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
-}
-
-
-expansionPack22 = {
-        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1],
-        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2],
-        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3],
-}
-
-
+#TODO extra goals to add
 goalDictionaryLegacy = {
 
     # "X0011": ['Fill Inventory with Unique Items', '"id": "minecraft:chest"', 1],
@@ -498,7 +501,7 @@ def createNewBalancedGoalIndex(expansions: list, respectExclusiveSets: bool) -> 
     if 'all' in expansions or 22 in expansions:
         baseIndex |= expansionPack22
 
-    for exSet in exclusiveSets:
+    for exSet in exclusiveSets: #TODO This is a horrible shitty mess. Clean up later
         if exSet == 'opponent': # adds extra two opponent goals
             randomChoice = random.choice(list(exclusiveSets[exSet]))
             baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
@@ -528,18 +531,4 @@ def getFullGoalIndex():
 if __name__ == '__main__':
     print("Goals:", len(getFullGoalIndex()))
 
-
-
-### maintanence stuff for developement
-def convertLegacyDictToModernFormat():
-    # this does not change the difficulty -- that must be modified manually
-    for i in goalDictionaryLegacy:
-        print(f"        '{i}': ['{goalDictionaryLegacy[i][0]}', '{goalDictionaryLegacy[i][1][17:(goalDictionaryLegacy[i][1].find('comp')-3 if 'components' in goalDictionaryLegacy[i][1] else -1)].replace('\"', '\'')}', {'True' if 'components' in goalDictionaryLegacy[i][1] else 'False'}, {goalDictionaryLegacy[i][2]}],")
-
-
-def createGoalIdStrings(letter, length):
-
-    for i in range(length):
-        zeros = 4 - len(str(i+1)) 
-        print(letter + ("0" * zeros) + str(i+1))
 

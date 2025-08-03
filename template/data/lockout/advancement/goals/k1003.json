@@ -5,7 +5,7 @@
         "conditions": {
           "entity": {
             "type": "minecraft:sheep",
-            "nbt": "{Color:5b}"
+            "nbt": "{Color:2b}"
           }
         }
       }
@@ -16,6 +16,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/k0014"
+      "function": "lockout:goals/k1003"
     }
   }

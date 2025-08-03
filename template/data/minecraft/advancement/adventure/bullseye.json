@@ -40,9 +40,8 @@
     ]
   ],
   "rewards": {
-    "experience": 50,
-    "function": "lockout:goals/a0002"
+    "function": "lockout:goals/x0004",
+	"experience": 50
   },
-  
   "sends_telemetry_event": true
 }

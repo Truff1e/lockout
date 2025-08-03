@@ -113,8 +113,8 @@
     ]
   ],
   "rewards": {
-    "experience": 500,
-    "function": "lockout:goals/l0008"
+    "function": "lockout:goals/a0011",
+	"experience": 500
   },
   "sends_telemetry_event": true
 }

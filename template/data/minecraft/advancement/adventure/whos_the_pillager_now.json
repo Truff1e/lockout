@@ -3,6 +3,9 @@
   "criteria": {
     "kill_pillager": {
       "conditions": {
+        "fired_from_weapon": {
+          "items": "minecraft:crossbow"
+        },
         "victims": [
           [
             {
@@ -13,10 +16,7 @@
               }
             }
           ]
-        ],
-        "fired_from_weapon": {
-          "items": "minecraft:crossbow"
-        }
+        ]
       },
       "trigger": "minecraft:killed_by_arrow"
     }
@@ -39,7 +39,7 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/count/advancements"
+	"function": "lockout:goals/count/advancements"
   },
   "sends_telemetry_event": true
 }

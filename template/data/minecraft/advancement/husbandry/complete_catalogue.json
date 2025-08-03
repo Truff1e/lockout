@@ -227,7 +227,8 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/a0016"
+    "function": "lockout:goals/count/advancements",
+	"experience": 50
   },
   "sends_telemetry_event": true
 }

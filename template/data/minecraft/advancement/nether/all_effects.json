@@ -62,8 +62,8 @@
     ]
   ],
   "rewards": {
-    "experience": 1000,
-    "function": "lockout:goals/count/advancements"
+    "function": "lockout:goals/count/advancements",
+	"experience": 1000
   },
   "sends_telemetry_event": true
 }

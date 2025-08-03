@@ -36,7 +36,7 @@
     ]
   ],
   "rewards": {
-      "function": "lockout:goals/location/bastion"
-    },
+	"function": "lockout:goals/a0021"
+  },
   "sends_telemetry_event": true
 }

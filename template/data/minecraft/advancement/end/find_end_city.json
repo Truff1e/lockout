@@ -36,7 +36,7 @@
     ]
   ],
   "rewards": {
-      "function": "lockout:goals/location/end_city"
-    },
+	"function": "lockout:goals/a0022"
+  },
   "sends_telemetry_event": true
 }

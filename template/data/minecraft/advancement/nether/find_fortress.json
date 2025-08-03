@@ -36,7 +36,7 @@
     ]
   ],
   "rewards": {
-      "function": "lockout:goals/location/fortress"
-    },
+	"function": "lockout:goals/a0020"
+  },
   "sends_telemetry_event": true
 }

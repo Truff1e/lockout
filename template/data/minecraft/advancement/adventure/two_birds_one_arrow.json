@@ -3,6 +3,9 @@
   "criteria": {
     "two_birds": {
       "conditions": {
+        "fired_from_weapon": {
+          "items": "minecraft:crossbow"
+        },
         "victims": [
           [
             {
@@ -46,7 +49,8 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/count/advancements"
+    "function": "lockout:goals/count/advancements",
+	"experience": 65
   },
   "sends_telemetry_event": true
 }

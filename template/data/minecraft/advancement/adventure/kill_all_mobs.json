@@ -57,6 +57,20 @@
       },
       "trigger": "minecraft:player_killed_entity"
     },
+    "minecraft:creaking": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:creaking"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    },
     "minecraft:creeper": {
       "conditions": {
         "entity": [
@@ -533,6 +547,9 @@
       "minecraft:cave_spider"
     ],
     [
+      "minecraft:creaking"
+    ],
+    [
       "minecraft:creeper"
     ],
     [
@@ -630,7 +647,8 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/count/advancements"
+    "function": "lockout:goals/count/advancements",
+	"experience": 100
   },
   "sends_telemetry_event": true
 }

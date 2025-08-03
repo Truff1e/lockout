@@ -37,7 +37,7 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/a0014"
+	"function": "lockout:goals/count/advancements"
   },
   "sends_telemetry_event": true
 }

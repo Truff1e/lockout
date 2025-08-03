@@ -1,11 +1,11 @@
-{
+{1
     "criteria": {
       "endermite": {
         "trigger": "minecraft:player_killed_entity",
         "conditions": {
           "entity": {
             "type": "minecraft:sheep",
-            "nbt": "{Color:6b}"
+            "nbt": "{Color:8b}"
           }
         }
       }
@@ -16,6 +16,6 @@
       ]
     ],
     "rewards": {
-      "function": "lockout:goals/k0017"
+      "function": "lockout:goals/k1014"
     }
   }

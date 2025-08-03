@@ -44,7 +44,7 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/a0012"
+	"function": "lockout:goals/a0027"
   },
   "sends_telemetry_event": true
 }

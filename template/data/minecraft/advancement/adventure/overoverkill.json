@@ -16,7 +16,7 @@
             "tags": [
               {
                 "expected": true,
-                "id": "minecraft:is_player_attack"
+                "id": "minecraft:mace_smash"
               }
             ]
           },
@@ -47,7 +47,8 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/count/advancements"
+    "function": "lockout:goals/count/advancements",
+	"experience": 50
   },
   "sends_telemetry_event": true
 }

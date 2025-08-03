@@ -30,7 +30,7 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/items/wither_skull"
+	"function": "lockout:goals/count/advancements"
   },
   "sends_telemetry_event": true
 }

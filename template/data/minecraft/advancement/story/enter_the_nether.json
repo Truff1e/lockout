@@ -26,6 +26,7 @@
     ]
   ],
   "rewards": {
-      "function": "lockout:goals/location/nether"
-  }
+	"function": "lockout:goals/a0024"
+  },
+  "sends_telemetry_event": true
 }

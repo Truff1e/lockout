@@ -13,10 +13,10 @@
           }
         ],
         "item": {
-          "items": "minecraft:shears"
+          "items": "minecraft:wolf_armor"
         }
       },
-      "trigger": "minecraft:player_interacted_with_entity"
+      "trigger": "minecraft:player_sheared_equipment"
     }
   },
   "display": {
@@ -37,7 +37,7 @@
     ]
   ],
   "rewards": {
-    "function": "lockout:goals/count/advancements"
+	"function": "lockout:goals/count/advancements"
   },
   "sends_telemetry_event": true
 }

@@ -1,4 +1,4 @@
-from index import getFullGoalIndex
+from index import getFullGoalIndex, goalDictionaryLegacy
 import os
 
 
@@ -187,6 +187,20 @@ def createListeners():
 
 
 
+
+def convertLegacyDictToModernFormat():
+    # this does not change the difficulty -- that must be modified manually
+    for i in goalDictionaryLegacy:
+        print(f"        '{i}': ['{goalDictionaryLegacy[i][0]}', '{goalDictionaryLegacy[i][1][17:(goalDictionaryLegacy[i][1].find('comp')-3 if 'components' in goalDictionaryLegacy[i][1] else -1)].replace('\"', '\'')}', {'True' if 'components' in goalDictionaryLegacy[i][1] else 'False'}, {goalDictionaryLegacy[i][2]}],")
+
+
+
+
+def createGoalIdStrings(letter, length):
+
+    for i in range(length):
+        zeros = 4 - len(str(i+1)) 
+        print(letter + ("0" * zeros) + str(i+1))
 
 
 
