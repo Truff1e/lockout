@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "block/beehive_empty"
+    },
+    "cases": [
+      {
+        "when": "D0001",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_bee"
+        }
+      }
+    ]
+  }
+}

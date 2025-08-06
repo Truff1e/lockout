@@ -1,0 +1,236 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/iron_sword"
+    },
+    "cases": [
+      {
+        "when": "K0032",
+        "model": {
+          "type": "model",
+          "model": "item/kill_100_mobs"
+        }
+      },
+      {
+        "when": "K0002",
+        "model": {
+          "type": "model",
+          "model": "item/kill_bee_cycle"
+        }
+      },
+      {
+        "when": "K1011",
+        "model": {
+          "type": "model",
+          "model": "item/kill_blue_sheep"
+        }
+      },
+      {
+        "when": "K0004",
+        "model": {
+          "type": "model",
+          "model": "item/kill_cave_spider_cycle"
+        }
+      },
+      {
+        "when": "K1009",
+        "model": {
+          "type": "model",
+          "model": "item/kill_cyan_sheep"
+        }
+      },
+      {
+        "when": "K0006",
+        "model": {
+          "type": "model",
+          "model": "item/kill_drowned"
+        }
+      },
+      {
+        "when": "K0007",
+        "model": {
+          "type": "model",
+          "model": "item/kill_elder_guardian"
+        }
+      },
+      {
+        "when": "K0008",
+        "model": {
+          "type": "model",
+          "model": "item/kill_endermite"
+        }
+      },
+      {
+        "when": "K0009",
+        "model": {
+          "type": "model",
+          "model": "item/kill_ghast"
+        }
+      },
+      {
+        "when": "K1008",
+        "model": {
+          "type": "model",
+          "model": "item/kill_green_sheep"
+        }
+      },
+      {
+        "when": "K0011",
+        "model": {
+          "type": "model",
+          "model": "item/kill_guardian"
+        }
+      },
+      {
+        "when": "K0012",
+        "model": {
+          "type": "model",
+          "model": "item/kill_husk"
+        }
+      },
+      {
+        "when": "K1010",
+        "model": {
+          "type": "model",
+          "model": "item/kill_light_blue_sheep"
+        }
+      },
+      {
+        "when": "K1014",
+        "model": {
+          "type": "model",
+          "model": "item/kill_lime_sheep"
+        }
+      },
+      {
+        "when": "K0015",
+        "model": {
+          "type": "model",
+          "model": "item/kill_magenta_sheep"
+        }
+      },
+      {
+        "when": "K0016",
+        "model": {
+          "type": "model",
+          "model": "item/kill_orange_sheep"
+        }
+      },
+      {
+        "when": "K0017",
+        "model": {
+          "type": "model",
+          "model": "item/kill_pink_sheep"
+        }
+      },
+      {
+        "when": "K0018",
+        "model": {
+          "type": "model",
+          "model": "item/kill_player"
+        }
+      },
+      {
+        "when": "K0019",
+        "model": {
+          "type": "model",
+          "model": "item/kill_purple_sheep"
+        }
+      },
+      {
+        "when": "K0020",
+        "model": {
+          "type": "model",
+          "model": "item/kill_red_sheep"
+        }
+      },
+      {
+        "when": "K0021",
+        "model": {
+          "type": "model",
+          "model": "item/kill_silverfish"
+        }
+      },
+      {
+        "when": "K0022",
+        "model": {
+          "type": "model",
+          "model": "item/kill_snow_golem"
+        }
+      },
+      {
+        "when": "K0023",
+        "model": {
+          "type": "model",
+          "model": "item/kill_spider_cycle"
+        }
+      },
+      {
+        "when": "K0024",
+        "model": {
+          "type": "model",
+          "model": "item/kill_stray"
+        }
+      },
+      {
+        "when": "K0025",
+        "model": {
+          "type": "model",
+          "model": "item/kill_witch"
+        }
+      },
+      {
+        "when": "K0026",
+        "model": {
+          "type": "model",
+          "model": "item/kill_wither_skeleton"
+        }
+      },
+      {
+        "when": "K0027",
+        "model": {
+          "type": "model",
+          "model": "item/kill_7_unique"
+        }
+      },
+      {
+        "when": "K0028",
+        "model": {
+          "type": "model",
+          "model": "item/kill_15_unique"
+        }
+      },
+      {
+        "when": "K0029",
+        "model": {
+          "type": "model",
+          "model": "item/kill_yellow_sheep"
+        }
+      },
+      {
+        "when": "K0030",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zoglin"
+        }
+      },
+      {
+        "when": "K0031",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zombie_villager"
+        }
+      },
+      {
+        "when": "K0032",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zombie"
+        }
+      }
+    ]
+  }
+}

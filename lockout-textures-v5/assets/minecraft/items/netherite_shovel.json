@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/netherite_shovel"
+      },
+      "cases": [
+        {
+          "when": "I0047",
+          "model": {
+            "type": "model",
+            "model": "item/all_shovels"
+          }
+        }
+      ]
+    }
+  }

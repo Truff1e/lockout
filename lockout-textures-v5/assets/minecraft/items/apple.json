@@ -1,0 +1,33 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/apple"
+      },
+      "cases": [
+        {
+          "when": "E0015",
+          "model": {
+            "type": "model",
+            "model": "item/eat_x_unique"
+          }
+        },
+        {
+          "when": "E0016",
+          "model": {
+            "type": "model",
+            "model": "item/eat_x_unique"
+          }
+        },
+        {
+          "when": "E0017",
+          "model": {
+            "type": "model",
+            "model": "item/eat_x_unique"
+          }
+        }
+      ]
+    }
+  }

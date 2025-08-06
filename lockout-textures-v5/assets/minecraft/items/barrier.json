@@ -1,0 +1,89 @@
+{
+    "model": {
+        "type": "select",
+        "property": "custom_model_data",
+        "fallback": {
+          "type": "model",
+          "model": "item/barrier"
+        },
+        "cases": [
+            {
+              "when": "N0001",
+              "model": {
+                "type": "model",
+                "model": "item/no_crafting_table"
+              }
+            },
+            {
+                "when": "N0014",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_fall_damage"
+                }
+            },
+            {
+                "when": "N0015",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_fire"
+                }
+            },
+            {
+                "when": "inactive",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_jump"
+                }
+            },
+            {
+                "when": "N0002",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_obsidian"
+                }
+            },
+            {
+                "when": "N0003",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_seeds"
+                }
+            },
+            {
+                "when": "N0007",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_water"
+                }
+            },
+            {
+                "when": "N0010",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_armor"
+                }
+            },
+            {
+                "when": "N0013",
+                "model": {
+                  "type": "model",
+                  "model": "item/opponent_takes_100_damage"
+                }
+            },
+            {
+                "when": "N0011",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_death"
+                }
+            },
+            {
+                "when": "N0012",
+                "model": {
+                  "type": "model",
+                  "model": "item/no_death"
+                }
+            }
+          ]
+        }
+  }

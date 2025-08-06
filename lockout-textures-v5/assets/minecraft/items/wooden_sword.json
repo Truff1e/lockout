@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/wooden_sword"
+      },
+      "cases": [
+        {
+          "when": "X0033",
+          "model": {
+            "type": "model",
+            "model": "item/weakness"
+          }
+        },
+        {
+            "when": "X0018",
+            "model": {
+              "type": "model",
+              "model": "item/take_200_damage"
+            }
+          }
+      ]
+    }
+  }

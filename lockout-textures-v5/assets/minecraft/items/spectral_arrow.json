@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/spectral_arrow"
+    },
+    "cases": [
+      {
+        "when": "X0004",
+        "model": {
+          "type": "model",
+          "model": "item/glowing"
+        }
+      }
+    ]
+  }
+}

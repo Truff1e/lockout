@@ -1,3 +1,4 @@
+# NOT UPDATED FOR v2.0 - USE cli.py INSTEAD
 from tkinter import *
 from lockout import *
 from index import exclusiveSets

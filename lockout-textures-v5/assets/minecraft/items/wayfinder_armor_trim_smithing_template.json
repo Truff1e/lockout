@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/wayfinder_armor_trim_smithing_template"
+      },
+      "cases": [
+        {
+          "when": "I0042",
+          "model": {
+            "type": "model",
+            "model": "item/train_ruins_trims"
+          }
+        }
+      ]
+    }
+  }

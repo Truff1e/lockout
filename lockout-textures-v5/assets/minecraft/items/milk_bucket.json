@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/milk_bucket"
+      },
+      "cases": [
+        {
+          "when": "X0015",
+          "model": {
+            "type": "model",
+            "model": "item/3_status_effects"
+          }
+        },
+        {
+          "when": "X0016",
+          "model": {
+            "type": "model",
+            "model": "item/6_status_effects"
+          }
+        }
+      ]
+    }
+  }

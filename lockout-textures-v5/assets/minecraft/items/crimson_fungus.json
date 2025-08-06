@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/crimson_fungus"
+    },
+    "cases": [
+      {
+        "when": "B0007",
+        "model": {
+          "type": "model",
+          "model": "item/breed_hoglin"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/stone_pickaxe"
+      },
+      "cases": [
+        {
+          "when": "I0031",
+          "model": {
+            "type": "model",
+            "model": "item/stone_tools"
+          }
+        }
+      ]
+    }
+  }

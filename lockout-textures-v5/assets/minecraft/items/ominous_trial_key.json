@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/ominous_trial_key"
+    },
+    "cases": [
+      {
+        "when": "25adv",
+        "model": {
+          "type": "model",
+          "model": "item/25_advancements"
+        }
+      }
+    ]
+  }
+}

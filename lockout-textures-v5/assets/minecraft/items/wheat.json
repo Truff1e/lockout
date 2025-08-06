@@ -1,0 +1,40 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/wheat"
+    },
+    "cases": [
+      {
+        "when": "B0002",
+        "model": {
+          "type": "model",
+          "model": "item/breed_cow"
+        }
+      },
+      {
+        "when": "B0010",
+        "model": {
+          "type": "model",
+          "model": "item/breed_sheep"
+        }
+      },
+      {
+        "when": "B0004",
+        "model": {
+          "type": "model",
+          "model": "item/breed_goat"
+        }
+      },
+      {
+        "when": "B0013",
+        "model": {
+          "type": "model",
+          "model": "item/breed_x"
+        }
+      }
+    ]
+  }
+}

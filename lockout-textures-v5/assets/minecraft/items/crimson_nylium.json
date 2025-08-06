@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "block/crimson_nylium"
+    },
+    "cases": [
+      {
+        "when": "K0027",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zoglin"
+        }
+      }
+    ]
+  }
+}

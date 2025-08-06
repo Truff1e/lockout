@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/diamond_chestplate"
+      },
+      "cases": [
+        {
+          "when": "I0011",
+          "model": {
+            "type": "model",
+            "model": "item/diamond_armor"
+          }
+        },
+        {
+          "when": "I0012",
+          "model": {
+            "type": "model",
+            "model": "item/diamond_armor"
+          }
+        }
+      ]
+    }
+  }

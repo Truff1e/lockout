@@ -1,0 +1,54 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/experience_bottle"
+    },
+    "cases": [
+      {
+        "when": "X0003",
+        "model": {
+          "type": "model",
+          "model": "item/level_30"
+        }
+      },
+      {
+        "when": "A0002",
+        "model": {
+          "type": "model",
+          "model": "item/25_advancements"
+        }
+      },
+      {
+        "when": "A0001",
+        "model": {
+          "type": "model",
+          "model": "item/15_advancements"
+        }
+      },
+      {
+        "when": "A0003",
+        "model": {
+          "type": "model",
+          "model": "item/35_advancements"
+        }
+      },
+      {
+        "when": "X0002",
+        "model": {
+          "type": "model",
+          "model": "item/level_15"
+        }
+      },
+      {
+        "when": "M0014",
+        "model": {
+          "type": "model",
+          "model": "item/more_level"
+        }
+      }
+    ]
+  }
+}

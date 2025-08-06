@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/wheat_seeds"
+    },
+    "cases": [
+      {
+        "when": "B0001",
+        "model": {
+          "type": "model",
+          "model": "item/breed_chicken"
+        }
+      },
+      {
+        "when": "I0075",
+        "model": {
+          "type": "model",
+          "model": "item/all_seeds"
+        }
+      }
+    ]
+  }
+}

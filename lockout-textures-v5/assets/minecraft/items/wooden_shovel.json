@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/wooden_shovel"
+      },
+      "cases": [
+        {
+          "when": "X0027",
+          "model": {
+            "type": "model",
+            "model": "item/mining_fatigue"
+          }
+        }
+      ]
+    }
+  }

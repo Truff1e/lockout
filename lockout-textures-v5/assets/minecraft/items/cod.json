@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/cod"
+    },
+    "cases": [
+      {
+        "when": "T0001",
+        "model": {
+          "type": "model",
+          "model": "item/tame_cat"
+        }
+      },
+      {
+        "when": "B0010",
+        "model": {
+          "type": "model",
+          "model": "item/breed_ocelot"
+        }
+      }
+    ]
+  }
+}

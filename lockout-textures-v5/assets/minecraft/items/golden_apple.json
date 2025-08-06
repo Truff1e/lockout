@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/golden_apple"
+      },
+      "cases": [
+        {
+          "when": "X1025",
+          "model": {
+            "type": "model",
+            "model": "item/absorption"
+          }
+        }
+      ]
+    }
+  }

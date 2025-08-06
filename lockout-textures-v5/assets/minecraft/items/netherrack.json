@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "block/netherrack"
+      },
+      "cases": [
+        {
+          "when": "L0009",
+          "model": {
+            "type": "model",
+            "model": "item/nether_portal"
+          }
+        }
+      ]
+    }
+  }

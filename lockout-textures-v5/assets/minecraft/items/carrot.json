@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/carrot"
+    },
+    "cases": [
+      {
+        "when": "B0013",
+        "model": {
+          "type": "model",
+          "model": "item/breed_rabbit"
+        }
+      },
+      {
+        "when": "B0012",
+        "model": {
+          "type": "model",
+          "model": "item/breed_pig"
+        }
+      }
+    ]
+  }
+}

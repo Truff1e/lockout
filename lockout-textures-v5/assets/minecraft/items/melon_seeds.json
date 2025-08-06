@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/melon_seeds"
+      },
+      "cases": [
+        {
+          "when": "T0003",
+          "model": {
+            "type": "model",
+            "model": "item/tame_parrot"
+          }
+        }
+      ]
+    }
+  }

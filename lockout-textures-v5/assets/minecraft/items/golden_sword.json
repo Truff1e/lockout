@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/golden_sword"
+    },
+    "cases": [
+      {
+        "when": "K0030",
+        "model": {
+          "type": "model",
+          "model": "item/enrage_zombie_piglin"
+        }
+      }
+    ]
+  }
+}

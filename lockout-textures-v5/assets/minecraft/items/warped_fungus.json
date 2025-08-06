@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/warped_fungus"
+    },
+    "cases": [
+      {
+        "when": "B0011",
+        "model": {
+          "type": "model",
+          "model": "item/breed_strider"
+        }
+      }
+    ]
+  }
+}

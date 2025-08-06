@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "block/dirt"
+      },
+      "cases": [
+        {
+          "when": "X0007",
+          "model": {
+            "type": "model",
+            "model": "item/64_of_anything"
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/rotten_flesh"
+    },
+    "cases": [
+      {
+        "when": "X0020",
+        "model": {
+          "type": "model",
+          "model": "item/starve"
+        }
+      }
+    ]
+  }
+}
