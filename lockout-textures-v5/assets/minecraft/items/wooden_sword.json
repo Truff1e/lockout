@@ -8,14 +8,14 @@
       },
       "cases": [
         {
-          "when": "X0033",
+          "when": "X1037",
           "model": {
             "type": "model",
             "model": "item/weakness"
           }
         },
         {
-            "when": "X0018",
+            "when": "X0010",
             "model": {
               "type": "model",
               "model": "item/take_200_damage"

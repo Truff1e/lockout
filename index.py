@@ -96,11 +96,11 @@ defaultGoalDictionary = {
         'B0021': ['Breed 12 Unique Mobs', 'wheat', True, 7],
 
         # ITEM GOALS
-        'I0001': ['Obtain All Swords', 'netherite_sword', True, 6],
-        'I0002': ['Obtain All Axes', 'netherite_axe', True, 6],
-        'I0003': ['Obtain All Pickaxes', 'netherite_pickaxe', True, 6],
-        'I0004': ['Obtain All Shovels', 'netherite_shovel', True, 6],
-        'I0005': ['Obtain All Hoes', 'netherite_hoe', True, 6],
+        'I0001': ['Obtain All Swords', 'netherite_sword', True, 6], #TODO: Add Copper 
+        'I0002': ['Obtain All Axes', 'netherite_axe', True, 6], #TODO: Add Copper 
+        'I0003': ['Obtain All Pickaxes', 'netherite_pickaxe', True, 6], #TODO: Add Copper 
+        'I0004': ['Obtain All Shovels', 'netherite_shovel', True, 6], #TODO: Add Copper 
+        'I0005': ['Obtain All Hoes', 'netherite_hoe', True, 6], #TODO: Add Copper 
         'I0006': ['Obtain Full Leather Armor', 'leather_chestplate', True, 2],
         'I0007': ['Obtain Chainmail Armor', 'chainmail_helmet', False, 4],
         'I0008': ['Obtain Full Chainmail Armor', 'chainmail_chestplate', True, 7],
@@ -304,8 +304,8 @@ expansionPack21 = {
         'A0030': ['Ride Horse', 'saddle', False, 3],
         'K0042': ['Kill Bogged', 'iron_sword', True, 4],
         'K0043': ['Kill Breeze', 'iron_sword', True, 4],
-        'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
-        'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
+        # 'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
+        # 'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
         'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
 }
 
@@ -530,5 +530,4 @@ def getFullGoalIndex():
 
 if __name__ == '__main__':
     print("Goals:", len(getFullGoalIndex()))
-
 

@@ -82,7 +82,7 @@ def generateCommand(args, flags, kwflags):
         boardSize = safelyGetArgAtIndex(args, 1, str)
         if boardSize == None: return
         boardSize = int(boardSize) 
-        difficultyRange = args[2]
+        difficultyRange = safelyGetArgAtIndex(args, 2, str)
         minDifficulty = difficultyRange.split('-')[0]
         maxDifficulty = difficultyRange.split('-')[1]
         expansions = (['all'] if (len(args) <= 3) else args[3:])
@@ -109,7 +109,7 @@ def inputLoop():
         return False
 
     elif cmd == 'help' or cmd == 'q':
-        print('Help coming soon...')
+        print('Commands: gen(erate), create, exit')
 
     elif cmd == 'gen' or cmd == 'generate':
         generateCommand(args, flags, kwflags)

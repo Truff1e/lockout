@@ -8,7 +8,7 @@
       },
       "cases": [
         {
-          "when": "I0043",
+          "when": "I0103",
           "model": {
             "type": "model",
             "model": "item/armor_trims"

@@ -8,14 +8,14 @@
     },
     "cases": [
       {
-        "when": "B0001",
+        "when": "B0003",
         "model": {
           "type": "model",
           "model": "item/breed_chicken"
         }
       },
       {
-        "when": "I0075",
+        "when": "I0031",
         "model": {
           "type": "model",
           "model": "item/all_seeds"

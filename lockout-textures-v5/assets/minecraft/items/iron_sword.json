@@ -223,13 +223,6 @@
           "type": "model",
           "model": "item/kill_zombie_villager"
         }
-      },
-      {
-        "when": "K0032",
-        "model": {
-          "type": "model",
-          "model": "item/kill_zombie"
-        }
       }
     ]
   }

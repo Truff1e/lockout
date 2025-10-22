@@ -8,14 +8,14 @@
       },
       "cases": [
         {
-          "when": "X0015",
+          "when": "X0018",
           "model": {
             "type": "model",
             "model": "item/3_status_effects"
           }
         },
         {
-          "when": "X0016",
+          "when": "X0019",
           "model": {
             "type": "model",
             "model": "item/6_status_effects"

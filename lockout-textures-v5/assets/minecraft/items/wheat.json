@@ -8,28 +8,49 @@
     },
     "cases": [
       {
-        "when": "B0002",
+        "when": "B0004",
         "model": {
           "type": "model",
           "model": "item/breed_cow"
         }
       },
       {
-        "when": "B0010",
+        "when": "B0014",
         "model": {
           "type": "model",
           "model": "item/breed_sheep"
         }
       },
       {
-        "when": "B0004",
+        "when": "B0006",
         "model": {
           "type": "model",
           "model": "item/breed_goat"
         }
       },
       {
-        "when": "B0013",
+        "when": "B0018",
+        "model": {
+          "type": "model",
+          "model": "item/breed_x"
+        }
+      },
+      {
+        "when": "B0019",
+        "model": {
+          "type": "model",
+          "model": "item/breed_x"
+        }
+      },
+      {
+        "when": "B0020",
+        "model": {
+          "type": "model",
+          "model": "item/breed_x"
+        }
+      },
+      {
+        "when": "B0021",
         "model": {
           "type": "model",
           "model": "item/breed_x"

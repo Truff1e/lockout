@@ -8,7 +8,7 @@
       },
       "cases": [
         {
-          "when": "I0047",
+          "when": "I0004",
           "model": {
             "type": "model",
             "model": "item/all_shovels"

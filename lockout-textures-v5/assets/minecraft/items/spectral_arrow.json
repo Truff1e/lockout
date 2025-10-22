@@ -8,7 +8,7 @@
     },
     "cases": [
       {
-        "when": "X0004",
+        "when": "X1026",
         "model": {
           "type": "model",
           "model": "item/glowing"

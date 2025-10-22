@@ -8,7 +8,7 @@
       },
       "cases": [
         {
-          "when": "I0126",
+          "when": "I0032",
           "model": {
             "type": "model",
             "model": "item/minecarts"
