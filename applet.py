@@ -150,8 +150,8 @@ for i in goalDictionary:
 
 
 # Options Window
-output_path_var = parse_options()['output_path']
-output_path = ttk.Entry(options_window, textvariable=output_path_var)
+output_path_var = parse_options()['outputPath']
+output_path = ttk.Entry(options_window, textvariable=outputPath_var)
 output_path.pack()
 
 

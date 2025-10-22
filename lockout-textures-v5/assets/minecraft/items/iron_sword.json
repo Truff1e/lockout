@@ -43,14 +43,14 @@
         }
       },
       {
-        "when": "K0006",
+        "when": "K0005",
         "model": {
           "type": "model",
           "model": "item/kill_drowned"
         }
       },
       {
-        "when": "K0007",
+        "when": "K0006",
         "model": {
           "type": "model",
           "model": "item/kill_elder_guardian"
@@ -64,7 +64,7 @@
         }
       },
       {
-        "when": "K0009",
+        "when": "K0010",
         "model": {
           "type": "model",
           "model": "item/kill_ghast"
@@ -106,21 +106,21 @@
         }
       },
       {
-        "when": "K0015",
+        "when": "K1003",
         "model": {
           "type": "model",
           "model": "item/kill_magenta_sheep"
         }
       },
       {
-        "when": "K0016",
+        "when": "K1005",
         "model": {
           "type": "model",
           "model": "item/kill_orange_sheep"
         }
       },
       {
-        "when": "K0017",
+        "when": "K1002",
         "model": {
           "type": "model",
           "model": "item/kill_pink_sheep"
@@ -134,42 +134,42 @@
         }
       },
       {
-        "when": "K0019",
+        "when": "K1012",
         "model": {
           "type": "model",
           "model": "item/kill_purple_sheep"
         }
       },
       {
-        "when": "K0020",
+        "when": "K1004",
         "model": {
           "type": "model",
           "model": "item/kill_red_sheep"
         }
       },
       {
-        "when": "K0021",
+        "when": "K0019",
         "model": {
           "type": "model",
           "model": "item/kill_silverfish"
         }
       },
       {
-        "when": "K0022",
+        "when": "K0021",
         "model": {
           "type": "model",
           "model": "item/kill_snow_golem"
         }
       },
       {
-        "when": "K0023",
+        "when": "K0022",
         "model": {
           "type": "model",
           "model": "item/kill_spider_cycle"
         }
       },
       {
-        "when": "K0024",
+        "when": "K0023",
         "model": {
           "type": "model",
           "model": "item/kill_stray"
@@ -190,35 +190,35 @@
         }
       },
       {
-        "when": "K0027",
+        "when": "K0037",
         "model": {
           "type": "model",
           "model": "item/kill_7_unique"
         }
       },
       {
-        "when": "K0028",
+        "when": "K0038",
         "model": {
           "type": "model",
           "model": "item/kill_15_unique"
         }
       },
       {
-        "when": "K0029",
+        "when": "K1006",
         "model": {
           "type": "model",
           "model": "item/kill_yellow_sheep"
         }
       },
       {
-        "when": "K0030",
+        "when": "K0027",
         "model": {
           "type": "model",
           "model": "item/kill_zoglin"
         }
       },
       {
-        "when": "K0031",
+        "when": "K0028",
         "model": {
           "type": "model",
           "model": "item/kill_zombie_villager"

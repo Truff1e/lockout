@@ -12,7 +12,7 @@ defaultGoalDictionary = {
         'K0004': ['Kill Cave Spider', 'iron_sword', True, 4],
         'K0005': ['Kill Drowned', 'iron_sword', True, 2],
         'K0006': ['Kill Elder Guardian', 'iron_sword', True, 4],
-        'K0007': ['Kill Ender Dragon', 'iron_sword', True, 8],
+        'K0007': ['Kill Ender Dragon', 'dragon_head', True, 8],
         'K0008': ['Kill Endermite', 'iron_sword', True, 6],
         'K0009': ['Kill Evoker', 'iron_sword', True, 7],
         'K0010': ['Kill Ghast', 'iron_sword', True, 3],
