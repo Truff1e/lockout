@@ -1,2 +1,14 @@
 version=2.0
+mcVersion=1.21.8-10
 outputPath=Downloads
+startTime=45
+maxTime=120
+showProgress=1
+allowPvp=1
+friendlyFire=1
+allowLocator=1
+allowDraw=1
+allowResign=1
+endOnWin=1
+showTimer=1
+

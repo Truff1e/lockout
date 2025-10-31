@@ -1,10 +1,10 @@
-from index import getFullGoalIndex
+from index import goalIndex
 
 
 
 def lengthsOfGoalsTest():
-    for goalId in getFullGoalIndex():
-        goal = getFullGoalIndex()[goalId]
+    for goalId in goalIndex:
+        goal = goalIndex[goalId]
         if len(goal) != 4:
             print(goal)
 

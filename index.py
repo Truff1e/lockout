@@ -1,7 +1,18 @@
 import random
-import copy
+import json
+import os
 
-defaultGoalDictionary = {
+
+def parse_options():
+    # Reads data stored in options.txt and translates it to a settings list
+    optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
+    optionslist = {}
+    for line in optionsfile:
+        optionslist[line[:line.find('=')]] = line[line.find('=')+1:-1]
+    return optionslist
+
+
+goalIndex = {
         # id: [name, icon, customModelDataBool, difficulty, description]
         # Commented out goals are not yet implemented or are broken
 
@@ -263,11 +274,8 @@ defaultGoalDictionary = {
         'X0023': ['Craft 50 Unique Items', 'crafting_table', False, 2],
         'X0024': ['Craft 75 Unique Items', 'crafting_table', False, 4],
 
-}
 
 
-
-expansionPack19 = {
         'X0025': ['Find an Ancient City', 'sculk_shrieker', False, 2],
         'D0008': ['Die to Warden', 'sculk_shrieker', True, 3],
         'K0041': ['Kill Warden', 'iron_sword', True, 8],
@@ -278,10 +286,9 @@ expansionPack19 = {
         'I0099': ['Obtain Fermented Spider Eye', 'fermented_spider_eye', False, 3],
         # 'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
         'B0022': ['Breed Frog', 'slime_ball', True, 4],
-}
 
+        
 
-expansionPack20 = {
         'I0100': ['Obtain Brush', 'brush', False, 1],
         'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', True, 2],
         'I0102': ['Apply 3 Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 4],
@@ -291,10 +298,9 @@ expansionPack20 = {
         'B0023': ['Breed Sniffer', 'sniffer_egg', True, 9],
         'B0024': ['Breed Armadillo', 'spider_eye', True, 4],
         'X0026': ['Locate Trail Ruins', 'brush', False, 3],
-}
 
 
-expansionPack21 = {
+
         'I0105': ['Obtain Mace', 'mace', False, 10],
         'I0106': ['Obtain Creaking Heart', 'creaking_heart', False, 6],
         'I0107': ['Obtain Resin Brick Stairs', 'resin_brick_stairs', False, 3],
@@ -307,227 +313,213 @@ expansionPack21 = {
         # 'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
         # 'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
         'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
-}
 
 
-expansionPack22 = {
+
         'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1],
         'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2],
         'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3],
-}
 
 
-exclusiveSets = {
-
-        'opponent': {
-                'N0001': ['Opponent Obtains Crafting Table', 'barrier', True, 2],
-                'N0002': ['Opponent Obtains Obsidian', 'barrier', True, 2],
-                'N0003': ['Opponent Obtains Seeds', 'barrier', True, 2],
-                'N0004': ['Opponent Eats', 'barrier', True, 2],
-                'N0005': ['Opponent Obtains Advancement', 'barrier', True, 4],
-                'N0006': ['Opponent Gets 5 Levels', 'barrier', True, 4],
-                'N0007': ['Opponent Touches Water', 'barrier', True, 3],
-                'N0008': ['Opponent Stands on Netherrack', 'barrier', True, 4],
-                'N0009': ['Opponent Stands on Stone', 'barrier', True, 4],
-                'N0010': ['Opponent Wears Armor', 'barrier', True, 4],
-                'N0011': ['Opponent Dies', 'barrier', True, 2],
-                'N0012': ['Opponent Dies 3 Times', 'barrier', True, 2],
-                'N0013': ['Opponent Takes 100 Damage', 'barrier', True, 2],
-                'N0014': ['Opponent Takes Fall Damage', 'barrier', True, 2],
-                'N0015': ['Opponent Catches Fire', 'barrier', True, 2],
-        },
-
-        'musicDiscs' : {
-                'I1001': ['Obtain Music Disc 5', 'music_disc_5', False, 6],
-                'I1002': ['Obtain Music Disc 11', 'music_disc_11', False, 5],
-                'I1003': ['Obtain Music Disc 13', 'music_disc_13', False, 4],
-                'I1004': ['Obtain Music Disc Blocks', 'music_disc_blocks', False, 5],
-                'I1005': ['Obtain Music Disc Cat', 'music_disc_cat', False, 2],
-                'I1006': ['Obtain Music Disc Chirp', 'music_disc_chirp', False, 7],
-                'I1007': ['Obtain Music Disc Creator', 'music_disc_creator', False, 4],
-                'I1008': ['Obtain Creator Music Box', 'music_disc_creator_music_box', False, 4],
-                'I1009': ['Obtain Music Disc Far', 'music_disc_far', False, 5],
-                'I1010': ['Obtain Music Disc Mall', 'music_disc_mall', False, 5],
-                'I1011': ['Obtain Music Disc Mellohi', 'music_disc_mellohi', False, 5],
-                'I1012': ['Obtain Music Disc Otherside', 'music_disc_otherside', False, 6],
-                'I1013': ['Obtain Music Disc Pigstep', 'music_disc_pigstep', False, 5],
-                'I1014': ['Obtain Music Disc Precipice', 'music_disc_precipice', False, 5],
-                'I1015': ['Obtain Music Disc Relic', 'music_disc_relic', False, 7],
-                'I1016': ['Obtain Music Disc Stal', 'music_disc_stal', False, 5],
-                'I1017': ['Obtain Music Disc Strad', 'music_disc_strad', False, 5],
-                'I1018': ['Obtain Music Disc Wait', 'music_disc_wait', False, 5],
-                'I1019': ['Obtain Music Disc Ward', 'music_disc_ward', False, 5],
-        },
-
-        'killSheep': {
-                'K1001': ['Kill White Sheep', 'white_wool', True, 1], 
-                'K1002': ['Kill Pink Sheep', 'pink_wool', True, 1], 
-                'K1003': ['Kill Magenta Sheep', 'magenta_wool', True, 1], 
-                'K1004': ['Kill Red Sheep', 'red_wool', True, 1], 
-                'K1005': ['Kill Orange Sheep', 'orange_wool', True, 1], 
-                'K1006': ['Kill Yellow Sheep', 'yellow_wool', True, 1], 
-                'K1007': ['Kill Lime Sheep', 'lime_wool', True, 3], 
-                'K1008': ['Kill Green Sheep', 'green_wool', True, 3], 
-                'K1009': ['Kill Cyan Sheep', 'cyan_wool', True, 3], 
-                'K1010': ['Kill Light Blue Sheep', 'light_blue_wool', True, 1], 
-                'K1011': ['Kill Blue Sheep', 'blue_wool', True, 1], 
-                'K1012': ['Kill Purple Sheep', 'purple_wool', True, 1], 
-                'K1013': ['Kill Brown Sheep', 'brown_wool', True, 3], 
-                'K1014': ['Kill Light Gray Sheep', 'light_gray_wool', True, 1], 
-                'K1015': ['Kill Gray Sheep', 'gray_wool', True, 1], 
-                'K1016': ['Kill Black Sheep', 'black_wool', True, 1], 
-        },
-
-        'coloredConcrete': {
-                'I2001': ['Obtain 64 White Concrete', 'white_concrete', False, 1], 
-                'I2002': ['Obtain 64 Pink Concrete', 'pink_concrete', False, 1], 
-                'I2003': ['Obtain 64 Magenta Concrete', 'magenta_concrete', False, 1], 
-                'I2004': ['Obtain 64 Red Concrete', 'red_concrete', False, 1], 
-                'I2005': ['Obtain 64 Orange Concrete', 'orange_concrete', False, 1], 
-                'I2006': ['Obtain 64 Yellow Concrete', 'yellow_concrete', False, 1], 
-                'I2007': ['Obtain 64 Lime Concrete', 'lime_concrete', False, 3], 
-                'I2008': ['Obtain 64 Green Concrete', 'green_concrete', False, 3], 
-                'I2009': ['Obtain 64 Cyan Concrete', 'cyan_concrete', False, 3], 
-                'I2010': ['Obtain 64 Light Blue Concrete', 'light_blue_concrete', False, 1], 
-                'I2011': ['Obtain 64 Blue Concrete', 'blue_concrete', False, 1], 
-                'I2012': ['Obtain 64 Purple Concrete', 'purple_concrete', False, 1], 
-                'I2013': ['Obtain 64 Brown Concrete', 'brown_concrete', False, 3], 
-                'I2014': ['Obtain 64 Light Gray Concrete', 'light_gray_concrete', False, 1], 
-                'I2015': ['Obtain 64 Gray Concrete', 'gray_concrete', False, 1], 
-                'I2016': ['Obtain 64 Black Concrete', 'black_concrete', False, 1], 
-        },
-
-        'glazedTerracotta': {
-                'I3001': ['Obtain White Glazed Terracotta', 'white_glazed_terracotta', False, 1], 
-                'I3002': ['Obtain Pink Glazed Terracotta', 'pink_glazed_terracotta', False, 1], 
-                'I3003': ['Obtain Magenta Glazed Terracotta', 'magenta_glazed_terracotta', False, 1], 
-                'I3004': ['Obtain Red Glazed Terracotta', 'red_glazed_terracotta', False, 1], 
-                'I3005': ['Obtain Orange Glazed Terracotta', 'orange_glazed_terracotta', False, 1], 
-                'I3006': ['Obtain Yellow Glazed Terracotta', 'yellow_glazed_terracotta', False, 1], 
-                'I3007': ['Obtain Lime Glazed Terracotta', 'lime_glazed_terracotta', False, 3], 
-                'I3008': ['Obtain Green Glazed Terracotta', 'green_glazed_terracotta', False, 3], 
-                'I3009': ['Obtain Cyan Glazed Terracotta', 'cyan_glazed_terracotta', False, 3], 
-                'I3010': ['Obtain Light Blue Glazed Terracotta', 'light_blue_glazed_terracotta', False, 1], 
-                'I3011': ['Obtain Blue Glazed Terracotta', 'blue_glazed_terracotta', False, 1], 
-                'I3012': ['Obtain Purple Glazed Terracotta', 'purple_glazed_terracotta', False, 1], 
-                'I3013': ['Obtain Brown Glazed Terracotta', 'brown_glazed_terracotta', False, 3], 
-                'I3014': ['Obtain Light Gray Glazed Terracotta', 'light_gray_glazed_terracotta', False, 1], 
-                'I3015': ['Obtain Gray Glazed Terracotta', 'gray_glazed_terracotta', False, 1], 
-                'I3016': ['Obtain Black Glazed Terracotta', 'black_glazed_terracotta', False, 1], 
-        },
-
-        'coloredCandle': {
-                'I4001': ['Obtain White Candle', 'white_candle', False, 1], 
-                'I4002': ['Obtain Pink Candle', 'pink_candle', False, 1], 
-                'I4003': ['Obtain Magenta Candle', 'magenta_candle', False, 1], 
-                'I4004': ['Obtain Red Candle', 'red_candle', False, 1], 
-                'I4005': ['Obtain Orange Candle', 'orange_candle', False, 1], 
-                'I4006': ['Obtain Yellow Candle', 'yellow_candle', False, 1], 
-                'I4007': ['Obtain Lime Candle', 'lime_candle', False, 3], 
-                'I4008': ['Obtain Green Candle', 'green_candle', False, 3], 
-                'I4009': ['Obtain Cyan Candle', 'cyan_candle', False, 3], 
-                'I4010': ['Obtain Light Blue Candle', 'light_blue_candle', False, 1], 
-                'I4011': ['Obtain Blue Candle', 'blue_candle', False, 1], 
-                'I4012': ['Obtain Purple Candle', 'purple_candle', False, 1], 
-                'I4013': ['Obtain Brown Candle', 'brown_candle', False, 3], 
-                'I4014': ['Obtain Light Gray Candle', 'light_gray_candle', False, 1], 
-                'I4015': ['Obtain Gray Candle', 'gray_candle', False, 1], 
-                'I4016': ['Obtain Black Candle', 'black_candle', False, 1], 
-        },
-
-        'stainedGlass': {
-                'I5001': ['Obtain White Stained Glass', 'white_stained_glass', False, 1], 
-                'I5002': ['Obtain Pink Stained Glass', 'pink_stained_glass', False, 1], 
-                'I5003': ['Obtain Magenta Stained Glass', 'magenta_stained_glass', False, 1], 
-                'I5004': ['Obtain Red Stained Glass', 'red_stained_glass', False, 1], 
-                'I5005': ['Obtain Orange Stained Glass', 'orange_stained_glass', False, 1], 
-                'I5006': ['Obtain Yellow Stained Glass', 'yellow_stained_glass', False, 1], 
-                'I5007': ['Obtain Lime Stained Glass', 'lime_stained_glass', False, 3], 
-                'I5008': ['Obtain Green Stained Glass', 'green_stained_glass', False, 3], 
-                'I5009': ['Obtain Cyan Stained Glass', 'cyan_stained_glass', False, 3], 
-                'I5010': ['Obtain Light Blue Stained Glass', 'light_blue_stained_glass', False, 1], 
-                'I5011': ['Obtain Blue Stained Glass', 'blue_stained_glass', False, 1], 
-                'I5012': ['Obtain Purple Stained Glass', 'purple_stained_glass', False, 1], 
-                'I5013': ['Obtain Brown Stained Glass', 'brown_stained_glass', False, 3], 
-                'I5014': ['Obtain Light Gray Stained Glass', 'light_gray_stained_glass', False, 1], 
-                'I5015': ['Obtain Gray Stained Glass', 'gray_stained_glass', False, 1], 
-                'I5016': ['Obtain Black Stained Glass', 'black_stained_glass', False, 1], 
-        },
-
-        'statusEffects': {
-                'X1025': ['Get Absorption', 'golden_apple', True, 2],
-                'X1026': ['Get Glowing', 'spectral_arrow', True, 2],
-                'X1027': ['Get Poisoned', 'spider_eye', True, 1],
-                'X1028': ['Get Nausea', 'pufferfish', True, 3],
-                'X1029': ['Get Leaping', 'rabbit_foot', False, 2],
-                'X1030': ['Get Withered', 'wither_rose', False, 3],
-                'X1031': ['Get Mining Fatigue', 'wooden_shovel', True, 3],
-                'X1032': ['Get Blindness', 'suspicious_stew', False, 3],
-                'X1033': ['Get Strength', 'blaze_powder', False, 5],
-                'X1034': ['Get Fire Resistance', 'potion', True, 4],
-                'X1035': ['Get Water Breathing', 'potion', True, 3],
-                'X1036': ['Get Night Vision', 'potion', True, 2],
-                'X1037': ['Get Weakness', 'wooden_sword', True, 2],
-        },
+        #opponent goals
+        'N0001': ['Opponent Obtains Crafting Table', 'barrier', True, 2],
+        'N0002': ['Opponent Obtains Obsidian', 'barrier', True, 2],
+        'N0003': ['Opponent Obtains Seeds', 'barrier', True, 2],
+        'N0004': ['Opponent Eats', 'barrier', True, 2],
+        'N0005': ['Opponent Obtains Advancement', 'barrier', True, 4],
+        'N0006': ['Opponent Gets 5 Levels', 'barrier', True, 4],
+        'N0007': ['Opponent Touches Water', 'barrier', True, 3],
+        'N0008': ['Opponent Stands on Netherrack', 'barrier', True, 4],
+        'N0009': ['Opponent Stands on Stone', 'barrier', True, 4],
+        'N0010': ['Opponent Wears Armor', 'barrier', True, 4],
+        'N0011': ['Opponent Dies', 'barrier', True, 2],
+        'N0012': ['Opponent Dies 3 Times', 'barrier', True, 2],
+        'N0013': ['Opponent Takes 100 Damage', 'barrier', True, 2],
+        'N0014': ['Opponent Takes Fall Damage', 'barrier', True, 2],
+        'N0015': ['Opponent Catches Fire', 'barrier', True, 2],
 
 
-}
+        #music discs
+
+        'I1001': ['Obtain Music Disc 5', 'music_disc_5', False, 6],
+        'I1002': ['Obtain Music Disc 11', 'music_disc_11', False, 5],
+        'I1003': ['Obtain Music Disc 13', 'music_disc_13', False, 4],
+        'I1004': ['Obtain Music Disc Blocks', 'music_disc_blocks', False, 5],
+        'I1005': ['Obtain Music Disc Cat', 'music_disc_cat', False, 2],
+        'I1006': ['Obtain Music Disc Chirp', 'music_disc_chirp', False, 7],
+        'I1007': ['Obtain Music Disc Creator', 'music_disc_creator', False, 4],
+        'I1008': ['Obtain Creator Music Box', 'music_disc_creator_music_box', False, 4],
+        'I1009': ['Obtain Music Disc Far', 'music_disc_far', False, 5],
+        'I1010': ['Obtain Music Disc Mall', 'music_disc_mall', False, 5],
+        'I1011': ['Obtain Music Disc Mellohi', 'music_disc_mellohi', False, 5],
+        'I1012': ['Obtain Music Disc Otherside', 'music_disc_otherside', False, 6],
+        'I1013': ['Obtain Music Disc Pigstep', 'music_disc_pigstep', False, 5],
+        'I1014': ['Obtain Music Disc Precipice', 'music_disc_precipice', False, 5],
+        'I1015': ['Obtain Music Disc Relic', 'music_disc_relic', False, 7],
+        'I1016': ['Obtain Music Disc Stal', 'music_disc_stal', False, 5],
+        'I1017': ['Obtain Music Disc Strad', 'music_disc_strad', False, 5],
+        'I1018': ['Obtain Music Disc Wait', 'music_disc_wait', False, 5],
+        'I1019': ['Obtain Music Disc Ward', 'music_disc_ward', False, 5],
+
+
+        #kill sheep
+        'K1001': ['Kill White Sheep', 'white_wool', True, 1], 
+        'K1002': ['Kill Pink Sheep', 'pink_wool', True, 1], 
+        'K1003': ['Kill Magenta Sheep', 'magenta_wool', True, 1], 
+        'K1004': ['Kill Red Sheep', 'red_wool', True, 1], 
+        'K1005': ['Kill Orange Sheep', 'orange_wool', True, 1], 
+        'K1006': ['Kill Yellow Sheep', 'yellow_wool', True, 1], 
+        'K1007': ['Kill Lime Sheep', 'lime_wool', True, 3], 
+        'K1008': ['Kill Green Sheep', 'green_wool', True, 3], 
+        'K1009': ['Kill Cyan Sheep', 'cyan_wool', True, 3], 
+        'K1010': ['Kill Light Blue Sheep', 'light_blue_wool', True, 1], 
+        'K1011': ['Kill Blue Sheep', 'blue_wool', True, 1], 
+        'K1012': ['Kill Purple Sheep', 'purple_wool', True, 1], 
+        'K1013': ['Kill Brown Sheep', 'brown_wool', True, 3], 
+        'K1014': ['Kill Light Gray Sheep', 'light_gray_wool', True, 1], 
+        'K1015': ['Kill Gray Sheep', 'gray_wool', True, 1], 
+        'K1016': ['Kill Black Sheep', 'black_wool', True, 1], 
+
+
+        #concrete 
+        'I2001': ['Obtain 64 White Concrete', 'white_concrete', False, 1], 
+        'I2002': ['Obtain 64 Pink Concrete', 'pink_concrete', False, 1], 
+        'I2003': ['Obtain 64 Magenta Concrete', 'magenta_concrete', False, 1], 
+        'I2004': ['Obtain 64 Red Concrete', 'red_concrete', False, 1], 
+        'I2005': ['Obtain 64 Orange Concrete', 'orange_concrete', False, 1], 
+        'I2006': ['Obtain 64 Yellow Concrete', 'yellow_concrete', False, 1], 
+        'I2007': ['Obtain 64 Lime Concrete', 'lime_concrete', False, 3], 
+        'I2008': ['Obtain 64 Green Concrete', 'green_concrete', False, 3], 
+        'I2009': ['Obtain 64 Cyan Concrete', 'cyan_concrete', False, 3], 
+        'I2010': ['Obtain 64 Light Blue Concrete', 'light_blue_concrete', False, 1], 
+        'I2011': ['Obtain 64 Blue Concrete', 'blue_concrete', False, 1], 
+        'I2012': ['Obtain 64 Purple Concrete', 'purple_concrete', False, 1], 
+        'I2013': ['Obtain 64 Brown Concrete', 'brown_concrete', False, 3], 
+        'I2014': ['Obtain 64 Light Gray Concrete', 'light_gray_concrete', False, 1], 
+        'I2015': ['Obtain 64 Gray Concrete', 'gray_concrete', False, 1], 
+        'I2016': ['Obtain 64 Black Concrete', 'black_concrete', False, 1], 
+
+
+        
+        #glazed terracotta
+        'I3001': ['Obtain White Glazed Terracotta', 'white_glazed_terracotta', False, 1], 
+        'I3002': ['Obtain Pink Glazed Terracotta', 'pink_glazed_terracotta', False, 1], 
+        'I3003': ['Obtain Magenta Glazed Terracotta', 'magenta_glazed_terracotta', False, 1], 
+        'I3004': ['Obtain Red Glazed Terracotta', 'red_glazed_terracotta', False, 1], 
+        'I3005': ['Obtain Orange Glazed Terracotta', 'orange_glazed_terracotta', False, 1], 
+        'I3006': ['Obtain Yellow Glazed Terracotta', 'yellow_glazed_terracotta', False, 1], 
+        'I3007': ['Obtain Lime Glazed Terracotta', 'lime_glazed_terracotta', False, 3], 
+        'I3008': ['Obtain Green Glazed Terracotta', 'green_glazed_terracotta', False, 3], 
+        'I3009': ['Obtain Cyan Glazed Terracotta', 'cyan_glazed_terracotta', False, 3], 
+        'I3010': ['Obtain Light Blue Glazed Terracotta', 'light_blue_glazed_terracotta', False, 1], 
+        'I3011': ['Obtain Blue Glazed Terracotta', 'blue_glazed_terracotta', False, 1], 
+        'I3012': ['Obtain Purple Glazed Terracotta', 'purple_glazed_terracotta', False, 1], 
+        'I3013': ['Obtain Brown Glazed Terracotta', 'brown_glazed_terracotta', False, 3], 
+        'I3014': ['Obtain Light Gray Glazed Terracotta', 'light_gray_glazed_terracotta', False, 1], 
+        'I3015': ['Obtain Gray Glazed Terracotta', 'gray_glazed_terracotta', False, 1], 
+        'I3016': ['Obtain Black Glazed Terracotta', 'black_glazed_terracotta', False, 1], 
 
 
 
-#TODO extra goals to add
-goalDictionaryLegacy = {
+        # candles
+        'I4001': ['Obtain White Candle', 'white_candle', False, 1], 
+        'I4002': ['Obtain Pink Candle', 'pink_candle', False, 1], 
+        'I4003': ['Obtain Magenta Candle', 'magenta_candle', False, 1], 
+        'I4004': ['Obtain Red Candle', 'red_candle', False, 1], 
+        'I4005': ['Obtain Orange Candle', 'orange_candle', False, 1], 
+        'I4006': ['Obtain Yellow Candle', 'yellow_candle', False, 1], 
+        'I4007': ['Obtain Lime Candle', 'lime_candle', False, 3], 
+        'I4008': ['Obtain Green Candle', 'green_candle', False, 3], 
+        'I4009': ['Obtain Cyan Candle', 'cyan_candle', False, 3], 
+        'I4010': ['Obtain Light Blue Candle', 'light_blue_candle', False, 1], 
+        'I4011': ['Obtain Blue Candle', 'blue_candle', False, 1], 
+        'I4012': ['Obtain Purple Candle', 'purple_candle', False, 1], 
+        'I4013': ['Obtain Brown Candle', 'brown_candle', False, 3], 
+        'I4014': ['Obtain Light Gray Candle', 'light_gray_candle', False, 1], 
+        'I4015': ['Obtain Gray Candle', 'gray_candle', False, 1], 
+        'I4016': ['Obtain Black Candle', 'black_candle', False, 1], 
 
-    # "X0011": ['Fill Inventory with Unique Items', '"id": "minecraft:chest"', 1],
-    # "X0013": ['Get a Villager to Max Level', '"id": "minecraft:emerald"', 3],
-    # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
-    # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
-    # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
-    # "L0014": ['Find a Badlands Biome', '"id": "minecraft:terracotta"', 3],
 
+        #stained glass
+        'I5001': ['Obtain White Stained Glass', 'white_stained_glass', False, 1], 
+        'I5002': ['Obtain Pink Stained Glass', 'pink_stained_glass', False, 1], 
+        'I5003': ['Obtain Magenta Stained Glass', 'magenta_stained_glass', False, 1], 
+        'I5004': ['Obtain Red Stained Glass', 'red_stained_glass', False, 1], 
+        'I5005': ['Obtain Orange Stained Glass', 'orange_stained_glass', False, 1], 
+        'I5006': ['Obtain Yellow Stained Glass', 'yellow_stained_glass', False, 1], 
+        'I5007': ['Obtain Lime Stained Glass', 'lime_stained_glass', False, 3], 
+        'I5008': ['Obtain Green Stained Glass', 'green_stained_glass', False, 3], 
+        'I5009': ['Obtain Cyan Stained Glass', 'cyan_stained_glass', False, 3], 
+        'I5010': ['Obtain Light Blue Stained Glass', 'light_blue_stained_glass', False, 1], 
+        'I5011': ['Obtain Blue Stained Glass', 'blue_stained_glass', False, 1], 
+        'I5012': ['Obtain Purple Stained Glass', 'purple_stained_glass', False, 1], 
+        'I5013': ['Obtain Brown Stained Glass', 'brown_stained_glass', False, 3], 
+        'I5014': ['Obtain Light Gray Stained Glass', 'light_gray_stained_glass', False, 1], 
+        'I5015': ['Obtain Gray Stained Glass', 'gray_stained_glass', False, 1], 
+        'I5016': ['Obtain Black Stained Glass', 'black_stained_glass', False, 1], 
+
+
+        #status effects
+        'X1025': ['Get Absorption', 'golden_apple', True, 2],
+        'X1026': ['Get Glowing', 'spectral_arrow', True, 2],
+        'X1027': ['Get Poisoned', 'spider_eye', True, 1],
+        'X1028': ['Get Nausea', 'pufferfish', True, 3],
+        'X1029': ['Get Leaping', 'rabbit_foot', False, 2],
+        'X1030': ['Get Withered', 'wither_rose', False, 3],
+        'X1031': ['Get Mining Fatigue', 'wooden_shovel', True, 3],
+        'X1032': ['Get Blindness', 'suspicious_stew', False, 3],
+        'X1033': ['Get Strength', 'blaze_powder', False, 5],
+        'X1034': ['Get Fire Resistance', 'potion', True, 4],
+        'X1035': ['Get Water Breathing', 'potion', True, 3],
+        'X1036': ['Get Night Vision', 'potion', True, 2],
+        'X1037': ['Get Weakness', 'wooden_sword', True, 2],
+
+
+        #goal ideas
+        # "X0011": ['Fill Inventory with Unique Items', '"id": "minecraft:chest"', 1],
+        # "X0013": ['Get a Villager to Max Level', '"id": "minecraft:emerald"', 3],
+        # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
+        # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
+        # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
+        # "L0014": ['Find a Badlands Biome', '"id": "minecraft:terracotta"', 3],
 }
 
 
 
-def createNewBalancedGoalIndex(expansions: list, respectExclusiveSets: bool) -> dict:
-    baseIndex = copy.deepcopy(defaultGoalDictionary)
+def parseGoalPool(poolId) -> list:
+    try:
+        file = open('goal_pools/' + poolId + '.json', 'r')
+        goalPool = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print('The specified goal pool,', poolId, ', could not be found or is unreadable.') 
+        print(e)
+        return []
 
-    if 'all' in expansions or 19 in expansions:
-        baseIndex |= expansionPack19
-    if 'all' in expansions or 20 in expansions:
-        baseIndex |= expansionPack20
-    if 'all' in expansions or 21 in expansions:
-        baseIndex |= expansionPack21
-    if 'all' in expansions or 22 in expansions:
-        baseIndex |= expansionPack22
+    goalList = []
 
-    for exSet in exclusiveSets: #TODO This is a horrible shitty mess. Clean up later
-        if exSet == 'opponent': # adds extra two opponent goals
-            randomChoice = random.choice(list(exclusiveSets[exSet]))
-            baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
-            randomChoice = random.choice(list(exclusiveSets[exSet]))
-            baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
-        randomChoice = random.choice(list(exclusiveSets[exSet]))
-        baseIndex[randomChoice] = exclusiveSets[exSet][randomChoice]
-    return baseIndex
+    for pool in goalPool['pools']:
+        type = pool['type']
 
+        if type == 'all':
+            for goal in pool['goals']:
+                goalList.append(goal)
+        elif type == 'weighted':
+            for goal in pool['goals']:
+                pass #TODO: Implement weighted goal parser
+        elif type == 'pick':
+            for _ in range(pool['amount']):
+                randomGoal = random.choice(pool['goals'])
+                goalList.append(randomGoal)
+                pool['goals'].remove(randomGoal) #ensure the same goal is not picked twice
+        else:
+            continue
 
-
-def getFullGoalIndex():
-    baseIndex = copy.deepcopy(defaultGoalDictionary)
-
-    baseIndex |= expansionPack19
-    baseIndex |= expansionPack20
-    baseIndex |= expansionPack21
-    baseIndex |= expansionPack22
-
-    for exSet in exclusiveSets:
-        for goal in exclusiveSets[exSet]:
-            baseIndex[goal] = exclusiveSets[exSet][goal]
-
-    return baseIndex
+    return goalList
+    
 
 
 if __name__ == '__main__':
-    print("Goals:", len(getFullGoalIndex()))
+    print("Goals:", len(goalIndex))
+    # for goal in goalIndex:
+    #     print(f'"{goal}",')
 
