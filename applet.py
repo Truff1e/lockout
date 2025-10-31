@@ -2,7 +2,6 @@
 import tkinter
 from tkinter import ttk
 from lockout import *
-from index import parse_options
 import os
 
 

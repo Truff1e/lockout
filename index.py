@@ -3,7 +3,7 @@ import json
 import os
 
 
-def parse_options():
+def parseOptions():
     # Reads data stored in options.txt and translates it to a settings list
     optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
     optionslist = {}

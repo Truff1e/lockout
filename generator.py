@@ -4,10 +4,10 @@ import os
 import datetime
 import platform
 import subprocess
-from index import goalIndex, parse_options
+from index import goalIndex, parseOptions
 
 
-options = parse_options()
+options = parseOptions()
 
 
 def open_directory(path):

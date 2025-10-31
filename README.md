@@ -1,6 +1,6 @@
 ![Alt text](assets/banner.png)
 
-# Lockout Generator
+# Truffle's Minecraft Lockout Generator
 ![GitHub Release](https://img.shields.io/github/v/release/truff1e/lockout)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/truff1e/lockout/total)
 
@@ -14,6 +14,7 @@ You can find the original mod on curseforge [here](https://www.curseforge.com/mi
 All credit for the concept goes to SmallAnt - [Check out his YouTube!](https://www.youtube.com/@Smallant)
 
 I hope you enjoy!
+
 ~Truffle
 
 ## How to Generate a Board
@@ -27,12 +28,12 @@ custom - Generates a user-specified board using a provided list of goal ID numbe
 
 
 ### Generate a Balanced Board (Start Here)
-Running "python3 cli.py" in a terminal of your choice will create a random board weighed to a reasonable difficulty. This is the recommended option if you are just starting out or want to start playing quickly.
+Running "python3 lockout.py" in a terminal of your choice will create a random board weighed to a reasonable difficulty. This is the recommended option if you are just starting out or want to start playing quickly.
 You can set several options when generating a board. For example, the command below will make a 4x4 board with a maximum difficulty of 6:
-```python3 cli.py -s 4 -d 1-6```
+```python3 lockout.py -s 4 -d 1-6```
 
 For detailed information, run 
-```python3 cli.py -h```
+```python3 lockout.py -h```
 
 The length of your game depends on the board size and the difficulty you choose.
 I recommend a 3 or 4 size board for short games (45m-1hr), and 5 or 6 for longer games (1.5-2hrs).
@@ -49,7 +50,7 @@ For example: A0001 A0002 A0003 etc. Do not put the same goal in the list twice, 
 You must have a square number of goals (4, 9, 16, 25, 36, etc.)
 
 Run the command 
-```python3 cli.py -b custom <yourlistofgoals>```
+```python3 lockout.py -b custom <yourlistofgoals>```
 
 Your data pack will generate by default in your Downloads folder.
 
