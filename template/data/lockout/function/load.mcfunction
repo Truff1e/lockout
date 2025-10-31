@@ -11,15 +11,15 @@ scoreboard objectives add lk.enabled_goals dummy
 scoreboard objectives add lk.points dummy {"text": "Lockout", "color": "yellow", "bold": true}
 scoreboard objectives setdisplay sidebar lk.points
 scoreboard objectives add lk.goal dummy
-
 scoreboard objectives add lk.logoff minecraft.custom:minecraft.leave_game
 
+#statistic counters
 scoreboard objectives add lk.stat.failed_goals dummy
 scoreboard objectives add lk.stat.deaths deathCount
 scoreboard objectives add lk.stat.kills playerKillCount
 
 
-##goals
+#scoreboards for goals
 scoreboard objectives add lk.unique_mobs dummy
 scoreboard objectives add lk.unique_foods dummy
 scoreboard objectives add lk.unique_breeds dummy
@@ -61,12 +61,13 @@ scoreboard objectives add resign trigger
 scoreboard objectives add draw trigger
 scoreboard objectives add progress trigger
 
-#settings
-scoreboard players set #start_time lk.util 45
-scoreboard players set #max_time lk.util 120
-scoreboard players set #show_progress lk.util 1
+#set default settings
+function lockout:settings/defaults
 
 #start loops and run postload
 schedule function lockout:postload 3s
 schedule function lockout:tick/1s 1s replace
 schedule function lockout:tick/1m 1s replace
+
+#ensure some settings aren't reset when the data pack is reloaded
+scoreboard players set #initialized lk.util 1

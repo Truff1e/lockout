@@ -1,0 +1,2 @@
+#tellraw @a [{"selector": "@s"},{"text": " | "}, {"score": {"name": "@s", "objective": "lk.points"}}, {"text": " goals | "},{"score": {"name": "@s", "objective": "lk.stat.failed_goals"}}, {"text": " failed goals | "},{"score": {"name": "@s", "objective": "lk.stat.deaths"}}, {"text": " deaths | "},{"score": {"name": "@s", "objective": "lk.stat.kills"}}, {"text": " kills"}]
+# Make stats exportable to spreadsheet

@@ -4,12 +4,7 @@ attribute @s movement_speed base set 0
 scoreboard players set @a resign 0
 scoreboard players set @a draw 0
 
-execute if score #start_time lk.util matches 30 run title @s title {"text": "Lockout Will Start in 30 Seconds", "color": "dark_aqua"}
-execute if score #start_time lk.util matches 45 run title @s title {"text": "Lockout Will Start in 45 Seconds", "color": "dark_aqua"}
-execute if score #start_time lk.util matches 60 run title @s title {"text": "Lockout Will Start in 60 Seconds", "color": "dark_aqua"}
-execute if score #start_time lk.util matches 90 run title @s title {"text": "Lockout Will Start in 90 Seconds", "color": "dark_aqua"}
-execute if score #start_time lk.util matches 120 run title @s title {"text": "Lockout Will Start in 120 Seconds", "color": "dark_aqua"}
-
+title @s title [{"text": "Lockout Will Start in ", "color": "dark_aqua"},{"score":{"name": "#start_time", "objective":"lk.util"}, "color":"dark_aqua"},{"text":" Seconds", "color":"dark_aqua"}]
 title @s subtitle [{"text": "Press ", "color": "aqua"}, {"keybind": "key.advancements", "color": "aqua"}, {"text":" for Lockout Board", "color": "aqua"}]
 
 tellraw @s [{"text":"======================================","color":"dark_gray"},{"text":"\n"},{"text":"Minecraft Lockout","bold":true,"color":"yellow"},{"text":"\n\n"},{"text":"Objective: Complete more than half of the\ngoals on the board. If the other team gets\na goal, you can no longer get that goal.","color":"yellow"},{"text":"\n\n"},{"text":">> Press [","color":"green"},{"keybind":"key.advancements","color":"green"},{"text":"] to see the Lockout Board","color":"green"},{"text":"\n"},{"text":">> Type '/trigger locate' to see other\nplayers' locations. (Effectively a compass)","color":"aqua"},{"text":"\n"},{"text":"\n©2025 - Truff1e","italic":true,"color":"gray"},{"text":"\n======================================","color":"dark_gray"}]
