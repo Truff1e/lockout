@@ -1,3 +1,5 @@
+![Alt text](assets/banner.png)
+
 # Lockout Generator v2.0
 
 ## What is Lockout?
