@@ -42,8 +42,9 @@ def main():
 
     if args.listpools:
         goalPools = os.listdir('goal_pools')
-        for i in range(len(goalPools)):
-            print(f'[{i+1}]', goalPools[i])
+        for pool in goalPools:
+            if pool[-5:] == '.json':
+                print(' >', pool[:-5])
     else:
         if args.boardtype == 'custom':
             generateCustomboard(args.customgoals)
