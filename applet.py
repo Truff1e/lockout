@@ -1,42 +1,40 @@
-# NOT SUPPORTED IN v2.0 - USE cli.py INSTEAD
 import tkinter
 from tkinter import ttk
 from lockout import *
 import os
 
-
-print('The GUI is not supported for v2.0 yet. Please use cli.py instead.')
-exit()
+options = parseOptions()
 
 
-def boardoutputwindow(board, gentype: str):
+def boardoutputwindow(board, type: str):
     outputwindow = tkinter.Tk()
-    outputwindow.title("Generated Board")
-    outputwindow.geometry("300x250+300+300")
+    outputwindow.title("Lockout Board")
+    outputwindow.geometry("300x200+300+300")
     outputwindow.resizable(False, True)
 
     boardinfo = tkinter.Text(outputwindow)
 
-    if gentype == 'balanced':
+    if type == 'balanced':
         boardinfo.insert('end', "BALANCED BOARD\n\n")
-        boardinfo.insert('end', f"Board Size: {int(sizevar.get()//1)**2} \n")
+        boardinfo.insert('end', f"Board Size: {int(sizevar.get())} \n")
         boardinfo.insert('end', f"Difficulty: {difficultyvar.get().__round__(1)} \n")
         boardinfo.insert('end', f"Blackout Mode: {blackoutvar.get()} \n")
         boardinfo.insert('end', "Excluded Goals: \n")
         for goal in goal_checkboxes_list:
             if not goal_checkboxes_list[goal].get():
                 boardinfo.insert('end', f"{goal}, ")
-    elif gentype == 'custom':
+    elif type == 'custom':
         boardinfo.insert('end', "CUSTOM BOARD\n")
     boardinfo.insert('end', "\n\nBoard Goals: ")
     for goal in board:
-        boardinfo.insert('end', f"\n{goal} - {goalDictionary[goal][0]}")
+        boardinfo.insert('end', f"\n{goal} - {goalIndex[goal][0]}")
     boardinfo.insert('end', "\n\nGoal List: ")
     for goal in board:
         boardinfo.insert('end', f"{goal},")
     boardinfo.config(state="disabled")
     boardinfo.pack()
     outputwindow.mainloop()
+
 
 def generatebalanced():
     if blackoutvar.get():
@@ -45,22 +43,26 @@ def generatebalanced():
             if not goal_checkboxes_list[goal].get():
                 excluded.append(goal)
         print("Generating Blackout Board")
+        board = generateBalancedBoard(int(sizevar.get()), (1.0, None, float(difficultyvar.get().__round__(1))), 'Blackout', excluded=excluded)
     else:
         excluded = []
         for goal in goal_checkboxes_list:
             if not goal_checkboxes_list[goal].get():
                 excluded.append(goal)
         print("Generating Lockout Board")
-    print(excluded)
-    board = generateBalancedBoard(int(sizevar.get()//1)**2, str(difficultyvar.get().__round__(1)).split(','), ['all'], excluded=excluded)
+        board = generateBalancedBoard(int(sizevar.get()), (1.0, None, float(difficultyvar.get().__round__(1))), 'Lockout', excluded=excluded)
+    print('Excluding:', excluded)
     boardoutputwindow(board, 'balanced')
 
+
 def generatecustom():
-    customboard(customboardtext.get("1.0", "end-1c").strip(" ").split(','))
+    generateCustomboard(customboardtext.get("1.0", "end-1c").strip(" ").split(','))
     boardoutputwindow(customboardtext.get("1.0", "end-1c").strip(" ").split(','), 'custom')
 
+
 def getsizesildervalue():
-    return int(sizevar.get()//1)
+    return int(sizevar.get())
+
 
 def getdifficultysildervalue():
     return '{: .1f}'.format(difficultyvar.get())
@@ -102,13 +104,13 @@ ttk.Label(boardsize, text="Board Size: ").pack(side="left")
 boardsizeslider = ttk.Scale(boardsize, from_=1, to=9, orient='horizontal', variable=sizevar,
                             command=(lambda event: boardsizelabel.configure(text=f"{getsizesildervalue()} x {getsizesildervalue()}")))
 boardsizelabel = ttk.Label(boardsize, text=f"{getsizesildervalue()} x {getsizesildervalue()}")
-boardsizeslider.pack(side="left", padx=10, pady=3)
+boardsizeslider.pack(side="left", padx=10, pady=2)
 boardsizelabel.pack(side="left")
 ttk.Label(difficulty, text="Difficulty: ").pack(side="left")
 difficultyslider = ttk.Scale(difficulty, from_=1, to=8, orient='horizontal', variable=difficultyvar,
                              command=(lambda event: difficultylabel.configure(text=f"{getdifficultysildervalue()}")))
 difficultylabel = ttk.Label(difficulty, text=getdifficultysildervalue())
-difficultyslider.pack(side="left", padx=10, pady=3)
+difficultyslider.pack(side="left", padx=10)
 difficultylabel.pack(side="left")
 blackouttoggle = ttk.Checkbutton(balanced_window, text="Blackout Mode", variable=blackoutvar, padding=10)
 generatebutton = ttk.Button(balanced_window, text="Generate Balanced Board", command=generatebalanced)
@@ -165,8 +167,8 @@ notebook.add(goal_window, text="Goals")
 
 # App Construction
 appicon = tkinter.PhotoImage(file=os.path.join(os.path.dirname(__file__), './assets/app_splash.png'))
-tkinter.Label(window, image=appicon, pady=15).pack()
-tkinter.Label(window, text=f"v{parse_options()['version']} - Truffle Studios", pady=3).pack()
+tkinter.Label(window, image=appicon, pady=10).pack()
+tkinter.Label(window, text=f"v{options['version']} - Truffle Studios", pady=2).pack()
 notebook.pack()
 
 window.mainloop()
