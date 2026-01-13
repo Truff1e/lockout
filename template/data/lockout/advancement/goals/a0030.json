@@ -8,7 +8,13 @@
                         "entity": "this",
                         "predicate": {
                             "vehicle": {
-                                "type": "minecraft:horse"
+                                "type": "minecraft:horse",
+                                "equipment": {
+                                    "saddle": {
+                                        "items": "minecraft:saddle",
+                                        "count": 1
+                                    }
+                                }
                             }
                         }
                     }

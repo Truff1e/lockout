@@ -14,6 +14,6 @@
     ],
     "sends_telemetry_event": true,
     "rewards": {
-        "function": "lockout:goals/a0023.json"
+        "function": "lockout:goals/a0023"
     }
 }
