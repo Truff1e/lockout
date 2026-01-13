@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "diamond": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:diamond"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "diamond"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

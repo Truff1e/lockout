@@ -1,0 +1,21 @@
+{
+    "criteria": {
+        "axolotl_bucket": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:axolotl_bucket"
+                }
+            },
+            "trigger": "minecraft:filled_bucket"
+        }
+    },
+    "requirements": [
+        [
+            "axolotl_bucket"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "shot_trident": {
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "direct_entity": {
+                            "type": "minecraft:trident"
+                        },
+                        "tags": [
+                            {
+                                "expected": true,
+                                "id": "minecraft:is_projectile"
+                            }
+                        ]
+                    }
+                }
+            },
+            "trigger": "minecraft:player_hurt_entity"
+        }
+    },
+    "requirements": [
+        [
+            "shot_trident"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "tamed_animal": {
+            "trigger": "minecraft:tame_animal"
+        }
+    },
+    "requirements": [
+        [
+            "tamed_animal"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

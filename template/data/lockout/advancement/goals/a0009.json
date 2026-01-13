@@ -1,0 +1,81 @@
+{
+    "criteria": {
+        "spyglass_at_dragon": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:spyglass"
+                },
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "minecraft:player",
+                                "looking_at": {
+                                    "type": "minecraft:ender_dragon"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:using_item"
+        },
+        "spyglass_at_ghast": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:spyglass"
+                },
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "minecraft:player",
+                                "looking_at": {
+                                    "type": "minecraft:ghast"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:using_item"
+        },
+        "spyglass_at_parrot": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:spyglass"
+                },
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type_specific": {
+                                "type": "minecraft:player",
+                                "looking_at": {
+                                    "type": "minecraft:parrot"
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:using_item"
+        }
+    },
+    "requirements": [
+        [
+            "spyglass_at_dragon",
+            "spyglass_at_ghast",
+            "spyglass_at_parrot"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/a0009"
+    }
+}

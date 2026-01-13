@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "entered_end": {
+            "conditions": {
+                "to": "minecraft:the_end"
+            },
+            "trigger": "minecraft:changed_dimension"
+        }
+    },
+    "requirements": [
+        [
+            "entered_end"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/a0023.json"
+    }
+}

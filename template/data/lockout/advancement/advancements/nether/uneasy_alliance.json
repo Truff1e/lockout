@@ -1,0 +1,30 @@
+{
+    "criteria": {
+        "killed_ghast": {
+            "conditions": {
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:ghast",
+                            "location": {
+                                "dimension": "minecraft:overworld"
+                            }
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:player_killed_entity"
+        }
+    },
+    "requirements": [
+        [
+            "killed_ghast"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    },
+    "sends_telemetry_event": true
+}

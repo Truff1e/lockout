@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "killed_by_something": {
+            "trigger": "minecraft:entity_killed_player"
+        },
+        "killed_something": {
+            "trigger": "minecraft:player_killed_entity"
+        }
+    },
+    "requirements": [
+        [
+            "killed_something",
+            "killed_by_something"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

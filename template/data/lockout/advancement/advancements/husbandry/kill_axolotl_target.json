@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "kill_axolotl_target": {
+            "conditions": {
+                "source": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:axolotl"
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:effects_changed"
+        }
+    },
+    "requirements": [
+        [
+            "kill_axolotl_target"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

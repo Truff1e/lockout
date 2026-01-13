@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "place_dried_ghast_in_water": {
+            "conditions": {
+                "location": [
+                    {
+                        "block": "minecraft:dried_ghast",
+                        "condition": "minecraft:block_state_property",
+                        "properties": {
+                            "waterlogged": "true"
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:placed_block"
+        }
+    },
+    "requirements": [
+        [
+            "place_dried_ghast_in_water"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

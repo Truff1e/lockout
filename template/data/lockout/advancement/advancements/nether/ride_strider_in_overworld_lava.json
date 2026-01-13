@@ -1,0 +1,37 @@
+{
+    "criteria": {
+        "ride_entity_distance": {
+            "conditions": {
+                "distance": {
+                    "horizontal": {
+                        "min": 50.0
+                    }
+                },
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "location": {
+                                "dimension": "minecraft:overworld"
+                            },
+                            "vehicle": {
+                                "type": "minecraft:strider"
+                            }
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:ride_entity_in_lava"
+        }
+    },
+    "requirements": [
+        [
+            "ride_entity_distance"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

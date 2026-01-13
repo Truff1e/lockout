@@ -1,0 +1,29 @@
+{
+    "criteria": {
+        "ride_horse": {
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "vehicle": {
+                                "type": "minecraft:horse"
+                            }
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:started_riding"
+        }
+    },
+    "requirements": [
+        [
+            "ride_horse"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/a0030"
+    }
+}

@@ -10,7 +10,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Generate Minecraft Lockout boards with the Truff1e lockout generator.')
 
-    parser.add_argument('--boardtype', '-b',
+    parser.add_argument('-b', '--boardtype',
                         type=str,
                         default='balanced',
                         help='Set generator mode to balanced (default) or custom')
@@ -19,21 +19,21 @@ def main():
                         nargs='*',
                         help='Set a list of goal ids for custom board.')
 
-    parser.add_argument('--boardsize', '-s',
+    parser.add_argument('-s', '--boardsize',
                         type=int,
                         default='5',
                         help='Set board size (1-10). Larger sizes may be unstable.')
 
-    parser.add_argument('--pool', '-p',
+    parser.add_argument('-p', '--pool',
                         type=str,
                         default='Lockout',
                         help='Set a goal pool to draw from when generating the board. See options with -P.')
 
-    parser.add_argument('--listpools', '-P',
+    parser.add_argument('-P', '--listpools',
                         action='store_true',
                         help='List all loaded goal pools.')
 
-    parser.add_argument('--difficulty', '-d',
+    parser.add_argument('-d', '--difficulty',
                         type=str,
                         default='1-5',
                         help='Set the difficulty range (int-int). Min 1, max 10.')

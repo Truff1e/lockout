@@ -1,0 +1,21 @@
+{
+    "criteria": {
+        "used_totem": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:totem_of_undying"
+                }
+            },
+            "trigger": "minecraft:used_totem"
+        }
+    },
+    "requirements": [
+        [
+            "used_totem"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "criteria": {
+        "kill_pillager": {
+            "conditions": {
+                "fired_from_weapon": {
+                    "items": "minecraft:crossbow"
+                },
+                "victims": [
+                    [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "type": "minecraft:pillager"
+                            }
+                        }
+                    ]
+                ]
+            },
+            "trigger": "minecraft:killed_by_arrow"
+        }
+    },
+    "requirements": [
+        [
+            "kill_pillager"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

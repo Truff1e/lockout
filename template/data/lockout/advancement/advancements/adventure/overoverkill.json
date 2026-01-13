@@ -1,0 +1,39 @@
+{
+    "criteria": {
+        "overoverkill": {
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "direct_entity": {
+                            "type": "minecraft:player",
+                            "equipment": {
+                                "mainhand": {
+                                    "items": "minecraft:mace"
+                                }
+                            }
+                        },
+                        "tags": [
+                            {
+                                "expected": true,
+                                "id": "minecraft:mace_smash"
+                            }
+                        ]
+                    },
+                    "dealt": {
+                        "min": 100.0
+                    }
+                }
+            },
+            "trigger": "minecraft:player_hurt_entity"
+        }
+    },
+    "requirements": [
+        [
+            "overoverkill"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    },
+    "sends_telemetry_event": true
+}

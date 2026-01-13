@@ -1,0 +1,33 @@
+{
+    "criteria": {
+        "feed_snifflet": {
+            "conditions": {
+                "entity": [
+                    {
+                        "condition": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "type": "minecraft:sniffer",
+                            "flags": {
+                                "is_baby": true
+                            }
+                        }
+                    }
+                ],
+                "item": {
+                    "items": "#minecraft:sniffer_food"
+                }
+            },
+            "trigger": "minecraft:player_interacted_with_entity"
+        }
+    },
+    "requirements": [
+        [
+            "feed_snifflet"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

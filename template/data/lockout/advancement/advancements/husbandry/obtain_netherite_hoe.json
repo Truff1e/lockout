@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "netherite_hoe": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:netherite_hoe"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "netherite_hoe"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    },
+    "sends_telemetry_event": true
+}

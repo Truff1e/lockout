@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "bred": {
+            "trigger": "minecraft:bred_animals"
+        }
+    },
+    "requirements": [
+        [
+            "bred"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

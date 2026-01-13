@@ -1,2 +1,1 @@
-execute as @s run function lockout:goals/count/advancements
 execute as @s run function lockout:goals/skeleton/master {"goalid": "A0026", "goalnum": "650026", "goalname": "Apply Armor Trim"}

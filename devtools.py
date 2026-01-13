@@ -1,5 +1,6 @@
 from index import goalIndex
 import os
+import argparse
 
 
 def createTriggers():
@@ -15,10 +16,6 @@ def createTriggers():
     for goal in goalIndex:
         file = open(f'./triggers/{goal.lower()}.mcfunction', 'w')
         number = goal[1:]
-        # Ensure goals that use achievement triggers are counted for unique advancements
-        if 'A' in goal and int(goal[1:]) > 3:
-            file.write('execute as @s run function lockout:goals/count/advancements\n')
-
         # Write most function for Most goals
         if 'M' in goal:
             file.write("execute as @s run function lockout:goals/skeleton/most {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{goalIndex[goal][0]}"' + '}')
@@ -1599,4 +1596,15 @@ def createCraftFiles():
             file.close()
 
 
+def main():
+    parser = argparse.ArgumentParser(description='Run tools for generating data pack files')
 
+    parser.add_argument('function')
+
+    args = parser.parse_args()
+
+    exec(f'{args.function}()')
+
+
+if __name__ == '__main__':
+    main()
