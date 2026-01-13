@@ -90,9 +90,15 @@ def write_advancement_tree(path, boardBlueprint):
 
 
 def write_info_file(path, boardBlueprint):
-    file = open(f'{path}/generator_info.txt', 'w')
-    file.write('This lockout board was generated using the Truff1e Lockout generator.')
-    pass
+    file = open(f'{path}/board_info.txt', 'w')
+    file.write('This lockout board was generated using the Truff1e Lockout generator.\n')
+    file.write('github.com/truff1e/lockout\n')
+    file.write(f'Lockout Version: {options["version"]}\n')
+    file.write(f'Generated on: {datetime.datetime.now().strftime('%Y%m%d-%H%M')}\n')
+    file.write(f'Minecraft Version(s): {options["mcVersion"]}\n')
+    file.write(f'Board Size: {len(boardBlueprint)}\n')
+    file.write(f'Board: {boardBlueprint}\n')
+    file.close()
 
 
 def prepare_files(output_path, boardtype: str):
