@@ -38,7 +38,19 @@ def main():
                         default='1-5',
                         help='Set the difficulty range (int-int). Min 1, max 10.')
 
+    parser.add_argument('-v', '--version',
+                        action='store_true',
+                        help='Print version info, license & credits.')
+
     args = parser.parse_args()
+
+    if args.version:
+        print('---------------------------------------------------------------------')
+        print(f'Truffle Minecraft Lockout - v{options['version']}')
+        print(f'©2025 Truffle Studios (GNU GPLv3)')
+        print(f'Supports MC {options['mcVersion']} - Pass -h for help')
+        print('---------------------------------------------------------------------')
+        exit()
 
     if args.listpools:
         goalPools = os.listdir('goal_pools')
@@ -50,6 +62,7 @@ def main():
             generateCustomboard(args.customgoals)
         if args.boardtype == 'balanced':
             generateBalancedBoard(args.boardsize, (float(args.difficulty.split('-')[0]), None, float(args.difficulty.split('-')[1])), args.pool)
+
 
     exit()
 
@@ -135,9 +148,4 @@ def generateBalancedBoard(size: int, difficultySet: tuple, poolId, excluded=None
 
 
 if __name__ == '__main__':
-    print('---------------------------------------------------------------------')
-    print(f'Truffle Minecraft Lockout - v{options['version']}')
-    print(f'©2025 - Truffle Studios (GNU GPLv3)')
-    print(f'Supports MC {options['mcVersion']} - Pass -h for help')
-    print('---------------------------------------------------------------------')
     main()

@@ -1,8 +1,6 @@
 import json
 import argparse
 
-
-
 def main():
     parser = argparse.ArgumentParser(description='Convert Minecraft advancement files into triggers for lockout goals.')
     parser.add_argument('file', nargs='*')
@@ -26,7 +24,6 @@ def main():
         print('Success!')
 
         
-
 if __name__ == '__main__':
     main()
 
