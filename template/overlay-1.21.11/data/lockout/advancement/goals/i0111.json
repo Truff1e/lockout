@@ -1,0 +1,40 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wooden_spear"
+            },
+            {
+              "items": "minecraft:stone_spear"
+            },
+            {
+              "items": "minecraft:copper_spear"
+            },
+            {
+              "items": "minecraft:iron_spear"
+            },
+            {
+              "items": "minecraft:golden_spear"
+            },
+            {
+              "items": "minecraft:diamond_spear"
+            },
+            {
+              "items": "minecraft:netherite_spear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0111"
+    }
+  }

@@ -1,0 +1,37 @@
+{
+    "criteria": {
+      "wooden_tools": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wooden_sword"
+            },
+            {
+              "items": "minecraft:wooden_axe"
+            },
+            {
+              "items": "minecraft:wooden_pickaxe"
+            },
+            {
+              "items": "minecraft:wooden_shovel"
+            },
+            {
+              "items": "minecraft:wooden_hoe"
+            },
+            {
+              "items": "minecraft:wooden_spear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "wooden_tools"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0015"
+    }
+  }

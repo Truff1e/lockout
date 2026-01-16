@@ -107,11 +107,11 @@ goalIndex = {
         'B0021': ['Breed 12 Unique Mobs', 'wheat', True, 7],
 
         # ITEM GOALS
-        'I0001': ['Obtain All Swords', 'netherite_sword', True, 6], #TODO: Add Copper 
-        'I0002': ['Obtain All Axes', 'netherite_axe', True, 6], #TODO: Add Copper 
-        'I0003': ['Obtain All Pickaxes', 'netherite_pickaxe', True, 6], #TODO: Add Copper 
-        'I0004': ['Obtain All Shovels', 'netherite_shovel', True, 6], #TODO: Add Copper 
-        'I0005': ['Obtain All Hoes', 'netherite_hoe', True, 6], #TODO: Add Copper 
+        'I0001': ['Obtain All Swords', 'netherite_sword', True, 6], 
+        'I0002': ['Obtain All Axes', 'netherite_axe', True, 6], 
+        'I0003': ['Obtain All Pickaxes', 'netherite_pickaxe', True, 6], 
+        'I0004': ['Obtain All Shovels', 'netherite_shovel', True, 6], 
+        'I0005': ['Obtain All Hoes', 'netherite_hoe', True, 6], 
         'I0006': ['Obtain Full Leather Armor', 'leather_chestplate', True, 2],
         'I0007': ['Obtain Chainmail Armor', 'chainmail_helmet', False, 4],
         'I0008': ['Obtain Full Chainmail Armor', 'chainmail_chestplate', True, 7],
@@ -315,10 +315,11 @@ goalIndex = {
         'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
 
 
-
-        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1],
-        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2],
-        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3],
+        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1], #1.21.9+
+        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2], #1.21.9+
+        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3], #1.21.6+
+        'I0111': ['Obtain All Spears', 'netherite_spear', False, 6], #1.21.11+ #needs texture
+        'I0112': ['Obtain Any Nautilus Armor', 'iron_nautilus_armor', False, 5], #1.21.11+ #needs texture
 
 
         #opponent goals

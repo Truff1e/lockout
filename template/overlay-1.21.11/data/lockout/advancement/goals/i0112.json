@@ -1,0 +1,66 @@
+{
+    "criteria": {
+      "copper": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:copper_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "iron": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:iron_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "gold": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:golden_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "diamond": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:diamond_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "netherite": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_nautilus_armor"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "copper",
+        "iron",
+        "gold",
+        "diamond",
+        "netherite"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0112"
+    }
+  }

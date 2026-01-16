@@ -34,6 +34,7 @@ scoreboard players add @s[predicate=lockout:effects/water_breathing] lk.unique_e
 scoreboard players add @s[predicate=lockout:effects/weakness] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/wind_charged] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/wither] lk.unique_effects 1
+scoreboard players add @s[predicate=lockout:effects/breath_of_the_nautilus] lk.unique_effects 1
 
 execute if score #test_effects lk.util matches 1 as @s[scores={lk.unique_effects=3..}] run function lockout:goals/x0018
 execute if score #test_effects lk.util matches 1 as @s[scores={lk.unique_effects=6..}] run function lockout:goals/x0019

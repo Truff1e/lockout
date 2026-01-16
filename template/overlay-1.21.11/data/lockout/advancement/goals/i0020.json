@@ -1,0 +1,37 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_sword"
+            },
+            {
+              "items": "minecraft:netherite_axe"
+            },
+            {
+              "items": "minecraft:netherite_pickaxe"
+            },
+            {
+              "items": "minecraft:netherite_shovel"
+            },
+            {
+              "items": "minecraft:netherite_hoe"
+            },
+            {
+              "items": "minecraft:netherite_spear"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0020"
+    }
+  }

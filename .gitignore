@@ -5,6 +5,7 @@
 /triggers/
 **/.DS_Store
 **/__pycache__/
+/template-1-21-4/
 
 lockout-textures-v5/LockoutTextures*
 lockout-textures-v5/pack.png

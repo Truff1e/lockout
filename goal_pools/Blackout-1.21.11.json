@@ -1,11 +1,11 @@
 {
     "meta": {
-        "version": 2.1,
-        "dp_version": [94],
-        "name": "All Goals",
-        "description": "Contains every possible goal, evenly weighted.",
+        "version": 2.0,
+        "dp_version": [81],
+        "name": "Default Blackout",
+        "description": "Contains every unique blackout-compatible goal, and picks one for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",
         "author": "Truff1e",
-        "last_updated": "2026-01-16"
+        "last_updated": "2025-10-31"
     },
     "pools": [
         {
@@ -277,22 +277,13 @@
                 "I0109",
                 "I0110",
                 "I0111",
-                "I0112",
-                "N0001",
-                "N0002",
-                "N0003",
-                "N0004",
-                "N0005",
-                "N0006",
-                "N0007",
-                "N0008",
-                "N0009",
-                "N0010",
-                "N0011",
-                "N0012",
-                "N0013",
-                "N0014",
-                "N0015",
+                "I0112"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I1001",
                 "I1002",
                 "I1003",
@@ -311,7 +302,13 @@
                 "I1016",
                 "I1017",
                 "I1018",
-                "I1019",
+                "I1019"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "K1001",
                 "K1002",
                 "K1003",
@@ -327,7 +324,13 @@
                 "K1013",
                 "K1014",
                 "K1015",
-                "K1016",
+                "K1016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I2001",
                 "I2002",
                 "I2003",
@@ -343,7 +346,13 @@
                 "I2013",
                 "I2014",
                 "I2015",
-                "I2016",
+                "I2016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I3001",
                 "I3002",
                 "I3003",
@@ -359,7 +368,13 @@
                 "I3013",
                 "I3014",
                 "I3015",
-                "I3016",
+                "I3016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I4001",
                 "I4002",
                 "I4003",
@@ -375,7 +390,13 @@
                 "I4013",
                 "I4014",
                 "I4015",
-                "I4016",
+                "I4016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I5001",
                 "I5002",
                 "I5003",
@@ -391,7 +412,13 @@
                 "I5013",
                 "I5014",
                 "I5015",
-                "I5016",
+                "I5016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "X1025",
                 "X1026",
                 "X1027",

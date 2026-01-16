@@ -1,0 +1,40 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wooden_shovel"
+            },
+            {
+              "items": "minecraft:stone_shovel"
+            },
+            {
+              "items": "minecraft:copper_shovel"
+            },
+            {
+              "items": "minecraft:iron_shovel"
+            },
+            {
+              "items": "minecraft:golden_shovel"
+            },
+            {
+              "items": "minecraft:diamond_shovel"
+            },
+            {
+              "items": "minecraft:netherite_shovel"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0004"
+    }
+  }

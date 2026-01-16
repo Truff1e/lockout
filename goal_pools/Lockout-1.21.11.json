@@ -2,8 +2,8 @@
     "meta": {
         "version": 2.1,
         "dp_version": [94],
-        "name": "All Goals",
-        "description": "Contains every possible goal, evenly weighted.",
+        "name": "Lockout - Mounts of Mayhem - 1.21.11",
+        "description": "Contains every unique goal, and picks one for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards. Includes goals for Minecraft 1.21.11 (Mounts of Mayhem Update)",
         "author": "Truff1e",
         "last_updated": "2026-01-16"
     },
@@ -277,7 +277,13 @@
                 "I0109",
                 "I0110",
                 "I0111",
-                "I0112",
+                "I0112"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "N0001",
                 "N0002",
                 "N0003",
@@ -292,7 +298,13 @@
                 "N0012",
                 "N0013",
                 "N0014",
-                "N0015",
+                "N0015"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I1001",
                 "I1002",
                 "I1003",
@@ -311,7 +323,13 @@
                 "I1016",
                 "I1017",
                 "I1018",
-                "I1019",
+                "I1019"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "K1001",
                 "K1002",
                 "K1003",
@@ -327,7 +345,13 @@
                 "K1013",
                 "K1014",
                 "K1015",
-                "K1016",
+                "K1016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I2001",
                 "I2002",
                 "I2003",
@@ -343,7 +367,13 @@
                 "I2013",
                 "I2014",
                 "I2015",
-                "I2016",
+                "I2016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I3001",
                 "I3002",
                 "I3003",
@@ -359,7 +389,13 @@
                 "I3013",
                 "I3014",
                 "I3015",
-                "I3016",
+                "I3016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I4001",
                 "I4002",
                 "I4003",
@@ -375,7 +411,13 @@
                 "I4013",
                 "I4014",
                 "I4015",
-                "I4016",
+                "I4016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "I5001",
                 "I5002",
                 "I5003",
@@ -391,7 +433,13 @@
                 "I5013",
                 "I5014",
                 "I5015",
-                "I5016",
+                "I5016"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
                 "X1025",
                 "X1026",
                 "X1027",

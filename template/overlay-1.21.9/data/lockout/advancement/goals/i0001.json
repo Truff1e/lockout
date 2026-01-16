@@ -1,0 +1,40 @@
+{
+    "criteria": {
+      "picks": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:wooden_sword"
+            },
+            {
+              "items": "minecraft:stone_sword"
+            },
+            {
+              "items": "minecraft:copper_sword"
+            },
+            {
+              "items": "minecraft:iron_sword"
+            },
+            {
+              "items": "minecraft:golden_sword"
+            },
+            {
+              "items": "minecraft:diamond_sword"
+            },
+            {
+              "items": "minecraft:netherite_sword"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "picks"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0001"
+    }
+  }
