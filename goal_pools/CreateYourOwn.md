@@ -41,6 +41,10 @@ Picks an "amount" (integer) of goals from the list of "goals". You will need to 
 
 More pool types will be added in the future to allow for more customizability.
 
+**include**
+
+Include another goal pool file. Set "file" to the poolID (filename without .json extension)
+
 
 ### Goals
 This is a list of goal id numbers (the full list can be found in index.py).

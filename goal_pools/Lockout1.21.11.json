@@ -1,0 +1,23 @@
+{
+    "meta": {
+        "version": 2.1,
+        "dp_version": [94],
+        "name": "Lockout 1.21.11",
+        "description": "Extension of the base Lockout pool. Includes goals for Minecraft 1.21.11 (Mounts of Mayhem Update)",
+        "author": "Truff1e",
+        "last_updated": "2026-01-16"
+    },
+    "pools": [
+        {
+            "type": "include",
+            "file": "LockoutBase"
+        },
+        {
+            "type": "all",
+            "goals": [
+                "I0111",
+                "I0112"
+            ]
+        }
+    ]
+}

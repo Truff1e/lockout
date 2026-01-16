@@ -2,8 +2,8 @@
     "meta": {
         "version": 2.0,
         "dp_version": [81],
-        "name": "Default Blackout",
-        "description": "Contains every unique blackout-compatible goal, and picks one for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",
+        "name": "Lockout Base",
+        "description": "Contains every unique goal, and picks one for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",
         "author": "Truff1e",
         "last_updated": "2025-10-31"
     },
@@ -275,9 +275,28 @@
                 "D0009",
                 "I0108",
                 "I0109",
-                "I0110",
-                "I0111",
-                "I0112"
+                "I0110"
+            ]
+        },
+        {
+            "type": "pick",
+            "amount": 1,
+            "goals": [
+                "N0001",
+                "N0002",
+                "N0003",
+                "N0004",
+                "N0005",
+                "N0006",
+                "N0007",
+                "N0008",
+                "N0009",
+                "N0010",
+                "N0011",
+                "N0012",
+                "N0013",
+                "N0014",
+                "N0015"
             ]
         },
         {

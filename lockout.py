@@ -1,5 +1,5 @@
 from generator import generateBoard
-from index import goalIndex, parseGoalPool, parseOptions
+from index import goalIndex, parseGoalPool, parseOptions, getGoalPoolMeta
 from random import choice, choices
 import os
 import argparse
@@ -33,6 +33,9 @@ def main():
                         action='store_true',
                         help='List all loaded goal pools.')
 
+    parser.add_argument('-I', '--poolinfo',
+                        help='Get information about a specific goal pool.')
+
     parser.add_argument('-d', '--difficulty',
                         type=str,
                         default='1-5',
@@ -57,6 +60,18 @@ def main():
         for pool in goalPools:
             if pool[-5:] == '.json':
                 print(' >', pool[:-5])
+    elif args.poolinfo:
+        pool = args.poolinfo
+        meta = getGoalPoolMeta(pool)
+        if meta == None:
+            print('Goal pool not found')
+            return
+        print(' > NAME:        ', meta['name'])
+        print(' > DESCRIPTION: ', meta['description'])
+        print(' > AUTHOR:      ', meta['author'])
+        print(' > LAST_UPDATE: ', meta['last_updated'])
+        print(' > VERSION:     ', meta['version'])
+        print(' > DP_VERSION:  ', meta['dp_version'])
     else:
         if args.boardtype == 'custom':
             generateCustomboard(args.customgoals)

@@ -483,8 +483,19 @@ goalIndex = {
         # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
         # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
         # "L0014": ['Find a Badlands Biome', '"id": "minecraft:terracotta"', 3],
+
 }
 
+
+def getGoalPoolMeta(poolId):
+    try:
+        file = open('goal_pools/' + poolId + '.json', 'r')
+        goalPool = json.load(file)
+        return goalPool['meta']
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print('The specified goal pool,', poolId, ', could not be found or is unreadable.') 
+        print(e)
+        return None
 
 
 def parseGoalPool(poolId) -> list:
@@ -512,6 +523,9 @@ def parseGoalPool(poolId) -> list:
                 randomGoal = random.choice(pool['goals'])
                 goalList.append(randomGoal)
                 pool['goals'].remove(randomGoal) #ensure the same goal is not picked twice
+        elif type == 'include':
+            for goal in parseGoalPool(pool['file']):
+                goalList.append(goal)
         else:
             continue
 
