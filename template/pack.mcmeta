@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "Minecraft Lockout - by Truff1e - v2.1.0 - Supports 1.21.4 to 1.21.11",
+        "description": "Minecraft Lockout - by Truff1e - v2.1.0 - Supports 1.21.8 to 1.21.11",
         "pack_format": 81,
         "supported_formats": [61, 94],
         "min_format": 61,

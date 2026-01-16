@@ -1,5 +1,5 @@
 version=2.1.0
-mcVersion=1.21.4-1.21.11
+mcVersion=1.21.8-1.21.11
 outputPath=Downloads
 startTime=45
 maxTime=120
