@@ -5,7 +5,6 @@ team modify 1 color dark_purple
 team modify 2 color dark_aqua
 team modify spectator color gray
 
-
 scoreboard objectives add lk.util dummy
 scoreboard objectives add lk.enabled_goals dummy
 scoreboard objectives add lk.points dummy {"text": "Lockout", "color": "yellow", "bold": true}
@@ -13,11 +12,10 @@ scoreboard objectives setdisplay sidebar lk.points
 scoreboard objectives add lk.goal dummy
 scoreboard objectives add lk.logoff minecraft.custom:minecraft.leave_game
 
-#statistic counters
+#stat counters
 scoreboard objectives add lk.stat.failed_goals dummy
 scoreboard objectives add lk.stat.deaths deathCount
 scoreboard objectives add lk.stat.kills playerKillCount
-
 
 #scoreboards for goals
 scoreboard objectives add lk.unique_mobs dummy
@@ -52,7 +50,6 @@ scoreboard objectives add lk.armor_washed minecraft.custom:clean_armor
 scoreboard objectives add lk.fall minecraft.custom:fall_one_cm
 scoreboard objectives add lk.fall_dmg minecraft.custom:damage_taken
 
-
 scoreboard objectives add lk.posX dummy
 scoreboard objectives add lk.posZ dummy
 
@@ -64,10 +61,26 @@ scoreboard objectives add progress trigger
 #set default settings
 function lockout:settings/defaults
 
-#start loops and run postload
-schedule function lockout:postload 3s
+#summon armor stands for point tracking
+forceload add 0 0
+execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}
+execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"],CustomName:'"Team 1"'}
+execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team2pts"],CustomName:'"Team 2"'}
+team join 1 @e[tag=lk.team1pts]
+team join 2 @e[tag=lk.team2pts]
+
+#start loops
 schedule function lockout:tick/1s 1s replace
 schedule function lockout:tick/1m 1s replace
+
+#initialize compatibility overlays
+function lockout:load_overlay_1_21_5
+function lockout:load_overlay_1_21_6
+function lockout:load_overlay_1_21_9
+function lockout:load_overlay_1_21_11
+
+#splash screen
+function lockout:splash
 
 #ensure some settings aren't reset when the data pack is reloaded
 scoreboard players set #initialized lk.util 1
