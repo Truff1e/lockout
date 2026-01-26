@@ -1,8 +1,10 @@
+scoreboard players remove #game_time lk.util 1
 tellraw @a {"text": "========================================", "color": "gray"}
 $tellraw @a {"text": "Game Over - $(end_reason)", "bold": true, "color": "yellow"}
 tellraw @a {"text": "----------------------------------------", "color": "gray"}
 tellraw @a [{"text": "Team 1: ", "color":"dark_purple"},{"score": {"name": "@e[type=armor_stand,tag=lk.team1pts]", "objective": "lk.points"}}]
 tellraw @a [{"text": "Team 2: ", "color":"dark_aqua"},{"score": {"name": "@e[type=armor_stand,tag=lk.team2pts]", "objective": "lk.points"}}]
+tellraw @a [{"text": "Max Time: ", "color":"gold"},{"score": {"name": "#max_time", "objective": "lk.util"}},{"text": "min"}]
 tellraw @a [{"text": "Game Length: ", "color":"gold"},{"score": {"name": "#game_time", "objective": "lk.util"}},{"text": "min"}]
 tellraw @a {"text": "\n"}
 tellraw @a {"text": "Player Stats", "bold": true, "color": "light_purple"}

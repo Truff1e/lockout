@@ -1,4 +1,5 @@
 #update timer
+scoreboard players remove #seconds_remaining lk.util 1
 execute if score #game_begun lk.util matches 1 run function lockout:timer/timer
 
 #run misc goal checks

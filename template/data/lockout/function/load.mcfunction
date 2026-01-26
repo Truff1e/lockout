@@ -69,10 +69,6 @@ execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:
 team join 1 @e[tag=lk.team1pts]
 team join 2 @e[tag=lk.team2pts]
 
-#start loops
-schedule function lockout:tick/1s 1s replace
-schedule function lockout:tick/1m 1s replace
-
 #initialize compatibility overlays
 function lockout:load_overlay_1_21_5
 function lockout:load_overlay_1_21_6
