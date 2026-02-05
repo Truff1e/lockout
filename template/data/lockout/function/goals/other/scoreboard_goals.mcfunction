@@ -27,7 +27,7 @@ execute as @a[scores={lk.death_count=3}] run function lockout:goals/n0012
 execute as @a[scores={lk.hunger_bar=0}] run function lockout:goals/x0011
 
 execute as @a[predicate=lockout:on_fire,predicate=!lockout:effects/fire_resistance] run function lockout:goals/n0015
-execute as @a[scores={lk.armor_washed=1..2}] run function lockout:goals/x0021
+execute as @a[scores={lk.armor_washed=1..2}] run function lockout:goals/x0012
 
 execute as @a[predicate=lockout:pumpkin_head] run scoreboard players add @s lk.pumpkin_head_timer 1
 execute as @a[predicate=!lockout:pumpkin_head] run scoreboard players set @s lk.pumpkin_head_timer 0
