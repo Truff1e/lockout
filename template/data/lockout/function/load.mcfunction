@@ -63,11 +63,6 @@ function lockout:settings/defaults
 
 #summon armor stands for point tracking
 forceload add 0 0
-execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}
-execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"],CustomName:'"Team 1"'}
-execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team2pts"],CustomName:'"Team 2"'}
-team join 1 @e[tag=lk.team1pts]
-team join 2 @e[tag=lk.team2pts]
 
 #initialize compatibility overlays
 function lockout:load_overlay_1_21_5
@@ -78,5 +73,18 @@ function lockout:load_overlay_1_21_11
 #splash screen
 function lockout:splash
 
+
+
+# ALL LINES BELOW HERE ONLY RUN ONCE WHEN THE DATA PACK LOADS FOR THE FIRST TIME
+execute if score #initialized lk.util matches 1 run return fail
+
+execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}
+execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"],CustomName:'"Team 1"'}
+execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team2pts"],CustomName:'"Team 2"'}
+team join 1 @e[tag=lk.team1pts]
+team join 2 @e[tag=lk.team2pts]
+
 #ensure some settings aren't reset when the data pack is reloaded
 scoreboard players set #initialized lk.util 1
+
+

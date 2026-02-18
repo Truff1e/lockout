@@ -3,9 +3,9 @@
         "version": 2.0,
         "dp_version": [81],
         "name": "Lockout Base",
-        "description": "Contains every unique goal, and picks one for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",
+        "description": "Contains every unique goal, and picks three for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",
         "author": "Truff1e",
-        "last_updated": "2025-10-31"
+        "last_updated": "2026-02-18"
     },
     "pools": [
         {
@@ -280,7 +280,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "N0001",
                 "N0002",
@@ -301,7 +301,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "I1001",
                 "I1002",
@@ -326,7 +326,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "K1001",
                 "K1002",
@@ -348,7 +348,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "I2001",
                 "I2002",
@@ -370,7 +370,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "I3001",
                 "I3002",
@@ -392,7 +392,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "I4001",
                 "I4002",
@@ -414,7 +414,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "I5001",
                 "I5002",
@@ -436,7 +436,7 @@
         },
         {
             "type": "pick",
-            "amount": 1,
+            "amount": 3,
             "goals": [
                 "X1025",
                 "X1026",
