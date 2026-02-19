@@ -1,9 +1,10 @@
 {
 	"pack": {
-		"pack_format": 64,
+		"min_format": 65,
+		"max_format": 75,
 		"description": [
 			{
-				"text": "Resource Pack v5.0 for Truffle's Minecraft Lockout v2.0",
+				"text": "Resource Pack v5.1 for Truffle's Minecraft Lockout v2.0",
 				"color": "white"
 			}
 		]
