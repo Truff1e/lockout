@@ -4,10 +4,7 @@ import os
 import datetime
 import platform
 import subprocess
-from index import goalIndex, parseOptions
-
-
-options = parseOptions()
+from index import *
 
 
 def open_directory(path):
@@ -18,7 +15,6 @@ def open_directory(path):
         subprocess.Popen(['open', path])
     else:
         print("Open Directory Failed - Unsupported platform")
-
 
 
 def write_start_function(path, boardBlueprint):
@@ -91,18 +87,38 @@ def write_advancement_tree(path, boardBlueprint):
 
 def write_info_file(path, boardBlueprint):
     file = open(f'{path}/board_info.txt', 'w')
+    file.write(dumpGeneratorInfo())
     file.write('This lockout board was generated using the Truff1e Lockout generator.\n')
-    file.write('github.com/truff1e/lockout\n')
-    file.write(f'Lockout Version: {options["version"]}\n')
+    file.write('https://github.com/truff1e/lockout\n')
     file.write(f'Generated on: {datetime.datetime.now().strftime('%Y%m%d-%H%M')}\n')
-    file.write(f'Minecraft Version(s): {options["mcVersion"]}\n')
     file.write(f'Board Size: {len(boardBlueprint)}\n')
     file.write(f'Board: {boardBlueprint}\n')
     file.close()
 
 
+def write_default_settings_file(path):
+    file = open(f'{path}/data/lockout/function/settings/defaults.mcfunction', 'w')
+    file.write(f'''
+#if the game has already been initialized, don't reset the scores
+execute if score #initialized lk.util matches 1 run return fail
+#settings
+scoreboard players set #start_time lk.util {LK_START_TIME}
+scoreboard players set #max_time lk.util {LK_MAX_TIME}
+scoreboard players set #show_progress lk.util {1 if LK_SHOW_PROGRESS else 0}
+scoreboard players set #allow_pvp lk.util {1 if LK_ALLOW_PVP else 0}
+scoreboard players set #allow_locator lk.util {1 if LK_ALLOW_TRACKER else 0}
+scoreboard players set #allow_draw lk.util {1 if LK_ALLOW_DRAW else 0}
+scoreboard players set #allow_resign lk.util {1 if LK_ALLOW_RESIGN else 0}
+scoreboard players set #end_on_win lk.util {1 if LK_END_ON_WIN else 0}
+scoreboard players set #friendly_fire lk.util {1 if LK_ALLOW_FRIENDLY_FIRE else 0}
+scoreboard players set #show_timer lk.util {1 if LK_SHOW_TIMER else 0}
+''')
+    file.close()
+
+
+
 def prepare_files(output_path, boardtype: str):
-    datapack_version = f'v{options['version']}-{options['mcVersion']}'
+    datapack_version = f'v{VERSION}-{MCVERSION}'
 
     app_path = os.path.dirname(__file__)
     datapack_path = f'lockout-{datapack_version}-{boardtype}-{datetime.datetime.now().strftime('%Y%m%d-%H%M')}'
@@ -126,7 +142,7 @@ def generateBoard(goals: list, boardtype: str):
     square = math.sqrt(board_size)
 
     for g in goals:
-        if g not in goalIndex:
+        if g not in GOAL_INDEX:
             print(f" > [Fatal Error] {g} is not a valid goal id")
             return False
 
@@ -137,7 +153,7 @@ def generateBoard(goals: list, boardtype: str):
     else:
 
         boardBlueprint = []
-        outputPath = os.path.join(os.path.expanduser('~'), options['outputPath'])
+        outputPath = os.path.join(os.path.expanduser('~'), OUTPUT_DIR)
         filePath = prepare_files(outputPath, boardtype)
 
         print(f"Creating a {int(square)}x{int(square)} board using:", ''.join(f'{str(goal)},' for goal in goals))  # logs a list of board goals
@@ -148,7 +164,7 @@ def generateBoard(goals: list, boardtype: str):
             letter = chr(97 + (i // int(square)))
             number = (i % int(square)) + 1
             coordinate = f'{letter}{number}'
-            goalInfo = goalIndex[goalId]
+            goalInfo = GOAL_INDEX[goalId]
             boardBlueprint.append((goalId, coordinate, goalInfo))
 
         # generate the necessary data pack files
@@ -157,6 +173,7 @@ def generateBoard(goals: list, boardtype: str):
         write_getgoals_function(filePath, boardBlueprint)
         write_advancement_tree(filePath, boardBlueprint)
         write_info_file(filePath, boardBlueprint)
+        write_default_settings_file(filePath)
 
         clean_up(filePath)
         open_directory(outputPath)

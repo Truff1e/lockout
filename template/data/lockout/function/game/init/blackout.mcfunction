@@ -11,10 +11,15 @@ scoreboard objectives modify lk.points displayname {"text": "Blackout", "color":
 
 tellraw @s ["",{"text":"========================================","color":"dark_gray"},{"text":"\n"},{"text":"Minecraft Blackout","bold":true,"color":"yellow"},{"text":"\n\n"},{"text":"Objective: Complete all of the goals on the\nboard before the time runs out.","color":"yellow"},{"text":"\n\n"},{"text":">> Press [","color":"green"},{"keybind":"key.advancements","color":"green"},{"text":"] to see the Blackout Board","color":"green"},{"text":"\n"},{"text":"\n©2025 - Truff1e","italic":true,"color":"gray"},{"text":"\n========================================","color":"dark_gray"}]
 
+effect clear @s
 effect give @s regeneration 3 10 true
 effect give @s saturation 3 10 true
 
-function lockout:game/reset_scoreboards
+execute as @a run function lockout:game/reset_scoreboards
+scoreboard players set #dried_kelp lk.dried_kelp 0
+scoreboard players set #hoppers lk.hoppers 0
+scoreboard players set #levels lk.util 0
+scoreboard players set #unique_crafts lk.util 10
 
 scoreboard players set #game_begun lk.util 1
 scoreboard players set #test_effects lk.util 0

@@ -1,4 +1,4 @@
-from index import goalIndex
+from index import GOAL_INDEX
 import os
 import argparse
 
@@ -13,20 +13,20 @@ def createTriggers():
         print('Triggers directory already exists. Proceeding...')
         pass
 
-    for goal in goalIndex:
+    for goal in GOAL_INDEX:
         file = open(f'./triggers/{goal.lower()}.mcfunction', 'w')
         number = goal[1:]
         # Write most function for Most goals
         if 'M' in goal:
-            file.write("execute as @s run function lockout:goals/skeleton/most {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{goalIndex[goal][0]}"' + '}')
+            file.write("execute as @s run function lockout:goals/skeleton/most {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
 
         # Write reversed function for Opponent goals
         elif 'N' in goal:
-            file.write("execute as @s run function lockout:goals/skeleton/opponent {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{goalIndex[goal][0]}"' + '}')
+            file.write("execute as @s run function lockout:goals/skeleton/opponent {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
 
         else:
             # Write goal triggers for all other goals
-            file.write("execute as @s run function lockout:goals/skeleton/master {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{goalIndex[goal][0]}"' + '}')
+            file.write("execute as @s run function lockout:goals/skeleton/master {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
 
         file.close()
 
@@ -41,7 +41,7 @@ def createListeners():
         print('Listeners directory already exists. Proceeding...')
         pass
 
-    for goalId in goalIndex:
+    for goalId in GOAL_INDEX:
 
         template = '''{
     "criteria": {
@@ -86,7 +86,7 @@ def createListeners():
       "function": "lockout:goals/<GOALID>"
     }
 }'''
-        goal = goalIndex[goalId]
+        goal = GOAL_INDEX[goalId]
         goalType = goalId[0]
 
         if goalType == 'I':

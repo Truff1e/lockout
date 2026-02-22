@@ -1,26 +1,21 @@
-scoreboard players set @a lk.damage_taken 0
-scoreboard players set @a lk.death_count 0
-scoreboard players set @a lk.jump 0
-scoreboard players set @a lk.mine_deepslate_diamond 0
-scoreboard players set @a lk.mine_diamond 0
-scoreboard players set @a lk.mine_emerald 0
-scoreboard players set @a lk.mine_spawner 0
-scoreboard players set @a lk.mob_kills 0
-scoreboard players set @a lk.points 0
-scoreboard players set @a lk.sprint_1km 0
-scoreboard players set @a lk.use_anvil 0
-scoreboard players set @a lk.armor_washed 0
+scoreboard players set @s lk.damage_taken 0
+scoreboard players set @s lk.death_count 0
+scoreboard players set @s lk.jump 0
+scoreboard players set @s lk.mine_deepslate_diamond 0
+scoreboard players set @s lk.mine_diamond 0
+scoreboard players set @s lk.mine_emerald 0
+scoreboard players set @s lk.mine_spawner 0
+scoreboard players set @s lk.mob_kills 0
+scoreboard players set @s lk.points 0
+scoreboard players set @s lk.sprint_1km 0
+scoreboard players set @s lk.use_anvil 0
+scoreboard players set @s lk.armor_washed 0
 
-scoreboard players set @a lk.dried_kelp 0
-scoreboard players set @a lk.hoppers 0
-scoreboard players set @a lk.unique_crafts 0
+scoreboard players set @s lk.dried_kelp 0
+scoreboard players set @s lk.hoppers 0
+scoreboard players set @s lk.unique_crafts 0
 
-scoreboard players set #dried_kelp lk.dried_kelp 0
-scoreboard players set #hoppers lk.hoppers 0
-scoreboard players set #levels lk.util 0
-scoreboard players set #unique_crafts lk.util 10
-
-scoreboard players set @a lk.stat.kills 0
-scoreboard players set @a lk.stat.deaths 0
-scoreboard players set @a resign 0
-scoreboard players set @a draw 0
+scoreboard players set @s lk.stat.kills 0
+scoreboard players set @s lk.stat.deaths 0
+scoreboard players set @s resign 0
+scoreboard players set @s draw 0

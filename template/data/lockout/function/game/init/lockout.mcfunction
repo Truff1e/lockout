@@ -9,10 +9,15 @@ title @s subtitle [{"text": "Press ", "color": "aqua"}, {"keybind": "key.advance
 
 tellraw @s [{"text":"======================================","color":"dark_gray"},{"text":"\n"},{"text":"Minecraft Lockout","bold":true,"color":"yellow"},{"text":"\n\n"},{"text":"Objective: Complete more than half of the\ngoals on the board. If the other team gets\na goal, you can no longer get that goal.","color":"yellow"},{"text":"\n\n"},{"text":">> Press [","color":"green"},{"keybind":"key.advancements","color":"green"},{"text":"] to see the Lockout Board","color":"green"},{"text":"\n"},{"text":">> Type '/trigger locate' to see other\nplayers' locations. (Effectively a compass)","color":"aqua"},{"text":"\n"},{"text":"\n©2025 - Truff1e","italic":true,"color":"gray"},{"text":"\n======================================","color":"dark_gray"}]
 
+effect clear @s
 effect give @s regeneration 3 10 true
 effect give @s saturation 3 10 true
 
-function lockout:game/reset_scoreboards
+execute as @a run function lockout:game/reset_scoreboards
+scoreboard players set #dried_kelp lk.dried_kelp 0
+scoreboard players set #hoppers lk.hoppers 0
+scoreboard players set #levels lk.util 0
+scoreboard players set #unique_crafts lk.util 10
 
 scoreboard players set #game_begun lk.util 1
 scoreboard players set #test_effects lk.util 0

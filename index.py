@@ -1,18 +1,33 @@
 import random
 import json
 import os
+from dotenv import load_dotenv
 
 
-def parseOptions():
-    # Reads data stored in options.txt and translates it to a settings list
-    optionsfile = open(os.path.join(os.path.dirname(__file__), 'options.txt'), 'r')
-    optionslist = {}
-    for line in optionsfile:
-        optionslist[line[:line.find('=')]] = line[line.find('=')+1:-1]
-    return optionslist
+# Set Environment Variables
+load_dotenv()
+VERSION = os.getenv('VERSION')
+MCVERSION = os.getenv('MCVERSION')
+OUTPUT_DIR = os.getenv('OUTPUT_DIR', default='Downloads')
+DEFAULT_MODE = os.getenv('DEFAULT_MODE', default='Lockout')
+DEFAULT_SIZE = os.getenv('DEFAULT_SIZE', default=5)
+DEFAULT_DIFFICULTY = os.getenv('DEFAULT_DIFFICULTY', default='1-5')
+DEBUG = os.getenv('DEBUG', default=False)
+
+LK_START_TIME=os.getenv('LK_START_TIME')
+LK_MAX_TIME=os.getenv('LK_MAX_TIME')
+LK_SHOW_PROGRESS=os.getenv('LK_SHOW_PROGRESS')
+LK_ALLOW_PVP=os.getenv('LK_ALLOW_PVP')
+LK_ALLOW_FRIENDLY_FIRE=os.getenv('LK_ALLOW_FRIENDLY_FIRE')
+LK_ALLOW_TRACKER=os.getenv('LK_ALLOW_TRACKER')
+LK_ALLOW_DRAW=os.getenv('LK_ALLOW_DRAW')
+LK_ALLOW_RESIGN=os.getenv('LK_ALLOW_RESIGN')
+LK_END_ON_WIN=os.getenv('LK_END_ON_WIN')
+LK_SHOW_TIMER=os.getenv('LK_SHOW_TIMER')
 
 
-goalIndex = {
+
+GOAL_INDEX = {
         # id: [name, icon, customModelDataBool, difficulty, description]
         # Commented out goals are not yet implemented or are broken
 
@@ -270,9 +285,9 @@ goalIndex = {
         'X0019': ['Have 6 Status Effects at Once', 'milk_bucket', True, 4],
         'X0020': ['Have 9 Status Effects at Once', 'milk_bucket', True, 6],
         'X0021': ['Have 12 Status Effects at Once', 'milk_bucket', True, 8],
-        'X0022': ['Craft 25 Unique Items', 'crafting_table', False, 1],
-        'X0023': ['Craft 50 Unique Items', 'crafting_table', False, 2],
-        'X0024': ['Craft 75 Unique Items', 'crafting_table', False, 4],
+        'X0022': ['Craft 25 Unique Items', 'crafting_table', True, 1],
+        'X0023': ['Craft 50 Unique Items', 'crafting_table', True, 2],
+        'X0024': ['Craft 75 Unique Items', 'crafting_table', True, 4],
 
 
 
@@ -465,11 +480,11 @@ goalIndex = {
         'X1026': ['Get Glowing', 'spectral_arrow', True, 2],
         'X1027': ['Get Poisoned', 'spider_eye', True, 1],
         'X1028': ['Get Nausea', 'pufferfish', True, 3],
-        'X1029': ['Get Leaping', 'rabbit_foot', False, 2],
-        'X1030': ['Get Withered', 'wither_rose', False, 3],
+        'X1029': ['Get Leaping', 'rabbit_foot', True, 2],
+        'X1030': ['Get Withered', 'wither_rose', True, 3],
         'X1031': ['Get Mining Fatigue', 'wooden_shovel', True, 3],
-        'X1032': ['Get Blindness', 'suspicious_stew', False, 3],
-        'X1033': ['Get Strength', 'blaze_powder', False, 5],
+        'X1032': ['Get Blindness', 'suspicious_stew', True, 3],
+        'X1033': ['Get Strength', 'blaze_powder', True, 5],
         'X1034': ['Get Fire Resistance', 'potion', True, 4],
         'X1035': ['Get Water Breathing', 'potion', True, 3],
         'X1036': ['Get Night Vision', 'potion', True, 2],
@@ -483,6 +498,10 @@ goalIndex = {
         # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
         # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
         # "L0014": ['Find a Badlands Biome', '"id": "minecraft:terracotta"', 3],
+        # "": ['Have the Most Advancements', '"id": "minecraft:terracotta"', 3],
+        # "": ['Have the Most Unique Breeds', '"id": "minecraft:terracotta"', 3],
+        # "": ['Eat the Most Unique Foods', '"id": "minecraft:terracotta"', 3],
+        # "": ['Apply the Most Unique Armor Trims', '"id": "minecraft:terracotta"', 3],
 
 }
 
@@ -508,6 +527,7 @@ def parseGoalPool(poolId) -> list:
         return []
 
     goalList = []
+    excludedGoals = []
 
     for pool in goalPool['pools']:
         type = pool['type']
@@ -518,6 +538,9 @@ def parseGoalPool(poolId) -> list:
         elif type == 'weighted':
             for goal in pool['goals']:
                 pass #TODO: Implement weighted goal parser
+        elif type == 'exclude':
+            for goal in pool['goals']:
+                excludedGoals.append(goal)
         elif type == 'pick':
             for _ in range(pool['amount']):
                 randomGoal = random.choice(pool['goals'])
@@ -528,13 +551,44 @@ def parseGoalPool(poolId) -> list:
                 goalList.append(goal)
         else:
             continue
+    
+    for goal in excludedGoals:
+        if goal in goalList:
+            goalList.remove(goal)
 
     return goalList
     
 
+def dumpGeneratorInfo():
+    message = f'''
+=====================================================================
+Truffle Minecraft Lockout - v{VERSION}
+©2025 Truffle Studios (GNU GPLv3)
+Supports MC {MCVERSION}
+
+Default Options -----------------------------------------------------
+OUTPUT_DIR             = {OUTPUT_DIR}
+DEFAULT_MODE           = {DEFAULT_MODE}
+DEFAULT_SIZE           = {DEFAULT_SIZE}
+DEFAULT_DIFFICULTY     = {DEFAULT_DIFFICULTY}
+DEBUG                  = {DEBUG}
+
+LK_START_TIME          = {LK_START_TIME}
+LK_MAX_TIME            = {LK_MAX_TIME}
+LK_SHOW_PROGRESS       = {LK_SHOW_PROGRESS}
+LK_ALLOW_PVP           = {LK_ALLOW_PVP}
+LK_ALLOW_FRIENDLY_FIRE = {LK_ALLOW_FRIENDLY_FIRE}
+LK_ALLOW_TRACKER       = {LK_ALLOW_TRACKER}
+LK_ALLOW_DRAW          = {LK_ALLOW_DRAW}
+LK_ALLOW_RESIGN        = {LK_ALLOW_RESIGN}
+LK_END_ON_WIN          = {LK_END_ON_WIN}
+LK_SHOW_TIMER          = {LK_SHOW_TIMER}
+====================================================================='''
+    return message
+
 
 if __name__ == '__main__':
-    print("Goals:", len(goalIndex))
-    # for goal in goalIndex:
-    #     print(f'"{goal}",')
+    print("Version:           ", VERSION)
+    print("Minecraft Version: ", MCVERSION)
+    print("Goals:             ", len(GOAL_INDEX))
 

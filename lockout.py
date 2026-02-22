@@ -1,10 +1,9 @@
+from index import *
 from generator import generateBoard
-from index import goalIndex, parseGoalPool, parseOptions, getGoalPoolMeta
 from random import choice, choices
 import os
 import argparse
 
-options = parseOptions()
 
 def main():
 
@@ -21,12 +20,12 @@ def main():
 
     parser.add_argument('-s', '--boardsize',
                         type=int,
-                        default='5',
+                        default=DEFAULT_SIZE,
                         help='Set board size (1-10). Larger sizes may be unstable.')
 
     parser.add_argument('-p', '--pool',
                         type=str,
-                        default='Lockout',
+                        default=DEFAULT_MODE,
                         help='Set a goal pool to draw from when generating the board. See options with -P.')
 
     parser.add_argument('-P', '--listpools',
@@ -38,7 +37,7 @@ def main():
 
     parser.add_argument('-d', '--difficulty',
                         type=str,
-                        default='1-5',
+                        default=DEFAULT_DIFFICULTY,
                         help='Set the difficulty range (int-int). Min 1, max 10.')
 
     parser.add_argument('-v', '--version',
@@ -48,11 +47,7 @@ def main():
     args = parser.parse_args()
 
     if args.version:
-        print('---------------------------------------------------------------------')
-        print(f'Truffle Minecraft Lockout - v{options['version']}')
-        print(f'©2025 Truffle Studios (GNU GPLv3)')
-        print(f'Supports MC {options['mcVersion']} - Pass -h for help')
-        print('---------------------------------------------------------------------')
+        print(dumpGeneratorInfo())
         exit()
 
     if args.listpools:
@@ -84,8 +79,8 @@ def main():
 
 
 def getid(goal):
-    for i in goalIndex:
-        if goalIndex[i][0].lower() == goal.lower():
+    for i in GOAL_INDEX:
+        if GOAL_INDEX[i][0].lower() == goal.lower():
             print(f'>> {goal} has a goal ID of: {i}')
             return i
     print(f"Goal Lookup Error: {goal} is not a valid goal id")
@@ -93,13 +88,13 @@ def getid(goal):
 
 
 def getrandomgoal():
-    return choice(list(goalIndex))
+    return choice(list(GOAL_INDEX))
 
 
 def translate(goal_id):
-    if str(goal_id).upper() in goalIndex:
-        print(f'>> {goal_id} has a goal name of: {goalIndex[str(goal_id)][0]}')
-        return goalIndex[str(goal_id)][0]
+    if str(goal_id).upper() in GOAL_INDEX:
+        print(f'>> {goal_id} has a goal name of: {GOAL_INDEX[str(goal_id)][0]}')
+        return GOAL_INDEX[str(goal_id)][0]
     else:
         print(">> Goal not found.")
         return "Goal not found."
@@ -144,8 +139,8 @@ def generateBalancedBoard(size: int, difficultySet: tuple, poolId, excluded=None
 
         newgoal = choice(goalPool)
         runs = 0
-        while ((newgoal in boardBlueprint) or (goalIndex[newgoal][3] not in range(int(minDifficulty), int(maxDifficulty)+1)) 
-                or (goalIndex[newgoal][3] != preferredDifficulty if preferredDifficulty != None else False)
+        while ((newgoal in boardBlueprint) or (GOAL_INDEX[newgoal][3] not in range(int(minDifficulty), int(maxDifficulty)+1)) 
+                or (GOAL_INDEX[newgoal][3] != preferredDifficulty if preferredDifficulty != None else False)
                 or checkExcludedGoals(newgoal, excluded)) or newgoal in boardBlueprint:
             newgoal = choice(goalPool)
             runs += 1
@@ -156,7 +151,7 @@ def generateBalancedBoard(size: int, difficultySet: tuple, poolId, excluded=None
             newgoal = choice(goalPool)
 
         boardBlueprint.append(newgoal)
-        print(f' > Added {newgoal} ({goalIndex[newgoal][0]}) of difficulty {goalIndex[newgoal][3]}')
+        print(f' > Added {newgoal} ({GOAL_INDEX[newgoal][0]}) of difficulty {GOAL_INDEX[newgoal][3]}')
 
     generateBoard(boardBlueprint, f's{size}-d{minDifficulty}-{maxDifficulty}')
     return boardBlueprint

@@ -57,9 +57,11 @@ scoreboard objectives add locate trigger
 scoreboard objectives add resign trigger
 scoreboard objectives add draw trigger
 scoreboard objectives add progress trigger
+scoreboard objectives add join_team trigger
 
 #set default settings
 function lockout:settings/defaults
+function lockout:settings/set/defaults
 
 #summon armor stands for point tracking
 forceload add 0 0
@@ -72,6 +74,7 @@ function lockout:load_overlay_1_21_11
 
 #splash screen
 function lockout:splash
+function lockout:tick/1s_pregame
 
 
 
