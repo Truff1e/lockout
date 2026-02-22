@@ -19,3 +19,4 @@ scoreboard players set @s lk.stat.kills 0
 scoreboard players set @s lk.stat.deaths 0
 scoreboard players set @s resign 0
 scoreboard players set @s draw 0
+scoreboard players set @s join_team 0
