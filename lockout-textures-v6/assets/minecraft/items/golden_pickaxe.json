@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/golden_pickaxe"
+    },
+    "cases": [
+      {
+        "when": "I0018",
+        "model": {
+          "type": "model",
+          "model": "item/golden_tools"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "block/sculk_shrieker"
+      },
+      "cases": [
+        {
+          "when": "D0008",
+          "model": {
+            "type": "model",
+            "model": "item/die_to_warden"
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "block/creaking_heart"
+    },
+    "cases": [
+      {
+        "when": "D0009",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_creaking"
+        }
+      }
+    ]
+  }
+}

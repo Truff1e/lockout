@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/rabbit_foot"
+    },
+    "cases": [
+      {
+        "when": "X1029",
+        "model": {
+          "type": "model",
+          "model": "item/jump_boost"
+        }
+      }
+    ]
+  }
+}

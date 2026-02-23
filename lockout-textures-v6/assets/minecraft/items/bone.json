@@ -1,0 +1,26 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/bone"
+      },
+      "cases": [
+        {
+          "when": "T0002",
+          "model": {
+            "type": "model",
+            "model": "item/tame_wolf"
+          }
+        },
+        {
+          "when": "B0017",
+          "model": {
+            "type": "model",
+            "model": "item/breed_wolf"
+          }
+        }
+      ]
+    }
+  }

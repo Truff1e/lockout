@@ -1,0 +1,383 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/iron_sword"
+    },
+    "cases": [
+      {
+        "when": "K0001",
+        "model": {
+          "type": "model",
+          "model": "item/kill_bat"
+        }
+      },
+      {
+        "when": "K0002",
+        "model": {
+          "type": "model",
+          "model": "item/kill_bee"
+        }
+      },
+      {
+        "when": "K0003",
+        "model": {
+          "type": "model",
+          "model": "item/kill_blaze"
+        }
+      },
+      {
+        "when": "K0004",
+        "model": {
+          "type": "model",
+          "model": "item/kill_cave_spider"
+        }
+      },
+      {
+        "when": "K0005",
+        "model": {
+          "type": "model",
+          "model": "item/kill_drowned"
+        }
+      },
+      {
+        "when": "K0006",
+        "model": {
+          "type": "model",
+          "model": "item/kill_elder_guardian"
+        }
+      },
+      {
+        "when": "K0007",
+        "model": {
+          "type": "model",
+          "model": "item/kill_ender_dragon"
+        }
+      },
+      {
+        "when": "K0008",
+        "model": {
+          "type": "model",
+          "model": "item/kill_endermite"
+        }
+      },
+      {
+        "when": "K0009",
+        "model": {
+          "type": "model",
+          "model": "item/kill_evoker"
+        }
+      },
+      {
+        "when": "K0010",
+        "model": {
+          "type": "model",
+          "model": "item/kill_ghast"
+        }
+      },
+      {
+        "when": "K0011",
+        "model": {
+          "type": "model",
+          "model": "item/kill_guardian"
+        }
+      },
+      {
+        "when": "K0012",
+        "model": {
+          "type": "model",
+          "model": "item/kill_husk"
+        }
+      },
+      {
+        "when": "K0013",
+        "model": {
+          "type": "model",
+          "model": "item/kill_magma_cube"
+        }
+      },
+      {
+        "when": "K0014",
+        "model": {
+          "type": "model",
+          "model": "item/kill_piglin_brute"
+        }
+      },
+      {
+        "when": "K0015",
+        "model": {
+          "type": "model",
+          "model": "item/kill_pillager"
+        }
+      },
+      {
+        "when": "K0016",
+        "model": {
+          "type": "model",
+          "model": "item/kill_player"
+        }
+      },
+      {
+        "when": "K0017",
+        "model": {
+          "type": "model",
+          "model": "item/kill_ravager"
+        }
+      },
+      {
+        "when": "K0018",
+        "model": {
+          "type": "model",
+          "model": "item/kill_shulker"
+        }
+      },
+      {
+        "when": "K0019",
+        "model": {
+          "type": "model",
+          "model": "item/kill_silverfish"
+        }
+      },
+      {
+        "when": "K0020",
+        "model": {
+          "type": "model",
+          "model": "item/kill_slime"
+        }
+      },
+      {
+        "when": "K0021",
+        "model": {
+          "type": "model",
+          "model": "item/kill_snow_golem"
+        }
+      },
+      {
+        "when": "K0022",
+        "model": {
+          "type": "model",
+          "model": "item/kill_spider"
+        }
+      },
+      {
+        "when": "K0023",
+        "model": {
+          "type": "model",
+          "model": "item/kill_stray"
+        }
+      },
+      {
+        "when": "K0024",
+        "model": {
+          "type": "model",
+          "model": "item/kill_vex"
+        }
+      },
+      {
+        "when": "K0025",
+        "model": {
+          "type": "model",
+          "model": "item/kill_witch"
+        }
+      },
+      {
+        "when": "K0026",
+        "model": {
+          "type": "model",
+          "model": "item/kill_wither_skeleton"
+        }
+      },
+      {
+        "when": "K0027",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zoglin"
+        }
+      },
+      {
+        "when": "K0028",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zombie_villager"
+        }
+      },
+      {
+        "when": "K0029",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zombie"
+        }
+      },
+      {
+        "when": "K0030",
+        "model": {
+          "type": "model",
+          "model": "item/kill_zombified_piglin"
+        }
+      },
+      {
+        "when": "K0031",
+        "model": {
+          "type": "model",
+          "model": "item/kill_30_mobs"
+        }
+      },
+      {
+        "when": "K0032",
+        "model": {
+          "type": "model",
+          "model": "item/kill_100_mobs"
+        }
+      },
+      {
+        "when": "K0037",
+        "model": {
+          "type": "model",
+          "model": "item/kill_7_unique"
+        }
+      },
+      {
+        "when": "K0038",
+        "model": {
+          "type": "model",
+          "model": "item/kill_15_unique"
+        }
+      },
+      {
+        "when": "K0041",
+        "model": {
+          "type": "model",
+          "model": "item/kill_warden"
+        }
+      },
+      {
+        "when": "K0042",
+        "model": {
+          "type": "model",
+          "model": "item/kill_bogged"
+        }
+      },
+      {
+        "when": "K0043",
+        "model": {
+          "type": "model",
+          "model": "item/kill_breeze"
+        }
+      },
+      {
+        "when": "K1001",
+        "model": {
+          "type": "model",
+          "model": "item/kill_sheep"
+        }
+      },
+      {
+        "when": "K1002",
+        "model": {
+          "type": "model",
+          "model": "item/kill_pink_sheep"
+        }
+      },
+      {
+        "when": "K1003",
+        "model": {
+          "type": "model",
+          "model": "item/kill_magenta_sheep"
+        }
+      },
+      {
+        "when": "K1004",
+        "model": {
+          "type": "model",
+          "model": "item/kill_red_sheep"
+        }
+      },
+      {
+        "when": "K1005",
+        "model": {
+          "type": "model",
+          "model": "item/kill_orange_sheep"
+        }
+      },
+      {
+        "when": "K1006",
+        "model": {
+          "type": "model",
+          "model": "item/kill_yellow_sheep"
+        }
+      },
+      {
+        "when": "K1007",
+        "model": {
+          "type": "model",
+          "model": "item/kill_lime_sheep"
+        }
+      },
+      {
+        "when": "K1008",
+        "model": {
+          "type": "model",
+          "model": "item/kill_green_sheep"
+        }
+      },
+      {
+        "when": "K1009",
+        "model": {
+          "type": "model",
+          "model": "item/kill_cyan_sheep"
+        }
+      },
+      {
+        "when": "K1010",
+        "model": {
+          "type": "model",
+          "model": "item/kill_light_blue_sheep"
+        }
+      },
+      {
+        "when": "K1011",
+        "model": {
+          "type": "model",
+          "model": "item/kill_blue_sheep"
+        }
+      },
+      {
+        "when": "K1012",
+        "model": {
+          "type": "model",
+          "model": "item/kill_purple_sheep"
+        }
+      },
+      {
+        "when": "K1013",
+        "model": {
+          "type": "model",
+          "model": "item/kill_brown_sheep"
+        }
+      },
+      {
+        "when": "K1014",
+        "model": {
+          "type": "model",
+          "model": "item/kill_light_gray_sheep"
+        }
+      },
+      {
+        "when": "K1015",
+        "model": {
+          "type": "model",
+          "model": "item/kill_gray_sheep"
+        }
+      },
+      {
+        "when": "K1016",
+        "model": {
+          "type": "model",
+          "model": "item/kill_black_sheep"
+        }
+      }
+    ]
+  }
+}

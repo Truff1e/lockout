@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/hopper"
+      },
+      "cases": [
+        {
+          "when": "M0013",
+          "model": {
+            "type": "model",
+            "model": "item/more_hoppers"
+          }
+        }
+      ]
+    }
+  }

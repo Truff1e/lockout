@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/golden_axe"
+    },
+    "cases": [
+      {
+        "when": "D0005",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_piglin_brute"
+        }
+      }
+    ]
+  }
+}

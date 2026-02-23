@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/blaze_powder"
+      },
+      "cases": [
+        {
+          "when": "X1033",
+          "model": {
+            "type": "model",
+            "model": "item/strength"
+          }
+        }
+      ]
+    }
+  }

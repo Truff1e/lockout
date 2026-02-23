@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/golden_chestplate"
+      },
+      "cases": [
+        {
+          "when": "I0010",
+          "model": {
+            "type": "model",
+            "model": "item/gold_armor"
+          }
+        }
+      ]
+    }
+  }

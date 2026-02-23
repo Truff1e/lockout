@@ -1,0 +1,40 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "block/crafting_table"
+    },
+    "cases": [
+      {
+        "when": "M0015",
+        "model": {
+          "type": "model",
+          "model": "item/more_crafting"
+        }
+      },
+      {
+        "when": "X0022",
+        "model": {
+          "type": "model",
+          "model": "item/craft_25"
+        }
+      },
+      {
+        "when": "X0023",
+        "model": {
+          "type": "model",
+          "model": "item/craft_50"
+        }
+      },
+      {
+        "when": "X0024",
+        "model": {
+          "type": "model",
+          "model": "item/craft_75"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "block/hay_block"
+    },
+    "cases": [
+      {
+        "when": "D0002",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_llama"
+        }
+      },
+      {
+        "when": "T0007",
+        "model": {
+          "type": "model",
+          "model": "item/tame_llama"
+        }
+      }
+    ]
+  }
+}

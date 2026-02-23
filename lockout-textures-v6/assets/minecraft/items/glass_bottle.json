@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/glass_bottle"
+    },
+    "cases": [
+      {
+        "when": "D0004",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_witch"
+        }
+      }
+    ]
+  }
+}

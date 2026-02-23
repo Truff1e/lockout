@@ -271,8 +271,8 @@ GOAL_INDEX = {
         'X0005': ['Mine Emerald Ore', 'emerald_ore', False, 3],
         'X0006': ['Mine Mob Spawner', 'spawner', False, 2],
         'X0007': ['Get 64 of the Same Item', 'dirt', True, 1],
-        'X0008': ['Sprint 1km', 'diamond_boots', False, 1],
-        'X0009': ['Wear a Pumpkin for 5 Minutes', 'carved_pumpkin', False, 2],
+        'X0008': ['Sprint 1km', 'diamond_boots', True, 1],
+        'X0009': ['Wear a Pumpkin for 5 Minutes', 'carved_pumpkin', True, 2],
         'X0010': ['Take 200 Damage', 'wooden_sword', True, 1],
         'X0011': ['Empty Hunger Bar', 'rotten_flesh', True, 1],
         'X0012': ['Wash Leather Armor', 'cauldron', True, 2],
@@ -305,7 +305,7 @@ GOAL_INDEX = {
         
 
         'I0100': ['Obtain Brush', 'brush', False, 1],
-        'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', True, 2],
+        'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', False, 2],
         'I0102': ['Apply 3 Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 4],
         'I0103': ['Apply 5 Unique Armor Trims', 'rib_armor_trim_smithing_template', True, 6],
         'I0104': ['Apply 7 Unique Armor Trims', 'silence_armor_trim_smithing_template', True, 8],
@@ -485,9 +485,9 @@ GOAL_INDEX = {
         'X1031': ['Get Mining Fatigue', 'wooden_shovel', True, 3],
         'X1032': ['Get Blindness', 'suspicious_stew', True, 3],
         'X1033': ['Get Strength', 'blaze_powder', True, 5],
-        'X1034': ['Get Fire Resistance', 'potion', True, 4],
-        'X1035': ['Get Water Breathing', 'potion', True, 3],
-        'X1036': ['Get Night Vision', 'potion', True, 2],
+        'X1034': ['Get Fire Resistance', 'magma_cream', True, 4],
+        'X1035': ['Get Water Breathing', 'pufferfish', True, 3],
+        'X1036': ['Get Night Vision', 'golden_carrot', True, 2],
         'X1037': ['Get Weakness', 'wooden_sword', True, 2],
 
 
@@ -502,6 +502,14 @@ GOAL_INDEX = {
         # "": ['Have the Most Unique Breeds', '"id": "minecraft:terracotta"', 3],
         # "": ['Eat the Most Unique Foods', '"id": "minecraft:terracotta"', 3],
         # "": ['Apply the Most Unique Armor Trims', '"id": "minecraft:terracotta"', 3],
+        # Most advancements
+        # Most unique breeds
+        # Most unique mob kills
+        # Obtain Coal Ore
+        # Use Anvil
+        # Obtain all fish buckets
+        # Obtain Loom
+        # Most unique eats
 
 }
 

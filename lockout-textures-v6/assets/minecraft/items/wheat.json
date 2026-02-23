@@ -1,0 +1,61 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/wheat"
+    },
+    "cases": [
+      {
+        "when": "B0004",
+        "model": {
+          "type": "model",
+          "model": "item/breed_cow"
+        }
+      },
+      {
+        "when": "B0014",
+        "model": {
+          "type": "model",
+          "model": "item/breed_sheep"
+        }
+      },
+      {
+        "when": "B0006",
+        "model": {
+          "type": "model",
+          "model": "item/breed_goat"
+        }
+      },
+      {
+        "when": "B0018",
+        "model": {
+          "type": "model",
+          "model": "item/breed_4"
+        }
+      },
+      {
+        "when": "B0019",
+        "model": {
+          "type": "model",
+          "model": "item/breed_6"
+        }
+      },
+      {
+        "when": "B0020",
+        "model": {
+          "type": "model",
+          "model": "item/breed_8"
+        }
+      },
+      {
+        "when": "B0021",
+        "model": {
+          "type": "model",
+          "model": "item/breed_12"
+        }
+      }
+    ]
+  }
+}

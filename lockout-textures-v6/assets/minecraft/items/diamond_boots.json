@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/diamond_boots"
+      },
+      "cases": [
+        {
+          "when": "X0008",
+          "model": {
+            "type": "model",
+            "model": "item/sprint_1km"
+          }
+        }
+      ]
+    }
+  }

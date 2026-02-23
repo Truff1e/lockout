@@ -1574,6 +1574,14 @@ item_files = '''acacia_boat.json
 item_file_list = item_files.split('\n')
 
 
+def generateTextureTestFile():
+    with open('./test_textures.mcfunction', 'w') as file:
+        for key, goal in GOAL_INDEX.items():
+            file.write("give @s minecraft:" + goal[1] + "[custom_model_data={'strings':['" + key + "']}]\n")
+
+        file.close()
+
+
 def createCraftFiles():
     item_ids = []
 

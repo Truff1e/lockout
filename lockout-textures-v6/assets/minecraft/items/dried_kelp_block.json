@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "block/dried_kelp_block"
+      },
+      "cases": [
+        {
+          "when": "M0012",
+          "model": {
+            "type": "model",
+            "model": "item/more_kelp"
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/iron_chestplate"
+    },
+    "cases": [
+      {
+        "when": "I0009",
+        "model": {
+          "type": "model",
+          "model": "item/iron_armor"
+        }
+      }
+    ]
+  }
+}

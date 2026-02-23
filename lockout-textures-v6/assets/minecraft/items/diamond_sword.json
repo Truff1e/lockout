@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/diamond_sword"
+    },
+    "cases": [
+      {
+        "when": "K0016",
+        "model": {
+          "type": "model",
+          "model": "item/kill_player"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/milk_bucket"
+      },
+      "cases": [
+        {
+          "when": "X0018",
+          "model": {
+            "type": "model",
+            "model": "item/3_status_effects"
+          }
+        },
+        {
+          "when": "X0019",
+          "model": {
+            "type": "model",
+            "model": "item/6_status_effects"
+          }
+        },
+        {
+          "when": "X0020",
+          "model": {
+            "type": "model",
+            "model": "item/9_status_effects"
+          }
+        },
+        {
+          "when": "X0021",
+          "model": {
+            "type": "model",
+            "model": "item/12_status_effects"
+          }
+        }
+      ]
+    }
+  }

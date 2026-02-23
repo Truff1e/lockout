@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/iron_pickaxe"
+      },
+      "cases": [
+        {
+          "when": "I0017",
+          "model": {
+            "type": "model",
+            "model": "item/iron_tools"
+          }
+        }
+      ]
+    }
+  }

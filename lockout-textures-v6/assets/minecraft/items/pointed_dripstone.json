@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/pointed_dripstone"
+    },
+    "cases": [
+      {
+        "when": "B0012",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_pointed_dripstone"
+        }
+      }
+    ]
+  }
+}

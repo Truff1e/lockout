@@ -1,0 +1,19 @@
+{
+    "model": {
+      "type": "select",
+      "property": "custom_model_data",
+      "fallback": {
+        "type": "model",
+        "model": "item/magma_cream"
+      },
+      "cases": [
+        {
+          "when": "X1034",
+          "model": {
+            "type": "model",
+            "model": "item/fire_resistance"
+          }
+        }
+      ]
+    }
+  }

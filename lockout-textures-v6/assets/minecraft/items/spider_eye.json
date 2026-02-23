@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/spider_eye"
+    },
+    "cases": [
+      {
+        "when": "X1027",
+        "model": {
+          "type": "model",
+          "model": "item/poison"
+        }
+      },
+      {
+        "when": "B0024",
+        "model": {
+          "type": "model",
+          "model": "item/breed_armadillo"
+        }
+      }
+    ]
+  }
+}

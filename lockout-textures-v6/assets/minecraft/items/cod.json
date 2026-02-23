@@ -1,0 +1,47 @@
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "item/cod"
+    },
+    "cases": [
+      {
+        "when": "T0001",
+        "model": {
+          "type": "model",
+          "model": "item/tame_cat"
+        }
+      },
+      {
+        "when": "T0009",
+        "model": {
+          "type": "model",
+          "model": "item/tame_cat"
+        }
+      },
+      {
+        "when": "B0010",
+        "model": {
+          "type": "model",
+          "model": "item/breed_ocelot"
+        }
+      },
+      {
+        "when": "B0002",
+        "model": {
+          "type": "model",
+          "model": "item/breed_cat"
+        }
+      },
+      {
+        "when": "D0007",
+        "model": {
+          "type": "model",
+          "model": "item/die_to_polar_bear"
+        }
+      }
+    ]
+  }
+}
