@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "spear_many_mobs": {
+      "conditions": {
+        "count": 5
+      },
+      "trigger": "minecraft:spear_mobs"
+    }
+  },
+  "requirements": [
+    [
+      "spear_many_mobs"
+    ]
+  ],
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}
