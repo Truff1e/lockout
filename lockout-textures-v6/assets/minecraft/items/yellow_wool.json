@@ -1,0 +1,20 @@
+
+{
+  "model": {
+    "type": "select",
+    "property": "custom_model_data",
+    "fallback": {
+      "type": "model",
+      "model": "block/yellow_wool"
+    },
+    "cases": [
+      {
+        "when": "K1006",
+        "model": {
+          "type": "model",
+          "model": "item/kill_yellow_sheep"
+        }
+      }
+    ]
+  }
+}

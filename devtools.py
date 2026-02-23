@@ -1581,6 +1581,55 @@ def generateTextureTestFile():
 
         file.close()
 
+def generateWoolItemModelFiles():
+
+    colors = [
+            'white',
+            'pink',
+            'magenta',
+            'red',
+            'orange',
+            'yellow',
+            'lime',
+            'green',
+            'aqua',
+            'light_blue',
+            'blue',
+            'purple',
+            'brown',
+            'light_gray',
+            'gray',
+            'black'
+    ]
+
+
+    x = 1
+    for c in colors:
+        with open(f'{c}_wool.json', 'w') as f:
+            f.write('''
+    {
+      "model": {
+        "type": "select",
+        "property": "custom_model_data",
+        "fallback": {
+          "type": "model",
+          "model": "block/''' + c + '''_wool"
+        },
+        "cases": [
+          {
+            "when": "K100''' + str(x) +'''",
+            "model": {
+              "type": "model",
+              "model": "item/kill_''' + c + '''_sheep"
+            }
+          }
+        ]
+      }
+    }
+    ''')
+            x += 1
+            f.close()
+
 
 def createCraftFiles():
     item_ids = []
