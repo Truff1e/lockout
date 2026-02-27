@@ -28,7 +28,7 @@ LK_SHOW_TIMER=os.getenv('LK_SHOW_TIMER')
 
 
 GOAL_INDEX = {
-        # id: [name, icon, customModelDataBool, difficulty, description]
+        # id: [name, icon, customModelDataBool, difficulty, min_version, description]
         # Commented out goals are not yet implemented or are broken
 
         # KILL GOALS
@@ -70,7 +70,7 @@ GOAL_INDEX = {
         # 'K0036': ['Kill 10 Endermen', 'iron_sword', True, 3],
         'K0037': ['Kill 7 Unique Hostile Mobs', 'iron_sword', True, 3],
         'K0038': ['Kill 15 Unique Hostile Mobs', 'iron_sword', True, 5],
-        # 'K0039': ['Kill Every Undead Mob', 'iron_sword', True, 5],
+        # 'K0039': ['Kill Every Undead Mob', 'iron_sword', True, 6],
 
         # DEATH GOALS
         'D0001': ['Die to Bee', 'beehive', True, 1],
@@ -330,11 +330,11 @@ GOAL_INDEX = {
         'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
 
 
-        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1], #1.21.9+
-        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2], #1.21.9+
-        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3], #1.21.6+
-        'I0111': ['Obtain All Spears', 'netherite_spear', False, 6], #1.21.11+ #needs texture
-        'I0112': ['Obtain Any Nautilus Armor', 'iron_nautilus_armor', False, 5], #1.21.11+ #needs texture
+        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1, '1.21.9'], 
+        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2, '1.21.9'], 
+        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3, '1.21.6'], 
+        'I0111': ['Obtain All Spears', 'netherite_spear', False, 6, '1.21.11'], #needs texture
+        'I0112': ['Obtain Any Nautilus Armor', 'iron_nautilus_armor', False, 5, '1.21.11'], #needs texture
 
 
         #opponent goals
@@ -502,14 +502,11 @@ GOAL_INDEX = {
         # "": ['Have the Most Unique Breeds', '"id": "minecraft:terracotta"', 3],
         # "": ['Eat the Most Unique Foods', '"id": "minecraft:terracotta"', 3],
         # "": ['Apply the Most Unique Armor Trims', '"id": "minecraft:terracotta"', 3],
-        # Most advancements
-        # Most unique breeds
-        # Most unique mob kills
-        # Obtain Coal Ore
+        # "": ['Kill the Most Unique Mobs', '"id": "minecraft:terracotta"', 3],
+        # "": ['Obtain Coal Ore', '"id": "minecraft:terracotta"', 3],
         # Use Anvil
         # Obtain all fish buckets
         # Obtain Loom
-        # Most unique eats
 
 }
 

@@ -45,6 +45,10 @@ More pool types will be added in the future to allow for more customizability.
 
 Include another goal pool file. Set "file" to the poolID (filename without .json extension)
 
+**exclude**
+
+Exclude a list of "goals".
+
 
 ### Goals
 This is a list of goal id numbers (the full list can be found in index.py).
