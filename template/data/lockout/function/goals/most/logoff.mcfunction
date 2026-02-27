@@ -1,3 +1,5 @@
+execute if score #end_seen lk.util matches 1 run return fail
+
 scoreboard players remove @s lk.points 1
 
 execute at @a run playsound minecraft:block.beacon.deactivate master @a ~ ~ ~

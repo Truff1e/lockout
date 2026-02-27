@@ -1,3 +1,5 @@
+execute if score #end_seen lk.util matches 1 run return fail
+
 tellraw @s[tag=lk.M0012] {"text": "Your point for most kelp was removed due to disconnection."}
 tellraw @s[tag=lk.M0013] {"text": "Your point for most hoppers was removed due to disconnection."}
 tellraw @s[tag=lk.M0014] {"text": "Your point for most levels was removed due to disconnection."}

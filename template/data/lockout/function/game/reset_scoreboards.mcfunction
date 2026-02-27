@@ -15,6 +15,7 @@ scoreboard players set @s lk.dried_kelp 0
 scoreboard players set @s lk.hoppers 0
 scoreboard players set @s lk.unique_crafts 0
 
+scoreboard players set @s lk.stat.failed_goals 0
 scoreboard players set @s lk.stat.kills 0
 scoreboard players set @s lk.stat.deaths 0
 scoreboard players set @s resign 0

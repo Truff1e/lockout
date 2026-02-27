@@ -31,10 +31,9 @@ def write_start_function(path, boardBlueprint):
         file.write(f'scoreboard players set #{goalId} lk.enabled_goals 1\n')
 
     # Starts the countdown and sets the board size
-    file.write('execute unless score #blackout lk.util matches 1 as @a run function lockout:game/init/lockout\n')
     file.write(f'execute unless score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint)+1)//2}\n')
-    file.write('execute if score #blackout lk.util matches 1 as @a run function lockout:game/init/blackout\n')
-    file.write(f'execute if score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint))}')
+    file.write(f'execute if score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint))}\n')
+    file.write('execute as @a run function lockout:game/init\n')
     file.close()
 
 
@@ -88,9 +87,9 @@ def write_advancement_tree(path, boardBlueprint):
 def write_info_file(path, boardBlueprint):
     file = open(f'{path}/board_info.txt', 'w')
     file.write(dumpGeneratorInfo())
-    file.write('This lockout board was generated using the Truff1e Lockout generator.\n')
+    file.write('\nThis lockout board was generated using the Truff1e Lockout generator.\n')
     file.write('https://github.com/truff1e/lockout\n')
-    file.write(f'Generated on: {datetime.datetime.now().strftime('%Y%m%d-%H%M')}\n')
+    file.write(f'Generated on: {datetime.datetime.now().strftime('%Y%m%d-%H%M')}\n') #TODO This does not account for time zones. Not a high priority issue
     file.write(f'Board Size: {len(boardBlueprint)}\n')
     file.write(f'Board: {boardBlueprint}\n')
     file.close()

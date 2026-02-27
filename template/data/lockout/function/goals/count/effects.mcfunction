@@ -1,3 +1,5 @@
+execute unless score #game_begun lk.util matches 1 run return fail
+
 scoreboard players add @s[predicate=lockout:effects/absorption] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/bad_omen] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/blindness] lk.unique_effects 1

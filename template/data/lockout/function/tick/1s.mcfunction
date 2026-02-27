@@ -4,6 +4,8 @@ execute if score #game_begun lk.util matches 1 run function lockout:timer/timer
 
 execute as @a[predicate=!lockout:is_playing, team=!spectator] run function lockout:game/joined_midgame
 
+#TODO: clear effects from all players with resistance 5 so that players who log out during the start of the game dont keep effects
+
 #run misc goal checks
 function lockout:goals/other/scoreboard_goals
 execute if predicate lockout:most/enabled run function lockout:goals/most/handler
