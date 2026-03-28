@@ -507,6 +507,16 @@ GOAL_INDEX = {
         # Use Anvil
         # Obtain all fish buckets
         # Obtain Loom
+        # Most unique eats
+        # X Unique Workstations
+        # Use Grindstone
+        # Kill all Raid Mobs
+        # Obtain Campfire
+        # 4 Unique Saplings
+        # Die in Sweet Berry Bush
+        # Put Banner on Shield
+        # Use Loom
+        # Obtain Experience Bottle
 
 }
 
