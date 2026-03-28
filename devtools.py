@@ -1,6 +1,9 @@
 from index import GOAL_INDEX
 import os
 import argparse
+import re
+import json
+from datetime import datetime, timedelta, time
 
 
 def createTriggers():
@@ -1631,6 +1634,81 @@ def generateWoolItemModelFiles():
             f.close()
 
 
+def parseLogFile(file):
+
+    log = open(file, '+r')
+    
+    mode = 'scanning'
+    goals = []
+    start_time = datetime(year=1, month=1, day=1)
+    end_type = None
+    players = {}
+
+    for line in log:
+
+        if mode == 'scanning':
+            start = re.match('\[(.*)\] \[.*Running function lockout.*', line)
+            if start:
+                start_time = datetime.strptime(start.groups()[0], '%H:%M:%S')
+                print('Located Start Command at time', start_time)
+                mode = 'game'
+        elif mode == 'game':
+            goal = re.match('\[(.*)\] \[.*\[(.*)\] completed \"(.*)\".*', line)
+            failed_goal = re.match('\[(.*)\] \[.*\[(.*)\] failed \"(.*)\".*', line)
+
+            if goal:
+                time, player, goal = goal.groups()
+                timecode = datetime.strptime(time, '%H:%M:%S')
+                timestamp = timecode - start_time 
+                goals.append({
+                        "time": time,
+                        "timestamp": f"{int(timestamp.total_seconds() // 60)}:{int(timestamp.total_seconds() % 60)}",
+                        "player": player,
+                        "goal": goal,
+                        "failed": False,
+                        "log_line": line,
+                })
+
+            if failed_goal:
+                time, player, goal = failed_goal.groups()
+                timecode = datetime.strptime(time, '%H:%M:%S')
+                timestamp = timecode - start_time
+                goals.append({
+                        "time": time,
+                        "timestamp": f"{int(timestamp.total_seconds() // 60)}:{int(timestamp.total_seconds() % 60)}",
+                        "player": player,
+                        "goal": goal,
+                        "failed": True,
+                        "log_line": line,
+                })
+
+            # end_type = re.match(".*Game Over - (.*)$", line)
+            end = re.match(".*wins!.*", line)
+
+            if end:
+                mode = 'end'
+                print(f'Game Over')
+
+        elif mode == 'end':
+            pass
+            # max_time = 
+            # duration = 
+            # team1score = 
+            # team2score = 
+            # goals, failed, deaths, kills = 
+
+
+    game_data = {
+        "start_time": start_time.strftime('%H:%M:%S'),
+        "goals": goals,
+        # "end_type": end_type,
+        # "players": players,
+    }
+
+    print(json.dumps(game_data, indent=4))
+    return game_data
+
+
 def createCraftFiles():
     item_ids = []
 
@@ -1657,10 +1735,15 @@ def main():
     parser = argparse.ArgumentParser(description='Run tools for generating data pack files')
 
     parser.add_argument('function')
+    parser.add_argument('-f', '--file',
+                        help='File to pass to the function')
+    parser.add_argument('args',
+                        nargs='*',
+                        help='Arguments to pass to the function')
 
     args = parser.parse_args()
 
-    exec(f'{args.function}()')
+    exec(f'{args.function}({",".join(args.args)} "{args.file}")')
 
 
 if __name__ == '__main__':

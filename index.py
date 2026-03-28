@@ -146,7 +146,7 @@ GOAL_INDEX = {
         'I0022': ['Obtain All Wool Blocks', 'white_wool', True, 5],
         'I0023': ['Obtain All Rail Types', 'powered_rail', True, 3],
         'I0024': ['Obtain All Raw Ore Blocks', 'raw_iron_block', True, 2],
-        'I0025': ['Obtain All Overworld Ores', 'diamond_ore', True, 8],
+        'I0025': ['Obtain All Overworld Ores', 'redstone_ore', True, 8],
         'I0026': ['Obtain All Overworld Ore Blocks', 'diamond_block', True, 8],
         'I0027': ['Obtain All Nether Ores', 'nether_gold_ore', True, 6],
         'I0028': ['Obtain All Banner Patterns', 'creeper_banner_pattern', False, 10],
