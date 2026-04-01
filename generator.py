@@ -71,10 +71,7 @@ def write_advancement_tree(path, boardBlueprint):
             parent = coordinate[0] + str(int(coordinate[1:]) - 1)
 
         file = open(f'{path}/data/lockout/advancement/board/{coordinate}.json', 'w')
-        if goalInfo[2]:
-            file.write('{\n"display": {\n"icon": {\n"id": "minecraft:' + goalInfo[1] + '","components": {"minecraft:custom_model_data": {"strings": ["' + goalId + '"]}}\n},\n"title": "' + goalInfo[0] + '",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
-        else:
-            file.write('{\n"display": {\n"icon": {\n"id": "minecraft:' + goalInfo[1] + '"\n},\n"title": "' + goalInfo[0] + '",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
+        file.write('{\n"display": {\n"icon": {\n"id": "minecraft:spyglass"\n},\n"title": "' + goalInfo[0] + '",\n"description": "", \n"frame": "task", \n"announce_to_chat": false, \n"hidden": false},\n')
         file.write(f'"parent": "lockout:board/{parent}",\n' + '"criteria": {"trigger": {"trigger": "minecraft:impossible"}}}')
     boardSideLength = int(math.sqrt(len(boardBlueprint)))
 

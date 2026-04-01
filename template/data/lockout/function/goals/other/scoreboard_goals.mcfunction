@@ -15,6 +15,7 @@ execute as @a[scores={lk.mob_kills=100..120}] run function lockout:goals/k0032
 # undead mobs
 
 execute as @a[scores={lk.mine_deepslate_diamond=1..2}] run function lockout:goals/x0004
+execute as @a[scores={lk.mine_deepslate_emerald=1..2}] run function lockout:goals/f0007
 execute as @a[scores={lk.mine_diamond=1..3}] run function lockout:goals/x0004
 execute as @a[scores={lk.mine_emerald=1..3}] run function lockout:goals/x0005
 execute as @a[scores={lk.mine_spawner=1..3}] run function lockout:goals/x0006

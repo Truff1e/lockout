@@ -1,0 +1,25 @@
+{
+            "criteria": {
+              "dieto": {
+                "trigger": "minecraft:entity_killed_player",
+                "conditions": {
+                  "entity": {
+                    "type": "minecraft:creeper",
+                    "nbt": {
+                        "Tags": [
+                          "lk.parrot"
+                        ]
+                    }
+                  }
+                }
+              }
+            },
+            "requirements": [
+              [
+                "dieto"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/f0004"
+            }
+        }

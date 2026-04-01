@@ -38,8 +38,8 @@ GOAL_INDEX = {
         'K0004': ['Kill Cave Spider', 'iron_sword', True, 4],
         'K0005': ['Kill Drowned', 'iron_sword', True, 2],
         'K0006': ['Kill Elder Guardian', 'iron_sword', True, 4],
-        'K0007': ['Kill Ender Dragon', 'dragon_head', True, 8],
-        'K0008': ['Kill Endermite', 'iron_sword', True, 6],
+        'K0007': ['Kill Ender Dragon', 'spyglass', True, 8],
+        'K0008': ['Kill Endermite', 'spyglass', True, 6],
         'K0009': ['Kill Evoker', 'iron_sword', True, 7],
         'K0010': ['Kill Ghast', 'iron_sword', True, 3],
         'K0011': ['Kill Guardian', 'iron_sword', True, 4],
@@ -117,7 +117,7 @@ GOAL_INDEX = {
         'B0016': ['Breed Turtle', 'seagrass', True, 3],
         'B0017': ['Breed Wolf', 'bone', True, 3],
         'B0018': ['Breed 4 Unique Mobs', 'wheat', True, 2],
-        'B0019': ['Breed 6 Unique Mobs', 'wheat', True, 3],
+        'B0019': ['Master Mater', 'spyglass', False, 3],
         'B0020': ['Breed 8 Unique Mobs', 'wheat', True, 4],
         'B0021': ['Breed 12 Unique Mobs', 'wheat', True, 7],
 
@@ -278,13 +278,13 @@ GOAL_INDEX = {
         'X0012': ['Wash Leather Armor', 'cauldron', True, 2],
         'X0013': ['Use a Jukebox', 'jukebox', False, 3],
         'X0014': ['Reach Bedrock', 'bedrock', False, 1],
-        'X0015': ['Reach Height Limit', 'glass', True, 1],
+        'X0015': ['Get High', 'spyglass', False, 1],
         'X0016': ['Travel to Nether Roof', 'bedrock', False, 2],
         'X0017': ['Locate Woodland Mansion', 'red_carpet', False, 4],
         'X0018': ['Have 3 Status Effects at Once', 'milk_bucket', True, 1],
         'X0019': ['Have 6 Status Effects at Once', 'milk_bucket', True, 4],
         'X0020': ['Have 9 Status Effects at Once', 'milk_bucket', True, 6],
-        'X0021': ['Have 12 Status Effects at Once', 'milk_bucket', True, 8],
+        'X0021': ['Have 12 Status Effects at Once', 'spyglass', True, 8],
         'X0022': ['Craft 25 Unique Items', 'crafting_table', True, 1],
         'X0023': ['Craft 50 Unique Items', 'crafting_table', True, 2],
         'X0024': ['Craft 75 Unique Items', 'crafting_table', True, 4],
@@ -316,7 +316,7 @@ GOAL_INDEX = {
 
 
 
-        'I0105': ['Obtain Mace', 'mace', False, 10],
+        'I0105': ['Obtain Mace', 'spyglass', False, 10],
         'I0106': ['Obtain Creaking Heart', 'creaking_heart', False, 6],
         'I0107': ['Obtain Resin Brick Stairs', 'resin_brick_stairs', False, 3],
         'A0027': ['Open Trial Vault', 'trial_key', False, 1],
@@ -489,6 +489,17 @@ GOAL_INDEX = {
         'X1035': ['Get Water Breathing', 'pufferfish', True, 3],
         'X1036': ['Get Night Vision', 'golden_carrot', True, 2],
         'X1037': ['Get Weakness', 'wooden_sword', True, 2],
+
+        'F0001': ['Kill Blaise', 'spyglass', False, 2],
+        'F0002': ['Break Netherite Hoe', 'spyglass', False, 2],
+        'F0003': ['Drown an Enderman', 'spyglass', False, 2],
+        'F0004': ['Die to Parrot', 'spyglass', False, 2],
+        'F0005': ['Kill Creeper', 'spyglass', False, 2],
+        'F0006': ['Use Vending Machine', 'spyglass', False, 2],
+        'F0007': ['Mine Deepslate Emerald Ore', 'spyglass', False, 2],
+        'F0008': ['Passerby were amazed by the unusually large amounts of blood', 'spyglass', False, 2],
+        'F0009': ['Do Adventuring Time', 'spyglass', False, 2],
+        'M0013': ['Have the Most Deaths', 'spyglass', False, 2],
 
 
         #goal ideas

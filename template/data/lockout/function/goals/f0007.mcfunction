@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "F0007", "goalnum": "700007", "goalname": "Mine Deepslate Emerald Ore"}

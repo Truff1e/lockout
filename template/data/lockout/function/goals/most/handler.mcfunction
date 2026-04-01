@@ -1,10 +1,10 @@
 #update scoreboards
 execute as @a store result score @s lk.dried_kelp run clear @s dried_kelp_block 0
-execute as @a store result score @s lk.hoppers run clear @s hopper 0
+execute as @a store result score @s lk.hoppers run scoreboard players get @s lk.stat.deaths
 
 #handle logoffs
 execute unless entity @a[tag=lk.M0012] as @e[type=armor_stand,tag=lk.M0012,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "M0012", "type": "dried kelp"}
-execute unless entity @a[tag=lk.M0013] as @e[type=armor_stand,tag=lk.M0013,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "M0013", "type": "hoppers"}
+execute unless entity @a[tag=lk.M0013] as @e[type=armor_stand,tag=lk.M0013,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "M0013", "type": "deaths"}
 execute unless entity @a[tag=lk.M0014] as @e[type=armor_stand,tag=lk.M0014,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "M0014", "type": "levels"}
 execute unless entity @a[tag=lk.M0015] as @e[type=armor_stand,tag=lk.M0015,tag=!lk.goaltracker] run function lockout:goals/most/logoff {"goalid": "M0015", "type": "unique crafts"}
 

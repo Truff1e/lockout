@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "F0009", "goalnum": "700009", "goalname": "Do Adventuring Time"}

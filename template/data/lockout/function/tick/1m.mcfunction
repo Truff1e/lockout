@@ -1,3 +1,4 @@
+function lockout:aprilfools/do_random_event
 
 scoreboard players set #seconds_remaining lk.util 60
 scoreboard players add #game_time lk.util 1

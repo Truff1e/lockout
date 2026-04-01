@@ -1,0 +1,21 @@
+{
+            "criteria": {
+              "dieto": {
+                    "trigger": "minecraft:item_durability_changed",
+                  "conditions": {
+                    "durability": 0,
+                    "item": {
+                      "items": "minecraft:netherite_hoe"
+                    }
+                  }
+              }
+            },
+            "requirements": [
+              [
+                "dieto"
+              ]
+            ],
+            "rewards": {
+              "function": "lockout:goals/f0002"
+            }
+        }

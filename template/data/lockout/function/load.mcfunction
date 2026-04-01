@@ -39,6 +39,7 @@ scoreboard objectives add lk.use_anvil minecraft.used:minecraft.anvil
 scoreboard objectives add lk.jump minecraft.custom:jump
 scoreboard objectives add lk.mob_kills minecraft.custom:minecraft.mob_kills
 scoreboard objectives add lk.mine_deepslate_diamond minecraft.mined:deepslate_diamond_ore
+scoreboard objectives add lk.mine_deepslate_emerald minecraft.mined:deepslate_emerald_ore
 scoreboard objectives add lk.mine_diamond minecraft.mined:diamond_ore
 scoreboard objectives add lk.mine_spawner minecraft.mined:spawner
 scoreboard objectives add lk.mine_emerald minecraft.mined:emerald_ore
