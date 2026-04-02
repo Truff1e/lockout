@@ -2,12 +2,19 @@
             "criteria": {
               "dieto": {
                     "trigger": "minecraft:item_durability_changed",
-                  "conditions": {
-                    "durability": 0,
-                    "item": {
-                      "items": "minecraft:netherite_hoe"
-                    }
-                  }
+                    "conditions": {
+                        "delta": -1,
+                        "item": {
+                          "items": "minecraft:netherite_hoe",
+                          "predicates": {
+                            "minecraft:damage": {
+                              "durability": {
+                                "max": 1
+                              }
+                            }
+                          }
+                        }
+                      }
               }
             },
             "requirements": [

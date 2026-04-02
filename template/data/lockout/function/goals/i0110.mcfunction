@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "I0110", "goalnum": "730110", "goalname": "Obtain Dried Ghast"}

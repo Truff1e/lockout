@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/master {"goalid": "F0003", "goalnum": "700003", "goalname": "Drown an Enderman"}

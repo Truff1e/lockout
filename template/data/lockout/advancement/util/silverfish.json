@@ -1,0 +1,29 @@
+{
+    "display": {
+      "icon": {
+        "id": "minecraft:stone"
+      },
+      "title": "",
+      "description": "",
+      "show_toast": false,
+      "announce_to_chat": false,
+      "hidden": true
+    },
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:entity_hurt_player",
+        "conditions": {
+          "damage": {
+            "source_entity": {
+              "type": "minecraft:silverfish"
+            }
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "lockout:aprilfools/duplicate_mob"
+    }
+  }
+  
+  

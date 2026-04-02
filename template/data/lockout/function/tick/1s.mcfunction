@@ -4,7 +4,9 @@ execute if score #game_begun lk.util matches 1 run function lockout:timer/timer
 
 execute as @a[predicate=!lockout:is_playing, team=!spectator] run function lockout:game/joined_midgame
 
-execute as @a at @e[type=parrot,distance=..10] run function lockout:aprilfools/parrot_explode
+execute at @e[type=parrot] if entity @a[distance=..5] run function lockout:aprilfools/parrot_explode
+
+execute as @e[tag=!lk.initialized] run function lockout:aprilfools/op_mobs
 
 #TODO: clear effects from all players with resistance 5 so that players who log out during the start of the game dont keep effects
 

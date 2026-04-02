@@ -83,7 +83,7 @@ GOAL_INDEX = {
 
         # HAVE MORE GOALS
         'M0012': ['Have the Most Dried Kelp Blocks', 'dried_kelp_block', True, 3],
-        'M0013': ['Have the Most Hoppers', 'hopper', True, 3],
+        # 'M0013': ['Have the Most Hoppers', 'hopper', True, 3],
         'M0014': ['Have the Most Levels', 'experience_bottle', True, 3],
         'M0015': ['Have the Most Unique Crafts', 'crafting_table', True, 3],
 
@@ -499,6 +499,7 @@ GOAL_INDEX = {
         'F0007': ['Mine Deepslate Emerald Ore', 'spyglass', False, 2],
         'F0008': ['Passerby were amazed by the unusually large amounts of blood', 'spyglass', False, 2],
         'F0009': ['Do Adventuring Time', 'spyglass', False, 2],
+        'F0010': ['Look at Joseph in Spyglass', 'spyglass', False, 2],
         'M0013': ['Have the Most Deaths', 'spyglass', False, 2],
 
 

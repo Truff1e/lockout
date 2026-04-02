@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "spyglass_at_ghast": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:spyglass"
+                },
+                "player": {
+                      "type_specific": {
+                        "type": "minecraft:player",
+                        "looking_at": {
+                          "type": "minecraft:player",
+                          "nbt": "{Tags:[\"lk.joseph\"]}"
+                        }
+                      }
+                }
+            },
+            "trigger": "minecraft:using_item"
+        }
+    },
+    "requirements": [
+        [
+            "spyglass_at_ghast"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}
+

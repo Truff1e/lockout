@@ -5,11 +5,7 @@
                 "conditions": {
                   "entity": {
                     "type": "minecraft:creeper",
-                    "nbt": {
-                        "Tags": [
-                          "lk.parrot"
-                        ]
-                    }
+                    "nbt": {"Tags": ["lk.parrot", "lk.initialized"]}
                   }
                 }
               }
