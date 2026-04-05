@@ -512,7 +512,6 @@ GOAL_INDEX = {
         # Use Grindstone
         # Kill all Raid Mobs
         # Obtain Campfire
-        # 4 Unique Saplings
         # Die in Sweet Berry Bush
         # Put Banner on Shield
         # Use Loom
@@ -578,7 +577,7 @@ def dumpGeneratorInfo():
     message = f'''
 =====================================================================
 Truffle Minecraft Lockout - v{VERSION}
-©2025 Truffle Studios (GNU GPLv3)
+©2026 YouDiedRespawn Studios (GNU GPLv3)
 Supports MC {MCVERSION}
 
 Default Options -----------------------------------------------------
