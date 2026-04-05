@@ -1,1 +1,1 @@
-tellraw @s {"text":"Help page is coming soon..."}
+tellraw @s {"text":"Help page coming soon..."}

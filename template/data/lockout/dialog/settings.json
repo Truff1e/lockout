@@ -5,7 +5,6 @@
     "color": "yellow",
     "bold": true
   },
-  "body": [],
   "inputs": [
     {
       "type": "minecraft:number_range",
@@ -30,32 +29,127 @@
       "initial": 45
     },
     {
-      "type": "minecraft:boolean",
+      "type": "minecraft:single_option",
       "key": "show_progress",
-      "label": "Show Goal Progress",
-      "initial": true,
-      "on_true": "1",
-      "on_false": "0"
+      "width": 150,
+      "label": "Show Progress",
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
     },
     {
-      "type": "minecraft:boolean",
+      "type": "minecraft:single_option",
       "key": "allow_pvp",
+      "width": 150,
       "label": "Allow PvP",
-      "initial": true,
-      "on_true": "1",
-      "on_false": "0"
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
     },
     {
-      "type": "minecraft:boolean",
+      "type": "minecraft:single_option",
       "key": "allow_locator",
+      "width": 150,
       "label": "Allow Locator",
-      "initial": true,
-      "on_true": "1",
-      "on_false": "0"
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "allow_draw",
+      "width": 150,
+      "label": "Allow Draw",
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "allow_resign",
+      "width": 150,
+      "label": "Allow Resign",
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "end_on_win",
+      "width": 150,
+      "label": "End on Win",
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
+    },
+    {
+      "type": "minecraft:single_option",
+      "key": "friendly_fire",
+      "width": 150,
+      "label": "Friendly Fire",
+      "options": [
+        {
+          "id": "1",
+          "display": "True",
+          "initial": true
+        },
+        {
+          "id": "0",
+          "display": "False"
+        }
+      ]
     }
   ],
   "can_close_with_escape": true,
-  "after_action": "none",
+  "after_action": "close",
   "pause": false,
   "columns": 2,
   "actions": [
@@ -68,7 +162,7 @@
       "width": 100,
       "action": {
         "type": "minecraft:dynamic/run_command",
-        "template": "function lockout:settings/update_settings {'max_time':'$(max_time)','start_time':'$(start_time)','show_progress':'$(show_progress)','allow_pvp':'$(allow_pvp)','allow_locator':'$(allow_locator)'}"
+        "template": "function lockout:settings/edit {'max_time':'$(max_time)','start_time':'$(start_time)','show_progress':'$(show_progress)','allow_pvp':'$(allow_pvp)','allow_locator':'$(allow_locator)','allow_draw':'$(allow_draw)','allow_resign':'$(allow_resign)','end_on_win':'$(end_on_win)','friendly_fire':'$(friendly_fire)'}"
       }
     }
   ]

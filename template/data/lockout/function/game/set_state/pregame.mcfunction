@@ -1,5 +1,4 @@
 execute at @e[tag=lk.lobby] run fill ~20 310 ~20 ~-20 319 ~-20 air replace
-scoreboard players reset @s join_team
 kill @e[tag=lk.lobby]
 
 execute as @a run function lockout:game/state/pregame

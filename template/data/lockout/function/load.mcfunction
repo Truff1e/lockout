@@ -6,14 +6,14 @@ team modify 2 color dark_aqua
 team modify spectator color gray
 
 scoreboard objectives add lk.util dummy
-# state - tracks the game state (0=lobby, 1=pregame, 2=game, 3=game over)
+# state - tracks the game state (0=lobby, 1=pregame, 2=game, 3=end)
 # blackout - whether or not the game is a blackout game
-# start_time - length of the pregame sequence
-# max_time - maximum length for the game
+# start_time - length of the pregame sequence / start delay
+# max_time - maximum length of the game
 # timer_seconds - counts seconds for the game timer
 # timer_pregame - counts seconds for the pregame timer
-# time_remaining
-# temp_max_time
+# time_remaining - keeps track of how much time is left in the game
+# temp_max_time - used for calculating the time remaining
 
 # show_progress - whether or not to display progress towards "X Unique" goals
 # allow_pvp
@@ -99,7 +99,7 @@ function lockout:splash
 execute if score #state lk.util matches 0 run function lockout:game/set_state/lobby
 execute if score #state lk.util matches 1 run function lockout:game/set_state/pregame
 execute if score #state lk.util matches 2 run function lockout:game/set_state/game
-execute if score #state lk.util matches 3 run function lockout:game/set_state/gameover
+execute if score #state lk.util matches 3 run function lockout:game/set_state/end {"reason": "", "message": "Game Ended", "color":"gray"}
 
 
 # ALL LINES BELOW ONLY RUN ONCE WHEN THE DATA PACK LOADS FOR THE FIRST TIME
@@ -111,7 +111,8 @@ execute unless entity @e[type=armor_stand,tag=lk.team2pts] run summon minecraft:
 team join 1 @e[tag=lk.team1pts]
 team join 2 @e[tag=lk.team2pts]
 
-#ensure some settings aren't reset when the data pack is reloaded
 scoreboard players set #state lk.util 0
+
+#ensure some settings aren't reset when the data pack is reloaded
 function lockout:game/set_state/lobby
 
