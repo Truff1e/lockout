@@ -1,0 +1,75 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "Lockout Settings",
+    "color": "yellow",
+    "bold": true
+  },
+  "body": [],
+  "inputs": [
+    {
+      "type": "minecraft:number_range",
+      "key": "max_time",
+      "width": 150,
+      "label": "Game Duration",
+      "label_format": "%1$s: %2$s min",
+      "start": 5,
+      "end": 240,
+      "step": 5,
+      "initial": 90
+    },
+    {
+      "type": "minecraft:number_range",
+      "key": "start_time",
+      "width": 150,
+      "label": "Start Delay",
+      "label_format": "%1$s: %2$s sec",
+      "start": 15,
+      "end": 120,
+      "step": 5,
+      "initial": 45
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "show_progress",
+      "label": "Show Goal Progress",
+      "initial": true,
+      "on_true": "1",
+      "on_false": "0"
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "allow_pvp",
+      "label": "Allow PvP",
+      "initial": true,
+      "on_true": "1",
+      "on_false": "0"
+    },
+    {
+      "type": "minecraft:boolean",
+      "key": "allow_locator",
+      "label": "Allow Locator",
+      "initial": true,
+      "on_true": "1",
+      "on_false": "0"
+    }
+  ],
+  "can_close_with_escape": true,
+  "after_action": "none",
+  "pause": false,
+  "columns": 2,
+  "actions": [
+    {
+      "label": "Cancel",
+      "width": 100
+    },
+    {
+      "label": "Update Settings",
+      "width": 100,
+      "action": {
+        "type": "minecraft:dynamic/run_command",
+        "template": "function lockout:settings/update_settings {'max_time':'$(max_time)','start_time':'$(start_time)','show_progress':'$(show_progress)','allow_pvp':'$(allow_pvp)','allow_locator':'$(allow_locator)'}"
+      }
+    }
+  ]
+}

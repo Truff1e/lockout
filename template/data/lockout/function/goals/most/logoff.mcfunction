@@ -1,4 +1,4 @@
-execute if score #end_seen lk.util matches 1 run return fail
+execute if score #state lk.util matches 3 run return fail
 
 scoreboard players remove @s lk.points 1
 
@@ -6,4 +6,4 @@ execute at @a run playsound minecraft:block.beacon.deactivate master @a ~ ~ ~
 
 $say The point for most $(type) was removed due to the player disconnecting.
 
-$tag @s remove lk.$(goalid)
+$tag @s remove lk.$(id)

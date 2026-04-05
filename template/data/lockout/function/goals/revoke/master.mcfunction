@@ -1,5 +1,5 @@
 $execute unless score #$(goalid) lk.enabled_goals matches 1 run return fail
-execute if score #end_seen lk.util matches 1 run return fail
+execute if score #state lk.util matches 3 run return fail
 #$execute if entity @e[tag=lk.$(goalid)] run return fail
 execute if entity @s[predicate=!lockout:is_playing] run return fail
 $tag @s remove lk.$(goalid)

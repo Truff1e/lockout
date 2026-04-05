@@ -1,3 +1,4 @@
+execute as @a at @s run playsound entity.ender_dragon.death master @s ~ ~ ~
 scoreboard players remove #game_time lk.util 1
 tellraw @a {"text": "========================================", "color": "gray"}
 $tellraw @a {"text": "Game Over - $(end_reason)", "bold": true, "color": "yellow"}
@@ -11,7 +12,7 @@ tellraw @a {"text": "Player Stats", "bold": true, "color": "light_purple"}
 tellraw @a {"text": "----------------------------------------", "color": "gray"}
 
 execute as @a run function lockout:game/stats/global
-scoreboard players set #end_seen lk.util 1
+scoreboard players set #state lk.util 3
 tellraw @a {"text": "========================================", "color": "gray"}
 function lockout:game/stats/export
 #execute as @a run function lockout:game/stats/personal #disabled because you can see this info in global stats

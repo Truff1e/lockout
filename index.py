@@ -82,6 +82,12 @@ GOAL_INDEX = {
         'D0007': ['Die to Polar Bear', 'cod', True, 3],
 
         # HAVE MORE GOALS
+        'M0006': ['Have the Most Deaths', 'diamond_sword', True, 3],
+        'M0007': ['Have the Most Advancements', 'experience_bottle', True, 3],
+        'M0008': ['Have the Most Unique Breeds', 'wheat', True, 3],
+        'M0009': ['Eat the Most Unique Foods', 'apple', True, 3],
+        'M0010': ['Apply the Most Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 3],
+        'M0011': ['Kill the Most Unique Mobs', 'iron_sword', True, 3],
         'M0012': ['Have the Most Dried Kelp Blocks', 'dried_kelp_block', True, 3],
         'M0013': ['Have the Most Hoppers', 'hopper', True, 3],
         'M0014': ['Have the Most Levels', 'experience_bottle', True, 3],
@@ -288,6 +294,7 @@ GOAL_INDEX = {
         'X0022': ['Craft 25 Unique Items', 'crafting_table', True, 1],
         'X0023': ['Craft 50 Unique Items', 'crafting_table', True, 2],
         'X0024': ['Craft 75 Unique Items', 'crafting_table', True, 4],
+        "X0027": ['Trade Villager to Max Level', '"id": "minecraft:emerald"', 4],
 
 
 
@@ -322,7 +329,7 @@ GOAL_INDEX = {
         'A0027': ['Open Trial Vault', 'trial_key', False, 1],
         'A0028': ['Repair Wolf Armor', 'wolf_armor', False, 2],
         'A0029': ['Open Ominous Vault', 'ominous_trial_key', False, 2],
-        'A0030': ['Ride Horse', 'saddle', False, 3],
+        # 'A0030': ['Ride Horse', 'saddle', False, 3],
         'K0042': ['Kill Bogged', 'iron_sword', True, 4],
         'K0043': ['Kill Breeze', 'iron_sword', True, 4],
         # 'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
@@ -493,21 +500,14 @@ GOAL_INDEX = {
 
         #goal ideas
         # "X0011": ['Fill Inventory with Unique Items', '"id": "minecraft:chest"', 1],
-        # "X0013": ['Get a Villager to Max Level', '"id": "minecraft:emerald"', 3],
         # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
         # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
         # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
         # "L0014": ['Find a Badlands Biome', '"id": "minecraft:terracotta"', 3],
-        # "": ['Have the Most Advancements', '"id": "minecraft:terracotta"', 3],
-        # "": ['Have the Most Unique Breeds', '"id": "minecraft:terracotta"', 3],
-        # "": ['Eat the Most Unique Foods', '"id": "minecraft:terracotta"', 3],
-        # "": ['Apply the Most Unique Armor Trims', '"id": "minecraft:terracotta"', 3],
-        # "": ['Kill the Most Unique Mobs', '"id": "minecraft:terracotta"', 3],
         # "": ['Obtain Coal Ore', '"id": "minecraft:terracotta"', 3],
         # Use Anvil
         # Obtain all fish buckets
         # Obtain Loom
-        # Most unique eats
         # X Unique Workstations
         # Use Grindstone
         # Kill all Raid Mobs

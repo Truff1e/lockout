@@ -1,4 +1,4 @@
-execute if score #end_seen lk.util matches 1 run return fail
+execute if score #state lk.util matches 3 run return fail
 execute if entity @s[predicate=!lockout:is_playing] run return fail
 
 $scoreboard players set @s lk.goal $(goalnum)

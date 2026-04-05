@@ -1,4 +1,4 @@
-execute unless score #game_begun lk.util matches 1 run return fail
+execute unless score #state lk.util matches 1.. run return fail
 
 #trigger functions
 execute as @a[scores={locate=1..}] run function lockout:trigger/locate

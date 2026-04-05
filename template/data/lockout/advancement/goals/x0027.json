@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "interact": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "entity": {
+          "nbt": "{\"VillagerData\":{\"level\":5}}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "interact"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goal/x0027"
+  }
+}

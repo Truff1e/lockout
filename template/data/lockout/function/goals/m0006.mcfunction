@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/skeleton/most {"goalid": "M0006", "goalnum": "770006", "goalname": "Have the Most Deaths"}

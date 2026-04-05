@@ -1,0 +1,10 @@
+scoreboard players set #deaths lk.most 0
+scoreboard players set #unique_advancements lk.most 0
+scoreboard players set #unique_breeds lk.most 0
+scoreboard players set #unique_foods lk.most 0
+scoreboard players set #unique_trims lk.most 0
+scoreboard players set #unique_mobs lk.most 0
+scoreboard players set #dried_kelp lk.most 0
+scoreboard players set #hoppers lk.most 0
+scoreboard players set #levels lk.most 0
+scoreboard players set #unique_crafts lk.most 10

@@ -1,36 +1,36 @@
 {
     "pack": {
-        "description": "Minecraft Lockout - by Truff1e - v2.2.1 - Supports 1.21.8 to 1.21.11",
+        "description": "Minecraft Lockout - by Truff1e - v2.2.1 - Supports 1.21.8 to 26.1.1",
         "pack_format": 81,
-        "supported_formats": [61, 94],
+        "supported_formats": [61, 101.1],
         "min_format": 61,
-        "max_format": [94, 1]
+        "max_format": [101, 1]
     },
     "overlays": {
         "entries": [
             {
                 "directory": "overlay-1.21.5",
-                "max_format": 95,
+                "max_format": 101.1,
                 "min_format": 71,
-                "formats": [71, 95]
+                "formats": [71, 101.1]
             },
             {
                 "directory": "overlay-1.21.6",
-                "max_format": 95,
+                "max_format": 101.1,
                 "min_format": 80,
-                "formats": [80, 95]
+                "formats": [80, 101.1]
             },
             {
                 "directory": "overlay-1.21.9",
-                "max_format": 95,
+                "max_format": 101.1,
                 "min_format": 88,
-                "formats": [88, 95] 
+                "formats": [88, 101.1] 
             },
             {
                 "directory": "overlay-1.21.11",
-                "max_format": 95,
+                "max_format": 101.1,
                 "min_format": 94,
-                "formats": [94, 95]
+                "formats": [94, 101.1]
             }
         ]
     }

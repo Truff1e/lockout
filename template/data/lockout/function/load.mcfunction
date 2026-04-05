@@ -6,6 +6,25 @@ team modify 2 color dark_aqua
 team modify spectator color gray
 
 scoreboard objectives add lk.util dummy
+# state - tracks the game state (0=lobby, 1=pregame, 2=game, 3=game over)
+# blackout - whether or not the game is a blackout game
+# start_time - length of the pregame sequence
+# max_time - maximum length for the game
+# timer_seconds - counts seconds for the game timer
+# timer_pregame - counts seconds for the pregame timer
+# time_remaining
+# temp_max_time
+
+# show_progress - whether or not to display progress towards "X Unique" goals
+# allow_pvp
+# allow_locator
+# allow_draw
+# allow_resign
+# end_on_win 
+# friendly_fire
+# show_timer
+
+
 scoreboard objectives add lk.enabled_goals dummy
 scoreboard objectives add lk.points dummy {"text": "Lockout", "color": "yellow", "bold": true}
 scoreboard objectives setdisplay sidebar lk.points
@@ -29,7 +48,9 @@ scoreboard objectives add lk.unique_effects dummy
 scoreboard objectives add lk.unique_logs dummy
 scoreboard objectives add lk.unique_crafts dummy
 
+scoreboard objectives add lk.most dummy
 scoreboard objectives add lk.levels level
+scoreboard objectives add lk.deaths deathCount
 scoreboard objectives add lk.hoppers dummy
 scoreboard objectives add lk.dried_kelp dummy
 
@@ -72,14 +93,17 @@ function lockout:load_overlay_1_21_6
 function lockout:load_overlay_1_21_9
 function lockout:load_overlay_1_21_11
 
+
 #splash screen
 function lockout:splash
-function lockout:tick/1s_pregame
+execute if score #state lk.util matches 0 run function lockout:game/set_state/lobby
+execute if score #state lk.util matches 1 run function lockout:game/set_state/pregame
+execute if score #state lk.util matches 2 run function lockout:game/set_state/game
+execute if score #state lk.util matches 3 run function lockout:game/set_state/gameover
 
 
-
-# ALL LINES BELOW HERE ONLY RUN ONCE WHEN THE DATA PACK LOADS FOR THE FIRST TIME
-execute if score #initialized lk.util matches 1 run return fail
+# ALL LINES BELOW ONLY RUN ONCE WHEN THE DATA PACK LOADS FOR THE FIRST TIME
+execute if score #state lk.util matches 0.. run return fail
 
 execute unless entity @e[type=armor_stand,tag=lk.goaltracker] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.goaltracker"]}
 execute unless entity @e[type=armor_stand,tag=lk.team1pts] run summon minecraft:armor_stand 0 319 0 {NoGravity:1b,Marker:1b,Invisible:1b,Tags:["lk.team1pts"],CustomName:'"Team 1"'}
@@ -88,6 +112,6 @@ team join 1 @e[tag=lk.team1pts]
 team join 2 @e[tag=lk.team2pts]
 
 #ensure some settings aren't reset when the data pack is reloaded
-scoreboard players set #initialized lk.util 1
-
+scoreboard players set #state lk.util 0
+function lockout:game/set_state/lobby
 

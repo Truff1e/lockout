@@ -33,7 +33,7 @@ def write_start_function(path, boardBlueprint):
     # Starts the countdown and sets the board size
     file.write(f'execute unless score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint)+1)//2}\n')
     file.write(f'execute if score #blackout lk.util matches 1 run scoreboard players set #boardSize lk.util {(len(boardBlueprint))}\n')
-    file.write('execute as @a run function lockout:game/init\n')
+    file.write('function lockout:game/set_state/pregame\n')
     file.close()
 
 
@@ -49,7 +49,7 @@ def write_resume_function(path, boardBlueprint):
     for _, coordinate, _ in boardBlueprint: # if goal is completed, give it to everyone
         file.write('execute as @a[advancements={lockout:board/' + coordinate + '=true}] run advancement grant @a only lockout:board/' + coordinate + '\n')
 
-    file.write('execute as @s run function lockout:game/resume_moregoals')
+    file.write('execute as @s run function lockout:goals/most/resume')
     file.close()
 
 
@@ -99,7 +99,7 @@ def write_default_settings_file(path):
     file = open(f'{path}/data/lockout/function/settings/defaults.mcfunction', 'w')
     file.write(f'''
 #if the game has already been initialized, don't reset the scores
-execute if score #initialized lk.util matches 1 run return fail
+execute if score #state lk.util matches 0.. run return fail
 #settings
 scoreboard players set #start_time lk.util {LK_START_TIME}
 scoreboard players set #max_time lk.util {LK_MAX_TIME}

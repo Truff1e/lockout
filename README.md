@@ -87,7 +87,7 @@ In order to make some of the goal icons more descriptive, this generator comes w
 
 
 ## Known Issues
-Due to data pack limitations, there may be some issues with players logging off during the game, though I've done as much as I can to limit any problems from this. One such issue that may arise is if a player logs out during the game start sequence. If this happens and the player cannot move/jump after the game has started, try running `/execute as <affected_player> run function lockout:game/reset_attributes`
+Due to data pack limitations, there may be some issues with players logging off during the game, though I've done as much as I can to limit any problems from this. One such issue that may arise is if a player logs out during the game start sequence. If this happens and the player cannot move/jump after the game has started, try running `/execute as <affected_player> run function lockout:game/reset/attributes`
 
 
 ## License

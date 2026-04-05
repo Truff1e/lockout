@@ -1,4 +1,4 @@
-execute unless score #game_begun lk.util matches 1 run return fail
+execute unless score #state lk.util matches 2 run return fail
 
 scoreboard players add @s[predicate=lockout:effects/absorption] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/bad_omen] lk.unique_effects 1
@@ -38,8 +38,8 @@ scoreboard players add @s[predicate=lockout:effects/wind_charged] lk.unique_effe
 scoreboard players add @s[predicate=lockout:effects/wither] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/breath_of_the_nautilus] lk.unique_effects 1
 
-execute if score #test_effects lk.util matches 1 as @s[scores={lk.unique_effects=3..}] run function lockout:goals/x0018
-execute if score #test_effects lk.util matches 1 as @s[scores={lk.unique_effects=6..}] run function lockout:goals/x0019
+execute as @s[scores={lk.unique_effects=3..}] run function lockout:goals/x0018
+execute as @s[scores={lk.unique_effects=6..}] run function lockout:goals/x0019
 execute as @s[scores={lk.unique_effects=9..}] run function lockout:goals/x0020
 execute as @s[scores={lk.unique_effects=12..}] run function lockout:goals/x0021
 

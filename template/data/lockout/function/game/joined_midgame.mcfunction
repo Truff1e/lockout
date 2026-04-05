@@ -1,6 +1,6 @@
 team join spectator @s
 gamemode spectator @s
-execute if score #game_begun lk.util matches 1 run function lockout:game/resume
+execute if score #state lk.util matches 1.. run function lockout:game/resume
 
 execute if score #blackout lk.util matches 1 run team join 1 @s
 execute if score #blackout lk.util matches 1 run tellraw @s {"text":"Welcome! You have joined the Blackout game!"}

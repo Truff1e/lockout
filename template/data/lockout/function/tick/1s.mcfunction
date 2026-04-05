@@ -1,8 +1,12 @@
 #update timer
 scoreboard players remove #seconds_remaining lk.util 1
-execute if score #game_begun lk.util matches 1 run function lockout:timer/timer
+function lockout:timer/timer
 
 execute as @a[predicate=!lockout:is_playing, team=!spectator] run function lockout:game/joined_midgame
+
+#update scoreboards
+execute as @a store result score @s lk.dried_kelp run clear @s dried_kelp_block 0
+execute as @a store result score @s lk.hoppers run clear @s hopper 0
 
 #TODO: clear effects from all players with resistance 5 so that players who log out during the start of the game dont keep effects
 

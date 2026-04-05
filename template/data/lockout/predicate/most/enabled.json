@@ -7,6 +7,78 @@
           "type": "minecraft:score",
           "target": {
             "type": "minecraft:fixed",
+            "name": "#M0006"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#M0007"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#M0008"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#M0009"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#M0010"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "#M0011"
+          },
+          "score": "lk.enabled_goals"
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "target": {
+            "type": "minecraft:fixed",
             "name": "#M0012"
           },
           "score": "lk.enabled_goals"

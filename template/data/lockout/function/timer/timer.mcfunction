@@ -1,6 +1,6 @@
 #execute if score #time_remaining lk.util matches ..-1 run title @a actionbar [{"text": "Game Over", "color": "red"}]
-execute if score #end_seen lk.util matches 1 run title @a actionbar [{"text": "Game Over", "color": "red"}]
-execute if score #end_seen lk.util matches 1 run return fail
+execute if score #state lk.util matches 3 run title @a actionbar [{"text": "Game Over", "color": "red"}]
+execute if score #state lk.util matches 3 run return fail
 
 execute if score #show_timer lk.util matches 0 run return fail
 
