@@ -222,6 +222,10 @@ GOAL_INDEX = {
         'I0092': ['Brew Healing Potion', 'potion', True, 6],
         'I0093': ['Brew Invisibility Potion', 'potion', True, 6],
         'I0094': ['Brew Jump Boost Potion', 'potion', True, 6],
+        # Obtain all fish buckets
+        # Obtain Loom
+        # Obtain Campfire
+        # Obtain Experience Bottle
          
         
         'E0001': ['Eat Apple', 'apple', False, 1],
@@ -499,23 +503,19 @@ GOAL_INDEX = {
         'X1037': ['Get Weakness', 'wooden_sword', True, 2],
 
 
-        #goal ideas
+        # goal ideas
         # "X0011": ['Fill Inventory with Unique Items', '"id": "minecraft:chest"', 1],
         # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
         # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
         # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
         # "": ['Obtain Coal Ore', '"id": "minecraft:terracotta"', 3],
         # Use Anvil
-        # Obtain all fish buckets
-        # Obtain Loom
         # X Unique Workstations
         # Use Grindstone
         # Kill all Raid Mobs
-        # Obtain Campfire
         # Die in Sweet Berry Bush
         # Put Banner on Shield
         # Use Loom
-        # Obtain Experience Bottle
 
 }
 
