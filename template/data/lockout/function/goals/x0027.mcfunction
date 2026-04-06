@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/master {"goalid": "X0027", "goalnum": "880027", "goalname": "Trade Villager to Max Level"}
+execute as @s run function lockout:goals/skeleton/master {"goalid": "X0027", "goalnum": "880027", "goalname": "Trade With Master Villager"}

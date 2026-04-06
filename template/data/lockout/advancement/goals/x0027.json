@@ -1,20 +1,20 @@
 {
   "criteria": {
-    "interact": {
-      "trigger": "minecraft:player_interacted_with_entity",
+    "trade": {
+      "trigger": "minecraft:villager_trade",
       "conditions": {
-        "entity": {
-          "nbt": "{\"VillagerData\":{\"level\":5}}"
+        "villager": {
+          "nbt": "{'VillagerData':{'level':5}}"
         }
       }
     }
   },
   "requirements": [
     [
-      "interact"
+      "trade"
     ]
   ],
   "rewards": {
-    "function": "lockout:goal/x0027"
+    "function": "lockout:goals/x0027"
   }
 }
