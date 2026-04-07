@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "X0006", "goalnum": "880006", "goalname": "Mine Mob Spawner"}

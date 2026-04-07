@@ -1,0 +1,1 @@
+execute as @a run function lockout:revoke/skeleton/master {"goalid": "M0010", "goalnum": "770010", "goalname": "Apply the Most Unique Armor Trims"}

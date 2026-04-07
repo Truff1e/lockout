@@ -62,6 +62,16 @@ def write_getgoals_function(path, boardBlueprint):
     file.close()
 
 
+def write_revokegoals_function(path, boardBlueprint):
+    # Writes the function to translate a scoreboard value into the correct advancement on the lockout board
+    file = open(f'{path}/data/lockout/function/game/revokegoal.mcfunction', 'w')
+    for goalId, coordinate, _ in boardBlueprint:
+        number = goalId[1:]
+        file.write(f'execute if score @s lk.goal matches {ord(goalId[0])}{number} run advancement revoke @a only lockout:board/{coordinate}\n')
+        file.write(f'execute if score @s lk.goal matches {ord(goalId[0])}{number} run advancement revoke @s only lockout:goals/{goalId.lower()}\n')
+    file.close()
+
+
 def write_advancement_tree(path, boardBlueprint):
     # Writes the advancement files to display goals on the board
     for goalId, coordinate, goalInfo in boardBlueprint:
@@ -170,6 +180,7 @@ def generateBoard(goals: list, boardtype: str):
         write_start_function(filePath, boardBlueprint)
         write_resume_function(filePath, boardBlueprint)
         write_getgoals_function(filePath, boardBlueprint)
+        write_revokegoals_function(filePath, boardBlueprint)
         write_advancement_tree(filePath, boardBlueprint)
         write_info_file(filePath, boardBlueprint)
         write_default_settings_file(filePath)

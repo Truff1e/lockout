@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "A0014", "goalnum": "650014", "goalname": "Fully Charge Respawn Anchor"}

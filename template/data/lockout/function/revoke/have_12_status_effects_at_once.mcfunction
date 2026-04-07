@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "X0021", "goalnum": "880021", "goalname": "Have 12 Status Effects at Once"}

@@ -1,0 +1,1 @@
+execute as @a run function lockout:revoke/skeleton/master {"goalid": "N0008", "goalnum": "780008", "goalname": "Opponent Stands on Netherrack"}

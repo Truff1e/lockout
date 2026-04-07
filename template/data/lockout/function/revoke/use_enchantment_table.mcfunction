@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "A0006", "goalnum": "650006", "goalname": "Use Enchantment Table"}

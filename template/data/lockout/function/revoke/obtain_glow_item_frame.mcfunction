@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0083", "goalnum": "730083", "goalname": "Obtain Glow Item Frame"}

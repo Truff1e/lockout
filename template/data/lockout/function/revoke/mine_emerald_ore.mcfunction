@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "X0005", "goalnum": "880005", "goalname": "Mine Emerald Ore"}

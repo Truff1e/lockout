@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "X0022", "goalnum": "880022", "goalname": "Craft 25 Unique Items"}

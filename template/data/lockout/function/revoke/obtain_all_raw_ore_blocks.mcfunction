@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0024", "goalnum": "730024", "goalname": "Obtain All Raw Ore Blocks"}

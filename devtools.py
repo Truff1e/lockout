@@ -6,38 +6,84 @@ import json
 from datetime import datetime, timedelta, time
 
 
-def createTriggers():
-
+def createGoalFunctions():
+    path = './template/data/lockout/function/goals'
     # This is used to automatically generate all the functions that are called when a goal is achieved.
-
+    print('[devtools] Creating goal functions...')
     try:
-        os.mkdir('./triggers')
+        os.mkdir(path)
     except FileExistsError:
-        print('Triggers directory already exists. Proceeding...')
+        print('[devtools] Directory already exists. Proceeding...')
         pass
 
     for goal in GOAL_INDEX:
-        file = open(f'./triggers/{goal.lower()}.mcfunction', 'w')
+        file = open(f'{path}/{goal.lower()}.mcfunction', 'w')
         number = goal[1:]
-        # Write most function for Most goals
+        # Write most function for most goals
         if 'M' in goal:
-            file.write("execute as @s run function lockout:goals/skeleton/most {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
-
+            file.write("execute as @s run function lockout:goals/template/most {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
         # Write reversed function for Opponent goals
         elif 'N' in goal:
-            file.write("execute as @s run function lockout:goals/skeleton/opponent {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
-
+            file.write("execute as @s run function lockout:goals/template/opponent {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
         else:
             # Write goal triggers for all other goals
-            file.write("execute as @s run function lockout:goals/skeleton/master {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
+            file.write("execute as @s run function lockout:goals/template/default {" + f'"goalid": "{goal}", "goalnum": "{ord(goal[0])}{number}", "goalname": "{GOAL_INDEX[goal][0]}"' + '}')
 
         file.close()
 
+    print('[devtools] Goal functions created')
 
 
 
-def createListeners():
 
+def createGrantFunctions():
+    path = './template/data/lockout/function/grant'
+    print('[devtools] Creating grant functions...')
+    try:
+        os.mkdir(path)
+    except FileExistsError:
+        print('[devtools] Directory already exists. Proceeding...')
+        pass
+
+    for id, goal in GOAL_INDEX.items():
+        if id.startswith('N'): continue
+        if id.startswith('M'): continue
+        functionname = goal[0].lower().replace(' ', '_')
+        goalnum = str(ord(id[0])) + id[1:]
+        goalname = goal[0]
+        file = open(f'{path}/{functionname}.mcfunction', 'w')
+        file.write('execute as @s run function lockout:goals/template/default {"goalid": "' + id + '", "goalnum": "' + goalnum + '", "goalname": "' + goalname + '"}')
+        file.close()
+    print('[devtools] Grant functions created')
+
+
+
+def createRevokeFunctions():
+    path = './template/data/lockout/function/revoke'
+    print('[devtools] Creating revoke functions...')
+    try:
+        os.mkdir(path)
+    except FileExistsError:
+        print('[devtools] Directory already exists. Proceeding...')
+        pass
+
+    for id, goal in GOAL_INDEX.items():
+        if id.startswith('N'): continue
+        if id.startswith('M'): continue
+        functionname = goal[0].lower().replace(' ', '_')
+        goalnum = str(ord(id[0])) + id[1:]
+        goalname = goal[0]
+        file = open(f'{path}/{functionname}.mcfunction', 'w')
+        file.write('execute as @a run function lockout:goals/template/revoke {"goalid": "' + id + '", "goalnum": "' + goalnum + '", "goalname": "' + goalname + '"}')
+        file.close()
+    
+    print('[devtools] Revoke functions created')
+
+
+def createGoalListeners():
+    '''
+    Attempts to auto-generate as many goal listeners as possible.
+    '''
     try:
         os.mkdir('./listeners')
     except FileExistsError:
@@ -183,25 +229,13 @@ def createListeners():
 
 
 
-
-
-def convertLegacyDictToModernFormat():
-    # this does not change the difficulty -- that must be modified manually
-    for i in goalDictionaryLegacy:
-        print(f"        '{i}': ['{goalDictionaryLegacy[i][0]}', '{goalDictionaryLegacy[i][1][17:(goalDictionaryLegacy[i][1].find('comp')-3 if 'components' in goalDictionaryLegacy[i][1] else -1)].replace('\"', '\'')}', {'True' if 'components' in goalDictionaryLegacy[i][1] else 'False'}, {goalDictionaryLegacy[i][2]}],")
-
-
-
-
 def createGoalIdStrings(letter, length):
-
+    '''
+    Prints goal id numbers.
+    '''
     for i in range(length):
         zeros = 4 - len(str(i+1)) 
         print(letter + ("0" * zeros) + str(i+1))
-
-
-
-
 
 item_files = '''acacia_boat.json
               acacia_button.json
@@ -1581,57 +1615,7 @@ def generateTextureTestFile():
     with open('./test_textures.mcfunction', 'w') as file:
         for key, goal in GOAL_INDEX.items():
             file.write("give @s minecraft:" + goal[1] + "[custom_model_data={'strings':['" + key + "']}]\n")
-
         file.close()
-
-def generateWoolItemModelFiles():
-
-    colors = [
-            'white',
-            'pink',
-            'magenta',
-            'red',
-            'orange',
-            'yellow',
-            'lime',
-            'green',
-            'aqua',
-            'light_blue',
-            'blue',
-            'purple',
-            'brown',
-            'light_gray',
-            'gray',
-            'black'
-    ]
-
-
-    x = 1
-    for c in colors:
-        with open(f'{c}_wool.json', 'w') as f:
-            f.write('''
-    {
-      "model": {
-        "type": "select",
-        "property": "custom_model_data",
-        "fallback": {
-          "type": "model",
-          "model": "block/''' + c + '''_wool"
-        },
-        "cases": [
-          {
-            "when": "K100''' + str(x) +'''",
-            "model": {
-              "type": "model",
-              "model": "item/kill_''' + c + '''_sheep"
-            }
-          }
-        ]
-      }
-    }
-    ''')
-            x += 1
-            f.close()
 
 
 def parseLogFile(file):
@@ -1735,15 +1719,17 @@ def main():
     parser = argparse.ArgumentParser(description='Run tools for generating data pack files')
 
     parser.add_argument('function')
-    parser.add_argument('-f', '--file',
-                        help='File to pass to the function')
-    parser.add_argument('args',
-                        nargs='*',
-                        help='Arguments to pass to the function')
 
     args = parser.parse_args()
 
-    exec(f'{args.function}({",".join(args.args)} "{args.file}")')
+    if args.function == 'bootstrap':
+        createGoalFunctions()
+        createRevokeFunctions()
+        createGrantFunctions()
+    elif args.function == 'craft':
+        createCraftFiles()
+    else:
+        print('Unknown argument. Import devtools to use all its functions.')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0032", "goalnum": "730032", "goalname": "Obtain All Minecart Types"}

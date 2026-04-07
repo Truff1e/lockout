@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/most {"goalid": "M0009", "goalnum": "770009", "goalname": "Eat the Most Unique Foods"}
+execute as @s run function lockout:goals/template/most {"goalid": "M0009", "goalnum": "770009", "goalname": "Eat the Most Unique Foods"}

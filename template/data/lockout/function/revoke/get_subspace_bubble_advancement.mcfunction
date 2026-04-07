@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "A0013", "goalnum": "650013", "goalname": "Get Subspace Bubble Advancement"}

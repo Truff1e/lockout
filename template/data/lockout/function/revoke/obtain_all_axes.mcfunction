@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0002", "goalnum": "730002", "goalname": "Obtain All Axes"}

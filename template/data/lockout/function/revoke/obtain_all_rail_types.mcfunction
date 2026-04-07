@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0023", "goalnum": "730023", "goalname": "Obtain All Rail Types"}

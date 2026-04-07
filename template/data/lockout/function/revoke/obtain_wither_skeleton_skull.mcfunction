@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0057", "goalnum": "730057", "goalname": "Obtain Wither Skeleton Skull"}

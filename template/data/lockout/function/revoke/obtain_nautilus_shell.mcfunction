@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0059", "goalnum": "730059", "goalname": "Obtain Nautilus Shell"}

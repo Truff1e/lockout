@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "A0021", "goalnum": "650021", "goalname": "Enter Bastion"}

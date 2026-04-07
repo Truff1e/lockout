@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/template/default {"goalid": "D0010", "goalnum": "680010", "goalname": "Die in Sweet Berry Bush"}

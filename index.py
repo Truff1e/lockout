@@ -6,30 +6,30 @@ from dotenv import load_dotenv
 
 # Set Environment Variables
 load_dotenv()
-VERSION = os.getenv('VERSION')
-MCVERSION = os.getenv('MCVERSION')
+VERSION = '2.3.1'
+MCVERSION = '1.21.8-26.1.1'
 OUTPUT_DIR = os.getenv('OUTPUT_DIR', default='Downloads')
 DEFAULT_MODE = os.getenv('DEFAULT_MODE', default='Lockout')
 DEFAULT_SIZE = os.getenv('DEFAULT_SIZE', default=5)
 DEFAULT_DIFFICULTY = os.getenv('DEFAULT_DIFFICULTY', default='1-5')
 DEBUG = os.getenv('DEBUG', default=False)
 
-LK_START_TIME=os.getenv('LK_START_TIME')
-LK_MAX_TIME=os.getenv('LK_MAX_TIME')
-LK_SHOW_PROGRESS=os.getenv('LK_SHOW_PROGRESS')
-LK_ALLOW_PVP=os.getenv('LK_ALLOW_PVP')
-LK_ALLOW_FRIENDLY_FIRE=os.getenv('LK_ALLOW_FRIENDLY_FIRE')
-LK_ALLOW_TRACKER=os.getenv('LK_ALLOW_TRACKER')
-LK_ALLOW_DRAW=os.getenv('LK_ALLOW_DRAW')
-LK_ALLOW_RESIGN=os.getenv('LK_ALLOW_RESIGN')
-LK_END_ON_WIN=os.getenv('LK_END_ON_WIN')
-LK_SHOW_TIMER=os.getenv('LK_SHOW_TIMER')
+LK_START_TIME=os.getenv('LK_START_TIME', default=45)
+LK_MAX_TIME=os.getenv('LK_MAX_TIME', default=120)
+LK_SHOW_PROGRESS=os.getenv('LK_SHOW_PROGRESS', default=True)
+LK_ALLOW_PVP=os.getenv('LK_ALLOW_PVP', default=True)
+LK_ALLOW_FRIENDLY_FIRE=os.getenv('LK_ALLOW_FRIENDLY_FIRE', default=True)
+LK_ALLOW_TRACKER=os.getenv('LK_ALLOW_TRACKER', default=True)
+LK_ALLOW_DRAW=os.getenv('LK_ALLOW_DRAW', default=True)
+LK_ALLOW_RESIGN=os.getenv('LK_ALLOW_RESIGN', default=True)
+LK_END_ON_WIN=os.getenv('LK_END_ON_WIN', default=True)
+LK_SHOW_TIMER=os.getenv('LK_SHOW_TIMER', default=True)
 
 
 
 GOAL_INDEX = {
         # id: [name, icon, customModelDataBool, difficulty, min_version, description]
-        # Commented out goals are not yet implemented or are broken
+        # Commented goals are not yet implemented or are broken
 
         # KILL GOALS
         'K0001': ['Kill Bat', 'iron_sword', True, 1],
@@ -71,6 +71,11 @@ GOAL_INDEX = {
         'K0037': ['Kill 7 Unique Hostile Mobs', 'iron_sword', True, 3],
         'K0038': ['Kill 15 Unique Hostile Mobs', 'iron_sword', True, 5],
         # 'K0039': ['Kill Every Undead Mob', 'iron_sword', True, 6],
+        #
+        'K0041': ['Kill Warden', 'iron_sword', True, 8],
+        'K0042': ['Kill Bogged', 'iron_sword', True, 4],
+        'K0043': ['Kill Breeze', 'iron_sword', True, 4],
+
 
         # DEATH GOALS
         'D0001': ['Die to Bee', 'beehive', True, 1],
@@ -80,6 +85,10 @@ GOAL_INDEX = {
         'D0005': ['Die to Piglin Brute', 'golden_axe', True, 3],
         'D0006': ['Die on Pointed Dripstone', 'pointed_dripstone', True, 2],
         'D0007': ['Die to Polar Bear', 'cod', True, 3],
+        'D0008': ['Die to Warden', 'sculk_shrieker', True, 3],
+        'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
+        'D0010': ['Die in Sweet Berry Bush', 'sweet_berries', True, 3], #needs texture
+
 
         # HAVE MORE GOALS
         'M0006': ['Have the Most Deaths', 'diamond_sword', True, 3], #needs texture
@@ -87,11 +96,12 @@ GOAL_INDEX = {
         'M0008': ['Have the Most Unique Breeds', 'wheat', True, 3], #needs texture
         'M0009': ['Eat the Most Unique Foods', 'apple', True, 3], #needs texture
         'M0010': ['Apply the Most Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 3], #needs texture
-        'M0011': ['Kill the Most Unique Mobs', 'iron_sword', True, 3], #needs texture
+        'M0011': ['Kill the Most Unique Hostile Mobs', 'iron_sword', True, 3], #needs texture
         'M0012': ['Have the Most Dried Kelp Blocks', 'dried_kelp_block', True, 3],
         'M0013': ['Have the Most Hoppers', 'hopper', True, 3],
         'M0014': ['Have the Most Levels', 'experience_bottle', True, 3],
         'M0015': ['Have the Most Unique Crafts', 'crafting_table', True, 3],
+
 
         # HUSBANDRY GOALS
         'T0001': ['Tame Cat', 'cod', True, 2],
@@ -103,6 +113,10 @@ GOAL_INDEX = {
         'T0007': ['Tame Llama', 'hay_block', True, 4],
         # 'T0008': ['Tame 5 Cat Variants', 'cod', True, 5],
         'T0009': ['Tame Every Cat Variant', 'cod', True, 9],
+        # 'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
+        # 'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
+        # 'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
+
 
         # BREEDING GOALS
         'B0001': ['Breed Axolotl', 'tropical_fish_bucket', True, 4],
@@ -126,6 +140,10 @@ GOAL_INDEX = {
         'B0019': ['Breed 6 Unique Mobs', 'wheat', True, 3],
         'B0020': ['Breed 8 Unique Mobs', 'wheat', True, 4],
         'B0021': ['Breed 12 Unique Mobs', 'wheat', True, 7],
+        'B0022': ['Breed Frog', 'slime_ball', True, 4],
+        'B0023': ['Breed Sniffer', 'sniffer_egg', True, 9],
+        'B0024': ['Breed Armadillo', 'spider_eye', True, 4],
+
 
         # ITEM GOALS
         'I0001': ['Obtain All Swords', 'netherite_sword', True, 6], 
@@ -222,12 +240,31 @@ GOAL_INDEX = {
         'I0092': ['Brew Healing Potion', 'potion', True, 6],
         'I0093': ['Brew Invisibility Potion', 'potion', True, 6],
         'I0094': ['Brew Jump Boost Potion', 'potion', True, 6],
+        'I0095': ['Obtain Recovery Compass', 'recovery_compass', False, 5],
+        'I0096': ['Obtain Mud Brick Wall', 'mud_brick_wall', False, 2],
+        'I0097': ['Obtain Froglight', 'pearlescent_froglight', False, 4],
+        'I0098': ['Obtain All Froglights', 'pearlescent_froglight', True, 8],
+        'I0099': ['Obtain Fermented Spider Eye', 'fermented_spider_eye', False, 3],
+        'I0100': ['Obtain Brush', 'brush', False, 1],
+        'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', False, 2],
+        'I0102': ['Apply 3 Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 4],
+        'I0103': ['Apply 5 Unique Armor Trims', 'rib_armor_trim_smithing_template', True, 6],
+        'I0104': ['Apply 7 Unique Armor Trims', 'silence_armor_trim_smithing_template', True, 8],
+        'I0105': ['Obtain Mace', 'mace', False, 10],
+        'I0106': ['Obtain Creaking Heart', 'creaking_heart', False, 6],
+        'I0107': ['Obtain Resin Brick Stairs', 'resin_brick_stairs', False, 3],
+        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1, '1.21.9'], 
+        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2, '1.21.9'], 
+        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3, '1.21.6'], 
+        'I0111': ['Obtain All Spears', 'netherite_spear', False, 6, '1.21.11'], #needs texture
+        'I0112': ['Obtain Any Nautilus Armor', 'iron_nautilus_armor', False, 5, '1.21.11'], #needs texture
         # Obtain all fish buckets
         # Obtain Loom
         # Obtain Campfire
         # Obtain Experience Bottle
          
         
+        #foods
         'E0001': ['Eat Apple', 'apple', False, 1],
         'E0002': ['Eat Beetroot', 'beetroot', False, 3],
         'E0003': ['Eat Carrot', 'carrot', False, 2],
@@ -247,6 +284,7 @@ GOAL_INDEX = {
         'E0017': ['Eat 20 Unique Foods', 'apple', True, 4],
 
 
+        #advancements
         'A0001': ['Get 15 Unique Advancements', 'experience_bottle', True, 2],
         'A0002': ['Get 25 Unique Advancements', 'experience_bottle', True, 4],
         'A0003': ['Get 35 Unique Advancements', 'experience_bottle', True, 6],
@@ -272,6 +310,11 @@ GOAL_INDEX = {
         'A0023': ['Enter End', 'end_portal_frame', False, 7],
         'A0024': ['Enter Nether', 'flint_and_steel', True, 2],
         'A0025': ['Locate Stronghold', 'ender_eye', False, 6],
+        'A0026': ['Apply Armor Trim', 'coast_armor_trim_smithing_template', True, 2],
+        'A0027': ['Open Trial Vault', 'trial_key', False, 1],
+        'A0028': ['Repair Wolf Armor', 'wolf_armor', False, 2],
+        'A0029': ['Open Ominous Vault', 'ominous_trial_key', False, 2],
+        # 'A0030': ['Ride Horse', 'saddle', False, 3],
 
 
         'X0001': ['Get 5 Levels', 'experience_bottle', True, 1],
@@ -298,55 +341,10 @@ GOAL_INDEX = {
         'X0022': ['Craft 25 Unique Items', 'crafting_table', True, 1],
         'X0023': ['Craft 50 Unique Items', 'crafting_table', True, 2],
         'X0024': ['Craft 75 Unique Items', 'crafting_table', True, 4],
+        'X0025': ['Find an Ancient City', 'sculk_shrieker', False, 2],
+        'X0026': ['Locate Trail Ruins', 'brush', False, 3],
         "X0027": ['Trade With Master Villager', 'emerald', True, 4],
         # "X0028": ['Locate Badlands Biome', 'terracotta', False, 4],
-
-
-
-        'X0025': ['Find an Ancient City', 'sculk_shrieker', False, 2],
-        'D0008': ['Die to Warden', 'sculk_shrieker', True, 3],
-        'K0041': ['Kill Warden', 'iron_sword', True, 8],
-        'I0095': ['Obtain Recovery Compass', 'recovery_compass', False, 5],
-        'I0096': ['Obtain Mud Brick Wall', 'mud_brick_wall', False, 2],
-        'I0097': ['Obtain Froglight', 'pearlescent_froglight', False, 4],
-        'I0098': ['Obtain All Froglights', 'pearlescent_froglight', True, 8],
-        'I0099': ['Obtain Fermented Spider Eye', 'fermented_spider_eye', False, 3],
-        # 'T0010': ['Befriend Allay', 'amethyst_shard', True, 5],
-        'B0022': ['Breed Frog', 'slime_ball', True, 4],
-
-        
-
-        'I0100': ['Obtain Brush', 'brush', False, 1],
-        'I0101': ['Obtain Armadillo Scute', 'armadillo_scute', False, 2],
-        'I0102': ['Apply 3 Unique Armor Trims', 'coast_armor_trim_smithing_template', True, 4],
-        'I0103': ['Apply 5 Unique Armor Trims', 'rib_armor_trim_smithing_template', True, 6],
-        'I0104': ['Apply 7 Unique Armor Trims', 'silence_armor_trim_smithing_template', True, 8],
-        'A0026': ['Apply Armor Trim', 'coast_armor_trim_smithing_template', True, 2],
-        'B0023': ['Breed Sniffer', 'sniffer_egg', True, 9],
-        'B0024': ['Breed Armadillo', 'spider_eye', True, 4],
-        'X0026': ['Locate Trail Ruins', 'brush', False, 3],
-
-
-
-        'I0105': ['Obtain Mace', 'mace', False, 10],
-        'I0106': ['Obtain Creaking Heart', 'creaking_heart', False, 6],
-        'I0107': ['Obtain Resin Brick Stairs', 'resin_brick_stairs', False, 3],
-        'A0027': ['Open Trial Vault', 'trial_key', False, 1],
-        'A0028': ['Repair Wolf Armor', 'wolf_armor', False, 2],
-        'A0029': ['Open Ominous Vault', 'ominous_trial_key', False, 2],
-        # 'A0030': ['Ride Horse', 'saddle', False, 3],
-        'K0042': ['Kill Bogged', 'iron_sword', True, 4],
-        'K0043': ['Kill Breeze', 'iron_sword', True, 4],
-        # 'T0011': ['Tame Every Wolf Variant', 'bone', True, 9],
-        # 'T0012': ['Tame 3 Wolf Variants', 'bone', True, 5],
-        'D0009': ['Die to Creaking', 'creaking_heart', True, 5],
-
-
-        'I0108': ['Obtain All Copper Tools', 'copper_pickaxe', True, 1, '1.21.9'], 
-        'I0109': ['Obtain Full Copper Armor', 'copper_chestplate', True, 2, '1.21.9'], 
-        'I0110': ['Obtain Dried Ghast', 'dried_ghast', False, 3, '1.21.6'], 
-        'I0111': ['Obtain All Spears', 'netherite_spear', False, 6, '1.21.11'], #needs texture
-        'I0112': ['Obtain Any Nautilus Armor', 'iron_nautilus_armor', False, 5, '1.21.11'], #needs texture
 
 
         #opponent goals
@@ -368,7 +366,6 @@ GOAL_INDEX = {
 
 
         #music discs
-
         'I1001': ['Obtain Music Disc 5', 'music_disc_5', False, 6],
         'I1002': ['Obtain Music Disc 11', 'music_disc_11', False, 5],
         'I1003': ['Obtain Music Disc 13', 'music_disc_13', False, 4],
@@ -504,16 +501,16 @@ GOAL_INDEX = {
 
 
         # goal ideas
-        # "X0011": ['Fill Inventory with Unique Items', '"id": "minecraft:chest"', 1],
-        # "X0022": ['Use Banner Pattern on Banner', '"id": "minecraft:flow_banner_pattern"', 1],
-        # "X0034": ['Create Rainbow Sheep', '"id": "minecraft:nametag"', 2],
-        # "X0035": ['Summon Johnny', '"id": "minecraft:nametag"', 3],
-        # "": ['Obtain Coal Ore', '"id": "minecraft:terracotta"', 3],
+        # "X0011": ['Fill Inventory with Unique Items', 'chest', 1],
+        # "X0022": ['Use Banner Pattern on Banner', 'flow_banner_pattern', 1],
+        # "X0034": ['Create Rainbow Sheep', 'nametag', 2],
+        # "X0035": ['Summon Johnny', 'nametag', 3],
+        # "": ['Obtain Coal Ore', 'coal_ore', 3],
         # Use Anvil
+        # Crafters crafting Crafters
         # X Unique Workstations
         # Use Grindstone
         # Kill all Raid Mobs
-        # Die in Sweet Berry Bush
         # Put Banner on Shield
         # Use Loom
 

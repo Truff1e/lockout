@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0060", "goalnum": "730060", "goalname": "Obtain Heart of the Sea"}

@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0033", "goalnum": "730033", "goalname": "Obtain All Furnace Variants"}

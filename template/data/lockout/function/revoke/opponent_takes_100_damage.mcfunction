@@ -1,0 +1,1 @@
+execute as @a run function lockout:revoke/skeleton/master {"goalid": "N0013", "goalnum": "780013", "goalname": "Opponent Takes 100 Damage"}

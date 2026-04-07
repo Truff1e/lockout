@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0063", "goalnum": "730063", "goalname": "Obtain Totem of Undying"}

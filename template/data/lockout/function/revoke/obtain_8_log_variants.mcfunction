@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0038", "goalnum": "730038", "goalname": "Obtain 8 Log Variants"}

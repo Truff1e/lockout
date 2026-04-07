@@ -1,0 +1,1 @@
+execute as @a run function lockout:revoke/skeleton/master {"goalid": "M0011", "goalnum": "770011", "goalname": "Kill the Most Unique Hostile Mobs"}

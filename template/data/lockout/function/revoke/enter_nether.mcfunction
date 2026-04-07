@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "A0024", "goalnum": "650024", "goalname": "Enter Nether"}

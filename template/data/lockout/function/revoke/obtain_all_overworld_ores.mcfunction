@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0025", "goalnum": "730025", "goalname": "Obtain All Overworld Ores"}

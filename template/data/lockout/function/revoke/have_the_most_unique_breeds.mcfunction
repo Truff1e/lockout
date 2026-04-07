@@ -1,0 +1,1 @@
+execute as @a run function lockout:revoke/skeleton/master {"goalid": "M0008", "goalnum": "770008", "goalname": "Have the Most Unique Breeds"}

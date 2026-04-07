@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0029", "goalnum": "730029", "goalname": "Obtain All Nether Ore Blocks"}

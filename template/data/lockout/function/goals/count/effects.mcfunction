@@ -36,6 +36,7 @@ scoreboard players add @s[predicate=lockout:effects/trial_omen] lk.unique_effect
 scoreboard players add @s[predicate=lockout:effects/unluck] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/water_breathing] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/weakness] lk.unique_effects 1
+scoreboard players add @s[predicate=lockout:effects/weaving] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/wind_charged] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/wither] lk.unique_effects 1
 scoreboard players add @s[predicate=lockout:effects/breath_of_the_nautilus] lk.unique_effects 1

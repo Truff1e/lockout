@@ -1,0 +1,1 @@
+execute as @a run function lockout:revoke/skeleton/master {"goalid": "N0001", "goalnum": "780001", "goalname": "Opponent Obtains Crafting Table"}

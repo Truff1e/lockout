@@ -1,0 +1,1 @@
+execute as @a run function lockout:goals/template/revoke {"goalid": "I0070", "goalnum": "730070", "goalname": "Obtain Ancient Debris"}

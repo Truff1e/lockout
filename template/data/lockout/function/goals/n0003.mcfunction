@@ -1,1 +1,1 @@
-execute as @s run function lockout:goals/skeleton/opponent {"goalid": "N0003", "goalnum": "780003", "goalname": "Opponent Obtains Seeds"}
+execute as @s run function lockout:goals/template/opponent {"goalid": "N0003", "goalnum": "780003", "goalname": "Opponent Obtains Seeds"}

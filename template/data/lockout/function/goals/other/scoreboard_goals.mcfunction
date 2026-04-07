@@ -25,6 +25,7 @@ execute as @a[scores={lk.damage_taken=1000..2000}] run function lockout:goals/n0
 execute as @a[scores={lk.damage_taken=2000..3000}] run function lockout:goals/x0010
 execute as @a[scores={lk.death_count=1}] run function lockout:goals/n0011
 execute as @a[scores={lk.death_trigger=1}] at @s if block ~ ~ ~ pointed_dripstone run function lockout:goals/d0006
+execute as @a[scores={lk.death_trigger=1}] at @s if block ~ ~ ~ sweet_berry_bush run function lockout:goals/d0010
 execute as @a[scores={lk.death_count=3}] run function lockout:goals/n0012
 execute as @a[scores={lk.hunger_bar=0}] run function lockout:goals/x0011
 
