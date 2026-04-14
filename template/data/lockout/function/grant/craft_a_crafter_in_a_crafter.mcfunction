@@ -1,0 +1,1 @@
+execute as @s run function lockout:goals/template/default {"goalid": "A0031", "goalnum": "650031", "goalname": "Craft a Crafter in a Crafter"}

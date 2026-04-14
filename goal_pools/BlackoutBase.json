@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": 2.0,
+        "version": 2.3,
         "dp_version": [81],
         "name": "Blackout Base",
         "description": "Contains every unique blackout-compatible goal, and picks one for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",

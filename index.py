@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # Set Environment Variables
 load_dotenv()
-VERSION = '2.3.1'
+VERSION = '2.3.2'
 MCVERSION = '1.21.8-26.1.1'
 OUTPUT_DIR = os.getenv('OUTPUT_DIR', default='Downloads')
 DEFAULT_MODE = os.getenv('DEFAULT_MODE', default='Lockout')
@@ -315,6 +315,7 @@ GOAL_INDEX = {
         'A0028': ['Repair Wolf Armor', 'wolf_armor', False, 2],
         'A0029': ['Open Ominous Vault', 'ominous_trial_key', False, 2],
         # 'A0030': ['Ride Horse', 'saddle', False, 3],
+        'A0031': ['Craft a Crafter in a Crafter', 'crafter', False, 3],
 
 
         'X0001': ['Get 5 Levels', 'experience_bottle', True, 1],
@@ -445,7 +446,6 @@ GOAL_INDEX = {
         'I3016': ['Obtain Black Glazed Terracotta', 'black_glazed_terracotta', False, 1], 
 
 
-
         # candles
         'I4001': ['Obtain White Candle', 'white_candle', False, 1], 
         'I4002': ['Obtain Pink Candle', 'pink_candle', False, 1], 
@@ -507,7 +507,6 @@ GOAL_INDEX = {
         # "X0035": ['Summon Johnny', 'nametag', 3],
         # "": ['Obtain Coal Ore', 'coal_ore', 3],
         # Use Anvil
-        # Crafters crafting Crafters
         # X Unique Workstations
         # Use Grindstone
         # Kill all Raid Mobs

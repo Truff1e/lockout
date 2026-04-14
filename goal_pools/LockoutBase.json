@@ -1,11 +1,11 @@
 {
     "meta": {
-        "version": 2.0,
+        "version": 2.3,
         "dp_version": [81],
         "name": "Lockout Base",
         "description": "Contains every unique goal, and picks three for each type of similar goal (different concrete colors, etc). Helps prevent repetitive/boring boards.",
         "author": "Truff1e",
-        "last_updated": "2026-02-18"
+        "last_updated": "2026-04-08"
     },
     "pools": [
         {
@@ -265,9 +265,11 @@
                 "A0027",
                 "A0028",
                 "A0029",
+                "A0031",
                 "K0042",
                 "K0043",
                 "D0009",
+                "D0010",
                 "I0108",
                 "I0109",
                 "I0110"

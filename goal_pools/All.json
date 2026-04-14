@@ -1,11 +1,11 @@
 {
     "meta": {
-        "version": 2.1,
+        "version": 2.3,
         "dp_version": [94],
         "name": "All Goals",
         "description": "Contains every possible goal, evenly weighted.",
         "author": "Truff1e",
-        "last_updated": "2026-01-16"
+        "last_updated": "2026-04-08"
     },
     "pools": [
         {
@@ -275,9 +275,11 @@
                 "A0027",
                 "A0028",
                 "A0029",
+                "A0031",
                 "K0042",
                 "K0043",
                 "D0009",
+                "D0010",
                 "I0108",
                 "I0109",
                 "I0110",

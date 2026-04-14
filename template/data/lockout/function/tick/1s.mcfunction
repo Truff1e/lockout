@@ -3,6 +3,7 @@ scoreboard players remove #seconds_remaining lk.util 1
 function lockout:timer/timer
 
 execute as @a[predicate=!lockout:is_playing, team=!spectator] run function lockout:game/joined_midgame
+gamemode spectator @a[team=spectator]
 
 #update scoreboards
 execute as @a store result score @s lk.dried_kelp run clear @s dried_kelp_block 0
