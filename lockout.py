@@ -71,7 +71,7 @@ def main():
         if args.boardtype == 'custom':
             generateCustomboard(args.customgoals)
         if args.boardtype == 'balanced':
-            generateBalancedBoard(args.boardsize, (float(args.difficulty.split('-')[0]), None, float(args.difficulty.split('-')[1])), args.pool)
+            generateBalancedBoard(args.boardsize, args.difficulty, args.pool)
 
 
     exit()
@@ -100,15 +100,6 @@ def translate(goal_id):
         return "Goal not found."
 
 
-def checkExcludedGoals(newgoal, excluded):
-    for goal in excluded:
-        if newgoal == goal:
-            return True
-            # Goal is excluded
-    return False
-    # Goal is not excluded
-
-
 def generateCustomboard(boardBlueprint: list):
     print(f'Generating Lockout Board')
     print(f'Type: Custom')
@@ -117,31 +108,23 @@ def generateCustomboard(boardBlueprint: list):
     return boardBlueprint
 
 
-def generateBalancedBoard(size: int, difficultySet: tuple, poolId, excluded=None):
-    if excluded is None:
-        excluded = []
-
-    minDifficulty, difficultyWeights, maxDifficulty = difficultySet
+def generateBalancedBoard(size: int, difficulty: str, poolId):
+    minDifficulty = int(difficulty.split('-')[0])
+    maxDifficulty = int(difficulty.split('-')[1])
     goalPool = parseGoalPool(poolId)
 
-    print(f'Generating Lockout Board')
-    print(f'Type: Balanced')
+    print('Generating Lockout Board')
+    print('Type: Balanced')
     print(f'Size: {size}')
-    print(f'Difficulty: {difficultySet}')
+    print(f'Difficulty: {difficulty}')
     print(f'Pool: {poolId}')
 
     boardBlueprint = [] 
     for _ in range(size**2):
-        if difficultyWeights != None:
-            preferredDifficulty = choices(range(minDifficulty, maxDifficulty+1), weights=difficultyWeights, k=1)[0]
-        else:
-            preferredDifficulty = None
-
         newgoal = choice(goalPool)
         runs = 0
-        while ((newgoal in boardBlueprint) or (GOAL_INDEX[newgoal][3] not in range(int(minDifficulty), int(maxDifficulty)+1)) 
-                or (GOAL_INDEX[newgoal][3] != preferredDifficulty if preferredDifficulty != None else False)
-                or checkExcludedGoals(newgoal, excluded)) or newgoal in boardBlueprint:
+        while (newgoal in boardBlueprint
+               or (GOAL_INDEX[newgoal][3] not in range(minDifficulty, maxDifficulty+1))):
             newgoal = choice(goalPool)
             runs += 1
             if runs > 300:
@@ -159,3 +142,4 @@ def generateBalancedBoard(size: int, difficultySet: tuple, poolId, excluded=None
 
 if __name__ == '__main__':
     main()
+

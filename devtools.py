@@ -3,7 +3,7 @@ import os
 import argparse
 import re
 import json
-from datetime import datetime, timedelta, time
+from datetime import datetime
 
 
 def createGoalFunctions():
@@ -282,14 +282,14 @@ def parseLogFile(file):
     for line in log:
 
         if mode == 'scanning':
-            start = re.match('\[(.*)\] \[.*Running function lockout.*', line)
+            start = re.match(r'\[(.*)\] \[.*Running function lockout.*', line)
             if start:
                 start_time = datetime.strptime(start.groups()[0], '%H:%M:%S')
                 print('Located Start Command at time', start_time)
                 mode = 'game'
         elif mode == 'game':
-            goal = re.match('\[(.*)\] \[.*\[(.*)\] completed \"(.*)\".*', line)
-            failed_goal = re.match('\[(.*)\] \[.*\[(.*)\] failed \"(.*)\".*', line)
+            goal = re.match(r'\[(.*)\] \[.*\[(.*)\] completed \"(.*)\".*', line)
+            failed_goal = re.match(r'\[(.*)\] \[.*\[(.*)\] failed \"(.*)\".*', line)
 
             if goal:
                 time, player, goal = goal.groups()
@@ -367,21 +367,64 @@ def createCraftFiles():
     print('[devtools] Success!')
 
 
+def convertToTriggers(file):
+    with open(file, 'r') as f:
+        advancement = json.load(f)
+
+        if 'display' in advancement:
+            advancement.pop('display')
+        if 'parent' in advancement:
+            advancement.pop('parent')
+        advancement['rewards'] = {"function": "lockout:goals/count/advancements"}
+
+        with open(file, 'w') as f:
+            json.dump(advancement, f, indent=4)
+
+
+
 def main():
     parser = argparse.ArgumentParser(description='Run tools for generating data pack files')
 
-    parser.add_argument('function')
+    parser.add_argument('function', nargs='?', default=None, help='Run a specific development function. Options: goal, craft, texturetest, revoke, grant')
+    parser.add_argument('--bootstrap', action='store_true', help='Run all functions to prepare the data pack template')
+    parser.add_argument('--parse', help='Parse lockout log file')
+    parser.add_argument('--ctt', nargs='*', help='Convert Minecraft advancement files into triggers for lockout goals.')
 
     args = parser.parse_args()
 
-    if args.function == 'bootstrap':
+    if args.function:
+        match args.function:
+            case 'goal':
+                createGoalFunctions()
+            case 'craft':
+                createCraftFiles()
+            case 'texturetest':
+                createTextureTestFile()
+            case 'revoke':
+                createRevokeFunctions()
+            case 'grant':
+                createGrantFunctions()
+            case _:
+                print('[devtools] You must specify a valid function. Options: goal, craft, texturetest, revoke, grant')
+
+    if args.bootstrap:
+        print('[devtools] Bootstrapping data pack template...')
         createGoalFunctions()
         createCraftFiles()
         createTextureTestFile()
         createRevokeFunctions()
         createGrantFunctions()
-    else:
-        print('[devtools] Unknown argument. Import devtools to use all its functions.')
+        print('Done!')
+
+    elif args.ctt:
+        print('[devtools] Converting files...')
+        for file in args.ctt:
+            convertToTriggers(file)
+        print('Done!')
+
+    elif args.parse:
+        print('[devtools] Parsing log...')
+        parseLogFile(args.parse)
 
 
 if __name__ == '__main__':

@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 
 # Set Environment Variables
 load_dotenv()
-VERSION = '2.3.2'
-MCVERSION = '1.21.8-26.1.1'
+VERSION = '2.3.3'
+MCVERSION = '1.21.8-26.1.2'
 OUTPUT_DIR = os.getenv('OUTPUT_DIR', default='Downloads')
 DEFAULT_MODE = os.getenv('DEFAULT_MODE', default='Lockout')
 DEFAULT_SIZE = os.getenv('DEFAULT_SIZE', default=5)
@@ -540,27 +540,27 @@ def parseGoalPool(poolId) -> list:
     excludedGoals = []
 
     for pool in goalPool['pools']:
-        type = pool['type']
+        match pool['type']:
+            case 'all':
+                for goal in pool['goals']:
+                    goalList.append(goal)
+            case 'weighted':
+                for goal in pool['goals']:
+                    pass #TODO: Implement weighted goal parser
+            case 'exclude':
+                for goal in pool['goals']:
+                    excludedGoals.append(goal)
+            case 'pick':
+                for _ in range(pool['amount']):
+                    randomGoal = random.choice(pool['goals'])
+                    goalList.append(randomGoal)
+                    pool['goals'].remove(randomGoal) #ensure the same goal is not picked twice
+            case 'include':
+                for goal in parseGoalPool(pool['file']):
+                    goalList.append(goal)
+            case _:
+                continue
 
-        if type == 'all':
-            for goal in pool['goals']:
-                goalList.append(goal)
-        elif type == 'weighted':
-            for goal in pool['goals']:
-                pass #TODO: Implement weighted goal parser
-        elif type == 'exclude':
-            for goal in pool['goals']:
-                excludedGoals.append(goal)
-        elif type == 'pick':
-            for _ in range(pool['amount']):
-                randomGoal = random.choice(pool['goals'])
-                goalList.append(randomGoal)
-                pool['goals'].remove(randomGoal) #ensure the same goal is not picked twice
-        elif type == 'include':
-            for goal in parseGoalPool(pool['file']):
-                goalList.append(goal)
-        else:
-            continue
     
     for goal in excludedGoals:
         if goal in goalList:
