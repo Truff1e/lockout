@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:polished_blackstone_stairs_from_polished_blackstone_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:polished_blackstone_stairs_from_polished_blackstone_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

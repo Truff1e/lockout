@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:purple_stained_glass_pane"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:purple_stained_glass_pane"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

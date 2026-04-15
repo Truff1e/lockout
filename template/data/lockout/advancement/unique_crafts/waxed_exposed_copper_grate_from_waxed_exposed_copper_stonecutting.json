@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:waxed_exposed_copper_grate_from_waxed_exposed_copper_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:waxed_exposed_copper_grate_from_waxed_exposed_copper_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:red_nether_brick_stairs_from_red_nether_bricks_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:red_nether_brick_stairs_from_red_nether_bricks_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

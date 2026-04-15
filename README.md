@@ -20,6 +20,11 @@ I hope you enjoy!
 ## Installation & Setup
 This code generates data packs. Each data pack is one single-use lockout board. Simply generate a board, [load the data pack into your world or server](https://datapack.wiki/guide/installing-a-datapack), add players to teams, and play!
 
+> [!NOTE]
+> The current version of this project is for Java Edition version 1.21.8+.
+> Older versions provide support for 1.21 through 1.21.4.
+> Bugrock is not supported. Data packs are a Java Edition exclusive feature.
+
 
 1. Press the green "Code" button, and click "Download ZIP"
 2. Extract the ZIP anywhere you like
@@ -52,9 +57,11 @@ You can customize several options when generating a board. For example, the comm
 > ```python3 lockout.py --help```
 
 **Size**
+
 The size of the board is controlled by the `-s` flag. In theory, the board can be as big as you want, although the generator may crash if you try to create a board with more goals than exist. I wouldn't recommend going above 10x10. To set the size, use `python3 lockout.py -s <size>`. For example, a 5x5 board is generated with `python3 lockout.py -s 5`, and a 6x6 board is `python3 lockout.py -s 6`.
 
 **Difficulty**
+
 The difficulty range is set by any two integers between 1 and 10 separated by a hyphen (-). The larger number (max difficulty) comes second.
 
 Set the size with `python3 lockout.py -d <min_difficulty>-<max_difficulty>`
@@ -91,11 +98,15 @@ To play lockout, install the data pack on your world or on a server.
 Players can use `/trigger join_team set <1 or 2>` to select their team while still in the lobby.
 You can manually add players to teams using `/team join 1 <player>` and `/team join 2 <player>`.
 
-To start the game, run 
-```/function lockout:game/start``` 
-or click the button that says "Start Lockout"
+> [!IMPORTANT]
+> To start the game, run 
+> ```/function lockout:game/start``` 
+> or click the button that says "Start Lockout"
 
 If a player joins late, and they can't see the lockout board, first add them to a team and have them relog.
+
+> [!TIP]
+> If a goal is bugged or you just want to give a player a specific goal, you can use `/execute as <player> run function lockout:grant/name_of_goal`. Or alternatively you can revoke a goal that a player has already achieved with `/function lockout:revoke/name_of_goal`.
 
 
 ## Playing Blackout
@@ -115,6 +126,8 @@ With that being said, there are plenty of benefits to playing in vanilla. You ca
 
 ## Resource Pack
 In order to make some of the goal icons more distinguishable, the generator comes with an optional resource pack that utilizes some of the textures from the original lockout mod. You do not have to do any setup besides enabling it on your client. If you know how, you can set it as the server resource pack so players are prompted to download it when they join the lockout server.
+
+**I highly recommend using the resource pack.**
 
 
 ## Known Issues

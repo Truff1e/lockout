@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:deepslate_tile_wall_from_cobbled_deepslate_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "minecraft:deepslate_tile_wall_from_cobbled_deepslate_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

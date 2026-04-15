@@ -360,7 +360,7 @@ def createCraftFiles():
 
     for item in item_ids:
         with open(f'{path}/{item}.json', 'w') as file:
-            advancement = str('{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "' + f'minecraft:{item}"' + '}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count_crafts"}}')
+            advancement = str('{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "' + f'minecraft:{item}"' + '}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}')
             file.write(advancement)
             file.close()
 
