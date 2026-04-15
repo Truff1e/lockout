@@ -1,8 +1,9 @@
 ![Alt text](assets/banner.png)
 
 # Truffle's Minecraft Lockout Generator
-![GitHub Release](https://img.shields.io/github/v/release/truff1e/lockout)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/truff1e/lockout/total)
+![GitHub Tag](https://img.shields.io/github/v/tag/truff1e/lockout?style=for-the-badge&label=Latest%20Version)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/truff1e/lockout/total?style=for-the-badge&color=%23AA7E0F)
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/lockout?style=for-the-badge&label=Modrinth%20Downloads&color=%231CD96A)
 
 
 ## What is Lockout?
