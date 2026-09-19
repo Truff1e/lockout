@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "killentity": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:spider"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killentity"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/k0022"
+  }
+}

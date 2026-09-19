@@ -1,0 +1,28 @@
+{
+        "criteria": {
+          "getitem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+              "items": [
+                  {
+                    "items": "minecraft:pearlescent_froglight"
+                  },
+                  {
+                    "items": "minecraft:verdant_froglight"
+                  },
+                  {
+                    "items": "minecraft:ochre_froglight"
+                  }
+              ]
+            }
+          }
+        },
+        "requirements": [
+          [
+            "getitem"
+          ]
+        ],
+        "rewards": {
+          "function": "lockout:goals/i0098"
+        }
+    }

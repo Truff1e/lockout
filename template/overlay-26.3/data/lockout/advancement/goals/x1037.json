@@ -1,0 +1,22 @@
+{
+    "criteria": {
+      "effect": {
+        "trigger": "minecraft:effects_changed",
+        "conditions": {
+          "effects": {
+            "minecraft:weakness": {
+              "visible": true
+            }
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "effect"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/x1037"
+    }
+}

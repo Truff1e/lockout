@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "patterns": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:quartz_block"
+          },
+          {
+            "items": "minecraft:gold_block"
+          },
+          {
+            "items": "minecraft:netherite_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "patterns"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/i0029"
+  }
+}

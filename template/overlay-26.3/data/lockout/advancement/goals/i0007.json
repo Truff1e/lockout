@@ -1,0 +1,55 @@
+{
+    "criteria": {
+      "chainmail_boots": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:chainmail_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "chainmail_chestplate": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:chainmail_chestplate"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "chainmail_helmet": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:chainmail_helmet"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      },
+      "chainmail_leggings": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:chainmail_leggings"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "chainmail_helmet",
+        "chainmail_chestplate",
+        "chainmail_leggings",
+        "chainmail_boots"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0007"
+    }
+  }

@@ -1,0 +1,28 @@
+{
+    "criteria": {
+        "bedrock": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:stepping_on": {
+                            "block": {
+                                "blocks": "minecraft:netherrack"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "bedrock"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/n0008"
+    }
+}

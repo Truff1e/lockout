@@ -1,6 +1,6 @@
 from index import *
 from generator import generateBoard
-from random import choice, choices
+from random import choice
 import os
 import argparse
 

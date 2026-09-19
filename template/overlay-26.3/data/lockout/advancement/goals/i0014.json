@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "netherite_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:netherite_helmet"
+            },
+            {
+              "items": "minecraft:netherite_chestplate"
+            },
+            {
+              "items": "minecraft:netherite_leggings"
+            },
+            {
+              "items": "minecraft:netherite_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "netherite_armor"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0014"
+    }
+  }

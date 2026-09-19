@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:slots": {
+              "weapon.mainhand": {
+                "count": 64
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "lockout:goals/x0007"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "breed": {
+      "trigger": "minecraft:bred_animals",
+      "conditions": {
+        "parent": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:horse"
+          }
+        },
+        "partner": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:horse"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "breed"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/b0008"
+  }
+}

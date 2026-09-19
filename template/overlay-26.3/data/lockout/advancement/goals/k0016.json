@@ -1,0 +1,55 @@
+{
+  "criteria": {
+    "kill_player": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/player": {},
+            "team": "1"
+          }
+        },
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/player": {},
+            "team": "2"
+          }
+        }
+      }
+    },
+    "kill_player2": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/player": {},
+            "team": "2"
+          }
+        },
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:type_specific/player": {},
+            "team": "1"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "kill_player",
+      "kill_player2"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/k0016"
+  }
+}

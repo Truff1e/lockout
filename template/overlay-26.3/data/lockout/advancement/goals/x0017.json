@@ -1,0 +1,26 @@
+{
+    "criteria": {
+        "city": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "structures": "minecraft:mansion"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "city"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/x0017"
+    }
+}

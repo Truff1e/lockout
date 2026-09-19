@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "traded": {
+            "trigger": "minecraft:villager_trade"
+        }
+    },
+    "requirements": [
+        [
+            "traded"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/a0012"
+    }
+}

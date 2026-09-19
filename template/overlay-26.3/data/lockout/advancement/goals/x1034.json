@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "effect": {
+        "trigger": "minecraft:effects_changed",
+        "conditions": {
+          "effects": {
+            "minecraft:fire_resistance": {}
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "effect"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/x1034"
+    }
+}

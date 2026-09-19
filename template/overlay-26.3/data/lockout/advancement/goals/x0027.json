@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "trade": {
+      "trigger": "minecraft:villager_trade",
+      "conditions": {
+        "villager": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:nbt": "{'VillagerData':{'level':5}}"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "trade"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/x0027"
+  }
+}

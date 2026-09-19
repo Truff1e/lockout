@@ -1,0 +1,30 @@
+{
+    "criteria": {
+        "height_limit": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "position": {
+                                "y": {
+                                    "min": 319.0
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:location"
+        }
+    },
+    "requirements": [
+        [
+            "height_limit"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/x0015"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "criteria": {
+      "chainmail_armor": {
+        "conditions": {
+          "items": [
+            {
+              "items": "minecraft:chainmail_helmet"
+            },
+            {
+              "items": "minecraft:chainmail_chestplate"
+            },
+            {
+              "items": "minecraft:chainmail_leggings"
+            },
+            {
+              "items": "minecraft:chainmail_boots"
+            }
+          ]
+        },
+        "trigger": "minecraft:inventory_changed"
+      }
+    },
+    "requirements": [
+      [
+        "chainmail_armor"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/i0008"
+    }
+  }

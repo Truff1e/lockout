@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "dieto": {
+      "trigger": "minecraft:entity_killed_player",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:iron_golem"
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "dieto"
+    ]
+  ],
+  "rewards": {
+    "function": "lockout:goals/d0003"
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "bedrock": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:stepping_on": {
+                            "block": {
+                                "blocks": "minecraft:bedrock"
+                            }
+                        },
+                        "minecraft:location": {
+                            "dimension": "minecraft:overworld"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "bedrock"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/x0014"
+    }
+}
