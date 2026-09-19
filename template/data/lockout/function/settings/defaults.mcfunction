@@ -12,3 +12,4 @@ scoreboard players set #allow_resign lk.util 1
 scoreboard players set #end_on_win lk.util 1
 scoreboard players set #friendly_fire lk.util 1
 scoreboard players set #show_timer lk.util 1
+scoreboard players set #paused lk.util 0

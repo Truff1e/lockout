@@ -92,6 +92,7 @@ function lockout:load_overlay_1_21_5
 function lockout:load_overlay_1_21_6
 function lockout:load_overlay_1_21_9
 function lockout:load_overlay_1_21_11
+function lockout:load_overlay_26_3
 
 
 #splash screen
