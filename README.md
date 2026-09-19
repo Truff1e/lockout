@@ -5,24 +5,22 @@
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/truff1e/lockout/total?style=for-the-badge&color=%23AA7E0F)
 ![Modrinth Downloads](https://img.shields.io/modrinth/dt/lockout?style=for-the-badge&label=Modrinth%20Downloads&color=%231CD96A)
 
+> [!NOTE]
+> This project is only receiving updates for pack format changes and bug fixes. 
+> New features will probably not be added, but you are welcome to open an issue, make a PR, or fork this repo.
+
 
 ## What is Lockout?
 Lockout is played on a random Minecraft world in survival mode. Two teams try to complete more than half the objectives on a board of typically 25 goals. The goals can be easy like 'Eat Apple' or as challenging as 'Enter End City'. Each goal is worth one point. Once one team completes a goal, the other team is "locked out" of that goal and can no longer earn a point for it. The first team to complete more than half the board wins.
 
-This game was originally invented by SmallAnt and created by AtSign as a Forge mod. You can find the original mod on Curseforge [here](https://www.curseforge.com/minecraft/mc-mods/lockout), although it is no longer receiving updates. There is an [updated version](https://github.com/Specnr/lockout-fabric) for Fabric made by marin774 and specnr. This project recreates lockout in a data pack so that it can be played in 100% vanilla Minecraft. If you are looking for a traditional lockout experience, use one of the mods linked above. If you want to play on vanilla (or any mod loader of your choosing), read on. 
-
-Lockout was originally created by [SmallAnt](https://www.youtube.com/@Smallant)!
-
-I hope you enjoy!
-
-~Truffle
+Lockout was originally invented by [SmallAnt](https://www.youtube.com/@Smallant) and created by AtSign as a Forge mod. You can find the original mod on Curseforge [here](https://www.curseforge.com/minecraft/mc-mods/lockout), although it is no longer receiving updates. There is an [updated version](https://github.com/Specnr/lockout-fabric) for Fabric made by marin774 and specnr. [Draftout](https://draftoutmc.com/) also has private rooms, but only allows playing in separate worlds. This project recreates lockout in a data pack so that it can be played in 100% vanilla Minecraft. If you are looking for a traditional lockout experience, use one of the mods linked above. If you want to play on vanilla (or any mod loader of your choosing), read on. 
 
 
 ## Installation & Setup
 This code generates data packs. Each data pack is one single-use lockout board. Simply generate a board, [load the data pack into your world or server](https://datapack.wiki/guide/installing-a-datapack), add players to teams, and play!
 
 > [!NOTE]
-> The current version of this project is for Java Edition version 1.21.8+.
+> The current version of this project is for Java Edition version 1.21.8 to 26.3.
 > Older versions provide support for 1.21 through 1.21.4.
 > Bugrock is not supported. Data packs are a Java Edition exclusive feature.
 
