@@ -1,29 +1,41 @@
 import random
 import json
-import os
-from dotenv import load_dotenv
 
+def load_option(key, default=None):
+    with open('./options.txt', 'r') as f:
+        for line in f.readlines():
+            if line.startswith('#'): continue
+            elif '=' not in line: continue
+            else:
+                keyval = line.split('=')
+                if len(keyval) != 2: continue
+                if keyval[0] == key: 
+                    val = keyval[1].strip('\n')
+                    if val.isdigit(): return int(val)
+                    if val.lower() == "false": return False
+                    if val.lower() == "true": return True
+                    return val
+        return default
 
 # Set Environment Variables
-load_dotenv()
 VERSION = '2.4.0'
 MCVERSION = '1.21.8-26.3'
-OUTPUT_DIR = os.getenv('OUTPUT_DIR', default='Downloads')
-DEFAULT_MODE = os.getenv('DEFAULT_MODE', default='Lockout')
-DEFAULT_SIZE = os.getenv('DEFAULT_SIZE', default=5)
-DEFAULT_DIFFICULTY = os.getenv('DEFAULT_DIFFICULTY', default='1-5')
-DEBUG = os.getenv('DEBUG', default=False)
+OUTPUT_DIR = load_option('OUTPUT_DIR', default='Downloads')
+DEFAULT_MODE = load_option('DEFAULT_MODE', default='Lockout')
+DEFAULT_SIZE = load_option('DEFAULT_SIZE', default=5)
+DEFAULT_DIFFICULTY = load_option('DEFAULT_DIFFICULTY', default='1-5')
+DEBUG = load_option('DEBUG', default=False)
 
-LK_START_TIME=os.getenv('LK_START_TIME', default=45)
-LK_MAX_TIME=os.getenv('LK_MAX_TIME', default=120)
-LK_SHOW_PROGRESS=os.getenv('LK_SHOW_PROGRESS', default=True)
-LK_ALLOW_PVP=os.getenv('LK_ALLOW_PVP', default=True)
-LK_ALLOW_FRIENDLY_FIRE=os.getenv('LK_ALLOW_FRIENDLY_FIRE', default=True)
-LK_ALLOW_TRACKER=os.getenv('LK_ALLOW_TRACKER', default=True)
-LK_ALLOW_DRAW=os.getenv('LK_ALLOW_DRAW', default=True)
-LK_ALLOW_RESIGN=os.getenv('LK_ALLOW_RESIGN', default=True)
-LK_END_ON_WIN=os.getenv('LK_END_ON_WIN', default=True)
-LK_SHOW_TIMER=os.getenv('LK_SHOW_TIMER', default=True)
+LK_START_TIME=load_option('LK_START_TIME', default=45)
+LK_MAX_TIME=load_option('LK_MAX_TIME', default=120)
+LK_SHOW_PROGRESS=load_option('LK_SHOW_PROGRESS', default=True)
+LK_ALLOW_PVP=load_option('LK_ALLOW_PVP', default=True)
+LK_ALLOW_FRIENDLY_FIRE=load_option('LK_ALLOW_FRIENDLY_FIRE', default=True)
+LK_ALLOW_TRACKER=load_option('LK_ALLOW_TRACKER', default=True)
+LK_ALLOW_DRAW=load_option('LK_ALLOW_DRAW', default=True)
+LK_ALLOW_RESIGN=load_option('LK_ALLOW_RESIGN', default=True)
+LK_END_ON_WIN=load_option('LK_END_ON_WIN', default=True)
+LK_SHOW_TIMER=load_option('LK_SHOW_TIMER', default=True)
 
 
 GOAL_INDEX = {
@@ -649,13 +661,13 @@ def parseGoalPool(poolId) -> list:
     
 
 def dumpGeneratorInfo():
-    message = f'''
-=====================================================================
+    message = f'''=====================================================================
 Truffle Minecraft Lockout - v{VERSION}
 ©2026 YouDiedRespawn Studios (GNU GPLv3)
 Supports MC {MCVERSION}
+Goals: {len(GOAL_INDEX)}
 
-Default Options -----------------------------------------------------
+Default Options [Edit in options.txt] -------------------------------
 OUTPUT_DIR             = {OUTPUT_DIR}
 DEFAULT_MODE           = {DEFAULT_MODE}
 DEFAULT_SIZE           = {DEFAULT_SIZE}
@@ -674,10 +686,4 @@ LK_END_ON_WIN          = {LK_END_ON_WIN}
 LK_SHOW_TIMER          = {LK_SHOW_TIMER}
 ====================================================================='''
     return message
-
-
-if __name__ == '__main__':
-    print("Version:           ", VERSION)
-    print("Minecraft Version: ", MCVERSION)
-    print("Goals:             ", len(GOAL_INDEX))
 
