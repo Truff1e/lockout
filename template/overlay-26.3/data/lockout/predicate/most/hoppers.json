@@ -1,0 +1,21 @@
+{
+    "condition": "minecraft:int_value_check",
+    "value": {
+      "type": "minecraft:score",
+      "target": {
+        "type": "minecraft:context",
+        "target": "this"
+      },
+      "score": "lk.hoppers"
+    },
+    "test": {
+      "min": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "#hoppers"
+        },
+        "score": "lk.most"
+      }
+    }
+  }

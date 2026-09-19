@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:black_concrete_slab_from_black_concrete_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

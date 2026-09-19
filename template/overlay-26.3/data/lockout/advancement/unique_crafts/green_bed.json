@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:green_bed"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

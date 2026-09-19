@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:decorated_pot_simple"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

@@ -347,6 +347,7 @@ def parseLogFile(file):
 def createCraftFiles():
     item_ids = []
     path = './template/data/lockout/advancement/unique_crafts'
+    overlay_path = './template/overlay-26.3/data/lockout/advancement/unique_crafts'
     print('[devtools] Creating recipe advancements...')
 
     for recipe in open('./recipies.txt', 'r').readlines():
@@ -356,11 +357,20 @@ def createCraftFiles():
         os.mkdir(path)
     except FileExistsError:
         print('[devtools] Directory already exists. Proceeding...')
-        pass
+
+    try:
+        os.mkdir(overlay_path)
+    except FileExistsError:
+        print('[devtools] Overlay directory already exists. Proceeding...')
 
     for item in item_ids:
         with open(f'{path}/{item}.json', 'w') as file:
             advancement = str('{"criteria": {"craft": {"trigger": "minecraft:recipe_crafted","conditions": {"recipe_id": "' + f'minecraft:{item}"' + '}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}')
+            file.write(advancement)
+            file.close()
+
+        with open(f'{overlay_path}/{item}.json', 'w') as file:
+            advancement = str('{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "' + f'minecraft:{item}"' + '}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}')
             file.write(advancement)
             file.close()
 

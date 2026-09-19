@@ -1,0 +1,1 @@
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:cinnabar_brick_slab"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
