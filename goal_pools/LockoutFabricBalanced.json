@@ -1,0 +1,18 @@
+{
+    "meta": {
+        "version": 2.4,
+        "dp_version": [81],
+        "name": "Lockout Fabric Balanced",
+        "description": "Contains all goals compatible with the lockout-fabric mod, balanced.",
+        "compatibility": "fabric-only",
+        "author": "Truff1e",
+        "last_updated": "2026-09-18"
+    },
+    "pools": [
+        {
+            "type": "all",
+            "goals": [
+            ]
+        }
+    ]
+}

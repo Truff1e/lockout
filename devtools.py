@@ -407,7 +407,7 @@ def main():
             case _:
                 print('[devtools] You must specify a valid function. Options: goal, craft, texturetest, revoke, grant')
 
-    if args.bootstrap:
+    elif args.bootstrap:
         print('[devtools] Bootstrapping data pack template...')
         createGoalFunctions()
         createCraftFiles()
@@ -425,6 +425,9 @@ def main():
     elif args.parse:
         print('[devtools] Parsing log...')
         parseLogFile(args.parse)
+
+    else:
+        parser.print_help()
 
 
 if __name__ == '__main__':
