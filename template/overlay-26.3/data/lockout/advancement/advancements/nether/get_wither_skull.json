@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "wither_skull": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:wither_skeleton_skull"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "wither_skull"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

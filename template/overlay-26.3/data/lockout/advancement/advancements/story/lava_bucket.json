@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "lava_bucket": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:lava_bucket"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "lava_bucket"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

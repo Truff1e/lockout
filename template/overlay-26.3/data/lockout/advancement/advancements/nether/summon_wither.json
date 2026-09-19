@@ -1,0 +1,25 @@
+{
+    "criteria": {
+        "summoned": {
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:entity_type": "minecraft:wither"
+                    }
+                }
+            },
+            "trigger": "minecraft:summoned_entity"
+        }
+    },
+    "requirements": [
+        [
+            "summoned"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

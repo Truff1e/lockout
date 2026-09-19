@@ -1,0 +1,20 @@
+{
+    "criteria": {
+      "chicken": {
+        "trigger": "minecraft:bred_animals",
+        "conditions": {
+          "child": {
+            "type": "minecraft:entity_properties", "entity":"this", "predicate": {"minecraft:entity_type":  "minecraft:donkey"}
+          }
+        }
+      }
+    },
+    "requirements": [
+      [
+        "chicken"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/count/breeds"
+    }
+  }

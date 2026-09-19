@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "struck_villager": {
+            "conditions": {
+                "victims": [
+                    {
+                        "type": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "minecraft:entity_type": "minecraft:villager"
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:channeled_lightning"
+        }
+    },
+    "requirements": [
+        [
+            "struck_villager"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

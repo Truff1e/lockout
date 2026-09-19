@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:yellow_concrete_stairs_from_yellow_concrete_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "minecraft:yellow_concrete_stairs_from_yellow_concrete_stonecutting"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

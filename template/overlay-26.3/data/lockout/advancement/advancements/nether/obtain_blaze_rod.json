@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "blaze_rod": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:blaze_rod"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "blaze_rod"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

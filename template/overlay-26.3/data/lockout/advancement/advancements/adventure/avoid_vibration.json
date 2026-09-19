@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "avoid_vibration": {
+            "trigger": "minecraft:avoid_vibration"
+        }
+    },
+    "requirements": [
+        [
+            "avoid_vibration"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

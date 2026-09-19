@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:acacia_trapdoor"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "minecraft:acacia_trapdoor"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

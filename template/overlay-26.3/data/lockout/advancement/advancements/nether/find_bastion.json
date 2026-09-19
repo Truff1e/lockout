@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "bastion": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "structures": "minecraft:bastion_remnant"
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:location"
+        }
+    },
+    "requirements": [
+        [
+            "bastion"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

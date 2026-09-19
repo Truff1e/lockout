@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "beacon": {
+            "conditions": {
+                "level": 4
+            },
+            "trigger": "minecraft:construct_beacon"
+        }
+    },
+    "requirements": [
+        [
+            "beacon"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

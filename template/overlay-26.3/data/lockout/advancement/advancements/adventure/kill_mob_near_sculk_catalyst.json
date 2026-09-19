@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "kill_mob_near_sculk_catalyst": {
+            "trigger": "minecraft:kill_mob_near_sculk_catalyst"
+        }
+    },
+    "requirements": [
+        [
+            "kill_mob_near_sculk_catalyst"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

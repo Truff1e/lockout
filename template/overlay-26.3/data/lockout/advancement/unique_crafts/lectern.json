@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:lectern"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "minecraft:lectern"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

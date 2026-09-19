@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:sentry_armor_trim_smithing_template"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "minecraft:sentry_armor_trim_smithing_template"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

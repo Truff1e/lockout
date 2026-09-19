@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "minecraft_trials_edition": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "structures": "minecraft:trial_chambers"
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:location"
+        }
+    },
+    "requirements": [
+        [
+            "minecraft_trials_edition"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

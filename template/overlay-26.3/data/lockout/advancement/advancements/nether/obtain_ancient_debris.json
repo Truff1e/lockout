@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "ancient_debris": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:ancient_debris"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "ancient_debris"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

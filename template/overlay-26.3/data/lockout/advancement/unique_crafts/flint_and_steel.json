@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:flint_and_steel"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "minecraft:flint_and_steel"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

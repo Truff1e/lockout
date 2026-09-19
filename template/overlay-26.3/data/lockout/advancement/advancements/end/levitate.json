@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "levitated": {
+            "conditions": {
+                "distance": {
+                    "y": {
+                        "min": 50.0
+                    }
+                }
+            },
+            "trigger": "minecraft:levitation"
+        }
+    },
+    "requirements": [
+        [
+            "levitated"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    },
+    "sends_telemetry_event": true
+}

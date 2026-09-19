@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "consumed_item": {
+            "trigger": "minecraft:consume_item"
+        }
+    },
+    "requirements": [
+        [
+            "consumed_item"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

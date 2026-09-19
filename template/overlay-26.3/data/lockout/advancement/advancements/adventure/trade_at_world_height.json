@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "trade_at_world_height": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "position": {
+                                "y": {
+                                    "min": 319.0
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:villager_trade"
+        }
+    },
+    "requirements": [
+        [
+            "trade_at_world_height"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

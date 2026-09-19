@@ -1,0 +1,37 @@
+{
+    "criteria": {
+        "two_birds": {
+            "conditions": {
+                "fired_from_weapon": {
+                    "items": "minecraft:crossbow"
+                },
+                "victims": [
+                    {
+                        "type": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "minecraft:entity_type": "minecraft:phantom"
+                        }
+                    },
+                    {
+                        "type": "minecraft:entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "minecraft:entity_type": "minecraft:phantom"
+                        }
+                    }
+                ]
+            },
+            "trigger": "minecraft:killed_by_arrow"
+        }
+    },
+    "requirements": [
+        [
+            "two_birds"
+        ]
+    ],
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    },
+    "sends_telemetry_event": true
+}

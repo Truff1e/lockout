@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "iron_pickaxe": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:iron_pickaxe"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "iron_pickaxe"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "criteria": {
+        "summoned_dragon": {
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:entity_type": "minecraft:ender_dragon"
+                    }
+                }
+            },
+            "trigger": "minecraft:summoned_entity"
+        }
+    },
+    "requirements": [
+        [
+            "summoned_dragon"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

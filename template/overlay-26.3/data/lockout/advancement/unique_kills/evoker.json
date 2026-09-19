@@ -1,0 +1,25 @@
+{
+    "criteria": {
+      "minecraft:zombie": {
+        "types": {
+          "entity": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {"minecraft:entity_type": "minecraft:evoker"
+              }
+            }
+          ]
+        },
+      "trigger": "minecraft:player_killed_entity"
+      }
+    },
+    "requirements": [
+      [
+        "minecraft:zombie"
+      ]
+    ],
+    "rewards": {
+      "function": "lockout:goals/count/kills"
+    }
+  }

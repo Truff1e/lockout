@@ -1,5 +1,5 @@
 {
-    "condition": "minecraft:int_value_check",
+    "type": "minecraft:int_value_check",
     "value": {
       "type": "minecraft:score",
       "target": {

@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "dragon_egg": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:dragon_egg"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "dragon_egg"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

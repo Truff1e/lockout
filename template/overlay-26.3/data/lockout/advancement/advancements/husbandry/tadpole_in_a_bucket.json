@@ -1,0 +1,21 @@
+{
+    "criteria": {
+        "tadpole_bucket": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:tadpole_bucket"
+                }
+            },
+            "trigger": "minecraft:filled_bucket"
+        }
+    },
+    "requirements": [
+        [
+            "tadpole_bucket"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

@@ -370,7 +370,7 @@ def createCraftFiles():
             file.close()
 
         with open(f'{overlay_path}/{item}.json', 'w') as file:
-            advancement = str('{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "' + f'minecraft:{item}"' + '}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}')
+            advancement = str('{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "' + f'minecraft:{item}"' + '}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}')
             file.write(advancement)
             file.close()
 

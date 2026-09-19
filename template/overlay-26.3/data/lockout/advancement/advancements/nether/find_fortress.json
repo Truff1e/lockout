@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "fortress": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "structures": "minecraft:fortress"
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:location"
+        }
+    },
+    "requirements": [
+        [
+            "fortress"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "criteria": {
+        "potion": {
+            "trigger": "minecraft:brewed_potion"
+        }
+    },
+    "requirements": [
+        [
+            "potion"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

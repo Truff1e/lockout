@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "in_stronghold": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "structures": "minecraft:stronghold"
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:location"
+        }
+    },
+    "requirements": [
+        [
+            "in_stronghold"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

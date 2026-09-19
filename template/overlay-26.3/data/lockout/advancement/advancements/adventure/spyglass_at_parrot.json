@@ -1,0 +1,32 @@
+{
+    "criteria": {
+        "spyglass_at_parrot": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:spyglass"
+                },
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:type_specific/player": {
+                            "looking_at": {
+                                "minecraft:entity_type": "minecraft:parrot"
+                            }
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:using_item"
+        }
+    },
+    "requirements": [
+        [
+            "spyglass_at_parrot"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

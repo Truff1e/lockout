@@ -1,0 +1,28 @@
+{
+    "criteria": {
+        "remove_wolf_armor": {
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:entity_type": "minecraft:wolf"
+                    }
+                },
+                "item": {
+                    "items": "minecraft:wolf_armor"
+                }
+            },
+            "trigger": "minecraft:player_sheared_equipment"
+        }
+    },
+    "requirements": [
+        [
+            "remove_wolf_armor"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

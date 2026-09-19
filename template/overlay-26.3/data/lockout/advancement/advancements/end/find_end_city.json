@@ -1,0 +1,27 @@
+{
+    "criteria": {
+        "in_city": {
+            "conditions": {
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:location": {
+                            "structures": "minecraft:end_city"
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:location"
+        }
+    },
+    "requirements": [
+        [
+            "in_city"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

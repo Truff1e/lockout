@@ -1,0 +1,23 @@
+{
+    "criteria": {
+        "stone_pickaxe": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": "minecraft:stone_pickaxe"
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "stone_pickaxe"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}

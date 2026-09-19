@@ -1,1 +1,1 @@
-{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipe_id": "minecraft:redstone_from_blasting_redstone_ore"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}
+{"criteria": {"craft": {"trigger": "minecraft:recipe_unlocked","conditions": {"recipes": "minecraft:redstone_from_blasting_redstone_ore"}}},"requirements": [["craft"]],"rewards": {"function": "lockout:goals/count/crafts"}}

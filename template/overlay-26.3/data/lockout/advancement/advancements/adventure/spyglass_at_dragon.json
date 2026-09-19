@@ -1,0 +1,32 @@
+{
+    "criteria": {
+        "spyglass_at_dragon": {
+            "conditions": {
+                "item": {
+                    "items": "minecraft:spyglass"
+                },
+                "player": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:type_specific/player": {
+                            "looking_at": {
+                                "minecraft:entity_type": "minecraft:ender_dragon"
+                            }
+                        }
+                    }
+                }
+            },
+            "trigger": "minecraft:using_item"
+        }
+    },
+    "requirements": [
+        [
+            "spyglass_at_dragon"
+        ]
+    ],
+    "sends_telemetry_event": true,
+    "rewards": {
+        "function": "lockout:goals/count/advancements"
+    }
+}
